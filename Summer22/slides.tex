@@ -118,6 +118,7 @@ Jupyterhub, R, SQL and SAS}
 {Biostatistical Consultation Mini-grants}
 \item \href{https://www.mcw.edu/departments/biostatistics/biostatistics-consulting-service}{Biostatistics Consulting Service (BCS)}
 \item \href{https://ctri.mcw.edu/resources/bmi-links}{CTSI Biomedical Informatics links}
+\item \href{https://ctri.mcw.edu/wp-content/uploads/CTSI-Honest-Broker-Data-Dictionary.pdf}{CTSI Honest Broker Data Dictionary}
 \item \href{https://www.nber.org/research/data/icd-9-cm-and-icd-10-cm-and-icd-10-pcs-crosswalk-or-general-equivalence-mappings}
 {Centers for Medicare and Medicaid Services ICD-9/ICD-10 crosswalk}
 \item \href{https://en.wikipedia.org/wiki/Project_Jupyter}{Project Jupyter}
@@ -156,20 +157,19 @@ e.g., ``Book1.csv''
 \item If CSV files have so many challenges, then why bother?
 \item No other data exchange formats have caught on
 \item Alternatives like XML are even worse!
-\item With respect to R and SAS, which are the most relevant here,
-CSV files fill an important niche
-\item Especially since they make the exchange of dates, times
+\item With respect to CSV, SAS fills an important niche
+\item SAS makes the exchange of CSV files with dates, times
 and date-times effectively trivial
 \item This is a very important concern since the EHR is rife
 with chronological info: so much so that you don't even want to
-consider making their transfer tedious in any shape or form
+consider making their transfer manual in any shape or form
 \item And we have decades of experience with CSVs
-\item Largely automated functions
-\item R functions: \texttt{read.csv()}/\texttt{write.csv()}
+\item Largely automated functions roughly in order of usefulness
 \item SAS: \texttt{PROC IMPORT}/\texttt{PROC EXPORT}
-\item Semi-automated
-\item SAS DATASTEP and RASMACRO: \texttt{\_cimport}/\texttt{\_cexport}\\
-plus \texttt{\_crepair} for an edge case
+\item R functions: \texttt{read.csv()}/\texttt{write.csv()}
+\item RASMACRO: \texttt{\_cimport}/\texttt{\_cexport}\\
+plus \texttt{\_crepair}, \texttt{\_constant}
+and \texttt{\_verify} for handy features
 \end{itemize}
 
 \end{frame}
@@ -277,7 +277,7 @@ and the Research Computing Center cluster
 \item But anyone can install it
 \item Very useful to working with CRDW data 
 \item \texttt{\_verify} to automatically convert {\it character} fields to numeric if possible,
-i.e., some fields are unnecessarily marked as text
+i.e., some fields are unnecessarily encoded as text
 \item \texttt{\_constant} automatically drops variables that are constant including missing
 \item \texttt{\_crepair} for CSVs with very long variable strings, R has an esoteric format
 that needs to be re-formatted so SAS can read them automatically
@@ -388,7 +388,7 @@ $ column_name   : chr "patient_hash" "encounter_hash" ...
 
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
 \begin{itemize}
-\item We have quickly summarized the tables in the database
+\item We can quickly summarized the tables in the database
 \item \texttt{table(columns\$table\_name)}
 \item The counts correspond to the number of columns as we have seen from the structure of the \texttt{data.frame}
 %\item Here's an edited version focusing on the most important tables
@@ -413,35 +413,149 @@ fh_hb_diagnostic_results_jupyter
 
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
 \begin{itemize}
-\item When does NAACCR data start?
+\item When does the NAACCR data start?
 \item Above, I said 1989: how did I get that?
 \item N.B. The SQL \texttt{date\_part} function is not to be confused with 
 the SAS \texttt{datepart} function
 \end{itemize}
 \begin{verbatim}
-dxyear=dbGetQuery(db, 
+naaccr=dbGetQuery(db, 
     paste("select",
           "date_part('year', date_of_diagnosis_shifted)",
-          "from fh_hb_naaccr_jupyter")
+          "as dxyear from fh_hb_naaccr_jupyter")
 )
-str(dxyear)
-t(table(dxyear$date_part))
+t(table(naaccr$dxyear))
 \end{verbatim}
 \end{frame}
 
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
 \begin{itemize}
-\item When does EKG data start?
+\item When does the EKG data start?
+\item Covered in the Appendix A of the 
+\item \href{https://ctri.mcw.edu/wp-content/uploads/CTSI-Honest-Broker-Data-Dictionary.pdf}{CTSI Honest Broker Data Dictionary}
 \end{itemize}
 \begin{verbatim}
-ekgyear=dbGetQuery(db, 
+muse=dbGetQuery(db, 
     paste("select",
           "date_part('year',acquisition_date_shifted)",
-          "from ekg_test_demographics")
+          "as ekgyear from ekg_test_demographics")
 )
-str(ekgyear)
-t(table(ekgyear$date_part))
+t(table(muse$ekgyear))
 \end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
+\begin{itemize}
+\item The state of Wisconsin (as well as other regional entities in the US
+and Canada) has a cancer registry that health care entities must
+submit their data to by statuary requirements
+\item \href{https://www.naaccr.org/data-standards-data-dictionary}
+{NAACCR data dictionaries}
+\item 
+\href{http://datadictionary.naaccr.org/default.aspx?c=10&Version=22}
+{Latest version 22}
+\item NAACCR item 523: ICD-O-3 behavior codes \texttt{behavior\_code\_icd\_o\_3}
+\item "valid codes are 0-3" is all that NAACCR specifies in their docs which leaves a lot to be desired
+\item So you need the Surveillance, Epidemiology
+and End Results (SEER) program docs too 
+\item NCI SEER is a subset of NAACCR
+regions in the US (including WI) with more carefully curated data
+and better documentation!
+\item \href{https://seer.cancer.gov/manuals/2022/SPCSM_2022_MainDoc.pdf}
+{SEER Program Coding and Staging Manual}
+\item 0: benign, 1: uncertain, 2: in situ, 3: malignant
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
+\begin{itemize}
+\item NAACCR item 400: Primary Site \texttt{site\_primary}
+\item ICD-O-3 topography code, e.g., breast cancer C50
+\item NAACCR item 560: \texttt{sequence\_number\_hospital}
+\item Indicates the sequence of all malignant and nonmalignant
+neoplasms over the lifetime of the patient
+\item How many patients had their first breast cancer between
+2016 and 2017?
+\item The PostgreSQL manual seems to be very terse
+\item But SAS has a nice description in their manual: \\
+\href{https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/sqlproc/titlepage.htm}{SAS 9.4 SQL Procedure User’s Guide, Fourth Edition}
+\item See the \texttt{BETWEEN} and \texttt{LIKE} operators
+\end{itemize}
+\begin{verbatim}
+naaccr=dbGetQuery(db, 
+    paste("select * from fh_hb_naaccr_jupyter",
+          "where sequence_number_hospital='1' and",
+          "(date_part('year', date_of_diagnosis_shifted)",
+          "between 2016 and 2017) and",
+          "site_primary like 'C50%'"))
+addmargins(table(naaccr$site_primary))
+\end{verbatim}
+\end{frame}
+
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
+\begin{itemize}
+\item But, how many of these are malignant?
+\item Notice that except for the dates/times,
+everything is character
+\item In both R and SAS, character is more painful than numeric
+values (SAS imports dates from CSV files as numeric)
+\item We can export the data as a CSV with \texttt{write.csv}
+\item The option \texttt{quote=FALSE} means don't use quotes
+\item However, if some fields have embedded commas, then you
+can't turn this option on: and we don't know if there are any
+\item The \texttt{na} option determines how \texttt{NA} is handled
+\item In this case, we set it to the CSV standard: \texttt{na=""}
+for nothing 
+\end{itemize}
+\begin{verbatim}
+addmargins(table(naaccr$site_primary, 
+           naaccr$behavior_code_icd_o_3))
+str(naaccr)
+write.csv(naaccr, "naaccr.csv", row.names=FALSE, na="") 
+\end{verbatim}
+\end{frame}
+
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{CSV processing with R}}
+\begin{itemize}
+\item You can download your CSV files: DEMO
+\item However, due to IRB restrictions, you may not download data
+for more than 10000 patients
+\item And you can process them with R
+\item R will convert character to numeric values where possible
+\item Except that it handles dates as character by default!
+\item There is no automatic detection: that is a manual process
+\end{itemize}
+\begin{verbatim}
+> naaccr = read.csv("~/Downloads/naaccr.csv")
+> str(naaccr)
+\end{verbatim}
+
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{CSV processing with SAS}}
+\begin{itemize}
+\item SAS does NOT automatically convert character to numeric
+\item However, the RASMACRO \texttt{\_verify} can handle that
+\item SAS does automatically detect dates, times and datetimes!
+\item Also, the RASMACRO \texttt{\_constant} automatically detects
+variable/columns that are a constant value (including missing) and
+removes them
+\item In this case, the following were superfluous and removed
+\item \texttt{mult\_tum\_rpt\_as\_one\_prim, multiplicity\_counter, 
+cs\_tumor\_size, cs\_lymph\_nodes, cs\_mets\_at\_dx, cs\_mets\_at\_dx\_bone, 
+cs\_mets\_at\_dx\_brain, cs\_mets\_at\_dx\_liver, cs\_mets\_at\_dx\_lung, 
+sequence\_number\_hospital}
+\end{itemize}
+\begin{verbatim}
+proc import datafile="~/Downloads/naaccr.csv" out=naaccr;
+guessingrows=max;
+run;
+%_verify(data=naaccr, out=naaccr);
+%_constant(data=naaccr, out=naaccr);
+\end{verbatim}
+
 \end{frame}
 
 \end{document}
