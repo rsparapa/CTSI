@@ -1,0 +1,448 @@
+\documentclass[11pt,pdftex,dvipsnames,usenames]{beamer}
+\setbeameroption{show notes}
+%\usepackage[round]{natbib}
+%\usepackage{amsmath}
+%\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\DeclareGraphicsExtensions{.ps,.eps,.pdf,.jpg,.png}
+\usefonttheme[onlymath]{serif}
+%\usepackage[cmintegrals,cmbraces]{newtxmath}
+\usetheme{default}
+\usecolortheme{dove}
+
+%\usepackage{cancel}
+%\usepackage{tikz}
+%\usepackage[english]{babel}
+
+\usepackage{verbatim}
+\usepackage{color}
+%\usepackage{pgf} %portable graphics format
+%\usepackage[autobold]{statex2}
+%\usepackage{enumitem}
+\mode<presentation>
+{
+  %\usetheme{Warsaw}
+  % or ...
+  \setbeamercovered{transparent}
+  % or whatever (possibly just delete it)
+
+  \setbeamertemplate{navigation symbols}{}
+  \usefonttheme[onlysmall]{structurebold}
+  %\usefonttheme{structurebold}
+}
+\addtobeamertemplate{navigation symbols}{}{%
+    \usebeamerfont{footline}%
+  \setbeamertemplate{navigation symbols}{}
+    \usebeamercolor[fg]{footline}%
+    \hspace{1em}%
+    \insertframenumber/\inserttotalframenumber
+}
+% \newcommand*{\BART}{\mathrm{BART}\ }
+% \newcommand*{\Wei}[2]{\mathrm{Wei}\wrap[()]{#1, #2}}
+% \newcommand*{\HBART}{\mathrm{HBART}\ }
+% \newcommand*{\corr}{\mathrm{corr}}
+% \newcommand*{\abs}{\mathrm{abs}}
+% \newcommand*{\DP}[2]{\mb{\mathrm{DP}}\wrap[()]{\mb{#1,\ #2}}}
+%\newcommand*{\EV}[2]{\mb{\mathrm{ExtremeValue}}\wrap[()]{\mb{#1,\ #2}}}
+%\newcommand*{\Wei}[2]{\mathrm{Wei}\wrap[()]{#1, #2}}
+
+\title{An introduction to big data mining of electronic health records with
+Jupyterhub, R, SQL and SAS}
+\author{Kristen Osinksi, Rodney Sparapani and Bradley Taylor}
+
+\begin{document}
+\bibliographystyle{plainnat}
+
+\titlepage
+\boldmath
+% 0. Intro
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Outline}}
+
+\begin{itemize}
+\item Overview
+\item Background
+\item Timeline
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Overview}}
+
+\begin{itemize}
+\item CTSI Clinical Research Data Warehouse (CRDW)
+%\item We restrict our attention on the following matters
+\item Adult patient records at Froedtert and MCW
+\item Jupyterhub access to the CRDW for adults
+\item Collaborative Institutional Training Initiative (CITI) training
+\item SQL, R and SAS: popular and mature programming languages
+\item SQL and R come free with Jupyterhub
+\item SAS can be purchased from MCW IS (free for students)
+% \item On the TIOBE Index of programming language popularity (circa 04/22)
+% \item Structured Query Language (SQL) is number 9 \\ first appeared in 1974
+% \item R is number 11 \\
+% derivative of S which first appeared in 1976
+% \item SAS is number 21 \\
+% first appeared in 1972
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Timeline of CRDW data availability}}
+
+\begin{itemize}
+\item 1989: North American Association of Central Cancer Registries (NAACCR)
+\item 1999 to 2018, November: GE/IDX billing
+\item 2001: NAACCR for St.\ Joseph's West Bend
+\item 2003: Philips IntelliSpace Cardiovascular/Xcelera for echos
+\item 2004: EPIC EHR debuts at Froedtert
+\item 2005: GE/MUSE for EKGs
+\item 2005 to 2007: National Provider Identifiers (NPI) transition
+\item 2012, May: EPIC EHR Community Memorial Menominee Falls
+\item 2013, September: EPIC EHR St.\ Joseph's
+\item \textcolor{red}{2013, July: EPIC EHR for Community Physicians Clinics} 
+\item 2015: Elekta/MOSAIQ radiotherapy dosage
+\item \textcolor{blue}{2015, October: ICD-10-CM/ICD-10-PCS era begins}
+\item 2020, March: COVID-19 pandemic declared
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Resources}}
+
+\begin{itemize}
+\item \href{https://ctsi.mcw.edu/investigator/services/ctsi-mini-grants/biostatistical-consultation}
+{Biostatistical Consultation Mini-grants}
+\item \href{https://www.mcw.edu/departments/biostatistics/biostatistics-consulting-service}{Biostatistics Consulting Service (BCS)}
+\item \href{https://ctri.mcw.edu/resources/bmi-links}{CTSI Biomedical Informatics links}
+\item \href{https://www.nber.org/research/data/icd-9-cm-and-icd-10-cm-and-icd-10-pcs-crosswalk-or-general-equivalence-mappings}
+{Centers for Medicare and Medicaid Services ICD-9/ICD-10 crosswalk}
+\item \href{https://en.wikipedia.org/wiki/Project_Jupyter}{Project Jupyter}
+\item CRDW Jupyterhub \href{https://jupyter.ctsi.mcw.edu}{https://jupyter.ctsi.mcw.edu}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Comma Separated Values}}
+
+\begin{itemize}
+\item A data exchange format that goes back to the early 1970's
+\item Popularized by spreadsheets in the 80's and 90's
+\item What we have today was solidifed by about 2005 
+\item Standards include RFCs 4180 and 7111 among others
+\item See \href{https://en.wikipedia.org/wiki/Comma-separated_values}
+{``Comma-separated values'' on Wikipedia} 
+\item Typically, a three-letter file type of ``csv'',
+e.g., ``Book1.csv''
+\item A text file where each field is separated by commas
+\item A missing value is nothing: two consecutive commas
+\item Fields with commas are encased in double-quotes
+\item Double-quotes are escaped by doubling them (like SAS does)
+\item Double-quotes around numbers (or anything) is read as text 
+\item Although, a standard there are edge cases that can't be
+  {\it automatically} read by common software such as R and/or SAS
+\item Furthermore, spreadsheets are very lax: columns can be a mixture of numbers and text that will cause havoc when read
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Comma Separated Values}}
+
+\begin{itemize}
+\item If CSV files have so many challenges, then why bother?
+\item No other data exchange formats have caught on
+\item Alternatives like XML are even worse!
+\item With respect to R and SAS, which are the most relevant here,
+CSV files fill an important niche
+\item Especially since they make the exchange of dates, times
+and date-times effectively trivial
+\item This is a very important concern since the EHR is rife
+with chronological info: so much so that you don't even want to
+consider making their transfer tedious in any shape or form
+\item And we have decades of experience with CSVs
+\item Largely automated functions
+\item R functions: \texttt{read.csv()}/\texttt{write.csv()}
+\item SAS: \texttt{PROC IMPORT}/\texttt{PROC EXPORT}
+\item Semi-automated
+\item SAS DATASTEP and RASMACRO: \texttt{\_cimport}/\texttt{\_cexport}\\
+plus \texttt{\_crepair} for an edge case
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{A brief introduction to R}}
+
+\begin{itemize}
+\item The R language is an open-source free software GNU project\\
+ purpose-built for data science with {\it objects}
+\item \href{https://R-project.org}{https://R-project.org}
+\item \href{https://CRAN.R-project.org/manuals.html}{https://CRAN.R-project.org/manuals.html}
+\item Naturally vectorized language with convenient objects such as vectors,
+matrices and \texttt{date.frame}'s
+\item On the TIOBE Index of programming language popularity (circa 04/22)
+\item R is number 11 
+\item A derivative of S which first appeared in 1976
+\item Many free add-on packages
+\item 18991 available on the Comprehensive R Archive Network (CRAN) (circa 04/22)
+\item \href{https://CRAN.R-project.org}{https://CRAN.R-project.org}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Accessing the database with R}}
+
+\begin{itemize}
+\item Via \texttt{DBI} package and the \texttt{RPostgres} backend from CRAN 
+\item Use your MCWCORP credentials to login at 
+\href{https://jupyter.ctsi.mcw.edu}{https://jupyter.ctsi.mcw.edu}
+\item BUT YOU HAVE A SEPARATE \texttt{JHUSERNAME/JHPASSWORD}
+\end{itemize}
+\begin{verbatim}
+user="JHUSERNAME", 
+password="JHPASSWORD",
+library(DBI)
+library(RPostgres)
+db=dbConnect(
+    Postgres(), 
+    user=user,
+    password=password,
+    host="localhost", 
+    port=5432, 
+    dbname="fh_jupyter_hub_hbdb",
+    bigint="integer"
+)
+\end{verbatim}
+
+\end{frame}
+
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{A brief introduction to SAS}}
+
+\begin{itemize}
+\item The SAS language is a proprietary for-fee fourth-generation\\ domain-specific environment for data science
+\item \href{https://SAS.com}{https://SAS.com}
+\item \href{https://support.sas.com/en/documentation.html}{https://support.sas.com/en/documentation.html}
+\item Convenient naturally vectorized \texttt{DATASTEP} language 
+\item You don't buy SAS, you rent it annually June to May
+\item MCW has a site-license: for students it is free
+\item Use the IS ticket system to order
+\item On the TIOBE Index of programming language popularity (circa 04/22)
+\item SAS is number 21 
+\item First appeared in 1972
+\item The \texttt{RASMACRO} collection of my GPL SAS macros 
+\href{https://github.com/rsparapa/rasmacro}{https://github.com/rsparapa/rasmacro}
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{A brief
+introduction to SAS}}
+
+\begin{itemize}
+\item Why not just use R instead of SAS?
+\item R's strengths are not within data processing
+\item For example, R does not have warnings about non-unique keys
+whereas SAS does (always check your \texttt{.log} !)
+\item What is a unique key?
+\item Suppose your SSN is unique, does that make it a unique key?
+\item NO, not necessarily
+\item Consider a table consisting of everyone's lifetime annual
+  earnings where each row/record is a year for a given SSN?
+\item What is the unique key on this table?
+\item It is SSN AND year: NOT SSN alone!
+\item The R function \texttt{byvalue} adds SAS-like
+automatic variables but it is not the same as the real
+thing with WARNINGS
+\item For virtually all tables in the CRDW, the unique key
+is not obvious and often surprising: SAS is much better suited to this
+\item You have been forewarned
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{RASMACRO}}
+\begin{itemize}
+\item SAS has a powerful macro language
+\item RASMACRO is GPL library at 
+\href{https://github.com/rsparapa/rasmacro}{https://github.com/rsparapa/rasmacro}
+\item It is available on the Biostatistics Cheese Cluster
+and the Research Computing Center cluster
+\item But anyone can install it
+\item Very useful to working with CRDW data 
+\item \texttt{\_verify} to automatically convert {\it character} fields to numeric if possible,
+i.e., some fields are unnecessarily marked as text
+\item \texttt{\_constant} automatically drops variables that are constant including missing
+\item \texttt{\_crepair} for CSVs with very long variable strings, R has an esoteric format
+that needs to be re-formatted so SAS can read them automatically
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{RASMACRO}}
+\begin{itemize}
+\item Installing RASMACRO is fairly trivial on Windows and Linux
+\item Get it from github in a directory called \texttt{rasmacro}
+\end{itemize}
+\texttt{git clone https://github.com/rsparapa/rasmacro.git} \\
+To get updates: \texttt{cd rasmacro; git pull} \\
+Add these lines to your \texttt{sasv9\_local.cfg} \\
+where \texttt{RASMACRO} is the path to your directory 
+\begin{verbatim}
+/* ' these are single quotes as LaTeX renders them */
+-sasautos ('!SASROOT/sasautos' 'RASMACRO') 
+-set SASAUTOS ('!SASROOT/sasautos' 'RASMACRO')
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
+\begin{itemize}
+\item Login \href{https://jupyter.ctsi.mcw.edu}{https://jupyter.ctsi.mcw.edu}
+with your MCWCORP credentials, i.e., same as Outlook/etc.
+\item And use your \texttt{JHUSERNAME/JHPASSWORD}
+\item Shift+Enter submits the block
+\end{itemize}
+\begin{verbatim}
+library(DBI)
+library(RPostgres)
+user="JHUSERNAME" 
+password="JHPASSWORD"
+## db object to facilitate database two-way communication
+db=dbConnect(
+    Postgres(), ## connect to a PostgreSQL database
+    user=user,
+    password=password,
+    host="localhost", 
+    port=5432, 
+    dbname="fh_jupyter_hub_hbdb",
+    bigint="integer" ## see dbConnect documentation
+)
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
+\begin{itemize}
+\item Which version of PostgreSQL are we running?
+\item At the time of this writing, I see version \textcolor{red}{11}.15
+\item The documentation can be found at
+\href{https://www.postgresql.org/docs/11}
+{https://www.postgresql.org/docs/\textcolor{red}{11}}
+\item N.B. \textcolor{red}{11} stands for the major version number, e.g.,
+if the software is upgraded to a newer version, then update accordingly
+\end{itemize}
+\begin{verbatim}
+dbGetQuery(db, "select version()")
+\end{verbatim}
+\texttt{PostgreSQL \textcolor{red}{11}.15 ...}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
+\begin{itemize}
+\item Let's see the public database tables
+\end{itemize}
+\begin{verbatim}
+## ' these are single quotes as LaTeX renders them
+tables=dbGetQuery(db, 
+       paste("select * from information_schema.tables",
+             "where table_schema = 'public'")
+)
+print(tables$table_name)
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
+\begin{itemize}
+\item Let's see the public database table columns
+\end{itemize}
+\begin{verbatim}
+columns=dbGetQuery(db, 
+       paste("select * from information_schema.columns",
+             "where table_schema = 'public'")
+)
+str(columns)
+table(columns$table_name)
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
+\begin{itemize}
+\item We have created the \texttt{columns} \texttt{data.frame}
+\item We used the \texttt{str} function to see its {\it structure}: \texttt{str(columns)}
+\item The first four variables look like so
+\end{itemize}
+\begin{verbatim}
+'data.frame':	671 obs. of  44 variables:
+$ table_catalog : chr "fh_jupyter_hub_hbdb" ...
+$ table_schema  : chr "public" "public" "public" ...
+$ table_name    : chr "fh_hb_diagnosis_jupyter" ...
+$ column_name   : chr "patient_hash" "encounter_hash" ...
+...
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
+\begin{itemize}
+\item We have quickly summarized the tables in the database
+\item \texttt{table(columns\$table\_name)}
+\item The counts correspond to the number of columns as we have seen from the structure of the \texttt{data.frame}
+%\item Here's an edited version focusing on the most important tables
+\end{itemize}
+\begin{verbatim}
+      fh_hb_demographics_jupyter          
+                              31
+         fh_hb_diagnosis_jupyter 
+                              15 
+fh_hb_diagnostic_results_jupyter
+                              27
+         fh_hb_mar_table_jupyter
+                              37
+  fh_hb_med_orders_table_jupyter 
+                              32 
+             fh_hb_procs_jupyter
+                              18 
+            fh_hb_vitals_jupyter 
+                              11 
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
+\begin{itemize}
+\item When does NAACCR data start?
+\item Above, I said 1989: how did I get that?
+\item N.B. The SQL \texttt{date\_part} function is not to be confused with 
+the SAS \texttt{datepart} function
+\end{itemize}
+\begin{verbatim}
+dxyear=dbGetQuery(db, 
+    paste("select",
+          "date_part('year', date_of_diagnosis_shifted)",
+          "from fh_hb_naaccr_jupyter")
+)
+str(dxyear)
+t(table(dxyear$date_part))
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
+\begin{itemize}
+\item When does EKG data start?
+\end{itemize}
+\begin{verbatim}
+ekgyear=dbGetQuery(db, 
+    paste("select",
+          "date_part('year',acquisition_date_shifted)",
+          "from ekg_test_demographics")
+)
+str(ekgyear)
+t(table(ekgyear$date_part))
+\end{verbatim}
+\end{frame}
+
+\end{document}
+
