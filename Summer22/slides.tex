@@ -14,7 +14,7 @@
 %\usepackage{cancel}
 %\usepackage{tikz}
 %\usepackage[english]{babel}
-
+\usepackage{statex2}
 \usepackage{verbatim}
 \usepackage{color}
 %\usepackage{pgf} %portable graphics format
@@ -49,7 +49,7 @@
 
 \title{An introduction to big data mining of electronic health records with
 Jupyterhub, R, SQL and SAS}
-\author{Kristen Osinksi, Rodney Sparapani and Bradley Taylor}
+\author{Kristen Osinski, Rodney Sparapani and Bradley Taylor}
 
 \begin{document}
 \bibliographystyle{plainnat}
@@ -57,6 +57,26 @@ Jupyterhub, R, SQL and SAS}
 \titlepage
 \boldmath
 % 0. Intro
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Schedule}}
+
+\begin{tabular}{rl}
+8:00 & Speaker/attendee introductions \\
+8:15 & Bradley Taylor, Chief Research Informatics Officer \\
+8:30 & Kristen Osinski, Business Analyst IV, CTSI \\
+9:15 & CRDW, Jupyterhub, SQL and R \\
+10:00& Coffee break getting to know each other \\
+10:30& Hands-on with Jupyterhub  \\
+12:00& Lunch on your own \\
+12:30& Case study: Cardio-oncology \\
+2:00 & Biological break \\
+2:15 & SAS and RASMACRO \\
+4:00 & Q and A \\
+4:15 & 
+\end{tabular}
+
+\end{frame}
+
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Outline}}
 
 \begin{itemize}
@@ -109,7 +129,7 @@ and surrounded by square brackets for color equity
 \item 2013, September: EPIC EHR St.\ Joseph's
 \item \textcolor{red}{2013, July: EPIC EHR for Community Physicians Clinics} 
 \item 2015: Elekta/MOSAIQ radiotherapy dosage
-\item \textcolor{blue}{2015, October: ICD-10-CM/ICD-10-PCS era begins}
+\item \textcolor{blue}{2015, October: ICD-10 era begins}
 \item 2020, March: COVID-19 pandemic declared
 \end{itemize}
 
@@ -127,6 +147,8 @@ and surrounded by square brackets for color equity
 
 \item \textcolor{PineGreen}{[\href{https://www.nber.org/research/data/icd-9-cm-and-icd-10-cm-and-icd-10-pcs-crosswalk-or-general-equivalence-mappings}
 {Centers for Medicare and Medicaid Services ICD-9/ICD-10 crosswalk}]}
+\item \textcolor{PineGreen}{[\href{https://icd10cmtool.cdc.gov}
+{US CDC ICD-10-CM Browser}]}
 \item \textcolor{PineGreen}{[\href{https://en.wikipedia.org/wiki/Project_Jupyter}{Project Jupyter}]}
 \item CRDW Jupyterhub \textcolor{PineGreen}{[\href{https://jupyter.ctsi.mcw.edu}{https://jupyter.ctsi.mcw.edu}]}
 \end{itemize}
@@ -144,8 +166,9 @@ and surrounded by square brackets for color equity
 \item The term originated in diplomacy meaning an entity
 accepted by all sides in a negotiation as impartial
 \item German Chancellor Otto von Bismarck was the first to use the
-  term by applying it to himself (Auray-Blais and Patenaude, BMC
-  Medical Ethics 2006)
+  term, by applying it to himself, as an intermediary in negotiations
+  between Russia and the Ottoman Empire (Auray-Blais and Patenaude,
+  BMC Medical Ethics 2006)
 \end{itemize}
 
 \end{frame}
@@ -197,6 +220,21 @@ and \texttt{\_verify} for handy features
 
 \end{frame}
 
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{A brief introduction to SQL}}
+
+\begin{itemize}
+\item Structured Query Language (SQL) 
+\item The syntax/semantics for interacting with\\
+relational database management systems
+\item Originally developed by IBM: now an industry standard
+\item \textcolor{PineGreen}{[\href{https://www.iso.org/standard/63555.html}
+{SQL:2016 AKA ISO/IEC 9075:2016}]}
+\item On the TIOBE Index of programming language popularity (circa 04/22)
+\item SQL is ranked 9
+\item First appeared in 1974
+\end{itemize}
+
+\end{frame}
 
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{A brief introduction to R}}
 
@@ -208,7 +246,7 @@ and \texttt{\_verify} for handy features
 \item Naturally vectorized language with convenient objects such as vectors,
 matrices and \texttt{date.frame}'s
 \item On the TIOBE Index of programming language popularity (circa 04/22)
-\item R is number 11 
+\item R is ranked 11 
 \item A derivative of S which first appeared in 1976
 \item Many free add-on packages
 \item 18991 available on the Comprehensive R Archive Network (CRAN) (circa 04/22)
@@ -226,8 +264,8 @@ matrices and \texttt{date.frame}'s
 \item BUT YOU HAVE A SEPARATE \texttt{JHUSERNAME/JHPASSWORD}
 \end{itemize}
 \begin{verbatim}
-user="JHUSERNAME", 
-password="JHPASSWORD",
+user="JHUSERNAME" 
+password="JHPASSWORD"
 library(DBI)
 library(RPostgres)
 db=dbConnect(
@@ -255,7 +293,7 @@ db=dbConnect(
 \item MCW has a site-license: for students it is free
 \item Use the IS ticket system to order
 \item On the TIOBE Index of programming language popularity (circa 04/22)
-\item SAS is number 21 
+\item SAS is ranked 21 
 \item First appeared in 1972
 \item The \texttt{RASMACRO} collection of my GPL SAS macros 
 \textcolor{PineGreen}{[\href{https://github.com/rsparapa/rasmacro}{https://github.com/rsparapa/rasmacro}]}
