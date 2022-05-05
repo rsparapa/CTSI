@@ -422,7 +422,7 @@ db=dbConnect(
     Postgres(), ## connect to a PostgreSQL database
     user=user,
     password=password,
-    host="localhost", 
+    host="localhost", ## TCP/IP connections prohibited 
     port=5432, 
     dbname="fh_jupyter_hub_hbdb",
     bigint="integer" ## see dbConnect documentation
@@ -624,6 +624,7 @@ write.csv(naaccr, "naaccr.csv", row.names=FALSE, na="")
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{CSV processing with R}}
 \begin{itemize}
 \item You can download your CSV files: DEMO
+\item Either with your web browser or with \texttt{scp}
 \item However, due to IRB restrictions, you may not download data
 for more than 9999 patients
 \item And you can process them with R
@@ -632,8 +633,9 @@ for more than 9999 patients
 \item There is no automatic detection: that is a manual process
 \end{itemize}
 \begin{verbatim}
-> naaccr = read.csv("~/Downloads/naaccr.csv")
-> str(naaccr)
+client% scp USER@jupyter.ctsi.mcw.edu:naaccr.csv Downloads
+R> naaccr = read.csv("~/Downloads/naaccr.csv")
+R> str(naaccr)
 \end{verbatim}
 
 \end{frame}
