@@ -624,9 +624,13 @@ write.csv(naaccr, "naaccr.csv", row.names=FALSE, na="")
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{CSV processing with R}}
 \begin{itemize}
 \item You can download your CSV files: DEMO
-\item Either with your web browser or with \texttt{scp}
-\item However, due to IRB restrictions, you may not download data
-for more than 9999 patients
+\item Either with your web browser or with Secure Copy: \texttt{scp}
+\item \texttt{scp} is a standard command on Windows, macOS and Linux
+\item However, \textcolor{red}{due to IRB restrictions, 
+you may not download data
+for more than 9999 PATIENTS} in one project
+\item This is the honor system since there is no mechanism
+to prevent malfeasance but their could be ``real soon now''
 \item And you can process them with R
 \item R will convert character to numeric values where possible
 \item Except that it handles dates as character by default!
