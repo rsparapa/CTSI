@@ -91,15 +91,20 @@ Jupyterhub, R, SQL and SAS}
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Overview}}
 
 \begin{itemize}
+\item Clinical and Translational Science Institute\\
+of Southeast Wisconsin (CTSI)
 \item CTSI Clinical Research Data Warehouse (CRDW)
 %\item We restrict our attention on the following matters
-\item Adult patient records at Froedtert and MCW
+\item CRDW contains adult electronic health records (EHR)\\
+at Froedtert and MCW: mainly EPIC EHR\\
+but including billing claims and ancillary databanks
+%including the EPIC EHR, billing and other sources of data
 \item Jupyterhub access to the CRDW for adults
 \item Collaborative Institutional Training Initiative (CITI) training
 \item SQL, R and SAS: popular and mature programming languages
 \item SQL and R come free with Jupyterhub
 \item SAS can be purchased through the MCW IS Ticket system\\
- for Windows client (free for students) and Linux server 
+ for Linux server and Windows client (free for students)  
 \item \textcolor{PineGreen}{[\href{https://mcwcherwellapp.mcwcorp.net/CherwellPortal}{https://mcwcherwellapp.mcwcorp.net/CherwellPortal}]}
 \item In this presentation, links are colored \textcolor{PineGreen}{[green]}
 and surrounded by square brackets for color equity
@@ -115,10 +120,11 @@ and surrounded by square brackets for color equity
 \end{frame}
 
 
-\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Timeline of CRDW data availability}}
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{CRDW data eras}}
 
 \begin{itemize}
-\item 1989: North American Association of Central Cancer Registries (NAACCR)
+\item 1989: North American Association of Central Cancer Registries
+  (NAACCR) for Froedtert and MCW
 \item 1999 to 2018, November: GE/IDX billing
 \item 2001: NAACCR for St.\ Joseph's West Bend
 %\item 2003: Philips IntelliSpace Cardiovascular/Xcelera for echos
@@ -143,9 +149,9 @@ and surrounded by square brackets for color equity
 {Biostatistical Consultation Mini-grants}]}
 \item \textcolor{PineGreen}{[\href{https://www.mcw.edu/departments/biostatistics/biostatistics-consulting-service}{Biostatistics Consulting Service (BCS)}]}
 \item \textcolor{PineGreen}{[\href{https://ctri.mcw.edu/resources/bmi-links}
-{Clinical and Translational Science Institute\\ 
-of Southeast Wisconsin (CTSI)\\ 
-Biomedical Informatics links}]}
+%{Clinical and Translational Science Institute\\ 
+%of Southeast Wisconsin (CTSI)\\ 
+{CTSI Biomedical Informatics links}]}
 \item \textcolor{PineGreen}{[\href{https://ctri.mcw.edu/wp-content/uploads/CTSI-Honest-Broker-Data-Dictionary.pdf}{CTSI Honest Broker Data Dictionary}]}
 \item \textcolor{PineGreen}{[\href{https://www.nber.org/research/data/icd-9-cm-and-icd-10-cm-and-icd-10-pcs-crosswalk-or-general-equivalence-mappings}
 {US Centers for Medicare and Medicaid Services\\ ICD-9 to, and from, ICD-10 crosswalks}]}
@@ -193,7 +199,8 @@ the MRNs could be retrieved if you have IRB approval for identified
 data
 \item All dates for each patient are de-identified by a\\
 \textcolor{blue}{single} random integer from -10 to 10 (with zero excluded)
-
+\item This allows any two date differentials to be calculated
+exactly such as the age of a diagnosis with respect to birth date
 \end{itemize}
 
 \end{frame}
@@ -202,15 +209,14 @@ data
       of Death}}
 
 \begin{itemize}
-\item Death is available
-\item However, it may not be trustworthy
-\item It is common to see EMR data far beyond the death date
+\item Death is available; however, it may not be trustworthy
+\item It is common to see EHR data far beyond the death date
 \item Also, Cause of Death is not available
 \item It can be acquired from the state of Wisconsin or\\
 the US Centers for Disase Control and Prevention (CDC) \\ 
 National Death Index (NDI)
-\item Of course, it costs money
-\item NDI is death only; NDI Plus includes cause and costs more
+\item NDI is death only; NDI Plus includes cause % and costs more
+\item Of course, this costs money and cause costs more
 \item Typically, NDI/NDI Plus is about two years behind
 \item Complete data for 2020 was released in 01/2022
 \item Early release for 2021 in 01/2022 was about 98\% complete 
@@ -239,7 +245,7 @@ e.g., ``Book1.csv''
 \item Double-quotes around numbers (or anything) is read as text 
 \item Although, a standard there are edge cases that can't be
   {\it automatically} read by common software such as R and/or SAS
-\item Furthermore, spreadsheets are very lax: columns can be a mixture of numbers and text that will cause havoc when read
+\item Furthermore, spreadsheets are very lax: columns can be a mixture of numbers and text that will create havoc when read
 \end{itemize}
 
 \end{frame}
@@ -250,7 +256,7 @@ e.g., ``Book1.csv''
 \begin{itemize}
 \item If CSV files have so many challenges, then why bother?
 \item No other data exchange formats have caught on
-\item Alternatives like XML are even worse!
+\item Alternatives like {\it recfiles} are not nearly as popular
 \item With respect to CSV, SAS fills an important niche
 \item SAS makes the exchange of CSV files with dates, times
 and date-times effectively trivial
@@ -408,7 +414,7 @@ To get updates: \texttt{cd rasmacro; git pull} \\
 Add these lines to your \texttt{sasv9\_local.cfg} \\
 where \texttt{RASMACRO} is the path to your directory 
 \begin{verbatim}
-/* ' these are single quotes as LaTeX renders them */
+/* ' these are single quotes */
 -sasautos ('!SASROOT/sasautos' 'RASMACRO') 
 -set SASAUTOS ('!SASROOT/sasautos' 'RASMACRO')
 \end{verbatim}
@@ -428,7 +434,7 @@ user="JHUSERNAME"
 password="JHPASSWORD"
 ## db object to facilitate database two-way communication
 db=dbConnect(
-    Postgres(),           ## connect to a PostgreSQL db
+    Postgres(),           ## connect to PostgreSQL
     dbname  ="fh_jupyter_hub_hbdb",
     user    =user,
     password=password,
@@ -460,7 +466,7 @@ dbGetQuery(db, "select version()")
 \item Let's see the public database tables
 \end{itemize}
 \begin{verbatim}
-## ' these are single quotes as LaTeX renders them
+## ' these are single quotes 
 tables=dbGetQuery(db, 
        paste("select * from information_schema.tables",
              "where table_schema = 'public'")
