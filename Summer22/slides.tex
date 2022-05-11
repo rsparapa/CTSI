@@ -142,12 +142,16 @@ and surrounded by square brackets for color equity
 \item \textcolor{PineGreen}{[\href{https://ctsi.mcw.edu/investigator/services/ctsi-mini-grants/biostatistical-consultation}
 {Biostatistical Consultation Mini-grants}]}
 \item \textcolor{PineGreen}{[\href{https://www.mcw.edu/departments/biostatistics/biostatistics-consulting-service}{Biostatistics Consulting Service (BCS)}]}
-\item \textcolor{PineGreen}{[\href{https://ctri.mcw.edu/resources/bmi-links}{CTSI Biomedical Informatics links}]}
+\item \textcolor{PineGreen}{[\href{https://ctri.mcw.edu/resources/bmi-links}
+{Clinical and Translational Science Institute\\ 
+of Southeast Wisconsin (CTSI)\\ 
+Biomedical Informatics links}]}
 \item \textcolor{PineGreen}{[\href{https://ctri.mcw.edu/wp-content/uploads/CTSI-Honest-Broker-Data-Dictionary.pdf}{CTSI Honest Broker Data Dictionary}]}
 \item \textcolor{PineGreen}{[\href{https://www.nber.org/research/data/icd-9-cm-and-icd-10-cm-and-icd-10-pcs-crosswalk-or-general-equivalence-mappings}
-{Centers for Medicare and Medicaid Services ICD-9/ICD-10 crosswalk}]}
+{US Centers for Medicare and Medicaid Services\\ ICD-9 to, and from, ICD-10 crosswalks}]}
 \item \textcolor{PineGreen}{[\href{https://icd10cmtool.cdc.gov}
-{US CDC ICD-10-CM Browser}]}
+{US Centers for Disease Control and Prevention\\ 
+ICD-10-CM Browser}]}
 \item \textcolor{PineGreen}{[\href{https://en.wikipedia.org/wiki/Project_Jupyter}{Project Jupyter}]}
 \item CRDW Jupyterhub \textcolor{PineGreen}{[\href{https://jupyter.ctsi.mcw.edu}{https://jupyter.ctsi.mcw.edu}]}
 \end{itemize}
@@ -162,7 +166,7 @@ and surrounded by square brackets for color equity
 \item
 ``A neutral intermediary ... between the individual whose ... data are being studied, and the researcher. The honest broker collects and collates pertinent information ... replaces identifiers with a code, and releases only coded information to the researcher.''
  \textcolor{PineGreen}{[\href{https://www.hhs.gov/ohrp/sachrp-committee/recommendations/2011-october-13-letter-attachment-d/index.html}{US
-     HHS FAQ}]}
+     Health and Human Services FAQ}]}
 \item CTSI Biomedical Informatics is the Honest Broker!
 \item The term originated in diplomacy meaning an entity
 accepted by all sides in a negotiation as impartial
@@ -202,12 +206,14 @@ data
 \item However, it may not be trustworthy
 \item It is common to see EMR data far beyond the death date
 \item Also, Cause of Death is not available
-\item It can be acquired from the state of Wisconsin\\
-or the US CDC National Death Index (NDI)
-\item Typically, NDI is about two years behind
+\item It can be acquired from the state of Wisconsin or\\
+the US Centers for Disase Control and Prevention (CDC) \\ 
+National Death Index (NDI)
+\item Of course, it costs money
+\item NDI is death only; NDI Plus includes cause and costs more
+\item Typically, NDI/NDI Plus is about two years behind
 \item Complete data for 2020 was released in 01/2022
 \item Early release for 2021 in 01/2022 was about 98\% complete 
-\item Of course, it costs money
 \item And the caveats about cause of death are substantial
 \item \textcolor{PineGreen}{[\href{https://www.cdc.gov/nchs/ndi/index.htm}
 {US CDC NDI}]}
@@ -281,18 +287,21 @@ relational database management systems
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{A brief introduction to R}}
 
 \begin{itemize}
-\item The R language is an open-source free software GNU project\\
- purpose-built for data science with {\it objects}
+\item The R language is an open-source, free software GNU project\\
+ purpose-built for data science that is {\it object-oriented}
 \item \textcolor{PineGreen}{[\href{https://R-project.org}{https://R-project.org}]}
 \item \textcolor{PineGreen}{[\href{https://CRAN.R-project.org/manuals.html}{https://CRAN.R-project.org/manuals.html}]}
 \item Naturally vectorized language with convenient objects such as vectors,
-matrices and \textcolor{red}{\texttt{date.frame}}'s
-\item On the TIOBE Index of programming language popularity (circa 04/22)
+matrices, lists (objects containers) and 
+\textcolor{red}{\texttt{date.frame}}'s
+\item \textcolor{PineGreen}{[\href{https://www.tiobe.com/tiobe-index}
+{The TIOBE Index of programming language popularity}]}\\ (circa 04/22)
 \item R is ranked 11 
 \item A derivative of S which first appeared in 1976
 \item Many free add-on packages
-\item 18991 available on the Comprehensive R Archive Network (CRAN) (circa 04/22)
-\item \textcolor{PineGreen}{[\href{https://CRAN.R-project.org}{https://CRAN.R-project.org}]}
+\item 18991 available on the Comprehensive R Archive Network (CRAN) (circa 04/22) \textcolor{PineGreen}{[\href{https://CRAN.R-project.org}{https://CRAN.R-project.org}]}
+\item N.B. Jupyterhub can be used with either R or Python\\ 
+(Python is ranked 1 on the TIOBE Index circa 04/22)
 \end{itemize}
 
 \end{frame}
@@ -313,12 +322,12 @@ library(DBI)
 library(RPostgres)
 db=dbConnect(
     Postgres(), 
-    user=user,
+    dbname  ="fh_jupyter_hub_hbdb",
+    user    =user,
     password=password,
-    host="localhost", 
-    port=5432, 
-    dbname="fh_jupyter_hub_hbdb",
-    bigint="integer"
+    host    ="localhost", 
+    port    =5432, 
+    bigint  ="integer"
 )
 \end{verbatim}
 
@@ -407,10 +416,10 @@ where \texttt{RASMACRO} is the path to your directory
 
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
 \begin{itemize}
-\item Login \textcolor{PineGreen}{[\href{https://jupyter.ctsi.mcw.edu}{https://jupyter.ctsi.mcw.edu}]}
+\item Login \textcolor{PineGreen}{[\href{https://jupyter.ctsi.mcw.edu}{https://jupyter.ctsi.mcw.edu}]} \\
 with your MCWCORP credentials, i.e., same as Outlook/etc.
-\item And use your \texttt{JHUSERNAME/JHPASSWORD}
-\item Shift+Enter submits the block
+\item And use your Jupyterhub-only \texttt{JHUSERNAME/JHPASSWORD}
+\item Pressing Shift+Enter on your keyboard submits the code
 \end{itemize}
 \begin{verbatim}
 library(DBI)
@@ -419,13 +428,13 @@ user="JHUSERNAME"
 password="JHPASSWORD"
 ## db object to facilitate database two-way communication
 db=dbConnect(
-    Postgres(), ## connect to a PostgreSQL database
-    user=user,
+    Postgres(),           ## connect to a PostgreSQL db
+    dbname  ="fh_jupyter_hub_hbdb",
+    user    =user,
     password=password,
-    host="localhost", ## TCP/IP connections prohibited 
-    port=5432, 
-    dbname="fh_jupyter_hub_hbdb",
-    bigint="integer" ## see dbConnect documentation
+    host    ="localhost", ## only loopback connections! 
+    port    =5432, 
+    bigint  ="integer"    ## see dbConnect documentation
 )
 \end{verbatim}
 \end{frame}
@@ -490,11 +499,12 @@ $ column_name   : chr "patient_hash" "encounter_hash" ...
 \end{verbatim}
 \end{frame}
 
+
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
 \begin{itemize}
-\item We can quickly summarized the tables in the database
+\item We can quickly summarize the tables in the database
 \item \texttt{table(columns\$table\_name)}
-\item The counts correspond to the number of columns as we have seen from the structure of the \texttt{data.frame}
+\item For a selection, counts correspond to the number of columns as we have seen from the structure of the \texttt{data.frame}
 %\item Here's an edited version focusing on the most important tables
 \end{itemize}
 \begin{verbatim}
@@ -514,6 +524,34 @@ fh_hb_diagnostic_results_jupyter
                               11 
 \end{verbatim}
 \end{frame}
+
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
+\begin{tabular}{lll}
+Table Name & 
+\textcolor{PineGreen}{[\href{https://ctri.mcw.edu/wp-content/uploads/CTSI-Honest-Broker-Data-Dictionary.pdf}{Title in Documentation}]} \\ \hline
+\texttt{fh\_hb\_demographics\_jupyter}       & ``Patient Demographics'' \\ 
+\multicolumn{3}{l}{One record per patient: birth date, gender, 
+race/ethnicity, death, etc.} \\ \hline 
+\texttt{fh\_hb\_diagnosis\_jupyter}          & ``Diagnosis (Dx)'' \\
+\multicolumn{3}{l}{Combo of EPIC/billing with ICD-9/ICD-10 
+diagnosis codes} \\  \hline  
+\texttt{fh\_hb\_diagnostic\_results\_jupyter}& ``Diagnostic Results'' \\
+\multicolumn{3}{l}{Combo of mainly EPIC with MOSAIQ (for radiotherapy dosage)} \\  \hline  
+\texttt{fh\_hb\_mar\_table\_jupyter}         & ``Medications Administered''\\
+\multicolumn{3}{l}{EPIC \textcolor{red}{in-patient} records with Medi-Span pharm class/sub-class} \\   \hline 
+\texttt{fh\_hb\_med\_orders\_table\_jupyter} & ``Medications Ordered'' \\
+\multicolumn{3}{l}{EPIC prescription orders (not fills!) along with Medi-Span} \\  \hline  
+\texttt{fh\_hb\_procs\_jupyter}              & ``Procedures (Px)'' \\
+\multicolumn{3}{l}{Combo of EPIC/billing with 
+\textcolor{red}{ICD-9/ICD-10} 
+and \textcolor{blue}{CPT/HCPCS codes}} \\  \hline  
+\texttt{fh\_hb\_vitals\_jupyter}             & ``Vitals'' \\
+\multicolumn{3}{l}{EPIC vital signs such as height/weight, blood pressure,
+temp, etc. } \\   \hline 
+\end{tabular}
+\end{frame}
+
 
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
 \begin{itemize}
