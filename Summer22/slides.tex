@@ -737,14 +737,15 @@ a known institutional address, not a residential address
 \item A CBG with an ADI ranking of 100 indicates the highest level of disadvantage, i.e., most deprived 100th percentile
 \item So the range is integers 1 to 100
 \item Some CBG are missing ADI rankings with the following codes
-\item \texttt{PH} for suppression due to low population and/or housing 
-\item \texttt{GQ} for suppression due to a high group quarters population
-\item \texttt{PH-GQ}  (or is it \texttt{GQ-PH}?) 
+\item \texttt{NA} the R missing value code which is undocumented
+\item \texttt{'PH'} for suppression due to low population and/or housing 
+\item \texttt{'GQ'} for suppression due to a high group quarters population
+\item \texttt{'PH-GQ'}  (or is it \texttt{'GQ-PH'}?) 
 for suppression due to both types
-\item \texttt{KVM} (or is it \texttt{QDI}?) 
-designates block groups without an ADI due to key
-  missing variables from the American
-  Community Survey Five Year Estimates
+\item \texttt{'KVM'} (or is it \texttt{'QDI'}?) 
+designates block groups without an ADI value due to 
+  missing data within the data's source\\
+the American Community Survey Five Year Estimates
 \end{itemize}
 \end{frame}
 
@@ -765,10 +766,39 @@ b$adi[unk]=NA
 b$adi[!unk]=as.integer(b$adi_narank[!unk])
 summary(b$adi)
 plot(density(b$adi, from=1, to=100, na.rm=TRUE), 
-     xlab='ADI', ylab='CDF', main='1: best, 100:worst')
+     xlab='ADI', ylab='Distribution', 
+     main='', sub='1:least, 100:most')
 abline(h=0.01, col=8)
 \end{verbatim}
 \end{frame}
 
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Anomylous Death Dates}}
+\begin{itemize}
+\item There appears to be an issue with the status of death\\
+and/or the death dates in the ``Patient Demographics'' table
+\item It is all relative, but the size of the ``Vitals'' table is much smaller
+than other tables such as ``Encounters''
+\item Presumably, there would not be vital signs recorded on a date after someone has died
+\item So, we can create a relatively undemanding check of death dates
+by comparisons with their vital signs 
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
+\begin{verbatim}
+zombies=dbGetQuery(db, "select distinct a.patient_hash, 
+                        a.death_date_shifted,
+                        a.vital_status_source
+                        from fh_hb_demographics_jupyter a
+                        inner join fh_hb_vitals_jupyter b 
+                        on a.patient_hash=b.patient_hash 
+                        AND a.death_date_shifted<
+                        b.measure_date_shifted")
+table(zombies$vital_status_source)
+print(zombies)
+\end{verbatim}
+\end{frame}
 
 \end{document}
