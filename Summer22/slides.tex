@@ -148,6 +148,9 @@ and surrounded by square brackets for color equity
 \item \textcolor{PineGreen}{[\href{https://ctsi.mcw.edu/investigator/services/ctsi-mini-grants/biostatistical-consultation}
 {Biostatistical Consultation Mini-grants}]}
 \item \textcolor{PineGreen}{[\href{https://www.mcw.edu/departments/biostatistics/biostatistics-consulting-service}{Biostatistics Consulting Service (BCS)}]}
+\item \textcolor{PineGreen}{[\href{https://www.i2b2.org}
+{i2b2: informatics for integrating biology and the bedside}]}
+\item \textcolor{PineGreen}{[\href{https://www.neighborhoodatlas.medicine.wisc.edu}{Area Deprivation Index (ADI)}]}
 \item \textcolor{PineGreen}{[\href{https://ctri.mcw.edu/resources/bmi-links}
 %{Clinical and Translational Science Institute\\ 
 %of Southeast Wisconsin (CTSI)\\ 
@@ -187,9 +190,9 @@ accepted by all sides in a negotiation as impartial
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{De-identification}}
 
 \begin{itemize}
-\item All HIPAA identifiers are de-identified by the Honest Broker
+\item HIPAA de-identification provided by the Honest Broker
 \item For example, patient names, etc.\ are removed
-\item Spatially, we have state of residence and\\
+\item Geographically, we have only state of residence and\\
 ZIP code is shortened to 3 digits 
 \item The Medical Record Number (MRN) is replaced by
 the variable \textcolor{red}{\texttt{patient\_hash}} which is a double
@@ -306,7 +309,7 @@ matrices, lists (objects containers) and
 \item A derivative of S which first appeared in 1976
 \item Many free add-on packages
 \item 18991 available on the Comprehensive R Archive Network (CRAN) (circa 04/22) \textcolor{PineGreen}{[\href{https://CRAN.R-project.org}{https://CRAN.R-project.org}]}
-\item N.B. Jupyterhub can be used with either R or Python\\ 
+\item N.B. Jupyterhub can be used with either R or Python 3\\ 
 (Python is ranked 1 on the TIOBE Index circa 04/22)
 \end{itemize}
 
@@ -603,7 +606,7 @@ submit their data to by statuary requirements
 \textcolor{PineGreen}{[\href{http://datadictionary.naaccr.org/default.aspx?c=10&Version=22}
 {Latest version 22}]}
 \item NAACCR item 523: ICD-O-3 behavior codes \texttt{behavior\_code\_icd\_o\_3}
-\item "valid codes are 0-3" is all that NAACCR specifies in their docs which leaves a lot to be desired
+\item ``valid codes are 0-3'' is all that NAACCR specifies in their docs which leaves a lot to be desired
 \item So you need the Surveillance, Epidemiology
 and End Results (SEER) program docs too 
 \item NCI SEER is a subset of NAACCR
@@ -712,5 +715,60 @@ run;
 
 \end{frame}
 
-\end{document}
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Patient Residential
+Address Geocoding}}
+\begin{itemize}
+\item  
+\textcolor{PineGreen}{[\href{https://degauss.org}{DeGAUSS: Decentralized Geomarker Assessment for Multi-Site Studies}]}
+\item ``Patient Demographics'' \texttt{geocode\_result}
+\item Self-explanatory: \texttt{po\_box} and \texttt{non\_address\_text} 
+\item \texttt{cincy\_inst\_foster\_addr}: the address was not geocoded \\ 
+a known institutional address, not a residential address
+\item \texttt{imprecise\_geocode}: the address was geocoded, but results were suppressed because due to the lack of precision
+\item \texttt{geocoded}: the address was geocoded with precision
+\end{itemize}
+\end{frame}
 
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Area Deprivation Index (ADI)}}
+\begin{itemize}
+\item \textcolor{PineGreen}{[\href{https://www.neighborhoodatlas.medicine.wisc.edu}{ADI documentation}]}
+\item ``Patient Demographics'' \texttt{adi\_narank}
+\item A Census Block Group (CBG) with an ADI ranking of 1 indicates the lowest level of disadvantage within the nation, i.e., least deprived 1st percentile
+\item A CBG with an ADI ranking of 100 indicates the highest level of disadvantage, i.e., most deprived 100th percentile
+\item So the range is integers 1 to 100
+\item Some CBG are missing ADI rankings with the following codes
+\item \texttt{PH} for suppression due to low population and/or housing 
+\item \texttt{GQ} for suppression due to a high group quarters population
+\item \texttt{PH-GQ}  (or is it \texttt{GQ-PH}?) 
+for suppression due to both types
+\item \texttt{KVM} (or is it \texttt{QDI}?) 
+designates block groups without an ADI due to key
+  missing variables from the American
+  Community Survey Five Year Estimates
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
+\begin{verbatim}
+a=dbGetQuery(db, "select geocode_result 
+                  from fh_hb_demographics_jupyter")
+table(a$geocode_result, useNA='ifany')
+b=dbGetQuery(db, "select adi_narank 
+                  from fh_hb_demographics_jupyter
+                  where geocode_result='geocoded'")
+table(b$adi_narank, useNA='ifany')
+unk = (is.na(b$adi_narank) | 
+       b$adi_narank %in% c('GQ', 'PH', 'GQ-PH', 'QDI'))
+table(unk)
+b$adi=0
+b$adi[unk]=NA
+b$adi[!unk]=as.integer(b$adi_narank[!unk])
+summary(b$adi)
+plot(density(b$adi, from=1, to=100, na.rm=TRUE), 
+     xlab='ADI', ylab='CDF', main='1: best, 100:worst')
+abline(h=0.01, col=8)
+\end{verbatim}
+\end{frame}
+
+
+\end{document}
