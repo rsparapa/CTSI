@@ -132,8 +132,8 @@ and surrounded by square brackets for color equity
 \item 2005: GE/MUSE for EKGs
 \item 2005 to 2007: National Provider Identifiers (NPI) transition
 \item 2012, May: EPIC EHR Community Memorial Menominee Falls
-\item 2013, September: EPIC EHR St.\ Joseph's
 \item \textcolor{red}{2013, July: EPIC EHR for Community Physicians Clinics} 
+\item 2013, September: EPIC EHR St.\ Joseph's West Bend
 \item 2015: Elekta/MOSAIQ radiotherapy dosage
 \item \textcolor{blue}{2015, October: ICD-10 era begins}
 \item 2020, March: COVID-19 pandemic declared
@@ -145,24 +145,26 @@ and surrounded by square brackets for color equity
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Resources}}
 
 \begin{itemize}
+\item \textcolor{PineGreen}{[\href{https://ctsi.mcw.edu/about/history/support/berd}
+{Biostatistics, Epidemiology and Research Design (BERD)}]}
 \item \textcolor{PineGreen}{[\href{https://ctsi.mcw.edu/investigator/services/ctsi-mini-grants/biostatistical-consultation}
-{Biostatistical Consultation Mini-grants}]}
+{BERD Mini-grants}]}
 \item \textcolor{PineGreen}{[\href{https://www.mcw.edu/departments/biostatistics/biostatistics-consulting-service}{Biostatistics Consulting Service (BCS)}]}
 \item \textcolor{PineGreen}{[\href{https://www.i2b2.org}
 {i2b2: informatics for integrating biology and the bedside}]}
-\item \textcolor{PineGreen}{[\href{https://www.neighborhoodatlas.medicine.wisc.edu}{Area Deprivation Index (ADI)}]}
 \item \textcolor{PineGreen}{[\href{https://ctri.mcw.edu/resources/bmi-links}
 %{Clinical and Translational Science Institute\\ 
 %of Southeast Wisconsin (CTSI)\\ 
 {CTSI Biomedical Informatics links}]}
 \item \textcolor{PineGreen}{[\href{https://ctri.mcw.edu/wp-content/uploads/CTSI-Honest-Broker-Data-Dictionary.pdf}{CTSI Honest Broker Data Dictionary}]}
+\item \textcolor{PineGreen}{[\href{https://en.wikipedia.org/wiki/Project_Jupyter}{Project Jupyter}]}
+\item CRDW Jupyterhub \textcolor{PineGreen}{[\href{https://jupyter.ctsi.mcw.edu}{https://jupyter.ctsi.mcw.edu}]}
 \item \textcolor{PineGreen}{[\href{https://www.nber.org/research/data/icd-9-cm-and-icd-10-cm-and-icd-10-pcs-crosswalk-or-general-equivalence-mappings}
 {US Centers for Medicare and Medicaid Services\\ ICD-9 to, and from, ICD-10 crosswalks}]}
 \item \textcolor{PineGreen}{[\href{https://icd10cmtool.cdc.gov}
 {US Centers for Disease Control and Prevention\\ 
 ICD-10-CM Browser}]}
-\item \textcolor{PineGreen}{[\href{https://en.wikipedia.org/wiki/Project_Jupyter}{Project Jupyter}]}
-\item CRDW Jupyterhub \textcolor{PineGreen}{[\href{https://jupyter.ctsi.mcw.edu}{https://jupyter.ctsi.mcw.edu}]}
+\item \textcolor{PineGreen}{[\href{https://www.neighborhoodatlas.medicine.wisc.edu}{Area Deprivation Index (ADI)}]}
 \end{itemize}
 
 \end{frame}
@@ -178,7 +180,7 @@ ICD-10-CM Browser}]}
      Health and Human Services FAQ}]}
 \item CTSI Biomedical Informatics is the Honest Broker!
 \item The term originated in diplomacy meaning an entity
-accepted by all sides in a negotiation as impartial
+accepted as impartial by all sides in a negotiation
 \item German Chancellor Otto von Bismarck was the first to use the
   term, by applying it to himself, as an intermediary in negotiations
   between Russia and the Ottoman Empire (Auray-Blais and Patenaude,
@@ -192,8 +194,6 @@ accepted by all sides in a negotiation as impartial
 \begin{itemize}
 \item HIPAA de-identification provided by the Honest Broker
 \item For example, patient names, etc.\ are removed
-\item Geographically, we have only state of residence and\\
-ZIP code is shortened to 3 digits 
 \item The Medical Record Number (MRN) is replaced by
 the variable \textcolor{red}{\texttt{patient\_hash}} which is a double
 encrypted key 
@@ -204,6 +204,10 @@ data
 \textcolor{blue}{single} random integer from -10 to 10 (with zero excluded)
 \item This allows any two date differentials to be calculated
 exactly such as the age of a diagnosis with respect to birth date
+\item Geographically, we have only state of residence and\\
+ZIP code is shortened to 3 digits 
+\item However, geocoding was conducted to Census Block Groups\\ 
+and the corresponding Area Deprivation Index is provided
 \end{itemize}
 
 \end{frame}
@@ -220,7 +224,7 @@ the US Centers for Disase Control and Prevention (CDC) \\
 National Death Index (NDI)
 \item NDI is death only; NDI Plus includes cause % and costs more
 \item Of course, this costs money and cause costs more
-\item Typically, NDI/NDI Plus is about two years behind
+\item Typically, NDI/NDI Plus is one to two years behind
 \item Complete data for 2020 was released in 01/2022
 \item Early release for 2021 in 01/2022 was about 98\% complete 
 \item And the caveats about cause of death are substantial
@@ -286,7 +290,8 @@ relational database management systems
 \item Originally developed by IBM: now an industry standard
 \item \textcolor{PineGreen}{[\href{https://www.iso.org/standard/63555.html}
 {SQL:2016 AKA ISO/IEC 9075:2016}]}
-\item On the TIOBE Index of programming language popularity (circa 04/22)
+\item \textcolor{PineGreen}{[\href{https://www.tiobe.com/tiobe-index}
+{The TIOBE Index of programming language popularity}]}\\ (circa 04/22)
 \item SQL is ranked 9
 \item First appeared in 1974
 \end{itemize}
@@ -303,8 +308,7 @@ relational database management systems
 \item Naturally vectorized language with convenient objects such as vectors,
 matrices, lists (objects containers) and 
 \textcolor{red}{\texttt{date.frame}}'s
-\item \textcolor{PineGreen}{[\href{https://www.tiobe.com/tiobe-index}
-{The TIOBE Index of programming language popularity}]}\\ (circa 04/22)
+\item On the TIOBE Index of programming language popularity (circa 04/22)
 \item R is ranked 11 
 \item A derivative of S which first appeared in 1976
 \item Many free add-on packages
@@ -350,7 +354,8 @@ db=dbConnect(
 \item \textcolor{PineGreen}{[\href{https://SAS.com}{https://SAS.com}]}
 \item \textcolor{PineGreen}{[\href{https://support.sas.com/en/documentation.html}{https://support.sas.com/en/documentation.html}]}
 \item Convenient naturally vectorized \texttt{DATASTEP} language 
-\item You don't buy SAS, you rent it annually June to May
+\item You don't buy SAS, you rent it annually
+\item At MCW, the license goes from June to May
 \item MCW has a site-license: for students it is free
 \item Use the IS ticket system to order
 \item On the TIOBE Index of programming language popularity (circa 04/22)
@@ -373,9 +378,9 @@ introduction to SAS}}
 whereas SAS does (always check your \texttt{.log} !)
 \item What is a unique key?
 \item Suppose your SSN is unique, does that make it a unique key?
-\item NO, not necessarily
-\item Consider a table consisting of everyone's lifetime annual
-  earnings where each row/record is a year for a given SSN?
+\item NO! %, not necessarily
+\item Consider a table consisting of annual earnings\\ 
+where each row/record is a year for a given SSN?
 \item What is the unique key on this table?
 \item It is SSN AND year: NOT SSN alone!
 \item The R function \texttt{byvalue} adds SAS-like
@@ -401,8 +406,9 @@ and the Research Computing Center cluster
 \item \texttt{\_verify} to automatically convert {\it character} fields to numeric if possible,
 i.e., some fields are unnecessarily encoded as text
 \item \texttt{\_constant} automatically drops variables that are constant including missing
-\item \texttt{\_crepair} for CSVs with very long variable strings, R has an esoteric format
-that needs to be re-formatted so SAS can read them automatically
+\item \texttt{\_crepair} for CSVs with very long variable strings\\
+R will create an esoteric CSV file\\
+that needs re-formatting so SAS can read it automatically
 \end{itemize}
 \end{frame}
 
@@ -597,21 +603,22 @@ t(table(muse$ekgyear))
 
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
 \begin{itemize}
-\item The state of Wisconsin (as well as other regional entities in the US
-and Canada) has a cancer registry that health care entities must
-submit their data to by statuary requirements
+\item The state of Wisconsin (like regions of the US/Canada) 
+has/have a cancer registry that health care systems must
+submit their incidence data to by statuary requirements
 \item \textcolor{PineGreen}{[\href{https://www.naaccr.org/data-standards-data-dictionary}
 {NAACCR data dictionaries}]}
 \item 
 \textcolor{PineGreen}{[\href{http://datadictionary.naaccr.org/default.aspx?c=10&Version=22}
 {Latest version 22}]}
 \item NAACCR item 523: ICD-O-3 behavior codes \texttt{behavior\_code\_icd\_o\_3}
-\item ``valid codes are 0-3'' is all that NAACCR specifies in their docs which leaves a lot to be desired
-\item So you need the Surveillance, Epidemiology
+\item ``valid codes are 0-3'' is what NAACCR specifies in their docs\\ 
+which leaves a lot to be desired
+\item So use the Surveillance, Epidemiology
 and End Results (SEER) program docs too 
 \item NCI SEER is a subset of NAACCR
-regions in the US (including WI) with more carefully curated data
-and better documentation!
+regions in the US (including WI) with more carefully curated data\\
+and much better documentation too!
 \item \textcolor{PineGreen}{[\href{https://seer.cancer.gov/manuals/2022/SPCSM_2022_MainDoc.pdf}
 {SEER Program Coding and Staging Manual}]}
 \item 0: benign, 1: uncertain, 2: in situ, 3: malignant
@@ -651,7 +658,7 @@ addmargins(table(naaccr$site_primary))
 everything is character
 \item In both R and SAS, character is more painful than numeric
 values (SAS imports dates from CSV files as numeric)
-\item We can export the data as a CSV with \texttt{write.csv}
+\item We can export the data as a CSV with R's \texttt{write.csv}
 \item The option \texttt{quote=FALSE} means don't use quotes
 \item However, if some fields have embedded commas, then you
 can't turn this option on: and we don't know if there are any
@@ -677,7 +684,7 @@ write.csv(naaccr, "naaccr.csv", row.names=FALSE, na="")
 you may not download data
 for more than 9999 PATIENTS} in one project
 \item This is the honor system since there is no mechanism
-to prevent malfeasance but their could be ``real soon now''
+to prevent malfeasance (but their could be ``real soon now'')
 \item And you can process them with R
 \item R will convert character to numeric values where possible
 \item Except that it handles dates as character by default!
@@ -718,10 +725,15 @@ run;
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Patient Residential
 Address Geocoding}}
 \begin{itemize}
+\item Geocoding is the process of taking the address of a location and
+  returning geographic coordinates\\
+ such as a latitude/longitude pair or a US Census Tract
 \item  
-\textcolor{PineGreen}{[\href{https://degauss.org}{DeGAUSS: Decentralized Geomarker Assessment for Multi-Site Studies}]}
+\textcolor{PineGreen}{[\href{https://degauss.org}{DeGAUSS:
+    Decentralized Geomarker Assessment for Multi-Site Studies}]}
 \item ``Patient Demographics'' \texttt{geocode\_result}
-\item Self-explanatory: \texttt{po\_box} and \texttt{non\_address\_text} 
+\item Self-explanatory codes that are not accurately geocoded:\\ 
+\texttt{po\_box} and \texttt{non\_address\_text} 
 \item \texttt{cincy\_inst\_foster\_addr}: the address was not geocoded \\ 
 a known institutional address, not a residential address
 \item \texttt{imprecise\_geocode}: the address was geocoded, but results were suppressed because due to the lack of precision
