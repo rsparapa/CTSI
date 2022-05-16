@@ -801,4 +801,25 @@ print(zombies)
 \end{verbatim}
 \end{frame}
 
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
+Let's compare the last date of vital signs with death date
+\begin{verbatim}
+in.clause=paste0("('", paste(zombies$patient_hash, 
+                 collapse="','"), "')")
+zdates=dbGetQuery(db, 
+          paste("select patient_hash, measure_date_shifted 
+                 from fh_hb_vitals_jupyter  
+                 where patient_hash in ", in.clause, 
+                "order by patient_hash, 
+                 measure_date_shifted"))           
+max.zdates=c(tapply(zdates$measure_date_shifted, 
+                    zdates$patient_hash, max))
+class(max.zdates)='POSIXct'
+print(cbind(format(zombies$death_date_shifted), 
+            format(max.zdates)))
+\end{verbatim}
+\end{frame}
+
+
 \end{document}
