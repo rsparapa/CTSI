@@ -50,7 +50,7 @@
 \title{An introduction to big data mining of electronic health records with
 Jupyterhub, R, SQL and SAS}
 \author{Kristen Osinski, Rodney Sparapani and Bradley Taylor}
-
+\date{July 14, 2022}
 \begin{document}
 \bibliographystyle{plainnat}
 
@@ -120,7 +120,7 @@ and surrounded by square brackets for color equity
 \end{frame}
 
 
-\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{CRDW data eras}}
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{CRDW Data Horizon}}
 
 \begin{itemize}
 \item 1989: North American Association of Central Cancer Registries
@@ -170,10 +170,9 @@ ICD-10-CM Browser}]}
 \end{frame}
 
 
-\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Honest Broker}}
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{What is an Honest Broker?}}
 
 \begin{itemize}
-\item What is an {\it honest broker}?
 \item
 ``A neutral intermediary ... between the individual whose ... data are being studied, and the researcher. The honest broker collects and collates pertinent information ... replaces identifiers with a code, and releases only coded information to the researcher.''
  \textcolor{PineGreen}{[\href{https://www.hhs.gov/ohrp/sachrp-committee/recommendations/2011-october-13-letter-attachment-d/index.html}{US
@@ -189,14 +188,15 @@ accepted as impartial by all sides in a negotiation
 
 \end{frame}
 
-\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{De-identification}}
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Honest Broker De-identification}}
 
 \begin{itemize}
 \item HIPAA de-identification provided by the Honest Broker
 \item For example, patient names, etc.\ are removed
-\item The Medical Record Number (MRN) is replaced by
-the variable \textcolor{red}{\texttt{patient\_hash}} which is a double
-encrypted key 
+\item The Medical Record Number (MRN),
+  \textcolor{red}{\texttt{patient\_mrn}},\\ is replaced by 
+  \textcolor{red}{\texttt{patient\_hash}} which is an encrypted
+  key
 \item \textcolor{red}{\texttt{patient\_hash}} is unchanging so that
 the MRNs could be retrieved if you have IRB approval for identified
 data
@@ -212,74 +212,6 @@ and the corresponding Area Deprivation Index is provided
 
 \end{frame}
 
-\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Death and Cause
-      of Death}}
-
-\begin{itemize}
-\item Death is available; however, it may not be trustworthy
-\item It is common to see EHR data far beyond the death date
-\item Also, Cause of Death is not available
-\item It can be acquired from the state of Wisconsin or\\
-the US Centers for Disase Control and Prevention (CDC) \\ 
-National Death Index (NDI)
-\item NDI is death only; NDI Plus includes cause % and costs more
-\item Of course, this costs money and cause costs more
-\item Typically, NDI/NDI Plus is one to two years behind
-\item Complete data for 2020 was released in 01/2022
-\item Early release for 2021 in 01/2022 was about 98\% complete 
-\item And the caveats about cause of death are substantial
-\item \textcolor{PineGreen}{[\href{https://www.cdc.gov/nchs/ndi/index.htm}
-{US CDC NDI}]}
-\end{itemize}
-
-\end{frame}
-
-\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Comma Separated Values}}
-
-\begin{itemize}
-\item A data exchange format that goes back to the early 1970's
-\item Popularized by spreadsheets in the 80's and 90's
-\item What we have today was solidifed by about 2005 
-\item Standards include RFCs 4180 and 7111 among others
-\item See \textcolor{PineGreen}{[\href{https://en.wikipedia.org/wiki/Comma-separated_values}
-{``Comma-separated values'' on Wikipedia}]}
-\item Typically, a three-letter file type of ``csv'',
-e.g., ``Book1.csv''
-\item A text file where each field is separated by commas
-\item A missing value is nothing: two consecutive commas
-\item Fields with commas are encased in double-quotes
-\item Double-quotes are escaped by doubling them (like SAS does)
-\item Double-quotes around numbers (or anything) is read as text 
-\item Although, a standard there are edge cases that can't be
-  {\it automatically} read by common software such as R and/or SAS
-\item Furthermore, spreadsheets are very lax: columns can be a mixture of numbers and text that will create havoc when read
-\end{itemize}
-
-\end{frame}
-
-
-\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Comma Separated Values}}
-
-\begin{itemize}
-\item If CSV files have so many challenges, then why bother?
-\item No other data exchange formats have caught on
-\item Alternatives like {\it recfiles} are not nearly as popular
-\item With respect to CSV, SAS fills an important niche
-\item SAS makes the exchange of CSV files with dates, times
-and date-times effectively trivial
-\item This is a very important concern since the EHR is rife
-with chronological info: so much so that you don't even want to
-consider making their transfer manual in any shape or form
-\item And we have decades of experience with CSVs
-\item Largely automated functions roughly in order of usefulness
-\item SAS: \texttt{PROC IMPORT}/\texttt{PROC EXPORT}
-\item R functions: \texttt{read.csv()}/\texttt{write.csv()}
-\item RASMACRO: \texttt{\_cimport}/\texttt{\_cexport}\\
-plus \texttt{\_crepair}, \texttt{\_constant}
-and \texttt{\_verify} for handy features
-\end{itemize}
-
-\end{frame}
 
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{A brief introduction to SQL}}
 
@@ -393,8 +325,57 @@ is not obvious and often surprising: SAS is much better suited to this
 
 \end{frame}
 
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{A brief
+introduction to Comma Separated Values}}
 
-\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{RASMACRO}}
+\begin{itemize}
+\item A data exchange format that goes back to the early 1970's
+\item Popularized by spreadsheets in the 80's and 90's
+\item What we have today was solidifed by about 2005 
+\item Standards include RFCs 4180 and 7111 among others
+\item See \textcolor{PineGreen}{[\href{https://en.wikipedia.org/wiki/Comma-separated_values}
+{``Comma-separated values'' on Wikipedia}]}
+\item Typically, a three-letter file type of ``csv'',
+e.g., ``Book1.csv''
+\item A text file where each field is separated by commas
+\item A missing value is nothing: two consecutive commas
+\item Fields with commas are encased in double-quotes
+\item Double-quotes are escaped by doubling them (like SAS does)
+\item Double-quotes around numbers (or anything) is read as text 
+\item Although, a standard there are edge cases that can't be
+  {\it automatically} read by common software such as R and/or SAS
+\item Furthermore, spreadsheets are very lax: columns can be a mixture of numbers and text that will create havoc when read
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{A brief
+introduction to Comma Separated Values}}
+
+\begin{itemize}
+\item If CSV files have so many challenges, then why bother?
+\item No other data exchange formats have caught on
+\item Alternatives like {\it recfiles} are not nearly as popular
+\item With respect to CSV, SAS fills an important niche
+\item SAS makes the exchange of CSV files with dates, times
+and date-times effectively trivial
+\item This is a very important concern since the EHR is rife
+with chronological info: so much so that you don't even want to
+consider making their transfer manual in any shape or form
+\item And we have decades of experience with CSVs
+\item Largely automated functions roughly in order of usefulness
+\item SAS: \texttt{PROC IMPORT}/\texttt{PROC EXPORT}
+\item R functions: \texttt{read.csv()}/\texttt{write.csv()}
+\item RASMACRO: \texttt{\_cimport}/\texttt{\_cexport}\\
+plus \texttt{\_crepair}, \texttt{\_constant}
+and \texttt{\_verify} for handy features
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{A brief
+introduction to RASMACRO}}
 \begin{itemize}
 \item SAS has a powerful macro language
 \item RASMACRO is GPL library at 
@@ -413,7 +394,8 @@ that needs re-formatting so SAS can read it automatically
 \end{frame}
 
 
-\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{RASMACRO}}
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{A brief
+introduction to RASMACRO}}
 \begin{itemize}
 \item Installing RASMACRO is fairly trivial on Windows and Linux
 \item Get it from github in a directory called \texttt{rasmacro}
@@ -572,8 +554,8 @@ temp, etc. } \\   \hline
 \begin{itemize}
 \item When does the NAACCR data start?
 \item Above, I said 1989: how did I get that?
-\item N.B. The SQL \texttt{date\_part} function is not to be confused with 
-the SAS \texttt{datepart} function
+\item N.B. Do not confuse the SQL \texttt{date\_part} function with 
+the SAS \texttt{datepart} function: they are similar yet different
 \end{itemize}
 \begin{verbatim}
 naaccr=dbGetQuery(db, 
@@ -722,7 +704,7 @@ run;
 
 \end{frame}
 
-\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Patient Residential
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Honest Broker Residential
 Address Geocoding}}
 \begin{itemize}
 \item Geocoding is the process of taking the address of a location and
@@ -741,7 +723,8 @@ a known institutional address, not a residential address
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Area Deprivation Index (ADI)}}
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Introduction to
+the Area Deprivation Index (ADI)}}
 \begin{itemize}
 \item \textcolor{PineGreen}{[\href{https://www.neighborhoodatlas.medicine.wisc.edu}{ADI documentation}]}
 \item ``Patient Demographics'' \texttt{adi\_narank}
@@ -784,6 +767,28 @@ abline(h=0.01, col=8)
 \end{verbatim}
 \end{frame}
 
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Death and Cause
+      of Death}}
+
+\begin{itemize}
+\item Death is available; however, it may not be trustworthy
+\item It is common to see EHR data far beyond the death date
+\item Also, Cause of Death is not available
+\item It can be acquired from the state of Wisconsin or\\
+the US Centers for Disase Control and Prevention (CDC) \\ 
+National Death Index (NDI)
+\item NDI is death only; NDI Plus includes cause % and costs more
+\item Of course, this costs money and cause costs more
+\item Typically, NDI/NDI Plus is one to two years behind
+\item Complete data for 2020 was released in 01/2022
+\item Early release for 2021 in 01/2022 was about 98\% complete 
+\item And the caveats about cause of death are substantial
+\item \textcolor{PineGreen}{[\href{https://www.cdc.gov/nchs/ndi/index.htm}
+{US CDC NDI}]}
+\end{itemize}
+
+\end{frame}
+
 
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Anomylous Death Dates}}
 \begin{itemize}
@@ -807,7 +812,8 @@ zombies=dbGetQuery(db, "select distinct a.patient_hash,
                         inner join fh_hb_vitals_jupyter b 
                         on a.patient_hash=b.patient_hash 
                         AND a.death_date_shifted<
-                        b.measure_date_shifted")
+                        b.measure_date_shifted
+                        order by patient_hash")
 table(zombies$vital_status_source)
 print(zombies)
 \end{verbatim}
