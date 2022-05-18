@@ -839,5 +839,40 @@ print(cbind(format(zombies$death_date_shifted),
 \end{verbatim}
 \end{frame}
 
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Medi-Span and RxNorm}}
+\begin{itemize}
+\item \textcolor{PineGreen}{[\href{https://www.wolterskluwer.com/en/solutions/medi-span/about/gpi}
+{Medi-Span Generic Product Identifier (GPI)}]}
+\item The Wolters Kluwer Medi-Span brand database, called the Medispan
+  Electronic Drug File, links the GPI code to other prescription drug
+  classification codes
+\item RxNorm is part of Unified Medical Language System (UMLS)
+  terminology maintained by the US National Library
+  of Medicine (NLM)
+\item GPI and RxNorm codes are available on two CRDW tables
+\item ``Medications Ordered'' for medicinal prescriptions (not fills!): \texttt{fh\_hb\_med\_orders\_table\_jupyter}
+\item ``Medications Administered'' for medicines taken: \texttt{fh\_hb\_mar\_table\_jupyter} 
+\item Example variables of interest
+\item \texttt{pharm\_class}: pharmacologic class
+\item \texttt{pharm\_subclass}: pharmacologic subclass
+\item \texttt{ingredient\_rxcui\_name}: RxNorm Concept Unique Identifier (CUI) name
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
+How to make your own lookup table of drug nomenclature\\ 
+N.B. RESOURCE INTENSIVE: JUST DON'T DO IT TODAY
+\begin{verbatim}
+medispan=dbGetQuery(db, "select distinct pharm_class, 
+                         pharm_subclass,
+                         ingredient_rxcui_name
+                         from fh_hb_mar_table_jupyter 
+                         order by pharm_class, 
+                         pharm_subclass,
+                         ingredient_rxcui_name")
+write.csv(medispan, "medispan.csv", row.names=FALSE)
+\end{verbatim}
+\end{frame}
 
 \end{document}
+
