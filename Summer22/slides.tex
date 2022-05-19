@@ -104,7 +104,8 @@ but including billing claims and ancillary databanks
 \item SQL, R and SAS: popular and mature programming languages
 \item SQL and R come free with Jupyterhub
 \item SAS can be purchased through the MCW IS Ticket system\\
- for Linux server and Windows client (free for students)  
+ for Linux server and Windows clients, it's either free or cheap
+%\$60 for Linux on the RCC cluster and for Windows installs  
 \item \textcolor{PineGreen}{[\href{https://mcwcherwellapp.mcwcorp.net/CherwellPortal}{https://mcwcherwellapp.mcwcorp.net/CherwellPortal}]}
 \item In this presentation, links are colored \textcolor{PineGreen}{[green]}
 and surrounded by square brackets for color equity
@@ -287,9 +288,11 @@ db=dbConnect(
 \item \textcolor{PineGreen}{[\href{https://support.sas.com/en/documentation.html}{https://support.sas.com/en/documentation.html}]}
 \item Convenient naturally vectorized \texttt{DATASTEP} language 
 \item You don't buy SAS, you rent it annually
-\item At MCW, the license goes from June to May
-\item MCW has a site-license: for students it is free
-\item Use the IS ticket system to order
+\item The MCW site license goes from June to May
+\item It is free for students and members of Biostatistics/CAPS
+\item For others its cheap, use the IS ticket system to order\\
+\textcolor{PineGreen}{[\href{https://mcwcherwellapp.mcwcorp.net/CherwellPortal}{https://mcwcherwellapp.mcwcorp.net/CherwellPortal}]} \\
+\$60 for SAS on the RCC cluster and for Windows installs  
 \item On the TIOBE Index of programming language popularity (circa 04/22)
 \item SAS is ranked 21 
 \item First appeared in 1972
@@ -839,7 +842,8 @@ print(cbind(format(zombies$death_date_shifted),
 \end{verbatim}
 \end{frame}
 
-\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Medi-Span and RxNorm}}
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Medi-Span and RxNorm
+Medical Nomenclature}}
 \begin{itemize}
 \item \textcolor{PineGreen}{[\href{https://www.wolterskluwer.com/en/solutions/medi-span/about/gpi}
 {Medi-Span Generic Product Identifier (GPI)}]}
@@ -851,7 +855,7 @@ print(cbind(format(zombies$death_date_shifted),
   of Medicine (NLM)
 \item GPI and RxNorm codes are available on two CRDW tables
 \item ``Medications Ordered'' for medicinal prescriptions (not fills!): \texttt{fh\_hb\_med\_orders\_table\_jupyter}
-\item ``Medications Administered'' for medicines taken: \texttt{fh\_hb\_mar\_table\_jupyter} 
+\item ``Medications Administered'' for medicine given: \texttt{fh\_hb\_mar\_table\_jupyter} 
 \item Example variables of interest
 \item \texttt{pharm\_class}: pharmacologic class
 \item \texttt{pharm\_subclass}: pharmacologic subclass
