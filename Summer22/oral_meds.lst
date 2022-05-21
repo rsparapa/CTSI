@@ -1,0 +1,106 @@
+                                            15:54 Saturday, May 21, 2022   1
+
+                             The FREQ Procedure
+
+                                                   Cumulative    Cumulative
+ BRAND_NAME               Frequency     Percent     Frequency      Percent
+ --------------------------------------------------------------------------
+ CAPECITABINE                  960       30.01           960        30.01  
+ CYCLOPHOSPHAMIDE              820       25.63          1780        55.64  
+ XELODA                        522       16.32          2302        71.96  
+ ETOPOSIDE                     222        6.94          2524        78.90  
+ ALBUTEROL SULFATE             139        4.35          2663        83.24  
+ IPRATROPIUM-ALBUTEROL         119        3.72          2782        86.96  
+ MELPHALAN                      81        2.53          2863        89.50  
+ BUDESONIDE                     57        1.78          2920        91.28  
+ TACROLIMUS                     48        1.50          2968        92.78  
+ METHOTREXATE                   46        1.44          3014        94.22  
+ ALKERAN                        32        1.00          3046        95.22  
+ PREDNISONE                     32        1.00          3078        96.22  
+ HYCAMTIN                       31        0.97          3109        97.19  
+ MYCOPHENOLATE MOFETIL          28        0.88          3137        98.06  
+ BROVANA                        18        0.56          3155        98.62  
+ IPRATROPIUM BROMIDE            17        0.53          3172        99.16  
+ MYCOPHENOLIC ACID              15        0.47          3187        99.62  
+ MYLERAN                        12        0.38          3199       100.00  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/Summer22/oral_meds.sas                              
+                                            15:54 Saturday, May 21, 2022   2
+
+Obs BRAND_NAME
+
+  1 BUDESONIDE           
+  2 CAPECITABINE         
+  3 CYCLOPHOSPHAMIDE     
+  4 ETOPOSIDE            
+  5 MELPHALAN            
+  6 METHOTREXATE         
+  7 MYCOPHENOLATE MOFETIL
+  8 MYCOPHENOLIC ACID    
+  9 PREDNISONE           
+ 10 TACROLIMUS           
+
+Obs ingredient_rxcui_name
+
+  1 budesonide                                                              
+  2 capecitabine                                                            
+  3 cyclophosphamide                                                        
+  4 etoposide                                                               
+  5 melphalan                                                               
+  6 methotrexate                                                            
+  7 mycophenolate mofetil                                                   
+  8 mycophenolic acid                                                       
+  9 prednisone                                                              
+ 10 tacrolimus                                                              
+
+                                   N = 10
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/Summer22/oral_meds.sas                              
