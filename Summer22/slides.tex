@@ -146,6 +146,8 @@ and surrounded by square brackets for color equity
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Resources}}
 
 \begin{itemize}
+\item This presentation, programs, etc.\ are available online\\
+\textcolor{PineGreen}{[\href{https://github.com/rsparapa/CTSI/tree/main/Summer22}{at my \texttt{github.com} repository}]}
 \item \textcolor{PineGreen}{[\href{https://ctsi.mcw.edu/about/history/support/berd}
 {Biostatistics, Epidemiology and Research Design (BERD)}]}
 \item \textcolor{PineGreen}{[\href{https://ctsi.mcw.edu/investigator/services/ctsi-mini-grants/biostatistical-consultation}
@@ -396,6 +398,7 @@ to prevent malfeasance (but their could be ``real soon now'')
 client% scp USER@jupyter.ctsi.mcw.edu:naaccr.csv Downloads
 R> naaccr = read.csv("~/Downloads/naaccr.csv")
 R> str(naaccr)
+R> ?str
 \end{verbatim}
 \end{frame}
 
@@ -700,8 +703,9 @@ for nothing
 \begin{verbatim}
 addmargins(table(naaccr$site_primary, 
            naaccr$behavior_code_icd_o_3))
-str(naaccr)
 write.csv(naaccr, "naaccr.csv", row.names=FALSE, na="") 
+str(naaccr)
+?str
 \end{verbatim}
 \end{frame}
 
@@ -842,7 +846,7 @@ print(cbind(format(zombies$death_date_shifted),
 \end{verbatim}
 \end{frame}
 
-\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Medi-Span and RxNorm
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Medi-Span, GPI and RxNorm
 Medical Nomenclature}}
 \begin{itemize}
 \item \textcolor{PineGreen}{[\href{https://www.wolterskluwer.com/en/solutions/medi-span/about/gpi}
@@ -867,16 +871,46 @@ Medical Nomenclature}}
 How to make your own lookup table of drug nomenclature\\ 
 N.B. RESOURCE INTENSIVE: JUST DON'T DO IT TODAY
 \begin{verbatim}
-medispan=dbGetQuery(db, "select distinct pharm_class, 
-                         pharm_subclass,
-                         ingredient_rxcui_name
-                         from fh_hb_mar_table_jupyter 
-                         order by pharm_class, 
-                         pharm_subclass,
-                         ingredient_rxcui_name")
-write.csv(medispan, "medispan.csv", row.names=FALSE)
+medispan=dbGetQuery(db, 
+             "select distinct pharm_class, pharm_subclass, 
+              substring(gpi from 1 for 2) as gpi_group,
+              substring(gpi from 3 for 2) as gpi_class,
+              substring(gpi from 5 for 2) as gpi_subclass,
+              ingredient_rxcui_name
+              from fh_hb_mar_table_jupyter 
+              order by pharm_class, pharm_subclass,
+              ingredient_rxcui_name")
+write.csv(medispan, "medispan.csv", row.names=FALSE, na="")
 \end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Cancer Research}}
+
+\begin{itemize}
+\item We have already mentioned NCI SEER
+\item Another resource is NCI
+\textcolor{PineGreen}{[\href{https://healthcaredelivery.cancer.gov/seermedicare}
+{SEER-Medicare Linked Database}]}
+\item For cancer-related ICD-9/ICD-10, CPT/HCPCS codes, etc.
+\item Such as \textcolor{PineGreen}{[\href{https://healthcaredelivery.cancer.gov/seermedicare/aboutdata/ndc_frequency.html}{oral chemotherapy drug names}]}
+\item However, this type of processing is very challenging with R
+\item This is a job for ... \texttt{RASMACRO}!
+\item See the file \texttt{oral\_meds.sas}
+\end{itemize}
 \end{frame}
 
 \end{document}
 
+a=proc.time()
+med_name=dbGetQuery(db, "select distinct medication_name,
+                         pharm_class, pharm_subclass, 
+                         substring(gpi from 1 for 2) as gpi_group,
+                         substring(gpi from 3 for 2) as gpi_class,
+                         substring(gpi from 5 for 2) as gpi_subclass,
+                         ingredient_rxcui_name
+                         from fh_hb_mar_table_jupyter 
+                         order by medication_name,
+                         pharm_class, pharm_subclass,
+                         ingredient_rxcui_name")
+print(proc.time()-a)
+write.csv(med_name, "med_name.csv", row.names=FALSE, na="")
