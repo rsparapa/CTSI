@@ -64,15 +64,15 @@ Jupyterhub, R, SQL and SAS}
 8:00 & Speaker/attendee introductions \\
 8:15 & Bradley Taylor, Chief Research Informatics Officer \\
 8:30 & Kristen Osinski, Business Analyst IV, CTSI \\
-9:15 & CRDW, Jupyterhub, SQL and R \\
-10:00& Coffee break getting to know each other \\
-10:30& Hands-on with Jupyterhub  \\
+9:15 & Overview: slides 0:18  \\
+10:00& Break: getting to know each other \\
+10:30& Hands-on with Jupyterhub: slides 19:24  \\
 12:00& Lunch on your own \\
-12:30& Case study: Cardio-oncology \\
+12:30& Hands-on with Jupyterhub: slides 25:31  \\
 2:00 & Biological break \\
-2:15 & SAS and RASMACRO \\
-4:00 & Q and A \\
-4:15 & 
+2:15 & Hands-on with Jupyterhub: slides 33:39 \\
+3:45 & Q and A \\
+4:15 & Closing ceremonies
 \end{tabular}
 
 \end{frame}
@@ -377,6 +377,28 @@ and \texttt{\_verify} for handy features
 
 \end{frame}
 
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{CSV processing with R}}
+\begin{itemize}
+\item You can download your CSV files as we will see later
+\item Either with your web browser or with Secure Copy: \texttt{scp}
+\item \texttt{scp} is a standard command on Windows, macOS and Linux
+\item However, \textcolor{red}{due to IRB restrictions, 
+you may not download data
+for more than 9999 PATIENTS} in one project
+\item This is the honor system since there is no mechanism
+to prevent malfeasance (but their could be ``real soon now'')
+\item And you can process them with R
+\item R will convert character to numeric values where possible
+\item Except that it handles dates as character by default!
+\item There is no automatic detection: that is a manual process
+\end{itemize}
+\begin{verbatim}
+client% scp USER@jupyter.ctsi.mcw.edu:naaccr.csv Downloads
+R> naaccr = read.csv("~/Downloads/naaccr.csv")
+R> str(naaccr)
+\end{verbatim}
+\end{frame}
+
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{A brief
 introduction to RASMACRO}}
 \begin{itemize}
@@ -412,6 +434,30 @@ where \texttt{RASMACRO} is the path to your directory
 -sasautos ('!SASROOT/sasautos' 'RASMACRO') 
 -set SASAUTOS ('!SASROOT/sasautos' 'RASMACRO')
 \end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{CSV processing with SAS}}
+\begin{itemize}
+\item SAS does NOT automatically convert character to numeric
+\item However, the RASMACRO \texttt{\_verify} can handle that
+\item SAS does automatically detect dates, times and datetimes!
+\item Also, the RASMACRO \texttt{\_constant} automatically detects
+variable/columns that are a constant value (including missing) and
+removes them
+\item In this case, the following were superfluous and removed
+\item \texttt{mult\_tum\_rpt\_as\_one\_prim, multiplicity\_counter, 
+cs\_tumor\_size, cs\_lymph\_nodes, cs\_mets\_at\_dx, cs\_mets\_at\_dx\_bone, 
+cs\_mets\_at\_dx\_brain, cs\_mets\_at\_dx\_liver, cs\_mets\_at\_dx\_lung, 
+sequence\_number\_hospital}
+\end{itemize}
+\begin{verbatim}
+proc import datafile="~/Downloads/naaccr.csv" out=naaccr;
+guessingrows=max;
+run;
+%_verify(data=naaccr, out=naaccr);
+%_constant(data=naaccr, out=naaccr);
+\end{verbatim}
+
 \end{frame}
 
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
@@ -660,52 +706,6 @@ write.csv(naaccr, "naaccr.csv", row.names=FALSE, na="")
 \end{frame}
 
 
-\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{CSV processing with R}}
-\begin{itemize}
-\item You can download your CSV files: DEMO
-\item Either with your web browser or with Secure Copy: \texttt{scp}
-\item \texttt{scp} is a standard command on Windows, macOS and Linux
-\item However, \textcolor{red}{due to IRB restrictions, 
-you may not download data
-for more than 9999 PATIENTS} in one project
-\item This is the honor system since there is no mechanism
-to prevent malfeasance (but their could be ``real soon now'')
-\item And you can process them with R
-\item R will convert character to numeric values where possible
-\item Except that it handles dates as character by default!
-\item There is no automatic detection: that is a manual process
-\end{itemize}
-\begin{verbatim}
-client% scp USER@jupyter.ctsi.mcw.edu:naaccr.csv Downloads
-R> naaccr = read.csv("~/Downloads/naaccr.csv")
-R> str(naaccr)
-\end{verbatim}
-
-\end{frame}
-
-\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{CSV processing with SAS}}
-\begin{itemize}
-\item SAS does NOT automatically convert character to numeric
-\item However, the RASMACRO \texttt{\_verify} can handle that
-\item SAS does automatically detect dates, times and datetimes!
-\item Also, the RASMACRO \texttt{\_constant} automatically detects
-variable/columns that are a constant value (including missing) and
-removes them
-\item In this case, the following were superfluous and removed
-\item \texttt{mult\_tum\_rpt\_as\_one\_prim, multiplicity\_counter, 
-cs\_tumor\_size, cs\_lymph\_nodes, cs\_mets\_at\_dx, cs\_mets\_at\_dx\_bone, 
-cs\_mets\_at\_dx\_brain, cs\_mets\_at\_dx\_liver, cs\_mets\_at\_dx\_lung, 
-sequence\_number\_hospital}
-\end{itemize}
-\begin{verbatim}
-proc import datafile="~/Downloads/naaccr.csv" out=naaccr;
-guessingrows=max;
-run;
-%_verify(data=naaccr, out=naaccr);
-%_constant(data=naaccr, out=naaccr);
-\end{verbatim}
-
-\end{frame}
 
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Honest Broker Residential
 Address Geocoding}}
