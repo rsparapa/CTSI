@@ -1,34 +1,29 @@
 
 %_cimport(infile=pedsf.ndc.bn.table.all.sites.csv,
     firstobs=5, header=3, out=oral_meds, keep=brand_name _2018,
-    where=brand_name^='MISSING BRAND NAME');
+    where=brand_name^='MISSING BRAND NAME',
+    by=brand_name);
 
 %_verify(data=oral_meds, out=oral_meds, var=_2018, missing=#);
 
-proc freq order=freq;
+proc freq;
     tables brand_name;
     weight _2018;
 run;
 
-proc import datafile='medispan.csv' out=medispan;
-    guessingrows=max;
-run;
-
-%let m=%_nobs(data=medispan);
+%_cimport(infile=medispan.csv, out=medispan,
+    upcase=ingredient_rxcui_name, sort=nodupkey,
+    by=ingredient_rxcui_name pharm_class);
 
 data oral_meds;
-    set oral_meds;
-    drop j k match;
-    match=0;
-    if _2018>0 then do i=1 to &m until(match);
-        set medispan point=i;
-        j=length(ingredient_rxcui_name);
-        k=length(brand_name);
-        match=(j>=k & substr(ingredient_rxcui_name, 1, k)=lowcase(brand_name));
-        if match then output;
-    end;
+    merge oral_meds(rename=(brand_name=ingredient_rxcui_name))
+        medispan(in=medispan);
+    by ingredient_rxcui_name;
+    if not(first.ingredient_rxcui_name & last.ingredient_rxcui_name)
+    then pharm_class='Assorted Classes';
+    if _2018>0 & medispan & last.ingredient_rxcui_name;
 run;
-    
+
 proc print uniform n;
-    var brand_name ingredient_rxcui_name;
+    var ingredient_rxcui_name pharm_class;
 run;

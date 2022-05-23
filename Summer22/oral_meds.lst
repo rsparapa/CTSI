@@ -1,28 +1,28 @@
-                                            15:54 Saturday, May 21, 2022   1
+                                              14:58 Monday, May 23, 2022   1
 
                              The FREQ Procedure
 
                                                    Cumulative    Cumulative
  BRAND_NAME               Frequency     Percent     Frequency      Percent
  --------------------------------------------------------------------------
- CAPECITABINE                  960       30.01           960        30.01  
- CYCLOPHOSPHAMIDE              820       25.63          1780        55.64  
- XELODA                        522       16.32          2302        71.96  
- ETOPOSIDE                     222        6.94          2524        78.90  
- ALBUTEROL SULFATE             139        4.35          2663        83.24  
- IPRATROPIUM-ALBUTEROL         119        3.72          2782        86.96  
- MELPHALAN                      81        2.53          2863        89.50  
- BUDESONIDE                     57        1.78          2920        91.28  
- TACROLIMUS                     48        1.50          2968        92.78  
- METHOTREXATE                   46        1.44          3014        94.22  
- ALKERAN                        32        1.00          3046        95.22  
- PREDNISONE                     32        1.00          3078        96.22  
- HYCAMTIN                       31        0.97          3109        97.19  
- MYCOPHENOLATE MOFETIL          28        0.88          3137        98.06  
- BROVANA                        18        0.56          3155        98.62  
- IPRATROPIUM BROMIDE            17        0.53          3172        99.16  
- MYCOPHENOLIC ACID              15        0.47          3187        99.62  
- MYLERAN                        12        0.38          3199       100.00  
+ ALBUTEROL SULFATE             139        4.35           139         4.35  
+ ALKERAN                        32        1.00           171         5.35  
+ BROVANA                        18        0.56           189         5.91  
+ BUDESONIDE                     57        1.78           246         7.69  
+ CAPECITABINE                  960       30.01          1206        37.70  
+ CYCLOPHOSPHAMIDE              820       25.63          2026        63.33  
+ ETOPOSIDE                     222        6.94          2248        70.27  
+ HYCAMTIN                       31        0.97          2279        71.24  
+ IPRATROPIUM BROMIDE            17        0.53          2296        71.77  
+ IPRATROPIUM-ALBUTEROL         119        3.72          2415        75.49  
+ MELPHALAN                      81        2.53          2496        78.02  
+ METHOTREXATE                   46        1.44          2542        79.46  
+ MYCOPHENOLATE MOFETIL          28        0.88          2570        80.34  
+ MYCOPHENOLIC ACID              15        0.47          2585        80.81  
+ MYLERAN                        12        0.38          2597        81.18  
+ PREDNISONE                     32        1.00          2629        82.18  
+ TACROLIMUS                     48        1.50          2677        83.68  
+ XELODA                        522       16.32          3199       100.00  
  
  
  
@@ -51,35 +51,35 @@
  
  
 /home/rsparapa/git/CTSI/Summer22/oral_meds.sas                              
-                                            15:54 Saturday, May 21, 2022   2
+                                              14:58 Monday, May 23, 2022   2
 
-Obs BRAND_NAME
+              Obs    ingredient_rxcui_name      pharm_class
 
-  1 BUDESONIDE           
-  2 CAPECITABINE         
-  3 CYCLOPHOSPHAMIDE     
-  4 ETOPOSIDE            
-  5 MELPHALAN            
-  6 METHOTREXATE         
-  7 MYCOPHENOLATE MOFETIL
-  8 MYCOPHENOLIC ACID    
-  9 PREDNISONE           
- 10 TACROLIMUS           
-
-Obs ingredient_rxcui_name
-
-  1 budesonide                                                              
-  2 capecitabine                                                            
-  3 cyclophosphamide                                                        
-  4 etoposide                                                               
-  5 melphalan                                                               
-  6 methotrexate                                                            
-  7 mycophenolate mofetil                                                   
-  8 mycophenolic acid                                                       
-  9 prednisone                                                              
- 10 tacrolimus                                                              
+                1    BUDESONIDE               Assorted Classes
+                2    CAPECITABINE             Antineoplastics 
+                3    CYCLOPHOSPHAMIDE         Antineoplastics 
+                4    ETOPOSIDE                Antineoplastics 
+                5    MELPHALAN                Antineoplastics 
+                6    METHOTREXATE             Assorted Classes
+                7    MYCOPHENOLATE MOFETIL    Assorted Classes
+                8    MYCOPHENOLIC ACID        Assorted Classes
+                9    PREDNISONE               Corticosteroids 
+               10    TACROLIMUS               Assorted Classes
 
                                    N = 10
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
  
  
