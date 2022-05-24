@@ -893,7 +893,10 @@ write.csv(medispan, "medispan.csv", row.names=FALSE, na="")
 {SEER-Medicare Linked Database}]}
 \item For cancer-related ICD-9/ICD-10, CPT/HCPCS codes, etc.
 \item Such as \textcolor{PineGreen}{[\href{https://healthcaredelivery.cancer.gov/seermedicare/aboutdata/ndc_frequency.html}{oral chemotherapy drug names}]}
-\item However, this type of processing is very challenging with R
+\item
+  \textcolor{PineGreen}{[\href{https://healthcaredelivery.cancer.gov/seermedicare/aboutdata/pedsf.ndc.bn.table.xls}{See
+      this fiendishly formatted spreadsheet}]}
+\item Here, automated processing would be very challenging with R
 \item This is a job for ... RASMACRO!
 \item See the file \texttt{oral\_meds.sas}
 \end{itemize}
@@ -901,16 +904,3 @@ write.csv(medispan, "medispan.csv", row.names=FALSE, na="")
 
 \end{document}
 
-a=proc.time()
-med_name=dbGetQuery(db, "select distinct medication_name,
-                         pharm_class, pharm_subclass, 
-                         substring(gpi from 1 for 2) as gpi_group,
-                         substring(gpi from 3 for 2) as gpi_class,
-                         substring(gpi from 5 for 2) as gpi_subclass,
-                         ingredient_rxcui_name
-                         from fh_hb_mar_table_jupyter 
-                         order by medication_name,
-                         pharm_class, pharm_subclass,
-                         ingredient_rxcui_name")
-print(proc.time()-a)
-write.csv(med_name, "med_name.csv", row.names=FALSE, na="")
