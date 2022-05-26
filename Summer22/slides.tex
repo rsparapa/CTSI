@@ -66,11 +66,11 @@ Jupyterhub, R, SQL and SAS}
 8:30 & Kristen Osinski, Business Analyst IV, CTSI \\
 9:15 & Overview: slides 0:18  \\
 10:00& Break: getting to know each other \\
-10:30& Hands-on with Jupyterhub: slides 19:24  \\
+10:30& Hands-on with Jupyterhub: slides 19:25  \\
 12:00& Lunch on your own \\
-12:30& Hands-on with Jupyterhub: slides 25:31  \\
+12:30& Hands-on with Jupyterhub: slides 26:34  \\
 2:00 & Biological break \\
-2:15 & Hands-on with Jupyterhub: slides 33:39 \\
+2:15 & Hands-on with Jupyterhub: slides 35:41 \\
 3:45 & Q and A \\
 4:15 & Closing ceremonies
 \end{tabular}
@@ -465,7 +465,9 @@ run;
 
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
 \begin{itemize}
-\item Login \textcolor{PineGreen}{[\href{https://jupyter.ctsi.mcw.edu}{https://jupyter.ctsi.mcw.edu}]} \\
+\item Login
+  \textcolor{PineGreen}{[\href{https://jupyter.ctsi.mcw.edu}{https://jupyter.ctsi.mcw.edu}]}
+  with your web browser \\
 with your MCWCORP credentials, i.e., same as Outlook/etc.
 \item And use your Jupyterhub-only \texttt{JHUSERNAME/JHPASSWORD}
 \item Pressing Shift+Enter on your keyboard submits the code
@@ -481,7 +483,7 @@ db=dbConnect(
     dbname  ="fh_jupyter_hub_hbdb",
     user    =user,
     password=password,
-    host    ="localhost", ## only loopback connections! 
+    host    ="localhost", ## loopback web connection 
     port    =5432, 
     bigint  ="integer"    ## see dbConnect documentation
 )
@@ -502,6 +504,32 @@ if the software is upgraded to a newer version, then update accordingly
 dbGetQuery(db, "select version()")
 \end{verbatim}
 \texttt{PostgreSQL} $\textcolor{red}{\bm{11}}$\texttt{.15 ...}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
+\begin{itemize}
+\item For those on the Cheese Cluster servers gouda or colby\\
+you can access Jupyterhub over the LAN
+\item Many advantages using the 
+tools that you use on a daily basis 
+\item Here I'm using emacs
+\end{itemize}
+\begin{verbatim}
+library(DBI)
+library(RPostgres)
+user="JHUSERNAME" 
+password="JHPASSWORD"
+## db object to facilitate database two-way communication
+db=dbConnect(
+    Postgres(),           
+    dbname  ="fh_jupyter_hub_hbdb",
+    user    =user,
+    password=password,
+    host    ="garth.ctsi.mcw.edu", ## LAN connection 
+    port    =5432, 
+    bigint  ="integer"    
+)
+\end{verbatim}
 \end{frame}
 
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
