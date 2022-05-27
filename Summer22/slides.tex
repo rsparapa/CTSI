@@ -100,7 +100,7 @@ at Froedtert and MCW: mainly EPIC EHR\\
 but including billing claims and ancillary databanks
 %including the EPIC EHR, billing and other sources of data
 \item Jupyterhub access to the CRDW for adults
-\item Collaborative Institutional Training Initiative (CITI) training
+\item Collaborative Institutional Training Initiative (CITI) required
 \item SQL, R and SAS: popular and mature programming languages
 \item SQL and R come free with Jupyterhub
 \item SAS can be purchased through the MCW IS Ticket system\\
@@ -121,11 +121,12 @@ and surrounded by square brackets for color equity
 \end{frame}
 
 
-\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{CRDW Data Horizon}}
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{CRDW Data Horizon
+and Important Eras}}
 
 \begin{itemize}
 \item 1989: North American Association of Central Cancer Registries
-  (NAACCR) for Froedtert and MCW
+  (NAACCR) for Froedtert and Community Memorial
 \item 1999 to 2018, November: GE/IDX billing
 \item 2001: NAACCR for St.\ Joseph's West Bend
 %\item 2003: Philips IntelliSpace Cardiovascular/Xcelera for echos
@@ -194,6 +195,7 @@ accepted as impartial by all sides in a negotiation
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Honest Broker De-identification}}
 
 \begin{itemize}
+\item Jupyterhub data is brought ``up-to-date'' on Wednesday nights
 \item HIPAA de-identification provided by the Honest Broker
 \item For example, patient names, etc.\ are removed
 \item The Medical Record Number (MRN),
@@ -209,8 +211,9 @@ data
 exactly such as the age of a diagnosis with respect to birth date
 \item Geographically, we have only state of residence and\\
 ZIP code is shortened to 3 digits 
-\item However, geocoding was conducted to Census Block Groups\\ 
-and the corresponding Area Deprivation Index is provided
+\item Yet, addresses were geocoded to Census Block Groups (CBG)\\ 
+and the corresponding Area Deprivation Index is provided\\
+(the CBG is not of course)
 \end{itemize}
 
 \end{frame}
@@ -313,7 +316,7 @@ introduction to SAS}}
 \item R's strengths are not within data processing
 \item For example, R does not have warnings about non-unique keys
 whereas SAS does (always check your \texttt{.log} !)
-\item What is a unique key?
+\item This begs the question: ``What is a unique key?''
 \item Suppose your SSN is unique, does that make it a unique key?
 \item NO! %, not necessarily
 \item Consider a table consisting of annual earnings\\ 
@@ -321,8 +324,8 @@ where each row/record is a year for a given SSN?
 \item What is the unique key on this table?
 \item It is SSN AND year: NOT SSN alone!
 \item The R function \texttt{byvalue} adds SAS-like
-automatic variables but it is not the same as the real
-thing with WARNINGS
+FIRST./LAST. automatic variables but it is not the same as the real
+thing with ERRORS/WARNINGS (SAS provides them, R is silent)
 \item For virtually all tables in the CRDW, the unique key
 is not obvious and often surprising: SAS is much better suited to this
 \item You have been forewarned
@@ -465,10 +468,9 @@ run;
 
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
 \begin{itemize}
-\item Login
-  \textcolor{PineGreen}{[\href{https://jupyter.ctsi.mcw.edu}{https://jupyter.ctsi.mcw.edu}]}
-  with your web browser \\
-with your MCWCORP credentials, i.e., same as Outlook/etc.
+\item With your web browser, login
+  \textcolor{PineGreen}{[\href{https://jupyter.ctsi.mcw.edu}{https://jupyter.ctsi.mcw.edu}]} \\
+using MCWCORP credentials, i.e., same as Outlook/etc.
 \item And use your Jupyterhub-only \texttt{JHUSERNAME/JHPASSWORD}
 \item Pressing Shift+Enter on your keyboard submits the code
 \end{itemize}
@@ -539,9 +541,9 @@ db=dbConnect(
 \begin{verbatim}
 ## ' these are single quotes 
 tables=dbGetQuery(db, 
-       paste("select * from information_schema.tables",
-             "where table_schema = 'public'")
-)
+             "select * 
+              from information_schema.tables
+              where table_schema = 'public'")
 print(tables$table_name)
 \end{verbatim}
 \end{frame}
@@ -551,10 +553,11 @@ print(tables$table_name)
 \item Let's see the public database table columns
 \end{itemize}
 \begin{verbatim}
+## ' these are single quotes 
 columns=dbGetQuery(db, 
-       paste("select * from information_schema.columns",
-             "where table_schema = 'public'")
-)
+             "select * 
+              from information_schema.columns
+              where table_schema = 'public'")
 str(columns)
 table(columns$table_name)
 \end{verbatim}
@@ -639,10 +642,9 @@ the SAS \texttt{datepart} function: they are similar yet different
 \end{itemize}
 \begin{verbatim}
 naaccr=dbGetQuery(db, 
-    paste("select",
-          "date_part('year', date_of_diagnosis_shifted)",
-          "as dxyear from fh_hb_naaccr_jupyter")
-)
+          "select
+           date_part('year', date_of_diagnosis_shifted)
+           as dxyear from fh_hb_naaccr_jupyter")
 t(table(naaccr$dxyear))
 \end{verbatim}
 \end{frame}
@@ -654,11 +656,11 @@ t(table(naaccr$dxyear))
 \item \textcolor{PineGreen}{[\href{https://ctri.mcw.edu/wp-content/uploads/CTSI-Honest-Broker-Data-Dictionary.pdf}{CTSI Honest Broker Data Dictionary}]}
 \end{itemize}
 \begin{verbatim}
+## ' these are single quotes
 muse=dbGetQuery(db, 
-    paste("select",
-          "date_part('year',acquisition_date_shifted)",
-          "as ekgyear from ekg_test_demographics")
-)
+          "select
+           date_part('year',acquisition_date_shifted)
+           as ekgyear from ekg_test_demographics")
 t(table(muse$ekgyear))
 \end{verbatim}
 \end{frame}
@@ -702,12 +704,13 @@ neoplasms over the lifetime of the patient
 \item See the \texttt{BETWEEN} and \texttt{LIKE} operators
 \end{itemize}
 \begin{verbatim}
+## ' these are single quotes
 naaccr=dbGetQuery(db, 
-    paste("select * from fh_hb_naaccr_jupyter",
-          "where sequence_number_hospital='1' and",
-          "(date_part('year', date_of_diagnosis_shifted)",
-          "between 2016 and 2017) and",
-          "site_primary like 'C50%'"))
+          "select * from fh_hb_naaccr_jupyter
+           where sequence_number_hospital='1' and
+           (date_part('year', date_of_diagnosis_shifted)
+           between 2016 and 2017) and
+           site_primary like 'C50%'")
 addmargins(table(naaccr$site_primary))
 \end{verbatim}
 \end{frame}
@@ -858,6 +861,7 @@ print(zombies)
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
 Let's compare the last date of vital signs with death date
 \begin{verbatim}
+## ' these are single quotes 
 in.clause=paste0("('", paste(zombies$patient_hash, 
                  collapse="','"), "')")
 zdates=dbGetQuery(db, 
