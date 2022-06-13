@@ -50,7 +50,7 @@
 \title{An introduction to big data mining of electronic health records with
 Jupyterhub, R, SQL and SAS}
 \author{Kristen Osinski, Rodney Sparapani and Bradley Taylor}
-\date{July 14, 2022}
+\date{H1210/H1230/H1250: July 15, 2022}
 \begin{document}
 \bibliographystyle{plainnat}
 
@@ -58,6 +58,27 @@ Jupyterhub, R, SQL and SAS}
 \boldmath
 % 0. Intro
 
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Abstract}}
+Since the Affordable Care Act mandated meaningful usage
+of Electronic Health Records (EHR) data systems in 2011, there
+has been a paradigm shift in clinical/translational research towards
+studying EHR administrative databanks.  The Clinical and
+Translational Science Institute (CTSI) of Southeast Wisconsin
+has been at the forefront of this emerging trend.  CTSI
+Biomedical Informatics has painstakingly created the
+Clinical Research Data Warehouse (CRDW) with its Honest Broker
+tables.  The CRDW provides access to the EPIC EHR and other
+ancillary digital databanks. However, searching and manipulating
+the CRDW was challenging even for those familiar with it.  Recently,
+in 2020, a Jupyterhub server was created so that users could explore
+the CRDW directly with relative ease via programming languages
+in common use among biostatisticians, bioinformaticians and data
+scientists: SQL, R and SAS.  This workshop will provide you with
+a hands-on introduction to the CRDW via Jupyterhub.  CITI training
+and MCWCORP username/password authentication is recommended.  
+Room capacity limit: 90.
+\end{frame}
+ 
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Schedule}}
 
 \begin{tabular}{rl}
@@ -133,6 +154,7 @@ and Important Eras}}
 \item 2004: EPIC EHR debuts at Froedtert
 \item 2005: GE/MUSE for EKGs
 \item 2005 to 2007: National Provider Identifiers (NPI) transition
+\item 2011: Affordable Care Act mandates {\it meaningful use} of EHR
 \item 2012, May: EPIC EHR Community Memorial Menominee Falls
 \item \textcolor{red}{2013, July: EPIC EHR for Community Physicians Clinics} 
 \item 2013, September: EPIC EHR St.\ Joseph's West Bend
@@ -169,6 +191,30 @@ and Important Eras}}
 {US Centers for Disease Control and Prevention\\ 
 ICD-10-CM Browser}]}
 \item \textcolor{PineGreen}{[\href{https://www.neighborhoodatlas.medicine.wisc.edu}{Area Deprivation Index (ADI)}]}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{What is an Electronic Health Record?}}
+
+\begin{itemize}
+\item Electronic Medical Record (EMR) and\\ 
+Electronic Health Record (EHR)\\
+are often used interchangeably
+\item However, there is a subtle distinction
+\item Technically, the EMR is merely a digital version (whether of
+  digital provenance or scanned images) of what used to be a paper
+  {\it medical record} (which is a misnomer, i.e., NOT limited to
+  merely medicine as the name seemingly implies)
+\item Typically, the EMR is a collection of health-related data
+\item Inpatient and outpatient doctor/nursing/etc.\ treatment notes
+\item Imaging, laboratory results, vital signs, etc. 
+\item Whereas the EHR is an information management system like EPIC
+  providing convenient access to the EMR along with other ancillary
+  digital capabilities such as \textcolor{red}{billing}/scheduling,
+  prescription pharmaceutical orders and modern data souces 
+including radiotherapy dosage, X-ray/CAT/MRI scans,
+  electrocardiograms, echocardiograms, etc.
 \end{itemize}
 
 \end{frame}
