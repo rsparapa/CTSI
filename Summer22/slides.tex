@@ -17,6 +17,9 @@
 \usepackage{statex2}
 \usepackage{verbatim}
 \usepackage{color}
+\usepackage{courier}
+\usepackage{listings}
+\usepackage{fancyvrb}
 %\usepackage{pgf} %portable graphics format
 %\usepackage[autobold]{statex2}
 %\usepackage{enumitem}
@@ -46,6 +49,50 @@
 % \newcommand*{\DP}[2]{\mb{\mathrm{DP}}\wrap[()]{\mb{#1,\ #2}}}
 %\newcommand*{\EV}[2]{\mb{\mathrm{ExtremeValue}}\wrap[()]{\mb{#1,\ #2}}}
 %\newcommand*{\Wei}[2]{\mathrm{Wei}\wrap[()]{#1, #2}}
+
+\lstset{basicstyle=\small\ttfamily}
+%\lstset{basicstyle=\footnotesize\ttfamily,breaklines=true}
+\lstdefinestyle{customR}{
+  % belowcaptionskip=1\baselineskip,
+  % breaklines=true,
+  frame=LT,
+  % xleftmargin=\parindent,
+  language=R,
+showstringspaces=false,
+morekeywords={addmargins,dbConnect,dbGetQuery,Postgres,str},
+%emphstyle=\color{RedViolet},
+  % showstringspaces=false,
+  % basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\color{VioletRed},
+  commentstyle=\color{BrickRed},
+  identifierstyle=\color{black},
+  stringstyle=\color{ForestGreen},
+}
+\lstdefinestyle{customSAS}{
+  frame=LT,
+  language=SAS,
+showstringspaces=false,
+morekeywords={proc,data,datafile,out,run},
+  keywordstyle=\color{VioletRed},
+  commentstyle=\color{BrickRed},
+  identifierstyle=\color{black},
+  stringstyle=\color{ForestGreen},
+}
+
+\RecustomVerbatimCommand{\VerbatimInput}{VerbatimInput}%
+{% fontsize=\footnotesize,
+ % %
+ % frame=lines,  % top and bottom rule only
+ % framesep=2em, % separation between frame and text
+ % rulecolor=\color{Gray},
+ % %
+ % label=\fbox{\color{Black}data.txt},
+ % labelposition=topline,
+ % %
+ % commandchars=\|\(\), % escape character and argument delimiters for
+ %                      % commands within the verbatim
+ % commentchar=*        % comment character
+}
 
 \title{An introduction to big data mining of electronic health records with
 Jupyterhub, R, SQL and SAS}
@@ -128,7 +175,7 @@ but including billing claims and ancillary databanks
  for Linux server and Windows clients, it's either free or cheap
 %\$60 for Linux on the RCC cluster and for Windows installs  
 \item \textcolor{PineGreen}{[\href{https://mcwcherwellapp.mcwcorp.net/CherwellPortal}{https://mcwcherwellapp.mcwcorp.net/CherwellPortal}]}
-\item In this presentation, links are colored \textcolor{PineGreen}{[green]}
+\item In this presentation, links are colored MCW green \textcolor{PineGreen}{[green]}
 and surrounded by square brackets for color equity
 
 % \item On the TIOBE Index of programming language popularity (circa 04/22)
@@ -308,25 +355,27 @@ matrices, lists (objects containers) and
 \begin{itemize}
 \item Via \textcolor{red}{\texttt{DBI}} package and the 
 \textcolor{red}{\texttt{RPostgres}} backend from CRAN 
-\item Use your MCWCORP credentials to login at 
+\item Use your MCWCORP credentials to log in online at 
 \textcolor{PineGreen}{[\href{https://jupyter.ctsi.mcw.edu}{https://jupyter.ctsi.mcw.edu}]}
 \item BUT YOU HAVE A SEPARATE \textcolor{blue}{\texttt{JHUSERNAME/JHPASSWORD}}
 \end{itemize}
-\begin{verbatim}
-user="JHUSERNAME" 
-password="JHPASSWORD"
-library(DBI)
-library(RPostgres)
-db=dbConnect(
-    Postgres(), 
-    dbname  ="fh_jupyter_hub_hbdb",
-    user    =user,
-    password=password,
-    host    ="localhost", 
-    port    =5432, 
-    bigint  ="integer"
-)
-\end{verbatim}
+\lstinputlisting[style=customR]{snippet1.R}
+%\VerbatimInput{snippet1.R}
+% \begin{verbatim}
+% user="JHUSERNAME" 
+% password="JHPASSWORD"
+% library(DBI)
+% library(RPostgres)
+% db=dbConnect(
+%     Postgres(), 
+%     dbname  ="fh_jupyter_hub_hbdb",
+%     user    =user,
+%     password=password,
+%     host    ="localhost", 
+%     port    =5432, 
+%     bigint  ="integer"
+% )
+% \end{verbatim}
 
 \end{frame}
 
@@ -444,8 +493,8 @@ to prevent malfeasance (but their could be ``real soon now'')
 \item There is no automatic detection: that is a manual process
 \end{itemize}
 \begin{verbatim}
-client% scp USER@jupyter.ctsi.mcw.edu:naaccr.csv Downloads
-R> naaccr = read.csv("~/Downloads/naaccr.csv")
+CMD% scp USER@jupyter.ctsi.mcw.edu:naaccr.csv DIR
+R> naaccr = read.csv("DIR/naaccr.csv")
 R> str(naaccr)
 R> ?str
 \end{verbatim}
@@ -502,13 +551,14 @@ cs\_tumor\_size, cs\_lymph\_nodes, cs\_mets\_at\_dx, cs\_mets\_at\_dx\_bone,
 cs\_mets\_at\_dx\_brain, cs\_mets\_at\_dx\_liver, cs\_mets\_at\_dx\_lung, 
 sequence\_number\_hospital}
 \end{itemize}
-\begin{verbatim}
-proc import datafile="~/Downloads/naaccr.csv" out=naaccr;
-guessingrows=max;
-run;
-%_verify(data=naaccr, out=naaccr);
-%_constant(data=naaccr, out=naaccr);
-\end{verbatim}
+\lstinputlisting[style=customSAS]{snippet1.sas}
+% \begin{verbatim}
+% proc import datafile="DIR/naaccr.csv" out=naaccr;
+% guessingrows=max;
+% run;
+% %_verify(data=naaccr, out=naaccr);
+% %_constant(data=naaccr, out=naaccr);
+% \end{verbatim}
 
 \end{frame}
 
@@ -520,22 +570,23 @@ using MCWCORP credentials, i.e., same as Outlook/etc.
 \item And use your Jupyterhub-only \texttt{JHUSERNAME/JHPASSWORD}
 \item Pressing Shift+Enter on your keyboard submits the code
 \end{itemize}
-\begin{verbatim}
-library(DBI)
-library(RPostgres)
-user="JHUSERNAME" 
-password="JHPASSWORD"
-## db object to facilitate database two-way communication
-db=dbConnect(
-    Postgres(),           ## connect to PostgreSQL
-    dbname  ="fh_jupyter_hub_hbdb",
-    user    =user,
-    password=password,
-    host    ="localhost", ## loopback web connection 
-    port    =5432, 
-    bigint  ="integer"    ## see dbConnect documentation
-)
-\end{verbatim}
+\lstinputlisting[style=customR]{snippet2.R}
+% \begin{verbatim}
+% library(DBI)
+% library(RPostgres)
+% user="JHUSERNAME" 
+% password="JHPASSWORD"
+% ## db object to facilitate database two-way communication
+% db=dbConnect(
+%     Postgres(),           ## connect to PostgreSQL
+%     dbname  ="fh_jupyter_hub_hbdb",
+%     user    =user,
+%     password=password,
+%     host    ="localhost", ## loopback web connection 
+%     port    =5432, 
+%     bigint  ="integer"    ## see dbConnect documentation
+% )
+% \end{verbatim}
 \end{frame}
 
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
@@ -548,9 +599,9 @@ db=dbConnect(
 \item N.B. \textbf{\textcolor{red}{11}} stands for the major version number, e.g.,
 if the software is upgraded to a newer version, then update accordingly
 \end{itemize}
-\begin{verbatim}
-dbGetQuery(db, "select version()")
-\end{verbatim}
+\begin{lstlisting}[style=customR]
+print(dbGetQuery(db, "select version()"))
+\end{lstlisting}
 \texttt{PostgreSQL} $\textcolor{red}{\bm{11}}$\texttt{.15 ...}
 \end{frame}
 
@@ -560,53 +611,56 @@ dbGetQuery(db, "select version()")
 you can access Jupyterhub over the LAN
 \item Many advantages using the 
 tools that you use on a daily basis 
-\item Here I'm using emacs
+\item Here, I'm using emacs
 \end{itemize}
-\begin{verbatim}
-library(DBI)
-library(RPostgres)
-user="JHUSERNAME" 
-password="JHPASSWORD"
-## db object to facilitate database two-way communication
-db=dbConnect(
-    Postgres(),           
-    dbname  ="fh_jupyter_hub_hbdb",
-    user    =user,
-    password=password,
-    host    ="garth.ctsi.mcw.edu", ## LAN connection 
-    port    =5432, 
-    bigint  ="integer"    
-)
-\end{verbatim}
+\lstinputlisting[style=customR]{snippet3.R}
+% \begin{verbatim}
+% library(DBI)
+% library(RPostgres)
+% user="JHUSERNAME" 
+% password="JHPASSWORD"
+% ## db object to facilitate database two-way communication
+% db=dbConnect(
+%     Postgres(),           
+%     dbname  ="fh_jupyter_hub_hbdb",
+%     user    =user,
+%     password=password,
+%     host    ="garth.ctsi.mcw.edu", ## LAN connection 
+%     port    =5432, 
+%     bigint  ="integer"    
+% )
+% \end{verbatim}
 \end{frame}
 
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
 \begin{itemize}
 \item Let's see the public database tables
 \end{itemize}
-\begin{verbatim}
-## ' these are single quotes 
-tables=dbGetQuery(db, 
-             "select * 
-              from information_schema.tables
-              where table_schema = 'public'")
-print(tables$table_name)
-\end{verbatim}
+\lstinputlisting[style=customR]{snippet4.R}
+% \begin{verbatim}
+% ## ' these are single quotes 
+% tables=dbGetQuery(db, 
+%              "select * 
+%               from information_schema.tables
+%               where table_schema = 'public'")
+% print(tables$table_name)
+% \end{verbatim}
 \end{frame}
 
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
 \begin{itemize}
 \item Let's see the public database table columns
 \end{itemize}
-\begin{verbatim}
-## ' these are single quotes 
-columns=dbGetQuery(db, 
-             "select * 
-              from information_schema.columns
-              where table_schema = 'public'")
-str(columns)
-table(columns$table_name)
-\end{verbatim}
+\lstinputlisting[style=customR]{snippet5.R}
+% \begin{verbatim}
+% ## ' these are single quotes 
+% columns=dbGetQuery(db, 
+%              "select * 
+%               from information_schema.columns
+%               where table_schema = 'public'")
+% str(columns)
+% table(columns$table_name)
+% \end{verbatim}
 \end{frame}
 
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
@@ -686,13 +740,14 @@ temp, etc. } \\   \hline
 \item N.B. Do not confuse the SQL \texttt{date\_part} function with 
 the SAS \texttt{datepart} function: they are similar yet different
 \end{itemize}
-\begin{verbatim}
-naaccr=dbGetQuery(db, 
-          "select
-           date_part('year', date_of_diagnosis_shifted)
-           as dxyear from fh_hb_naaccr_jupyter")
-t(table(naaccr$dxyear))
-\end{verbatim}
+\lstinputlisting[style=customR]{snippet6.R}
+% \begin{verbatim}
+% naaccr=dbGetQuery(db, 
+%           "select
+%            date_part('year', date_of_diagnosis_shifted)
+%            as dxyear from fh_hb_naaccr_jupyter")
+% t(table(naaccr$dxyear))
+% \end{verbatim}
 \end{frame}
 
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
@@ -701,14 +756,15 @@ t(table(naaccr$dxyear))
 \item Covered in the Appendix A of the 
 \item \textcolor{PineGreen}{[\href{https://ctri.mcw.edu/wp-content/uploads/CTSI-Honest-Broker-Data-Dictionary.pdf}{CTSI Honest Broker Data Dictionary}]}
 \end{itemize}
-\begin{verbatim}
-## ' these are single quotes
-muse=dbGetQuery(db, 
-          "select
-           date_part('year',acquisition_date_shifted)
-           as ekgyear from ekg_test_demographics")
-t(table(muse$ekgyear))
-\end{verbatim}
+\lstinputlisting[style=customR]{snippet7.R}
+% \begin{verbatim}
+% ## ' these are single quotes
+% muse=dbGetQuery(db, 
+%           "select
+%            date_part('year',acquisition_date_shifted)
+%            as ekgyear from ekg_test_demographics")
+% t(table(muse$ekgyear))
+% \end{verbatim}
 \end{frame}
 
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
@@ -749,18 +805,21 @@ neoplasms over the lifetime of the patient
 \textcolor{PineGreen}{[\href{https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/sqlproc/titlepage.htm}{SAS 9.4 SQL Procedure User’s Guide, Fourth Edition}]}
 \item See the \texttt{BETWEEN} and \texttt{LIKE} operators
 \end{itemize}
-\begin{verbatim}
-## ' these are single quotes
-naaccr=dbGetQuery(db, 
-          "select * from fh_hb_naaccr_jupyter
-           where sequence_number_hospital='1' and
-           (date_part('year', date_of_diagnosis_shifted)
-           between 2016 and 2017) and
-           site_primary like 'C50%'")
-addmargins(table(naaccr$site_primary))
-\end{verbatim}
 \end{frame}
 
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
+\lstinputlisting[style=customR]{snippet8.R}
+% \begin{verbatim}
+% ## ' these are single quotes
+% naaccr=dbGetQuery(db, 
+%           "select * from fh_hb_naaccr_jupyter
+%            where sequence_number_hospital='1' and
+%            (date_part('year', date_of_diagnosis_shifted)
+%            between 2016 and 2017) and
+%            site_primary like 'C50%'")
+% addmargins(table(naaccr$site_primary))
+% \end{verbatim}
+\end{frame}
 
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
 \begin{itemize}
@@ -777,13 +836,14 @@ can't turn this option on: and we don't know if there are any
 \item In this case, we set it to the CSV standard: \texttt{na=""}
 for nothing 
 \end{itemize}
-\begin{verbatim}
-addmargins(table(naaccr$site_primary, 
-           naaccr$behavior_code_icd_o_3))
-write.csv(naaccr, "naaccr.csv", row.names=FALSE, na="") 
-str(naaccr)
-?str
-\end{verbatim}
+\lstinputlisting[style=customR]{snippet9.R}
+% \begin{verbatim}
+% addmargins(table(naaccr$site_primary, 
+%            naaccr$behavior_code_icd_o_3))
+% write.csv(naaccr, "naaccr.csv", row.names=FALSE, na="") 
+% str(naaccr)
+% ?str
+% \end{verbatim}
 \end{frame}
 
 
@@ -829,26 +889,27 @@ the American Community Survey Five Year Estimates
 \end{frame}
 
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
-\begin{verbatim}
-a=dbGetQuery(db, "select geocode_result 
-                  from fh_hb_demographics_jupyter")
-table(a$geocode_result, useNA='ifany')
-b=dbGetQuery(db, "select adi_narank 
-                  from fh_hb_demographics_jupyter
-                  where geocode_result='geocoded'")
-table(b$adi_narank, useNA='ifany')
-unk = (is.na(b$adi_narank) | 
-       b$adi_narank %in% c('GQ', 'PH', 'GQ-PH', 'QDI'))
-table(unk)
-b$adi=0
-b$adi[unk]=NA
-b$adi[!unk]=as.integer(b$adi_narank[!unk])
-summary(b$adi)
-plot(density(b$adi, from=1, to=100, na.rm=TRUE), 
-     xlab='ADI', ylab='Distribution', 
-     main='', sub='1:least, 100:most')
-abline(h=0.01, col=8)
-\end{verbatim}
+\lstinputlisting[style=customR]{snippet10.R}
+% \begin{verbatim}
+% a=dbGetQuery(db, "select geocode_result 
+%                   from fh_hb_demographics_jupyter")
+% table(a$geocode_result, useNA='ifany')
+% b=dbGetQuery(db, "select adi_narank 
+%                   from fh_hb_demographics_jupyter
+%                   where geocode_result='geocoded'")
+% table(b$adi_narank, useNA='ifany')
+% unk = (is.na(b$adi_narank) | 
+%        b$adi_narank %in% c('GQ', 'PH', 'GQ-PH', 'QDI'))
+% table(unk)
+% b$adi=0
+% b$adi[unk]=NA
+% b$adi[!unk]=as.integer(b$adi_narank[!unk])
+% summary(b$adi)
+% plot(density(b$adi, from=1, to=100, na.rm=TRUE), 
+%      xlab='ADI', ylab='Distribution', 
+%      main='', sub='1:least, 100:most')
+% abline(h=0.01, col=8)
+% \end{verbatim}
 \end{frame}
 
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Death and Cause
@@ -888,40 +949,42 @@ by comparisons with their vital signs
 
 
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
-\begin{verbatim}
-zombies=dbGetQuery(db, "select distinct a.patient_hash, 
-                        a.death_date_shifted,
-                        a.vital_status_source
-                        from fh_hb_demographics_jupyter a
-                        inner join fh_hb_vitals_jupyter b 
-                        on a.patient_hash=b.patient_hash 
-                        AND a.death_date_shifted<
-                        b.measure_date_shifted
-                        order by patient_hash")
-table(zombies$vital_status_source)
-print(zombies)
-\end{verbatim}
+\lstinputlisting[style=customR]{snippet11.R}
+% \begin{verbatim}
+% zombies=dbGetQuery(db, "select distinct a.patient_hash, 
+%                         a.death_date_shifted,
+%                         a.vital_status_source
+%                         from fh_hb_demographics_jupyter a
+%                         inner join fh_hb_vitals_jupyter b 
+%                         on a.patient_hash=b.patient_hash 
+%                         AND a.death_date_shifted<
+%                         b.measure_date_shifted
+%                         order by patient_hash")
+% table(zombies$vital_status_source)
+% print(zombies)
+% \end{verbatim}
 \end{frame}
 
 
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
 Let's compare the last date of vital signs with death date
-\begin{verbatim}
-## ' these are single quotes 
-in.clause=paste0("('", paste(zombies$patient_hash, 
-                 collapse="','"), "')")
-zdates=dbGetQuery(db, 
-          paste("select patient_hash, measure_date_shifted 
-                 from fh_hb_vitals_jupyter  
-                 where patient_hash in ", in.clause, 
-                "order by patient_hash, 
-                 measure_date_shifted"))           
-max.zdates=c(tapply(zdates$measure_date_shifted, 
-                    zdates$patient_hash, max))
-class(max.zdates)='POSIXct'
-print(cbind(format(zombies$death_date_shifted), 
-            format(max.zdates)))
-\end{verbatim}
+\lstinputlisting[style=customR]{snippet12.R}
+% \begin{verbatim}
+% ## ' these are single quotes 
+% in.clause=paste0("('", paste(zombies$patient_hash, 
+%                  collapse="','"), "')")
+% zdates=dbGetQuery(db, 
+%           paste("select patient_hash, measure_date_shifted 
+%                  from fh_hb_vitals_jupyter  
+%                  where patient_hash in ", in.clause, 
+%                 "order by patient_hash, 
+%                  measure_date_shifted"))           
+% max.zdates=c(tapply(zdates$measure_date_shifted, 
+%                     zdates$patient_hash, max))
+% class(max.zdates)='POSIXct'
+% print(cbind(format(zombies$death_date_shifted), 
+%             format(max.zdates)))
+% \end{verbatim}
 \end{frame}
 
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Medi-Span, GPI and RxNorm
@@ -948,18 +1011,19 @@ Medical Nomenclature}}
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
 How to make your own lookup table of drug nomenclature\\ 
 N.B. RESOURCE INTENSIVE: JUST DON'T DO IT TODAY
-\begin{verbatim}
-medispan=dbGetQuery(db, 
-             "select distinct pharm_class, pharm_subclass, 
-              substring(gpi from 1 for 2) as gpi_group,
-              substring(gpi from 3 for 2) as gpi_class,
-              substring(gpi from 5 for 2) as gpi_subclass,
-              ingredient_rxcui_name
-              from fh_hb_mar_table_jupyter 
-              order by pharm_class, pharm_subclass,
-              ingredient_rxcui_name")
-write.csv(medispan, "medispan.csv", row.names=FALSE, na="")
-\end{verbatim}
+\lstinputlisting[style=customR]{snippet13.R}
+% \begin{verbatim}
+% medispan=dbGetQuery(db, 
+%              "select distinct pharm_class, pharm_subclass, 
+%               substring(gpi from 1 for 2) as gpi_group,
+%               substring(gpi from 3 for 2) as gpi_class,
+%               substring(gpi from 5 for 2) as gpi_subclass,
+%               ingredient_rxcui_name
+%               from fh_hb_mar_table_jupyter 
+%               order by pharm_class, pharm_subclass,
+%               ingredient_rxcui_name")
+% write.csv(medispan, "medispan.csv", row.names=FALSE, na="")
+% \end{verbatim}
 \end{frame}
 
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Cancer Research with RASMACRO}}
