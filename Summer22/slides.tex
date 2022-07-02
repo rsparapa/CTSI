@@ -145,19 +145,20 @@ Room capacity limit: 90.
 8:00 & Speaker/attendee introductions \\
 8:15 & Bradley Taylor, Chief Research Informatics Officer \\
 8:30 & Kristen Osinski, Business Analyst IV, CTSI \\
-9:15 & Overview: slides 0:18  \\
+9:15 & Overview: slides 0:20  \\
 10:00& Snack break: getting to know each other \\
-10:30& Hands-on with Jupyterhub: slides 19:25  \\
+10:30& Hands-on with Jupyterhub: slides 21:28  \\
 12:00& Lunch provided \\
-12:30& Hands-on with Jupyterhub: slides 26:34  \\
+12:30& Hands-on with Jupyterhub: slides 29:37  \\
 2:00 & Biological break \\
-2:15 & Hands-on with Jupyterhub: slides 35:41 \\
+2:15 & Hands-on with Jupyterhub: slides 38:46 \\
 3:45 & Q and A \\
 4:15 & Closing ceremonies
 \end{tabular}
 
 \end{frame}
 
+\begin{comment}
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Outline}}
 
 \begin{itemize}
@@ -167,7 +168,7 @@ Room capacity limit: 90.
 \end{itemize}
 
 \end{frame}
-
+\end{comment}
 
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Overview}}
 
@@ -214,7 +215,8 @@ and Important Eras}}
 \item 2004: EPIC EHR debuts at Froedtert
 \item 2005: GE/MUSE for EKGs
 \item 2005 to 2007: National Provider Identifiers (NPI) transition
-\item 2011: Affordable Care Act mandates {\it meaningful use} of EHR
+\item 2009: American Recovery and Reinvestment Act mandates {\it meaningful use} of EHR
+%\item 2011: Affordable Care Act mandates {\it meaningful use} of EHR
 \item 2012, May: EPIC EHR Community Memorial Menominee Falls
 \item \textcolor{red}{2013, July: EPIC EHR for Community Physicians Clinics} 
 \item 2013, September: EPIC EHR St.\ Joseph's West Bend
@@ -1039,6 +1041,7 @@ N.B. RESOURCE INTENSIVE: JUST DON'T DO IT TODAY
 % \end{verbatim}
 \end{frame}
 
+\begin{comment}
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Cancer Research with RASMACRO}}
 
 \begin{itemize}
@@ -1046,16 +1049,81 @@ N.B. RESOURCE INTENSIVE: JUST DON'T DO IT TODAY
 \item Another resource is NCI's
 \textcolor{PineGreen}{[\href{https://healthcaredelivery.cancer.gov/seermedicare}
 {SEER-Medicare Linked Database}]}
-\item For cancer-related ICD-9/ICD-10, CPT/HCPCS codes, etc.
-\item Such as \textcolor{PineGreen}{[\href{https://healthcaredelivery.cancer.gov/seermedicare/aboutdata/ndc_frequency.html}{oral chemotherapy drug names}]}
+\item For example, \textcolor{PineGreen}{[\href{https://healthcaredelivery.cancer.gov/seermedicare/aboutdata/hcpcs.html}{a resource for identifying CPT/HCPCS codes}]}
+%\item Such as \textcolor{PineGreen}{[\href{https://healthcaredelivery.cancer.gov/seermedicare/aboutdata/ndc_frequency.html}{oral chemotherapy drug names}]}
 \item
-  \textcolor{PineGreen}{[\href{https://healthcaredelivery.cancer.gov/seermedicare/aboutdata/pedsf.ndc.bn.table.xls}{See
-      this fiendishly formatted spreadsheet}]}
+
 \item Here, automated processing would be very challenging with R
 \item This is a job for ... RASMACRO!
 \item See the file \texttt{oral\_meds.sas}
 \end{itemize}
 \end{frame}
+\end{comment}
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Cancer Research with RASMACRO}}
+
+\begin{itemize}
+\item We have already mentioned NCI SEER
+\item Another resource is NCI's
+\textcolor{PineGreen}{[\href{https://healthcaredelivery.cancer.gov/seermedicare}
+{SEER-Medicare Linked Database}]}
+\item For example, \textcolor{PineGreen}{[\href{https://healthcaredelivery.cancer.gov/seermedicare/aboutdata/hcpcs.html}{a resource for identifying CPT/HCPCS codes}]}
+\item \textcolor{PineGreen}{[\href{https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets/Alpha-Numeric-HCPCS}{List of HCPCS codes with descriptions}]}
+%\item Such as \textcolor{PineGreen}{[\href{https://healthcaredelivery.cancer.gov/seermedicare/aboutdata/ndc_frequency.html}{oral chemotherapy drug names}]}
+\item   \textcolor{PineGreen}{[\href{https://healthcaredelivery.cancer.gov/seermedicare/aboutdata/breast.all.hcpcs.table.txt}{See
+      this badly formatted list of breast cancer patient codes}]}
+\item Here, automated processing would be very challenging with R
+\item This is a job for ... RASMACRO!
+%\item See the file \texttt{oral\_meds.sas}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Cancer Research with RASMACRO}}
+
+\begin{itemize}
+\item For example, we have an EHR study of breast cancer survivors
+\item Which \textcolor{PineGreen}{[\href{https://www.ama-assn.org/amaone/cpt-current-procedural-terminology}{AMA Common Procedural Terminology (CPT) codes}]}
+are for breast cancer treatment and which are standard care?
+\item We need non-breast cancer men and women to compare with
+\item Let's contrast CPT codes with colorectal cancer patients
+\item What is left over are very likely breast cancer treatment
+\item Let's examine the codes billed to Medicare part A/B in 2016
+% \item We can look these up in the AMA CPT books
+% that are available in the MCW library
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Cancer Research with RASMACRO}}
+
+\begin{center}
+\begin{tabular}{rr|l}
+CPT & Bills & Description \\ \hline
+19380 & 1690 & revision of reconstructed \textcolor{red}{breast} \\
+19357 & 1448 & \textcolor{red}{breast} reconstruction \\
+19340 & 1281 & immediate insertion of \textcolor{red}{breast} prosthesis \\
+11970 & 1062 & replacement of tissue expander with prosthesis \\
+19371 & 1031 & periprosthetic caspulectomy of \textcolor{red}{breast} \\
+19342 & 1006 & delayed insertion of \textcolor{red}{breast} prosthesis \\
+19316 & 788 & mastopexy \\
+19283 & 717 & placement of \textcolor{red}{breast} localization device \\
+19328 & 660 & removal of intact mammary implant \\
+19350 & 638 & nipple/areola reconstruction \\
+19370 & 599 & open periprosthetic caspulectomy of \textcolor{red}{breast} \\
+93702 & 599 & bioimpedance spectroscopy analysis for lymphedema \\
+19499 & 520 & unlisted \textcolor{red}{breast} procedure \\
+77058 & 507 & magnetic resonance imaging of the \textcolor{red}{breast} \\
+19286 & 424 & placement of \textcolor{red}{breast} localization device \\
+81212 & 419 & procedure for 185delAG, 5385insC,
+6174delT variants \\
+%19296 & 388 & \\
+%11921 & 369 & \\
+\end{tabular}
+\end{center}
+
+\end{frame}
+
 
 \end{document}
 
