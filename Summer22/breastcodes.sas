@@ -1,5 +1,5 @@
 
-options ps=54 ls=76;
+options ps=53 ls=76;
 footnote;
 
 %include "hcpcs.sas";
