@@ -1,4 +1,7 @@
 
+options ps=54 ls=76;
+footnote;
+
 %include "hcpcs.sas";
 
 %macro main;
