@@ -147,11 +147,11 @@ Room capacity limit: 90.
 8:30 & Kristen Osinski, Business Analyst IV, CTSI \\
 9:15 & Overview: slides 0:20  \\
 10:00& Snack break: getting to know each other \\
-10:30& Hands-on with Jupyterhub: slides 21:28  \\
+10:30& Hands-on with Jupyterhub: slides 21:30  \\
 12:00& Lunch provided \\
-12:30& Hands-on with Jupyterhub: slides 29:37  \\
+12:30& Hands-on with Jupyterhub: slides 31:37  \\
 2:00 & Biological break \\
-2:15 & Hands-on with Jupyterhub: slides 38:46 \\
+2:15 & Hands-on with Jupyterhub: slides 38:50 \\
 3:45 & Q and A \\
 4:15 & Closing ceremonies
 \end{tabular}
@@ -274,8 +274,8 @@ are often used interchangeably
 \item Whereas the EHR is an information management system like EPIC
   providing convenient access to the EMR along with other ancillary
   digital capabilities such as \textcolor{red}{billing}/scheduling,
-  prescription pharmaceutical orders and modern data souces 
-including radiotherapy dosage, X-ray/CAT/MRI scans,
+  prescription pharmaceutical orders and modern data sources 
+including X-ray/CAT/MRI scans,  chemo-/radio-therapy dosage,
   electrocardiograms, echocardiograms, etc.
 \end{itemize}
 
@@ -318,7 +318,7 @@ data
 \item This allows any two date differentials to be calculated
 exactly such as the age of a diagnosis with respect to birth date
 \item Geographically, we have only state of residence and\\
-ZIP code is shortened to 3 digits 
+ZIP code shortened to the first 3 digits 
 \item Yet, addresses were geocoded to Census Block Groups (CBG)\\ 
 and the corresponding Area Deprivation Index is provided\\
 (the CBG is not of course)
@@ -501,7 +501,7 @@ and \texttt{\_verify} for handy features
 you may not download data
 for more than 9999 PATIENTS} in one project
 \item This is the honor system since there is no mechanism
-to prevent malfeasance (but their could be ``real soon now'')
+to prevent malfeasance %(but their could be ``real soon now'')
 \item And you can process them with R
 \item R will convert character to numeric values where possible
 \item Except that it handles dates as character by default!
@@ -521,7 +521,7 @@ introduction to RASMACRO}}
 \item SAS has a powerful macro language
 \item RASMACRO is GPL library at 
 \textcolor{PineGreen}{[\href{https://github.com/rsparapa/rasmacro}{https://github.com/rsparapa/rasmacro}]}
-\item It is available on the Biostatistics Cheese Cluster
+\item It is available on the Biostatistics Linux Cluster
 and the Research Computing Center cluster
 \item But anyone can install it
 \item Very useful to working with CRDW data 
@@ -622,7 +622,7 @@ print(dbGetQuery(db, "select version()"))
 
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
 \begin{itemize}
-\item For those on the Cheese Cluster servers gouda or colby\\
+\item For those on Biostatistics Cluster servers gouda or colby\\
 you can access Jupyterhub over the LAN
 \item Many advantages using the 
 tools that you use on a daily basis 
@@ -740,7 +740,7 @@ diagnosis codes} \\  \hline
 \texttt{fh\_hb\_procs\_jupyter}              & ``Procedures (Px)'' \\
 \multicolumn{3}{l}{Combo of EPIC/billing with 
 \textcolor{red}{ICD-9/ICD-10} 
-and \textcolor{blue}{CPT/HCPCS codes}} \\  \hline  
+and \textcolor{blue}{HCPCS/CPT codes}} \\  \hline  
 \texttt{fh\_hb\_vitals\_jupyter}             & ``Vitals'' \\
 \multicolumn{3}{l}{EPIC vital signs such as height/weight, blood pressure,
 temp, etc. } \\   \hline 
@@ -753,7 +753,7 @@ temp, etc. } \\   \hline
 \item When does the NAACCR data start?
 \item Above, I said 1989: how did I get that?
 \item N.B. Do not confuse the SQL \texttt{date\_part} function with 
-the SAS \texttt{datepart} function: they are similar yet different
+the SAS \texttt{datepart} function: they are similar, yet quite different
 \end{itemize}
 \lstinputlisting[style=customR]{snippet6.R}
 % \begin{verbatim}
@@ -1010,7 +1010,7 @@ Medical Nomenclature}}
 \item The Wolters Kluwer Medi-Span brand database, called the Medispan
   Electronic Drug File, links the GPI code to other prescription drug
   classification codes
-\item RxNorm is part of Unified Medical Language System (UMLS)
+\item \textcolor{PineGreen}{[\href{https://www.nlm.nih.gov/research/umls/rxnorm/index.html}{RxNorm}]} is part of Unified Medical Language System (UMLS)
   terminology maintained by the US National Library
   of Medicine (NLM)
 \item GPI and RxNorm codes are available on two CRDW tables
@@ -1049,7 +1049,7 @@ N.B. RESOURCE INTENSIVE: JUST DON'T DO IT TODAY
 \item Another resource is NCI's
 \textcolor{PineGreen}{[\href{https://healthcaredelivery.cancer.gov/seermedicare}
 {SEER-Medicare Linked Database}]}
-\item For example, \textcolor{PineGreen}{[\href{https://healthcaredelivery.cancer.gov/seermedicare/aboutdata/hcpcs.html}{a resource for identifying CPT/HCPCS codes}]}
+\item For example, \textcolor{PineGreen}{[\href{https://healthcaredelivery.cancer.gov/seermedicare/aboutdata/hcpcs.html}{a resource for identifying HCPCS/CPT codes}]}
 %\item Such as \textcolor{PineGreen}{[\href{https://healthcaredelivery.cancer.gov/seermedicare/aboutdata/ndc_frequency.html}{oral chemotherapy drug names}]}
 \item
 
@@ -1060,6 +1060,39 @@ N.B. RESOURCE INTENSIVE: JUST DON'T DO IT TODAY
 \end{frame}
 \end{comment}
 
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
+What types of procedure codes do we have? \\ 
+N.B. RESOURCE INTENSIVE: JUST DON'T DO IT TODAY
+\lstinputlisting[style=customR]{snippet14.R}
+\end{frame}
+
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
+\begin{itemize}
+\item What types of procedure codes do we have in the EHR? \\ 
+\item The Centers for Medicare and Medicaid Services (CMS)
+was an early entrant into the electronic billing space
+\item The Healthcare Common Procedural Coding System (HCPCS)
+was created by CMS for billing purposes
+\item HCPCS Level I codes are the \textcolor{PineGreen}{[\href{https://www.ama-assn.org/amaone/cpt-current-procedural-terminology}{American
+Medical Association's Common Procedural Terminology
+fourth edition (CPT-4)}]} that typically have 5 digits
+(or occasionally 4 digits followed by a letter: see \texttt{snippet15.R}) 
+\item \textcolor{PineGreen}{[\href{https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets/Alpha-Numeric-HCPCS}{HCPCS Level II}]} codes start with a letter 
+typically followed by 4 digits (see \texttt{snippet15.R})
+\end{itemize}
+
+\begin{tabular}{llr}
+\texttt{px\_type} & Coding system & Percentage \\
+\texttt{09} & ICD-9  & 0.1\% \\
+\texttt{10} & ICD-10 & 0.3\% \\
+\texttt{CH} & HCPCS/CPT & \textcolor{red}{88.0\%} \\
+\texttt{OT} & Custom & 11.0\% \\
+\texttt{NA} & Not available & 0.7\%
+\end{tabular}
+\end{frame}
+
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Cancer Research with RASMACRO}}
 
 \begin{itemize}
@@ -1068,13 +1101,13 @@ N.B. RESOURCE INTENSIVE: JUST DON'T DO IT TODAY
 \textcolor{PineGreen}{[\href{https://healthcaredelivery.cancer.gov/seermedicare}
 {SEER-Medicare Linked Database}]}
 \item For example, \textcolor{PineGreen}{[\href{https://healthcaredelivery.cancer.gov/seermedicare/aboutdata/hcpcs.html}{a resource for identifying CPT/HCPCS codes}]}
-\item \textcolor{PineGreen}{[\href{https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets/Alpha-Numeric-HCPCS}{List of HCPCS codes with descriptions}]}
+%\item \textcolor{PineGreen}{[\href{https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets/Alpha-Numeric-HCPCS}{List of HCPCS codes with descriptions}]}
 %\item Such as \textcolor{PineGreen}{[\href{https://healthcaredelivery.cancer.gov/seermedicare/aboutdata/ndc_frequency.html}{oral chemotherapy drug names}]}
 \item   \textcolor{PineGreen}{[\href{https://healthcaredelivery.cancer.gov/seermedicare/aboutdata/breast.all.hcpcs.table.txt}{See
       this badly formatted list of breast cancer patient codes}]}
 \item Here, automated processing would be very challenging with R
 \item This is a job for ... RASMACRO!
-%\item See the file \texttt{oral\_meds.sas}
+\item See the file \texttt{breastcodes.sas}
 \end{itemize}
 \end{frame}
 
@@ -1083,10 +1116,10 @@ N.B. RESOURCE INTENSIVE: JUST DON'T DO IT TODAY
 
 \begin{itemize}
 \item For example, we have an EHR study of breast cancer survivors
-\item Which \textcolor{PineGreen}{[\href{https://www.ama-assn.org/amaone/cpt-current-procedural-terminology}{AMA Common Procedural Terminology (CPT) codes}]}
-are for breast cancer treatment and which are standard care?
+%\item Which \textcolor{PineGreen}{[\href{https://www.ama-assn.org/amaone/cpt-current-procedural-terminology}{AMA Common Procedural Terminology (CPT) codes}]}
+\item Which codes are for breast cancer treatment and which standard care?
 \item We need non-breast cancer men and women to compare with
-\item Let's contrast CPT codes with colorectal cancer patients
+\item Let's contrast HCPCS codes with colorectal cancer patients
 \item What is left over are very likely breast cancer treatment
 \item Let's examine the codes billed to Medicare part A/B in 2016
 % \item We can look these up in the AMA CPT books
@@ -1115,15 +1148,65 @@ CPT & Bills & Description \\ \hline
 19499 & 520 & unlisted \textcolor{red}{breast} procedure \\
 77058 & 507 & magnetic resonance imaging of the \textcolor{red}{breast} \\
 19286 & 424 & placement of \textcolor{red}{breast} localization device \\
-81212 & 419 & procedure for 185delAG, 5385insC,
-6174delT variants \\
-%19296 & 388 & \\
-%11921 & 369 & \\
+81212 & 419 & procedure for 185delAG, 5385insC, 6174delT variants 
 \end{tabular}
 \end{center}
 
 \end{frame}
 
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Cancer Research with RASMACRO}}
+
+\begin{center}
+\begin{tabular}{rr|l}
+CPT & Bills & Description \\ \hline
+19296 & 388 & placement of radiotherapy catheter into the \textcolor{red}{breast} \\
+11921 & 369 & tattooing; 6.1 to 20 sq cm \\
+38740 & 325 & axillary lymphedectomy; superficial \\
+19297 & 316 & radiotherapy catether placement with partial masectomy \\
+38790 & 295 & lymphangiography injection \\
+19086 & 279 & \textcolor{red}{breast} biopsy of additional lesion \\
+77469 & 273 & intraoperative radiation treatment management \\
+19126 & 252 & excision of \textcolor{red}{breast} lesion identified by 
+radiological marker \\
+77424 & 252 & intraoperative radiation delivery, single x-ray treatment \\
+19361 & 239 & \textcolor{red}{breast} reconstruction with latissimus dorsi flap \\
+11971 & 223 & removal of tissue expanders without prosthesis insertion \\
+19330 & 223 & removal of mammary implant material \\
+19364 & 213 & \textcolor{red}{breast} reconstruction with free flap \\
+19325 & 179 & mammaplasty augmentation with prosthetic implant \\
+64462 & 174 & paravertebral block injection including imaging guidance \\
+11922 & 163 & tattooing; each additional 20 sq cm
+\end{tabular}
+\end{center}
+
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Cancer Research with RASMACRO}}
+
+\begin{center}
+\begin{tabular}{lr|l}
+HCPCS & Bills & Description \\ \hline
+L8000 &      816  &     Mastectomy bra                  \\
+J9179 &      705  &     Eribulin mesylate injection     \\
+J9354 &      693  &    Inj, ado-trastuzumab emt 1mg    \\
+Q4116 &      427  &    Alloderm                        \\
+L8600 &      335  &    Implant \textcolor{red}{breast} silicone/eq      \\
+L8030 &      330  &    \textcolor{red}{Breast} prosthes w/o adhesive    \\
+C1728 &      247  &    Cath, brachytx seed adm         \\
+C8906 &      245  &    Mri w/cont, \textcolor{red}{breast},  bi         \\
+C8905 &      239  &    Mri w/o fol w/cont, \textcolor{red}{breast}, un    \\
+C8907 &      171  &    Mri w/o cont, \textcolor{red}{breast}, bi        \\
+G8875 &      171  &    \textcolor{red}{Breast} cancer dx min invsive    \\
+J9207 &      134  &    Ixabepilone injection           \\
+C9726 &      116  &    Rxt \textcolor{red}{breast} appl place/remov     \\
+C9728 &      103  &    Place device/marker, non pro    \\
+J1950 &       88  &    Leuprolide acetate /3.75 mg     \\
+G8872 &       85  &    Intraop image confirm excise    \\
+C2639 &       72  &    Brachytx, non-stranded,i-125    
+\end{tabular}
+\end{center}
+
+\end{frame}
 
 \end{document}
 

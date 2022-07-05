@@ -29,15 +29,15 @@ run;
 %end;
 
 title 'CPT';
-proc print uniform n data=breast2016;
+proc print uniform n noobs data=breast2016;
     where cpt;
     var hcpcs breast2016;
 run;
 
 title 'HCPCS';
-proc print uniform n data=breast2016;
+proc print uniform n noobs data=breast2016;
     where short_description>' ';
-    var hcpcs short_description breast2016;
+    var hcpcs breast2016 short_description;
 run;
 
 %mend main;
