@@ -43,6 +43,9 @@ proc print uniform n noobs data=breast2016;
     var hcpcs breast2016 short_description;
 run;
 
+proc export data=breast2016 outfile='breastcodes.csv';
+run;
+
 %mend main;
 
 %main;
