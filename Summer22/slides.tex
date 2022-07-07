@@ -106,35 +106,35 @@ Jupyterhub, R, SQL and SAS}
 % 0. Intro
 
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Abstract}}
-Since the Affordable Care Act mandated meaningful usage
-of Electronic Health Records (EHR) data systems in 2011, there
-has been a paradigm shift in clinical/translational research towards
-studying EHR administrative databanks.  The Clinical and
-Translational Science Institute (CTSI) of Southeast Wisconsin
-has been at the forefront of this emerging trend.  CTSI
-Biomedical Informatics has painstakingly created the
-Clinical Research Data Warehouse (CRDW) with its Honest Broker
-tables.  The CRDW provides access to the EPIC EHR and other
-ancillary digital databanks. However, searching and manipulating
-the CRDW was challenging even for those familiar with it.  Recently,
-in 2020, a Jupyterhub server was created so that users could explore
-the CRDW directly with relative ease via programming languages
-in common use among biostatisticians, bioinformaticians and data
-scientists: SQL, R and SAS.  This workshop will provide you with
-a hands-on introduction to the CRDW via Jupyterhub.  CITI training
-and MCWCORP username/password authentication is recommended.  
-Room capacity limit: 90.
+  Since the \emph{American Recovery and Reinvestment Act} mandated
+  meaningful usage of Electronic Health Records (EHR) data systems in
+  2009, there has been a paradigm shift in clinical/translational
+  research towards studying EHR administrative databanks.  The
+  Clinical and Translational Science Institute (CTSI) of Southeast
+  Wisconsin has been at the forefront of this emerging trend.  CTSI
+  Biomedical Informatics has painstakingly created the Clinical
+  Research Data Warehouse (CRDW) with its Honest Broker tables.  The
+  CRDW provides access to the EPIC EHR and other ancillary digital
+  databanks. However, searching and manipulating the CRDW was
+  challenging even for those familiar with it.  Recently, in 2020, a
+  Jupyterhub server was created so that users could explore the CRDW
+  directly with relative ease via programming languages in common use
+  among biostatisticians, bioinformaticians and data scientists: SQL,
+  R and SAS.  This workshop will provide you with a hands-on
+  introduction to the CRDW via Jupyterhub.  CITI training and MCWCORP
+  username/password authentication is recommended.  Room capacity
+  limit: 90.
 \end{frame}
  
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Learning
       Objectives}}
 \begin{itemize}
-\item Pertinent definitions/jargon for Electronic Health Records (EHR)
+\item Definitions/jargon for Electronic Health Records (EHR)
 \item A series of online resources are developed for EHR
-\item Background of the Clinical Research Data Warehouse (CRDW)
+\item The CTSI Clinical Research Data Warehouse (CRDW)
 \item An overview of the CRDW Jupyterhub environment 
 \item Brief history of SQL, R and SAS
-\item Hands-on experience with the Jupyterhub by meaningful examples
+\item Hands-on experience with Jupyterhub by thoughtful examples
 \item Short introduction of RASMACRO 
 \end{itemize}
 \end{frame}
@@ -215,7 +215,7 @@ and Important Eras}}
 \item 2004: EPIC EHR debuts at Froedtert
 \item 2005: GE/MUSE for EKGs
 \item 2005 to 2007: National Provider Identifiers (NPI) transition
-\item 2009: American Recovery and Reinvestment Act mandates {\it meaningful use} of EHR
+\item 2009: American Recovery and Reinvestment Act mandates {\it meaningful use} of EHR (i.e., not just for billing purposes)
 %\item 2011: Affordable Care Act mandates {\it meaningful use} of EHR
 \item 2012, May: EPIC EHR Community Memorial Menominee Falls
 \item \textcolor{red}{2013, July: EPIC EHR for Community Physicians Clinics} 
@@ -247,11 +247,15 @@ and Important Eras}}
 \item \textcolor{PineGreen}{[\href{https://ctri.mcw.edu/wp-content/uploads/CTSI-Honest-Broker-Data-Dictionary.pdf}{CTSI Honest Broker Data Dictionary}]}
 \item \textcolor{PineGreen}{[\href{https://en.wikipedia.org/wiki/Project_Jupyter}{Project Jupyter}]}
 \item CRDW Jupyterhub \textcolor{PineGreen}{[\href{https://jupyter.ctsi.mcw.edu}{https://jupyter.ctsi.mcw.edu}]}
-\item \textcolor{PineGreen}{[\href{https://www.nber.org/research/data/icd-9-cm-and-icd-10-cm-and-icd-10-pcs-crosswalk-or-general-equivalence-mappings}
-{US Centers for Medicare and Medicaid Services\\ ICD-9 to, and from, ICD-10 crosswalks}]}
+\item \textcolor{PineGreen}{[\href{https://www.cdc.gov/nchs/icd/icd9cm.htm}
+{ICD-9 manuals available for download}]}
 \item \textcolor{PineGreen}{[\href{https://icd10cmtool.cdc.gov}
-{US Centers for Disease Control and Prevention\\ 
+{US Centers for Disease Control \& Prevention (CDC)\\ 
 ICD-10-CM Browser}]}
+\item \textcolor{PineGreen}{[\href{https://www.nber.org/research/data/icd-9-cm-and-icd-10-cm-and-icd-10-pcs-crosswalk-or-general-equivalence-mappings}
+{US Centers for Medicare \& Medicaid Services (CMS) \\
+(with the CDC) ICD-9 to, and from, ICD-10 crosswalk \\
+of General Equivalence Mappings (GEM)}]}
 \item \textcolor{PineGreen}{[\href{https://www.neighborhoodatlas.medicine.wisc.edu}{Area Deprivation Index (ADI)}]}
 \end{itemize}
 
@@ -894,9 +898,9 @@ the Area Deprivation Index (ADI)}}
 \item \texttt{NA} the R missing value code which is undocumented
 \item \texttt{'PH'} for suppression due to low population and/or housing 
 \item \texttt{'GQ'} for suppression due to a high group quarters population
-\item \texttt{'PH-GQ'}  (or is it \texttt{'GQ-PH'}?) 
+\item \texttt{'PH-GQ'}  (or \texttt{'GQ-PH'}?) 
 for suppression due to both types
-\item \texttt{'KVM'} (or is it \texttt{'QDI'}?) 
+\item \texttt{'KVM'} (or \texttt{'QDI'}?) 
 designates block groups without an ADI value due to 
   missing data within the data's source\\
 the American Community Survey Five Year Estimates
