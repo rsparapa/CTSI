@@ -10,3 +10,5 @@ medispan.csv Medi-Span, GPI, RxNorm medical nomenclature
 readme.txt this file
 slides.pdf the presentation slides
 snippet*.R R program snippets for hands-on examples
+byvalue.R definition of the byvalue function
+inclause.R definition of the inclause function

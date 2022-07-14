@@ -147,11 +147,11 @@ Jupyterhub, R, SQL and SAS}
 8:30 & Kristen Osinski, Business Analyst IV, CTSI \\
 9:15 & Overview: slides 0:20  \\
 10:00& Snack break: getting to know each other \\
-10:30& Hands-on with Jupyterhub: slides 21:30  \\
+10:30& Hands-on with Jupyterhub: slides 21:31  \\
 12:00& Lunch provided \\
-12:30& Hands-on with Jupyterhub: slides 31:37  \\
+12:30& Hands-on with Jupyterhub: slides 32:42  \\
 2:00 & Biological break \\
-2:15 & Hands-on with Jupyterhub: slides 38:50 \\
+2:15 & Hands-on with Jupyterhub: slides 43:54 \\
 3:45 & Q and A \\
 4:15 & Closing ceremonies
 \end{tabular}
@@ -208,9 +208,9 @@ and Important Eras}}
 
 \begin{itemize}
 \item 1989: North American Association of Central Cancer Registries
-  (NAACCR) for Froedtert and Community Memorial
+  (NAACCR) for Froedtert %Memorial Lutheran Hospital % and Community Memorial
 \item 1999 to 2018, November: GE/IDX billing
-\item 2001: NAACCR for St.\ Joseph's West Bend
+%\item 2001: NAACCR for St.\ Joseph's West Bend
 %\item 2003: Philips IntelliSpace Cardiovascular/Xcelera for echos
 \item 2004: EPIC EHR debuts at Froedtert
 \item 2005: GE/MUSE for EKGs
@@ -561,8 +561,8 @@ where \texttt{RASMACRO} is the path to your directory
 \item SAS does NOT automatically convert character to numeric
 \item However, the RASMACRO \texttt{\_verify} can handle that
 \item SAS does automatically detect dates, times and datetimes!
-\item Also, the RASMACRO \texttt{\_constant} automatically detects
-variable/columns that are a constant value (including missing) and
+\item The RASMACRO \texttt{\_constant} automatically detects
+variables that are constant (including missing) and
 removes them
 \item In this case, the following were superfluous and removed
 \item \texttt{mult\_tum\_rpt\_as\_one\_prim, multiplicity\_counter, 
@@ -726,31 +726,63 @@ fh_hb_diagnostic_results_jupyter
 
 
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
+%\begin{center}
 \begin{tabular}{lll}
-Table Name & 
+Table Name \texttt{fh\_hb\_NAME\_jupyter} & 
 \textcolor{PineGreen}{[\href{https://ctri.mcw.edu/wp-content/uploads/CTSI-Honest-Broker-Data-Dictionary.pdf}{Title in Documentation}]} \\ \hline
-\texttt{fh\_hb\_demographics\_jupyter}       & ``Patient Demographics'' \\ 
+\texttt{demographics}       & ``Patient Demographics'' \\ 
 \multicolumn{3}{l}{One record per patient: birth date, gender, 
 race/ethnicity, death, etc.} \\ \hline 
-\texttt{fh\_hb\_diagnosis\_jupyter}          & ``Diagnosis (Dx)'' \\
+\texttt{diagnosis}          & ``Diagnosis (Dx)'' \\
 \multicolumn{3}{l}{Combo of EPIC/billing with ICD-9/ICD-10 
 diagnosis codes} \\  \hline  
-\texttt{fh\_hb\_diagnostic\_results\_jupyter}& ``Diagnostic Results'' \\
+\texttt{diagnostic\_results}& ``Diagnostic Results'' \\
 \multicolumn{3}{l}{Combo of mainly EPIC with MOSAIQ (for radiotherapy dosage)} \\  \hline  
-\texttt{fh\_hb\_mar\_table\_jupyter}         & ``Medications Administered''\\
+\texttt{mar\_table}         & ``Medications Administered''\\
 \multicolumn{3}{l}{EPIC \textcolor{red}{in-patient} records with Medi-Span pharm class/sub-class} \\   \hline 
-\texttt{fh\_hb\_med\_orders\_table\_jupyter} & ``Medication Ordered'' \\
+\texttt{med\_orders\_table} & ``Medication Orders'' \\
 \multicolumn{3}{l}{EPIC prescription orders (not fills!) along with Medi-Span} \\  \hline  
-\texttt{fh\_hb\_procs\_jupyter}              & ``Procedures (Px)'' \\
+\texttt{procs}              & ``Procedures (Px)'' \\
 \multicolumn{3}{l}{Combo of EPIC/billing with 
 \textcolor{red}{ICD-9/ICD-10} 
 and \textcolor{blue}{HCPCS/CPT codes}} \\  \hline  
-\texttt{fh\_hb\_vitals\_jupyter}             & ``Vitals'' \\
+\texttt{vitals}             & ``Vitals'' \\
 \multicolumn{3}{l}{EPIC vital signs such as height/weight, blood pressure,
 temp, etc. } \\   \hline 
 \end{tabular}
+%\end{center}
 \end{frame}
 
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
+%\begin{center}
+\begin{tabular}{lll}
+\multicolumn{2}{c}{Froedtert Only} \\
+Table Name \texttt{fh\_hb\_NAME\_jupyter} & 
+\textcolor{PineGreen}{[\href{https://ctri.mcw.edu/wp-content/uploads/CTSI-Honest-Broker-Data-Dictionary.pdf}{Title in Documentation}]} \\ \hline
+\texttt{naaccr}       & ``NAACCR Data'' \\ 
+\multicolumn{3}{l}{North American Association of Central Cancer Registries} \\ \hline 
+\texttt{surgical\_case}       & ``Surgical Case'' \\ 
+\multicolumn{3}{l}{Including anesthesia, \texttt{asa\_rating\_c}, surgical service, etc.} \\ \hline
+\multicolumn{2}{l}{\texttt{ekg\_patient\_tracings}, \texttt{ekg\_order},} \\
+\multicolumn{2}{l}{\texttt{ekg\_test\_demographics}, \texttt{ekg\_resting\_ecg\_meas},} \\
+\multicolumn{2}{l}{\texttt{ekg\_qrs\_times\_types}, \texttt{ekg\_waveform},} \\
+\multicolumn{2}{l}{\texttt{ekg\_lead\_data}, \texttt{ekg\_pharma\_data},} \\
+\multicolumn{2}{l}{\texttt{ekg\_meas\_matrix} \& \texttt{ekg\_meas\_matrix\_leads}} \\
+           %     %ekg_lead_data                  %ekg_meas_matrix 
+           %                    18                               16 
+           % %ekg_meas_matrix_leads                        %ekg_order 
+           %                    56                               13 
+           %  %ekg_patient_tracings                  %ekg_pharma_data 
+           %                     5                                6 
+           %   %ekg_qrs_times_types             %ekg_resting_ecg_meas 
+           %                     7                               22 
+           % %ekg_test_demographics                     %ekg_waveform 
+           %                    14                               11 
+\multicolumn{3}{l}{GE Healthcare's MUSE for electrocardiograms: see Appendix A} \\ \hline
+\end{tabular}
+\textcolor{PineGreen}{[\href{https://www.ncbi.nlm.nih.gov/books/NBK441940}{American Society of Anesthesiologists physical status classification}]}
+\end{frame}
 
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
 \begin{itemize}
@@ -828,16 +860,6 @@ neoplasms over the lifetime of the patient
 
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
 \lstinputlisting[style=customR]{snippet8.R}
-% \begin{verbatim}
-% ## ' these are single quotes
-% naaccr=dbGetQuery(db, 
-%           "select * from fh_hb_naaccr_jupyter
-%            where sequence_number_hospital='1' and
-%            (date_part('year', date_of_diagnosis_shifted)
-%            between 2016 and 2017) and
-%            site_primary like 'C50%'")
-% addmargins(table(naaccr$site_primary))
-% \end{verbatim}
 \end{frame}
 
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
@@ -969,19 +991,6 @@ by comparisons with their vital signs
 
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
 \lstinputlisting[style=customR]{snippet11.R}
-% \begin{verbatim}
-% zombies=dbGetQuery(db, "select distinct a.patient_hash, 
-%                         a.death_date_shifted,
-%                         a.vital_status_source
-%                         from fh_hb_demographics_jupyter a
-%                         inner join fh_hb_vitals_jupyter b 
-%                         on a.patient_hash=b.patient_hash 
-%                         AND a.death_date_shifted<
-%                         b.measure_date_shifted
-%                         order by patient_hash")
-% table(zombies$vital_status_source)
-% print(zombies)
-% \end{verbatim}
 \end{frame}
 
 
@@ -1018,7 +1027,7 @@ Medical Nomenclature}}
   terminology maintained by the US National Library
   of Medicine (NLM)
 \item GPI and RxNorm codes are available on two CRDW tables
-\item ``Medication Ordered'' for medicinal prescriptions (not fills!): \texttt{fh\_hb\_med\_orders\_table\_jupyter}
+\item ``Medication Orders'' for medicinal prescriptions (not fills!): \texttt{fh\_hb\_med\_orders\_table\_jupyter}
 \item ``Medications Administered'' for medicine given: \texttt{fh\_hb\_mar\_table\_jupyter} 
 \item Example variables of interest
 \item \texttt{pharm\_class}: pharmacologic class
@@ -1210,6 +1219,46 @@ C2639 &       72  &    Brachytx, non-stranded,i-125
 \end{tabular}
 \end{center}
 
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
+
+\begin{itemize}
+\item Froedtert is a Level 1 trauma center so it has a trauma registry
+\item However, you need IRB approval to utilize the trauma registry
+\item But you can get some of the data from \texttt{surgical\_case}
+\item How many surgical trauma \textcolor{red}{patients} are there per year?
+%\end{itemize}
+%\end{frame}
+
+%\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
+\item Here's the number of trauma surgeries performed in 2018
+\end{itemize}
+\lstinputlisting[style=customR]{snippet16.R}
+\end{frame}
+
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
+\begin{itemize}
+\item But we want the number of trauma \textcolor{red}{patients} undergoing surgery in 2018
+\item We can use the \texttt{byvalue} function to identify the first
+patient record by date
+\item You have to upload the \texttt{byvalue.R} file to Jupyterhub
+\item How many surgical trauma \textcolor{red}{patients} are there per year?
+\end{itemize}
+\lstinputlisting[style=customR]{snippet17.R}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
+\begin{itemize}
+\item What about their trauma diagnoses?
+\item We can use the \texttt{inclause} function to create an \texttt{IN}
+clause to merge with the \texttt{diagnosis} table
+\item You have to upload the \texttt{inclause.R} file to Jupyterhub
+\item How many surgical trauma \textcolor{red}{patients} 
+first encounters linked to the \texttt{diagnosis} table?
+\end{itemize}
+\lstinputlisting[style=customR]{snippet18.R}
 \end{frame}
 
 \end{document}
