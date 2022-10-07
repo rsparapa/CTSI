@@ -1,6 +1,6 @@
 * snippet3.sas ;
-%let user=rsparapani; *JHUSERNAME; 
-%let password=RSP#ygbzqp26t5W#Jyph2; *JHPASSWORD;
+%let user=JHUSERNAME; 
+%let password=JHPASSWORD;
 
 options
     validmemname = extend; /* enable multiple periods in table references */
