@@ -1,11 +1,13 @@
 ## snippet12.R
 ## ' these are single quotes 
-in.clause=paste0("('", paste(zombies$patient_hash, 
-                 collapse="','"), "')")
+##source('snippet11.R')
+source('inclause.R')
+
 zdates=dbGetQuery(db, 
         paste("select patient_hash, measure_date_shifted 
                from fh_hb_vitals_jupyter  
-               where patient_hash in ", in.clause, 
+               where patient_hash in ",
+              inclause(zombies$patient_hash), 
               "order by patient_hash, 
                measure_date_shifted"))           
 max.zdates=c(tapply(zdates$measure_date_shifted, 

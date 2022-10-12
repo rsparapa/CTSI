@@ -11,3 +11,4 @@ zombies=dbGetQuery(db,
                     order by patient_hash")
 table(zombies$vital_status_source)
 print(zombies)
+str(zombies)
