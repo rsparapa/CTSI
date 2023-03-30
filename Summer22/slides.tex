@@ -738,6 +738,8 @@ race/ethnicity, death, etc.} \\ \hline
 diagnosis codes} \\  \hline  
 \texttt{diagnostic\_results}& ``Diagnostic Results'' \\
 \multicolumn{3}{l}{Combo of mainly EPIC with MOSAIQ (for radiotherapy dosage)} \\  \hline  
+\texttt{encounters}       & ``Encounters'' \\ 
+\multicolumn{3}{l}{Dates/types of all patient encounters} \\ \hline 
 \texttt{mar\_table}         & ``Medications Administered''\\
 \multicolumn{3}{l}{EPIC \textcolor{red}{in-patient} records with Medi-Span pharm class/sub-class} \\   \hline 
 \texttt{med\_orders\_table} & ``Medication Orders'' \\
@@ -757,9 +759,11 @@ temp, etc. } \\   \hline
 \begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with Jupyterhub}}
 %\begin{center}
 \begin{tabular}{lll}
-\multicolumn{2}{c}{Froedtert Only} \\
+\multicolumn{2}{c}{Froedtert Only (Meaning Adults!)} \\
 Table Name \texttt{fh\_hb\_NAME\_jupyter} & 
 \textcolor{PineGreen}{[\href{https://ctri.mcw.edu/wp-content/uploads/CTSI-Honest-Broker-Data-Dictionary.pdf}{Title in Documentation}]} \\ \hline
+%\texttt{encounters}       & ``Encounters'' \\ 
+%\multicolumn{3}{l}{Dates/types of all patient encounters} \\ \hline 
 \texttt{naaccr}       & ``NAACCR Data'' \\ 
 \multicolumn{3}{l}{North American Association of Central Cancer Registries} \\ \hline 
 \texttt{surgical\_case}       & ``Surgical Case'' \\ 
