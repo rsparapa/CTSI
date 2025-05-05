@@ -1,0 +1,106 @@
+                                          11:26 Saturday, April 26, 2025   1
+
+                           The CONTENTS Procedure
+
+Data Set Name        CRDW.EKG_MEAS_MATRIX         Observations          4741
+Member Type          DATA                         Variables             17  
+Engine               V9                           Indexes               0   
+Created              04/26/2025 11:28:09          Observation Length    3648
+Last Modified        04/26/2025 11:28:09          Deleted Observations  0   
+Protection                                        Compressed            NO  
+Data Set Type                                     Sorted                NO  
+Label                                                                       
+Data Representation  SOLARIS_X86_64,                                        
+                     LINUX_X86_64, ALPHA_TRU64,                             
+                     LINUX_IA64                                             
+Encoding             latin1  Western (ISO)                                  
+
+
+                     Engine/Host Dependent Information
+
+Data Set Page Size          131072                                          
+Number of Data Set Pages    136                                             
+First Data Page             1                                               
+Max Obs per Page            35                                              
+Obs in First Data Page      34                                              
+Number of Data Set Repairs  0                                               
+Filename                    /data/shared/04224/afib/libname/                
+                            crdw/ekg_meas_matrix.sas7bdat                   
+Release Created             9.0401M8                                        
+Host Created                Linux                                           
+Inode Number                42949763084                                     
+Access Permission           rw-r--r--                                       
+Owner Name                  rsparapa                                        
+File Size                   17MB                                            
+File Size (bytes)           17956864                                        
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet24.sas                                  
+                                          11:26 Saturday, April 26, 2025   2
+
+                           The CONTENTS Procedure
+
+                        Variables in Creation Order
+ 
+                    #    Variable           Type     Len
+
+                    1    meas_matrix_id     Char      16
+                    2    patient_trac_id    Char      16
+                    3    raw_data           Char    3490
+                    4    patient_hash       Char      16
+                    5    pon                Num        8
+                    6    poff               Num        8
+                    7    qon                Num        8
+                    8    qoff               Num        8
+                    9    ton                Num        8
+                   10    toff               Num        8
+                   11    nqrs               Num        8
+                   12    qrsdur             Num        8
+                   13    qt                 Num        8
+                   14    qtc                Num        8
+                   15    print              Num        8
+                   16    vrate              Num        8
+                   17    avgrr              Num        8
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet24.sas                                  

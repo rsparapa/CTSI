@@ -1,0 +1,318 @@
+                                          17:00 Thursday, March 13, 2025   1
+
+                             The FREQ Procedure
+
+                                           Cumulative    Cumulative
+        gender    Frequency     Percent     Frequency      Percent
+        -----------------------------------------------------------
+        FEMALE      160140       44.92        160140        44.92  
+        MALE        196378       55.08        356518       100.00  
+
+                          Frequency Missing = 50
+
+
+                           Table of afib by aflt
+
+                    afib      aflt
+
+                    Frequency|
+                    Percent  |
+                    Row Pct  |
+                    Col Pct  |       0|       1|  Total
+                    ---------+--------+--------+
+                           0 |      0 |   9257 |   9257
+                             |   0.00 |   2.60 |   2.60
+                             |   0.00 | 100.00 |
+                             |   0.00 |   7.56 |
+                    ---------+--------+--------+
+                           1 | 234094 | 113217 | 347311
+                             |  65.65 |  31.75 |  97.40
+                             |  67.40 |  32.60 |
+                             | 100.00 |  92.44 |
+                    ---------+--------+--------+
+                    Total      234094   122474   356568
+                                65.65    34.35   100.00
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet10.sas                                  
+                                          17:00 Thursday, March 13, 2025   2
+
+                           The CONTENTS Procedure
+
+Data Set Name        CRDW.EKG_PATIENT_TRACINGS  Observations          356568
+Member Type          DATA                       Variables             162   
+Engine               V9                         Indexes               0     
+Created              03/13/2025 17:00:41        Observation Length    1320  
+Last Modified        03/13/2025 17:00:41        Deleted Observations  0     
+Protection                                      Compressed            NO    
+Data Set Type                                   Sorted                NO    
+Label                                                                       
+Data Representation  SOLARIS_X86_64,                                        
+                     LINUX_X86_64,                                          
+                     ALPHA_TRU64, LINUX_IA64                                
+Encoding             latin1  Western (ISO)                                  
+
+
+                     Engine/Host Dependent Information
+
+Data Set Page Size          106496                                          
+Number of Data Set Pages    4458                                            
+First Data Page             1                                               
+Max Obs per Page            80                                              
+Obs in First Data Page      64                                              
+Number of Data Set Repairs  0                                               
+Filename                    /data/shared/04224/CTSI/libname/crdw/           
+                            ekg_patient_tracings.sas7bdat                   
+Release Created             9.0401M8                                        
+Host Created                Linux                                           
+Inode Number                42949763122                                     
+Access Permission           rw-r--r--                                       
+Owner Name                  rsparapa                                        
+File Size                   453MB                                           
+File Size (bytes)           474865664                                       
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet10.sas                                  
+                                          17:00 Thursday, March 13, 2025   3
+
+                           The CONTENTS Procedure
+
+                        Variables in Creation Order
+ 
+                     #    Variable           Type    Len
+
+                     1    patient_trac_id    Char     16
+                     2    patient_hash       Char     16
+                     3    gender             Char      6
+                     4    race               Char     16
+                     5    afib17             Num       8
+                     6    afib18             Num       8
+                     7    afib19             Num       8
+                     8    afib20             Num       8
+                     9    afib21             Num       8
+                    10    afib22             Num       8
+                    11    afib1701           Num       8
+                    12    afib1702           Num       8
+                    13    afib1703           Num       8
+                    14    afib1704           Num       8
+                    15    afib1705           Num       8
+                    16    afib1706           Num       8
+                    17    afib1707           Num       8
+                    18    afib1708           Num       8
+                    19    afib1709           Num       8
+                    20    afib1710           Num       8
+                    21    afib1711           Num       8
+                    22    afib1712           Num       8
+                    23    afib1801           Num       8
+                    24    afib1802           Num       8
+                    25    afib1803           Num       8
+                    26    afib1804           Num       8
+                    27    afib1805           Num       8
+                    28    afib1806           Num       8
+                    29    afib1807           Num       8
+                    30    afib1808           Num       8
+                    31    afib1809           Num       8
+                    32    afib1810           Num       8
+                    33    afib1811           Num       8
+                    34    afib1812           Num       8
+                    35    afib1901           Num       8
+                    36    afib1902           Num       8
+                    37    afib1903           Num       8
+                    38    afib1904           Num       8
+                    39    afib1905           Num       8
+                    40    afib1906           Num       8
+                    41    afib1907           Num       8
+                    42    afib1908           Num       8
+                    43    afib1909           Num       8
+ 
+/home/rsparapa/git/CTSI/BERD/snippet10.sas                                  
+                                          17:00 Thursday, March 13, 2025   4
+
+                           The CONTENTS Procedure
+
+                        Variables in Creation Order
+ 
+                     #    Variable           Type    Len
+
+                    44    afib1910           Num       8
+                    45    afib1911           Num       8
+                    46    afib1912           Num       8
+                    47    afib2001           Num       8
+                    48    afib2002           Num       8
+                    49    afib2003           Num       8
+                    50    afib2004           Num       8
+                    51    afib2005           Num       8
+                    52    afib2006           Num       8
+                    53    afib2007           Num       8
+                    54    afib2008           Num       8
+                    55    afib2009           Num       8
+                    56    afib2010           Num       8
+                    57    afib2011           Num       8
+                    58    afib2012           Num       8
+                    59    afib2101           Num       8
+                    60    afib2102           Num       8
+                    61    afib2103           Num       8
+                    62    afib2104           Num       8
+                    63    afib2105           Num       8
+                    64    afib2106           Num       8
+                    65    afib2107           Num       8
+                    66    afib2108           Num       8
+                    67    afib2109           Num       8
+                    68    afib2110           Num       8
+                    69    afib2111           Num       8
+                    70    afib2112           Num       8
+                    71    afib2201           Num       8
+                    72    afib2202           Num       8
+                    73    afib2203           Num       8
+                    74    afib2204           Num       8
+                    75    afib2205           Num       8
+                    76    afib2206           Num       8
+                    77    afib2207           Num       8
+                    78    afib2208           Num       8
+                    79    afib2209           Num       8
+                    80    afib2210           Num       8
+                    81    afib2211           Num       8
+                    82    afib2212           Num       8
+                    83    aflt17             Num       8
+                    84    aflt18             Num       8
+                    85    aflt19             Num       8
+                    86    aflt20             Num       8
+ 
+/home/rsparapa/git/CTSI/BERD/snippet10.sas                                  
+                                          17:00 Thursday, March 13, 2025   5
+
+                           The CONTENTS Procedure
+
+                        Variables in Creation Order
+ 
+                     #    Variable           Type    Len
+
+                    87    aflt21             Num       8
+                    88    aflt22             Num       8
+                    89    aflt1701           Num       8
+                    90    aflt1702           Num       8
+                    91    aflt1703           Num       8
+                    92    aflt1704           Num       8
+                    93    aflt1705           Num       8
+                    94    aflt1706           Num       8
+                    95    aflt1707           Num       8
+                    96    aflt1708           Num       8
+                    97    aflt1709           Num       8
+                    98    aflt1710           Num       8
+                    99    aflt1711           Num       8
+                   100    aflt1712           Num       8
+                   101    aflt1801           Num       8
+                   102    aflt1802           Num       8
+                   103    aflt1803           Num       8
+                   104    aflt1804           Num       8
+                   105    aflt1805           Num       8
+                   106    aflt1806           Num       8
+                   107    aflt1807           Num       8
+                   108    aflt1808           Num       8
+                   109    aflt1809           Num       8
+                   110    aflt1810           Num       8
+                   111    aflt1811           Num       8
+                   112    aflt1812           Num       8
+                   113    aflt1901           Num       8
+                   114    aflt1902           Num       8
+                   115    aflt1903           Num       8
+                   116    aflt1904           Num       8
+                   117    aflt1905           Num       8
+                   118    aflt1906           Num       8
+                   119    aflt1907           Num       8
+                   120    aflt1908           Num       8
+                   121    aflt1909           Num       8
+                   122    aflt1910           Num       8
+                   123    aflt1911           Num       8
+                   124    aflt1912           Num       8
+                   125    aflt2001           Num       8
+                   126    aflt2002           Num       8
+                   127    aflt2003           Num       8
+                   128    aflt2004           Num       8
+                   129    aflt2005           Num       8
+ 
+/home/rsparapa/git/CTSI/BERD/snippet10.sas                                  
+                                          17:00 Thursday, March 13, 2025   6
+
+                           The CONTENTS Procedure
+
+                        Variables in Creation Order
+ 
+                     #    Variable           Type    Len
+
+                   130    aflt2006           Num       8
+                   131    aflt2007           Num       8
+                   132    aflt2008           Num       8
+                   133    aflt2009           Num       8
+                   134    aflt2010           Num       8
+                   135    aflt2011           Num       8
+                   136    aflt2012           Num       8
+                   137    aflt2101           Num       8
+                   138    aflt2102           Num       8
+                   139    aflt2103           Num       8
+                   140    aflt2104           Num       8
+                   141    aflt2105           Num       8
+                   142    aflt2106           Num       8
+                   143    aflt2107           Num       8
+                   144    aflt2108           Num       8
+                   145    aflt2109           Num       8
+                   146    aflt2110           Num       8
+                   147    aflt2111           Num       8
+                   148    aflt2112           Num       8
+                   149    aflt2201           Num       8
+                   150    aflt2202           Num       8
+                   151    aflt2203           Num       8
+                   152    aflt2204           Num       8
+                   153    aflt2205           Num       8
+                   154    aflt2206           Num       8
+                   155    aflt2207           Num       8
+                   156    aflt2208           Num       8
+                   157    aflt2209           Num       8
+                   158    aflt2210           Num       8
+                   159    aflt2211           Num       8
+                   160    aflt2212           Num       8
+                   161    afib               Num       8
+                   162    aflt               Num       8
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet10.sas                                  

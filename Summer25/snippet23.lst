@@ -1,0 +1,318 @@
+                                          09:55 Saturday, April 26, 2025   1
+
+                          The UNIVARIATE Procedure
+                  Variable:  min  (the smallest value, ii)
+
+                                  Moments
+
+      N                        4741    Sum Weights               4741
+      Mean               -0.5208867    Sum Observations     -2469.524
+      Std Deviation      0.38807419    Variance            0.15060157
+      Skewness           -1.6897412    Kurtosis            4.87713096
+      Uncorrected SS     2000.19375    Corrected SS        713.851458
+      Coeff Variation    -74.502605    Std Error Mean      0.00563611
+
+
+                         Basic Statistical Measures
+ 
+               Location                    Variability
+
+           Mean     -0.52089     Std Deviation            0.38807
+           Median   -0.41480     Variance                 0.15060
+           Mode     -0.25376     Range                    5.35824
+                                 Interquartile Range      0.41968
+
+
+                         Tests for Location: Mu0=0
+ 
+              Test           -Statistic-    -----p Value------
+
+              Student's t    t  -92.4195    Pr > |t|    <.0001
+              Sign           M     -2305    Pr >= |M|   <.0001
+              Signed Rank    S  -5583017    Pr >= |S|   <.0001
+
+
+                          Quantiles (Definition 5)
+ 
+                           Level         Quantile
+
+                           100% Max       1.64456
+                           99%            0.03416
+                           95%           -0.13176
+                           90%           -0.17080
+                           75% Q3        -0.25376
+                           50% Median    -0.41480
+                           25% Q1        -0.67344
+                           10%           -1.02480
+                           5%            -1.28832
+                           1%            -1.91296
+                           0% Min        -3.71368
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet23.sas                                  
+                                          09:55 Saturday, April 26, 2025   2
+
+                          The UNIVARIATE Procedure
+                  Variable:  min  (the smallest value, ii)
+
+                            Extreme Observations
+ 
+                 ------Lowest-----        -----Highest-----
+ 
+                    Value      Obs           Value      Obs
+
+                 -3.71368      555         0.38552     3875
+                 -2.94752     3762         0.42944     4309
+                 -2.86944     4150         0.44896     2233
+                 -2.84992     1432         0.53192     3812
+                 -2.71328     4497         1.64456      936
+
+
+                          Histogram                          #       Boxplot
+   1.75+*                                                    1          *
+       .
+       .*                                                    1          0
+       .**                                                  65          0
+       .************************************************  2766       +-----+
+       .*************************                         1402       +--+--+
+       .*******                                            371          0
+       .**                                                 101          0
+       .*                                                   27          *
+       .*                                                    6          *
+       .
+  -3.75+*                                                    1          *
+        ----+----+----+----+----+----+----+----+----+---
+        * may represent up to 58 counts
+
+
+                               Normal Probability Plot
+            1.75+                                                  *
+                |
+                |                                                  *
+                |                                       ++++++++****
+                |                       *************************
+                |             ***********++
+                |++++++********
+                | ******
+                |*
+                |*
+                |
+           -3.75+*
+                 +----+----+----+----+----+----+----+----+----+----+
+                     -2        -1         0        +1        +2
+
+
+/home/rsparapa/git/CTSI/BERD/snippet23.sas
+                                          09:55 Saturday, April 26, 2025   3
+
+                          The UNIVARIATE Procedure
+                  Variable:  max  (the largest value, ii)
+
+                                  Moments
+
+      N                        4741    Sum Weights               4741
+      Mean               0.76558461    Sum Observations    3629.63664
+      Std Deviation      0.47770665    Variance            0.22820364
+      Skewness           1.58625979    Kurtosis            7.43968325
+      Uncorrected SS     3860.47923    Corrected SS        1081.68527
+      Coeff Variation    62.3976297    Std Error Mean      0.00693787
+
+
+                         Basic Statistical Measures
+ 
+               Location                    Variability
+
+           Mean     0.765585     Std Deviation            0.47771
+           Median   0.688080     Variance                 0.22820
+           Mode     0.488000     Range                    6.50016
+                                 Interquartile Range      0.56608
+
+  Note: The mode displayed is the smallest of 2 modes with a count of 39.
+
+
+                         Tests for Location: Mu0=0
+ 
+              Test           -Statistic-    -----p Value------
+
+              Student's t    t  110.3486    Pr > |t|    <.0001
+              Sign           M      2305    Pr >= |M|   <.0001
+              Signed Rank    S   5584835    Pr >= |S|   <.0001
+
+
+                          Quantiles (Definition 5)
+ 
+                           Level         Quantile
+
+                           100% Max       5.95360
+                           99%            2.19600
+                           95%            1.62016
+                           90%            1.36640
+                           75% Q3         1.00528
+                           50% Median     0.68808
+                           25% Q1         0.43920
+                           10%            0.26840
+                           5%             0.19032
+                           1%            -0.09760
+                           0% Min        -0.54656
+ 
+/home/rsparapa/git/CTSI/BERD/snippet23.sas                                  
+                                          09:55 Saturday, April 26, 2025   4
+
+                          The UNIVARIATE Procedure
+                  Variable:  max  (the largest value, ii)
+
+                            Extreme Observations
+ 
+                 ------Lowest-----        -----Highest-----
+ 
+                    Value      Obs           Value      Obs
+
+                 -0.54656     3226         4.07968      482
+                 -0.50264     2459         4.28464     4121
+                 -0.48800     4490         4.29440     1729
+                 -0.45872     3883         4.39200     1730
+                 -0.44896     1929         5.95360     3762
+
+
+                          Histogram                          #       Boxplot
+   5.75+*                                                    1          *
+       .
+       .
+       .*                                                    5          *
+       .*                                                    3          *
+       .*                                                    2          *
+       .*                                                   13          0
+       .**                                                  62          0
+       .******                                             249          0
+       .*********************                              866       +-----+
+       .************************************************  2049       *--+--*
+       .**********************************                1428       +-----+
+       .**                                                  61          0
+  -0.75+*                                                    2          0
+        ----+----+----+----+----+----+----+----+----+---
+        * may represent up to 43 counts
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/home/rsparapa/git/CTSI/BERD/snippet23.sas
+                                          09:55 Saturday, April 26, 2025   5
+
+                          The UNIVARIATE Procedure
+                  Variable:  max  (the largest value, ii)
+
+                               Normal Probability Plot
+            5.75+                                                  *
+                |
+                |
+                |                                                  *
+                |                                                  *
+                |                                                  *
+                |                                                  *
+                |                                              *****
+                |                                        *******++++
+                |                              ++*********
+                |                    *************
+                |   ******************
+                |****+++++
+           -0.75+*
+                 +----+----+----+----+----+----+----+----+----+----+
+                     -2        -1         0        +1        +2
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet23.sas                                  
+                                          09:55 Saturday, April 26, 2025   6
+
+                             The FREQ Procedure
+
+                                           Cumulative    Cumulative
+         count    Frequency     Percent     Frequency      Percent
+         ----------------------------------------------------------
+             2         632       43.08           632        43.08  
+             3         393       26.79          1025        69.87  
+             4         217       14.79          1242        84.66  
+             5         112        7.63          1354        92.30  
+             6          43        2.93          1397        95.23  
+             7          27        1.84          1424        97.07  
+             8          17        1.16          1441        98.23  
+             9           7        0.48          1448        98.70  
+            10          11        0.75          1459        99.45  
+            11           2        0.14          1461        99.59  
+            12           1        0.07          1462        99.66  
+            13           1        0.07          1463        99.73  
+            15           2        0.14          1465        99.86  
+            17           1        0.07          1466        99.93  
+            20           1        0.07          1467       100.00  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet23.sas                                  

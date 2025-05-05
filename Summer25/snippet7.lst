@@ -1,0 +1,53 @@
+                                           09:20 Saturday, March 1, 2025   1
+
+                           The CONTENTS Procedure
+
+Data Set Name        CRDW.SNIPPET7             Observations          2462383
+Member Type          DATA                      Variables             8      
+Engine               V9                        Indexes               0      
+Created              03/01/2025 18:42:29       Observation Length    64     
+Last Modified        03/01/2025 18:42:29       Deleted Observations  0      
+Protection                                     Compressed            NO     
+Data Set Type                                  Sorted                NO     
+Label                                                                       
+Data Representation  SOLARIS_X86_64,                                        
+                     LINUX_X86_64,                                          
+                     ALPHA_TRU64, LINUX_IA64                                
+Encoding             latin1  Western (ISO)                                  
+
+
+                     Engine/Host Dependent Information
+
+ Data Set Page Size          65536                                         
+ Number of Data Set Pages    2412                                          
+ First Data Page             1                                             
+ Max Obs per Page            1021                                          
+ Obs in First Data Page      976                                           
+ Number of Data Set Repairs  0                                             
+ Filename                    /data/shared/AI/libname/crdw/snippet7.sas7bdat
+ Release Created             9.0401M8                                      
+ Host Created                Linux                                         
+ Inode Number                42949763118                                   
+ Access Permission           rw-r--r--                                     
+ Owner Name                  rsparapa                                      
+ File Size                   151MB                                         
+ File Size (bytes)           158138368                                     
+
+
+                        Variables in Creation Order
+ 
+#   Variable          Type   Len   Format        Informat   Label
+
+1   patient_hash      Char    16   $16.          $16.       patient_hash   
+2   enc_type          Char     2   $2.           $2.        enc_type       
+3   dx_date_shifted   Num      8   DATETIME19.              dx_date_shifted
+4   dx_code           Char    18   $18.          $18.       dx_code        
+5   dx_type           Char     2   $2.           $2.        dx_type        
+6   dx_origin         Char     2   $2.           $2.        dx_origin      
+7   pdx               Char     2   $2.           $2.        pdx            
+8   dx_date           Num      8   DATE9.                                  
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet7.sas                                   

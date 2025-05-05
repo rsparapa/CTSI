@@ -1,0 +1,265 @@
+                                          17:01 Thursday, March 13, 2025   1
+
+                           The CONTENTS Procedure
+
+Data Set Name        CRDW.EKG_TEST_             Observations          677030
+                     DEMOGRAPHICS                                           
+Member Type          DATA                       Variables             17    
+Engine               V9                         Indexes               0     
+Created              03/13/2025 17:01:46        Observation Length    1184  
+Last Modified        03/13/2025 17:01:46        Deleted Observations  0     
+Protection                                      Compressed            NO    
+Data Set Type                                   Sorted                NO    
+Label                                                                       
+Data Representation  SOLARIS_X86_64,                                        
+                     LINUX_X86_64,                                          
+                     ALPHA_TRU64, LINUX_IA64                                
+Encoding             latin1  Western (ISO)                                  
+
+
+                     Engine/Host Dependent Information
+
+Data Set Page Size          98304                                           
+Number of Data Set Pages    8257                                            
+First Data Page             1                                               
+Max Obs per Page            82                                              
+Obs in First Data Page      79                                              
+Number of Data Set Repairs  0                                               
+Filename                    /data/shared/04224/CTSI/libname/crdw/           
+                            ekg_test_demographics.sas7bdat                  
+Release Created             9.0401M8                                        
+Host Created                Linux                                           
+Inode Number                42949763120                                     
+Access Permission           rw-r--r--                                       
+Owner Name                  rsparapa                                        
+File Size                   774MB                                           
+File Size (bytes)           811794432                                       
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet11.sas                                  
+                                          17:01 Thursday, March 13, 2025   2
+
+                           The CONTENTS Procedure
+
+                         Variables in Creation Order
+ 
+         #    Variable                    Type    Len    Format
+
+         1    test_demographics_id        Char     16               
+         2    patient_trac_id             Char     16               
+         3    data_type                   Char      7               
+         4    site_name                   Char     29               
+         5    acquisition_device          Char      5               
+         6    overreader_last_name        Char     22               
+         7    overreader_first_name       Char     13               
+         8    overreader_id               Char      5               
+         9    status                      Char     11               
+        10    location_name               Char     32               
+        11    room_id                     Char     28               
+        12    test_reason                 Char     67               
+        13    diagnosis_stmt              Char    895               
+        14    acquisition_time            Num       8    DATETIME19.
+        15    acquisition_date_shifted    Num       8    DATETIME19.
+        16    acquisition_time_date       Num       8    DATE9.     
+        17    acquisition_date            Num       8    DATE9.     
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet11.sas                                  
+                                          17:01 Thursday, March 13, 2025   3
+
+                             The FREQ Procedure
+
+                           Table of afib by aflt
+
+                    afib      aflt
+
+                    Frequency|
+                    Percent  |
+                    Row Pct  |
+                    Col Pct  |       0|       1|  Total
+                    ---------+--------+--------+
+                           0 |      0 |   3018 |   3018
+                             |   0.00 |   5.97 |   5.97
+                             |   0.00 | 100.00 |
+                             |   0.00 |  27.76 |
+                    ---------+--------+--------+
+                           1 |  39711 |   7854 |  47565
+                             |  78.51 |  15.53 |  94.03
+                             |  83.49 |  16.51 |
+                             | 100.00 |  72.24 |
+                    ---------+--------+--------+
+                    Total       39711    10872    50583
+                                78.51    21.49   100.00
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet11.sas                                  
+                                          17:01 Thursday, March 13, 2025   4
+
+                           The CONTENTS Procedure
+
+Data Set Name        CRDW.EKG_TEST_DEMOGRAPHICS  Observations          50583
+Member Type          DATA                        Variables             24   
+Engine               V9                          Indexes               1    
+Created              03/13/2025 17:02:00         Observation Length    1248 
+Last Modified        03/13/2025 17:02:00         Deleted Observations  0    
+Protection                                       Compressed            NO   
+Data Set Type                                    Sorted                YES  
+Label                                                                       
+Data Representation  SOLARIS_X86_64,                                        
+                     LINUX_X86_64, ALPHA_TRU64,                             
+                     LINUX_IA64                                             
+Encoding             latin1  Western (ISO)                                  
+
+
+                     Engine/Host Dependent Information
+
+Data Set Page Size          106496                                          
+Number of Data Set Pages    597                                             
+First Data Page             1                                               
+Max Obs per Page            85                                              
+Obs in First Data Page      81                                              
+Index File Page Size        8192                                            
+Number of Index File Pages  177                                             
+Number of Data Set Repairs  0                                               
+Filename                    /data/shared/04224/CTSI/libname/crdw/           
+                            ekg_test_demographics.sas7bdat                  
+Release Created             9.0401M8                                        
+Host Created                Linux                                           
+Inode Number                42949763121                                     
+Access Permission           rw-r--r--                                       
+Owner Name                  rsparapa                                        
+File Size                   61MB                                            
+File Size (bytes)           63684608                                        
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet11.sas                                  
+                                          17:01 Thursday, March 13, 2025   5
+
+                           The CONTENTS Procedure
+
+                         Variables in Creation Order
+ 
+         #    Variable                    Type    Len    Format
+
+         1    patient_trac_id             Char     16               
+         2    patient_hash                Char     16               
+         3    gender                      Char      6               
+         4    race                        Char     16               
+         5    afib                        Num       8               
+         6    aflt                        Num       8               
+         7    test_demographics_id        Char     16               
+         8    data_type                   Char      7               
+         9    site_name                   Char     29               
+        10    acquisition_device          Char      5               
+        11    overreader_last_name        Char     22               
+        12    overreader_first_name       Char     13               
+        13    overreader_id               Char      5               
+        14    status                      Char     11               
+        15    location_name               Char     32               
+        16    room_id                     Char     28               
+        17    test_reason                 Char     67               
+        18    diagnosis_stmt              Char    895               
+        19    acquisition_time            Num       8    DATETIME19.
+        20    acquisition_date_shifted    Num       8    DATETIME19.
+        21    acquisition_time_date       Num       8    DATE9.     
+        22    acquisition_date            Num       8    DATE9.     
+        23    afib_date                   Num       8    DATE7.     
+        24    aflt_date                   Num       8    DATE7.     
+
+
+                  Alphabetic List of Indexes and Attributes
+ 
+                                                      # of
+                                          Unique    Unique
+                  #    Index              Option    Values
+
+                  1    patient_trac_id    YES        50583
+
+
+                              Sort Information
+
+            Sortedby       patient_hash acquisition_date_shifted
+            Validated      NO                                   
+            Character Set  ASCII                                
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet11.sas                                  

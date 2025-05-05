@@ -1,0 +1,1007 @@
+                                           09:52 Saturday, March 8, 2025   1
+
+                             The FREQ Procedure
+
+                                          Cumulative    Cumulative
+          aad    Frequency     Percent     Frequency      Percent
+          --------------------------------------------------------
+            1       14205       64.69         14205        64.69  
+            2        3310       15.07         17515        79.77  
+            3        1221        5.56         18736        85.33  
+            4         721        3.28         19457        88.61  
+            5         451        2.05         19908        90.67  
+            6         373        1.70         20281        92.37  
+            7         301        1.37         20582        93.74  
+            8         260        1.18         20842        94.92  
+            9         209        0.95         21051        95.87  
+           10         184        0.84         21235        96.71  
+           11         148        0.67         21383        97.39  
+           12         122        0.56         21505        97.94  
+           13          93        0.42         21598        98.36  
+           14          81        0.37         21679        98.73  
+           15          72        0.33         21751        99.06  
+           16          57        0.26         21808        99.32  
+           17          38        0.17         21846        99.49  
+           18          26        0.12         21872        99.61  
+           19          22        0.10         21894        99.71  
+           20          16        0.07         21910        99.79  
+           21           7        0.03         21917        99.82  
+           22           7        0.03         21924        99.85  
+           23          11        0.05         21935        99.90  
+           24           5        0.02         21940        99.92  
+           25           7        0.03         21947        99.95  
+           26           1        0.00         21948        99.96  
+           27           3        0.01         21951        99.97  
+           28           1        0.00         21952        99.98  
+           29           2        0.01         21954        99.99  
+           30           1        0.00         21955        99.99  
+           31           1        0.00         21956       100.00  
+           40           1        0.00         21957       100.00  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet15.sas                                  
+                                           09:52 Saturday, March 8, 2025   2
+
+                             The FREQ Procedure
+
+                                          Cumulative    Cumulative
+         amio    Frequency     Percent     Frequency      Percent
+         ---------------------------------------------------------
+            0       10473       47.70         10473        47.70  
+            1        6522       29.70         16995        77.40  
+            2        2256       10.27         19251        87.68  
+            3         812        3.70         20063        91.37  
+            4         485        2.21         20548        93.58  
+            5         290        1.32         20838        94.90  
+            6         238        1.08         21076        95.99  
+            7         170        0.77         21246        96.76  
+            8         157        0.72         21403        97.48  
+            9         128        0.58         21531        98.06  
+           10          82        0.37         21613        98.43  
+           11          69        0.31         21682        98.75  
+           12          53        0.24         21735        98.99  
+           13          44        0.20         21779        99.19  
+           14          37        0.17         21816        99.36  
+           15          34        0.15         21850        99.51  
+           16          30        0.14         21880        99.65  
+           17          18        0.08         21898        99.73  
+           18          15        0.07         21913        99.80  
+           19           9        0.04         21922        99.84  
+           20           8        0.04         21930        99.88  
+           21           5        0.02         21935        99.90  
+           22           3        0.01         21938        99.91  
+           23           4        0.02         21942        99.93  
+           24           1        0.00         21943        99.94  
+           25           5        0.02         21948        99.96  
+           26           1        0.00         21949        99.96  
+           27           4        0.02         21953        99.98  
+           28           1        0.00         21954        99.99  
+           29           1        0.00         21955        99.99  
+           31           1        0.00         21956       100.00  
+           40           1        0.00         21957       100.00  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet15.sas                                  
+                                           09:52 Saturday, March 8, 2025   3
+
+                             The FREQ Procedure
+
+                                           Cumulative    Cumulative
+        type1a    Frequency     Percent     Frequency      Percent
+        -----------------------------------------------------------
+             0       21718       98.91         21718        98.91  
+             1         140        0.64         21858        99.55  
+             2          46        0.21         21904        99.76  
+             3          21        0.10         21925        99.85  
+             4           8        0.04         21933        99.89  
+             5           8        0.04         21941        99.93  
+             6           4        0.02         21945        99.95  
+             7           3        0.01         21948        99.96  
+             8           1        0.00         21949        99.96  
+             9           1        0.00         21950        99.97  
+            10           4        0.02         21954        99.99  
+            11           2        0.01         21956       100.00  
+            13           1        0.00         21957       100.00  
+
+
+                                           Cumulative    Cumulative
+        type1b    Frequency     Percent     Frequency      Percent
+        -----------------------------------------------------------
+             0       15827       72.08         15827        72.08  
+             1        5727       26.08         21554        98.16  
+             2         261        1.19         21815        99.35  
+             3          40        0.18         21855        99.54  
+             4          26        0.12         21881        99.65  
+             5          14        0.06         21895        99.72  
+             6          14        0.06         21909        99.78  
+             7           6        0.03         21915        99.81  
+             8          11        0.05         21926        99.86  
+             9           8        0.04         21934        99.90  
+            10           4        0.02         21938        99.91  
+            11           5        0.02         21943        99.94  
+            12           3        0.01         21946        99.95  
+            13           2        0.01         21948        99.96  
+            14           1        0.00         21949        99.96  
+            15           3        0.01         21952        99.98  
+            16           1        0.00         21953        99.98  
+            17           2        0.01         21955        99.99  
+            19           1        0.00         21956       100.00  
+            24           1        0.00         21957       100.00  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet15.sas                                  
+                                           09:52 Saturday, March 8, 2025   4
+
+                             The FREQ Procedure
+
+                                           Cumulative    Cumulative
+        type1c    Frequency     Percent     Frequency      Percent
+        -----------------------------------------------------------
+             0       18972       86.41         18972        86.41  
+             1        1607        7.32         20579        93.72  
+             2         452        2.06         21031        95.78  
+             3         239        1.09         21270        96.87  
+             4         112        0.51         21382        97.38  
+             5         114        0.52         21496        97.90  
+             6          80        0.36         21576        98.26  
+             7          68        0.31         21644        98.57  
+             8          59        0.27         21703        98.84  
+             9          54        0.25         21757        99.09  
+            10          52        0.24         21809        99.33  
+            11          26        0.12         21835        99.44  
+            12          38        0.17         21873        99.62  
+            13          24        0.11         21897        99.73  
+            14          18        0.08         21915        99.81  
+            15          17        0.08         21932        99.89  
+            16           9        0.04         21941        99.93  
+            17           6        0.03         21947        99.95  
+            18           4        0.02         21951        99.97  
+            19           1        0.00         21952        99.98  
+            20           2        0.01         21954        99.99  
+            22           1        0.00         21955        99.99  
+            23           2        0.01         21957       100.00  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet15.sas                                  
+                                           09:52 Saturday, March 8, 2025   5
+
+                             The FREQ Procedure
+
+                                           Cumulative    Cumulative
+         type3    Frequency     Percent     Frequency      Percent
+         ----------------------------------------------------------
+             0       19997       91.07         19997        91.07  
+             1        1083        4.93         21080        96.01  
+             2         275        1.25         21355        97.26  
+             3         131        0.60         21486        97.85  
+             4          90        0.41         21576        98.26  
+             5          69        0.31         21645        98.58  
+             6          48        0.22         21693        98.80  
+             7          55        0.25         21748        99.05  
+             8          36        0.16         21784        99.21  
+             9          24        0.11         21808        99.32  
+            10          27        0.12         21835        99.44  
+            11          29        0.13         21864        99.58  
+            12          16        0.07         21880        99.65  
+            13          14        0.06         21894        99.71  
+            14          15        0.07         21909        99.78  
+            15          15        0.07         21924        99.85  
+            16          10        0.05         21934        99.90  
+            17           8        0.04         21942        99.93  
+            18           4        0.02         21946        99.95  
+            19           3        0.01         21949        99.96  
+            20           3        0.01         21952        99.98  
+            21           2        0.01         21954        99.99  
+            22           2        0.01         21956       100.00  
+            25           1        0.00         21957       100.00  
+
+
+                                          Cumulative    Cumulative
+         misc    Frequency     Percent     Frequency      Percent
+         ---------------------------------------------------------
+            0       19692       89.68         19692        89.68  
+            1        2099        9.56         21791        99.24  
+            2         131        0.60         21922        99.84  
+            3          30        0.14         21952        99.98  
+            4           4        0.02         21956       100.00  
+            5           1        0.00         21957       100.00  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet15.sas                                  
+                                           09:52 Saturday, March 8, 2025   6
+
+                           The CONTENTS Procedure
+
+Data Set Name        CRDW.AAD                    Observations          21957
+Member Type          DATA                        Variables             554  
+Engine               V9                          Indexes               0    
+Created              03/08/2025 09:53:49         Observation Length    4440 
+Last Modified        03/08/2025 09:53:49         Deleted Observations  0    
+Protection                                       Compressed            NO   
+Data Set Type                                    Sorted                NO   
+Label                                                                       
+Data Representation  SOLARIS_X86_64,                                        
+                     LINUX_X86_64, ALPHA_TRU64,                             
+                     LINUX_IA64                                             
+Encoding             latin1  Western (ISO)                                  
+
+
+                     Engine/Host Dependent Information
+
+   Data Set Page Size          131072                                   
+   Number of Data Set Pages    758                                      
+   First Data Page             1                                        
+   Max Obs per Page            29                                       
+   Obs in First Data Page      13                                       
+   Number of Data Set Repairs  0                                        
+   Filename                    /data/shared/AI/libname/crdw/aad.sas7bdat
+   Release Created             9.0401M8                                 
+   Host Created                Linux                                    
+   Inode Number                43040116744                              
+   Access Permission           rw-r--r--                                
+   Owner Name                  rsparapa                                 
+   File Size                   95MB                                     
+   File Size (bytes)           99483648                                 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet15.sas                                  
+                                           09:52 Saturday, March 8, 2025   7
+
+                           The CONTENTS Procedure
+
+                         Variables in Creation Order
+ 
+               #    Variable        Type    Len    Label
+
+               1    patient_hash    Char     16    patient_hash
+               2    aad             Num       8                
+               3    amio            Num       8                
+               4    type1a          Num       8                
+               5    type1b          Num       8                
+               6    type1c          Num       8                
+               7    type3           Num       8                
+               8    misc            Num       8                
+               9    aad17           Num       8                
+              10    aad18           Num       8                
+              11    aad19           Num       8                
+              12    aad20           Num       8                
+              13    aad21           Num       8                
+              14    aad22           Num       8                
+              15    amio17          Num       8                
+              16    amio18          Num       8                
+              17    amio19          Num       8                
+              18    amio20          Num       8                
+              19    amio21          Num       8                
+              20    amio22          Num       8                
+              21    type1a17        Num       8                
+              22    type1a18        Num       8                
+              23    type1a19        Num       8                
+              24    type1a20        Num       8                
+              25    type1a21        Num       8                
+              26    type1a22        Num       8                
+              27    type1b17        Num       8                
+              28    type1b18        Num       8                
+              29    type1b19        Num       8                
+              30    type1b20        Num       8                
+              31    type1b21        Num       8                
+              32    type1b22        Num       8                
+              33    type1c17        Num       8                
+              34    type1c18        Num       8                
+              35    type1c19        Num       8                
+              36    type1c20        Num       8                
+              37    type1c21        Num       8                
+              38    type1c22        Num       8                
+              39    type317         Num       8                
+              40    type318         Num       8                
+              41    type319         Num       8                
+              42    type320         Num       8                
+              43    type321         Num       8                
+ 
+/home/rsparapa/git/CTSI/BERD/snippet15.sas                                  
+                                           09:52 Saturday, March 8, 2025   8
+
+                           The CONTENTS Procedure
+
+                         Variables in Creation Order
+ 
+               #    Variable        Type    Len    Label
+
+              44    type322         Num       8                
+              45    misc17          Num       8                
+              46    misc18          Num       8                
+              47    misc19          Num       8                
+              48    misc20          Num       8                
+              49    misc21          Num       8                
+              50    misc22          Num       8                
+              51    aad1701         Num       8                
+              52    aad1702         Num       8                
+              53    aad1703         Num       8                
+              54    aad1704         Num       8                
+              55    aad1705         Num       8                
+              56    aad1706         Num       8                
+              57    aad1707         Num       8                
+              58    aad1708         Num       8                
+              59    aad1709         Num       8                
+              60    aad1710         Num       8                
+              61    aad1711         Num       8                
+              62    aad1712         Num       8                
+              63    aad1801         Num       8                
+              64    aad1802         Num       8                
+              65    aad1803         Num       8                
+              66    aad1804         Num       8                
+              67    aad1805         Num       8                
+              68    aad1806         Num       8                
+              69    aad1807         Num       8                
+              70    aad1808         Num       8                
+              71    aad1809         Num       8                
+              72    aad1810         Num       8                
+              73    aad1811         Num       8                
+              74    aad1812         Num       8                
+              75    aad1901         Num       8                
+              76    aad1902         Num       8                
+              77    aad1903         Num       8                
+              78    aad1904         Num       8                
+              79    aad1905         Num       8                
+              80    aad1906         Num       8                
+              81    aad1907         Num       8                
+              82    aad1908         Num       8                
+              83    aad1909         Num       8                
+              84    aad1910         Num       8                
+              85    aad1911         Num       8                
+              86    aad1912         Num       8                
+ 
+/home/rsparapa/git/CTSI/BERD/snippet15.sas                                  
+                                           09:52 Saturday, March 8, 2025   9
+
+                           The CONTENTS Procedure
+
+                         Variables in Creation Order
+ 
+               #    Variable        Type    Len    Label
+
+              87    aad2001         Num       8                
+              88    aad2002         Num       8                
+              89    aad2003         Num       8                
+              90    aad2004         Num       8                
+              91    aad2005         Num       8                
+              92    aad2006         Num       8                
+              93    aad2007         Num       8                
+              94    aad2008         Num       8                
+              95    aad2009         Num       8                
+              96    aad2010         Num       8                
+              97    aad2011         Num       8                
+              98    aad2012         Num       8                
+              99    aad2101         Num       8                
+             100    aad2102         Num       8                
+             101    aad2103         Num       8                
+             102    aad2104         Num       8                
+             103    aad2105         Num       8                
+             104    aad2106         Num       8                
+             105    aad2107         Num       8                
+             106    aad2108         Num       8                
+             107    aad2109         Num       8                
+             108    aad2110         Num       8                
+             109    aad2111         Num       8                
+             110    aad2112         Num       8                
+             111    aad2201         Num       8                
+             112    aad2202         Num       8                
+             113    aad2203         Num       8                
+             114    aad2204         Num       8                
+             115    aad2205         Num       8                
+             116    aad2206         Num       8                
+             117    aad2207         Num       8                
+             118    aad2208         Num       8                
+             119    aad2209         Num       8                
+             120    aad2210         Num       8                
+             121    aad2211         Num       8                
+             122    aad2212         Num       8                
+             123    amio1701        Num       8                
+             124    amio1702        Num       8                
+             125    amio1703        Num       8                
+             126    amio1704        Num       8                
+             127    amio1705        Num       8                
+             128    amio1706        Num       8                
+             129    amio1707        Num       8                
+ 
+/home/rsparapa/git/CTSI/BERD/snippet15.sas                                  
+                                           09:52 Saturday, March 8, 2025  10
+
+                           The CONTENTS Procedure
+
+                         Variables in Creation Order
+ 
+               #    Variable        Type    Len    Label
+
+             130    amio1708        Num       8                
+             131    amio1709        Num       8                
+             132    amio1710        Num       8                
+             133    amio1711        Num       8                
+             134    amio1712        Num       8                
+             135    amio1801        Num       8                
+             136    amio1802        Num       8                
+             137    amio1803        Num       8                
+             138    amio1804        Num       8                
+             139    amio1805        Num       8                
+             140    amio1806        Num       8                
+             141    amio1807        Num       8                
+             142    amio1808        Num       8                
+             143    amio1809        Num       8                
+             144    amio1810        Num       8                
+             145    amio1811        Num       8                
+             146    amio1812        Num       8                
+             147    amio1901        Num       8                
+             148    amio1902        Num       8                
+             149    amio1903        Num       8                
+             150    amio1904        Num       8                
+             151    amio1905        Num       8                
+             152    amio1906        Num       8                
+             153    amio1907        Num       8                
+             154    amio1908        Num       8                
+             155    amio1909        Num       8                
+             156    amio1910        Num       8                
+             157    amio1911        Num       8                
+             158    amio1912        Num       8                
+             159    amio2001        Num       8                
+             160    amio2002        Num       8                
+             161    amio2003        Num       8                
+             162    amio2004        Num       8                
+             163    amio2005        Num       8                
+             164    amio2006        Num       8                
+             165    amio2007        Num       8                
+             166    amio2008        Num       8                
+             167    amio2009        Num       8                
+             168    amio2010        Num       8                
+             169    amio2011        Num       8                
+             170    amio2012        Num       8                
+             171    amio2101        Num       8                
+             172    amio2102        Num       8                
+ 
+/home/rsparapa/git/CTSI/BERD/snippet15.sas                                  
+                                           09:52 Saturday, March 8, 2025  11
+
+                           The CONTENTS Procedure
+
+                         Variables in Creation Order
+ 
+               #    Variable        Type    Len    Label
+
+             173    amio2103        Num       8                
+             174    amio2104        Num       8                
+             175    amio2105        Num       8                
+             176    amio2106        Num       8                
+             177    amio2107        Num       8                
+             178    amio2108        Num       8                
+             179    amio2109        Num       8                
+             180    amio2110        Num       8                
+             181    amio2111        Num       8                
+             182    amio2112        Num       8                
+             183    amio2201        Num       8                
+             184    amio2202        Num       8                
+             185    amio2203        Num       8                
+             186    amio2204        Num       8                
+             187    amio2205        Num       8                
+             188    amio2206        Num       8                
+             189    amio2207        Num       8                
+             190    amio2208        Num       8                
+             191    amio2209        Num       8                
+             192    amio2210        Num       8                
+             193    amio2211        Num       8                
+             194    amio2212        Num       8                
+             195    type1a1701      Num       8                
+             196    type1a1702      Num       8                
+             197    type1a1703      Num       8                
+             198    type1a1704      Num       8                
+             199    type1a1705      Num       8                
+             200    type1a1706      Num       8                
+             201    type1a1707      Num       8                
+             202    type1a1708      Num       8                
+             203    type1a1709      Num       8                
+             204    type1a1710      Num       8                
+             205    type1a1711      Num       8                
+             206    type1a1712      Num       8                
+             207    type1a1801      Num       8                
+             208    type1a1802      Num       8                
+             209    type1a1803      Num       8                
+             210    type1a1804      Num       8                
+             211    type1a1805      Num       8                
+             212    type1a1806      Num       8                
+             213    type1a1807      Num       8                
+             214    type1a1808      Num       8                
+             215    type1a1809      Num       8                
+ 
+/home/rsparapa/git/CTSI/BERD/snippet15.sas                                  
+                                           09:52 Saturday, March 8, 2025  12
+
+                           The CONTENTS Procedure
+
+                         Variables in Creation Order
+ 
+               #    Variable        Type    Len    Label
+
+             216    type1a1810      Num       8                
+             217    type1a1811      Num       8                
+             218    type1a1812      Num       8                
+             219    type1a1901      Num       8                
+             220    type1a1902      Num       8                
+             221    type1a1903      Num       8                
+             222    type1a1904      Num       8                
+             223    type1a1905      Num       8                
+             224    type1a1906      Num       8                
+             225    type1a1907      Num       8                
+             226    type1a1908      Num       8                
+             227    type1a1909      Num       8                
+             228    type1a1910      Num       8                
+             229    type1a1911      Num       8                
+             230    type1a1912      Num       8                
+             231    type1a2001      Num       8                
+             232    type1a2002      Num       8                
+             233    type1a2003      Num       8                
+             234    type1a2004      Num       8                
+             235    type1a2005      Num       8                
+             236    type1a2006      Num       8                
+             237    type1a2007      Num       8                
+             238    type1a2008      Num       8                
+             239    type1a2009      Num       8                
+             240    type1a2010      Num       8                
+             241    type1a2011      Num       8                
+             242    type1a2012      Num       8                
+             243    type1a2101      Num       8                
+             244    type1a2102      Num       8                
+             245    type1a2103      Num       8                
+             246    type1a2104      Num       8                
+             247    type1a2105      Num       8                
+             248    type1a2106      Num       8                
+             249    type1a2107      Num       8                
+             250    type1a2108      Num       8                
+             251    type1a2109      Num       8                
+             252    type1a2110      Num       8                
+             253    type1a2111      Num       8                
+             254    type1a2112      Num       8                
+             255    type1a2201      Num       8                
+             256    type1a2202      Num       8                
+             257    type1a2203      Num       8                
+             258    type1a2204      Num       8                
+ 
+/home/rsparapa/git/CTSI/BERD/snippet15.sas                                  
+                                           09:52 Saturday, March 8, 2025  13
+
+                           The CONTENTS Procedure
+
+                         Variables in Creation Order
+ 
+               #    Variable        Type    Len    Label
+
+             259    type1a2205      Num       8                
+             260    type1a2206      Num       8                
+             261    type1a2207      Num       8                
+             262    type1a2208      Num       8                
+             263    type1a2209      Num       8                
+             264    type1a2210      Num       8                
+             265    type1a2211      Num       8                
+             266    type1a2212      Num       8                
+             267    type1b1701      Num       8                
+             268    type1b1702      Num       8                
+             269    type1b1703      Num       8                
+             270    type1b1704      Num       8                
+             271    type1b1705      Num       8                
+             272    type1b1706      Num       8                
+             273    type1b1707      Num       8                
+             274    type1b1708      Num       8                
+             275    type1b1709      Num       8                
+             276    type1b1710      Num       8                
+             277    type1b1711      Num       8                
+             278    type1b1712      Num       8                
+             279    type1b1801      Num       8                
+             280    type1b1802      Num       8                
+             281    type1b1803      Num       8                
+             282    type1b1804      Num       8                
+             283    type1b1805      Num       8                
+             284    type1b1806      Num       8                
+             285    type1b1807      Num       8                
+             286    type1b1808      Num       8                
+             287    type1b1809      Num       8                
+             288    type1b1810      Num       8                
+             289    type1b1811      Num       8                
+             290    type1b1812      Num       8                
+             291    type1b1901      Num       8                
+             292    type1b1902      Num       8                
+             293    type1b1903      Num       8                
+             294    type1b1904      Num       8                
+             295    type1b1905      Num       8                
+             296    type1b1906      Num       8                
+             297    type1b1907      Num       8                
+             298    type1b1908      Num       8                
+             299    type1b1909      Num       8                
+             300    type1b1910      Num       8                
+             301    type1b1911      Num       8                
+ 
+/home/rsparapa/git/CTSI/BERD/snippet15.sas                                  
+                                           09:52 Saturday, March 8, 2025  14
+
+                           The CONTENTS Procedure
+
+                         Variables in Creation Order
+ 
+               #    Variable        Type    Len    Label
+
+             302    type1b1912      Num       8                
+             303    type1b2001      Num       8                
+             304    type1b2002      Num       8                
+             305    type1b2003      Num       8                
+             306    type1b2004      Num       8                
+             307    type1b2005      Num       8                
+             308    type1b2006      Num       8                
+             309    type1b2007      Num       8                
+             310    type1b2008      Num       8                
+             311    type1b2009      Num       8                
+             312    type1b2010      Num       8                
+             313    type1b2011      Num       8                
+             314    type1b2012      Num       8                
+             315    type1b2101      Num       8                
+             316    type1b2102      Num       8                
+             317    type1b2103      Num       8                
+             318    type1b2104      Num       8                
+             319    type1b2105      Num       8                
+             320    type1b2106      Num       8                
+             321    type1b2107      Num       8                
+             322    type1b2108      Num       8                
+             323    type1b2109      Num       8                
+             324    type1b2110      Num       8                
+             325    type1b2111      Num       8                
+             326    type1b2112      Num       8                
+             327    type1b2201      Num       8                
+             328    type1b2202      Num       8                
+             329    type1b2203      Num       8                
+             330    type1b2204      Num       8                
+             331    type1b2205      Num       8                
+             332    type1b2206      Num       8                
+             333    type1b2207      Num       8                
+             334    type1b2208      Num       8                
+             335    type1b2209      Num       8                
+             336    type1b2210      Num       8                
+             337    type1b2211      Num       8                
+             338    type1b2212      Num       8                
+             339    type1c1701      Num       8                
+             340    type1c1702      Num       8                
+             341    type1c1703      Num       8                
+             342    type1c1704      Num       8                
+             343    type1c1705      Num       8                
+             344    type1c1706      Num       8                
+ 
+/home/rsparapa/git/CTSI/BERD/snippet15.sas                                  
+                                           09:52 Saturday, March 8, 2025  15
+
+                           The CONTENTS Procedure
+
+                         Variables in Creation Order
+ 
+               #    Variable        Type    Len    Label
+
+             345    type1c1707      Num       8                
+             346    type1c1708      Num       8                
+             347    type1c1709      Num       8                
+             348    type1c1710      Num       8                
+             349    type1c1711      Num       8                
+             350    type1c1712      Num       8                
+             351    type1c1801      Num       8                
+             352    type1c1802      Num       8                
+             353    type1c1803      Num       8                
+             354    type1c1804      Num       8                
+             355    type1c1805      Num       8                
+             356    type1c1806      Num       8                
+             357    type1c1807      Num       8                
+             358    type1c1808      Num       8                
+             359    type1c1809      Num       8                
+             360    type1c1810      Num       8                
+             361    type1c1811      Num       8                
+             362    type1c1812      Num       8                
+             363    type1c1901      Num       8                
+             364    type1c1902      Num       8                
+             365    type1c1903      Num       8                
+             366    type1c1904      Num       8                
+             367    type1c1905      Num       8                
+             368    type1c1906      Num       8                
+             369    type1c1907      Num       8                
+             370    type1c1908      Num       8                
+             371    type1c1909      Num       8                
+             372    type1c1910      Num       8                
+             373    type1c1911      Num       8                
+             374    type1c1912      Num       8                
+             375    type1c2001      Num       8                
+             376    type1c2002      Num       8                
+             377    type1c2003      Num       8                
+             378    type1c2004      Num       8                
+             379    type1c2005      Num       8                
+             380    type1c2006      Num       8                
+             381    type1c2007      Num       8                
+             382    type1c2008      Num       8                
+             383    type1c2009      Num       8                
+             384    type1c2010      Num       8                
+             385    type1c2011      Num       8                
+             386    type1c2012      Num       8                
+             387    type1c2101      Num       8                
+ 
+/home/rsparapa/git/CTSI/BERD/snippet15.sas                                  
+                                           09:52 Saturday, March 8, 2025  16
+
+                           The CONTENTS Procedure
+
+                         Variables in Creation Order
+ 
+               #    Variable        Type    Len    Label
+
+             388    type1c2102      Num       8                
+             389    type1c2103      Num       8                
+             390    type1c2104      Num       8                
+             391    type1c2105      Num       8                
+             392    type1c2106      Num       8                
+             393    type1c2107      Num       8                
+             394    type1c2108      Num       8                
+             395    type1c2109      Num       8                
+             396    type1c2110      Num       8                
+             397    type1c2111      Num       8                
+             398    type1c2112      Num       8                
+             399    type1c2201      Num       8                
+             400    type1c2202      Num       8                
+             401    type1c2203      Num       8                
+             402    type1c2204      Num       8                
+             403    type1c2205      Num       8                
+             404    type1c2206      Num       8                
+             405    type1c2207      Num       8                
+             406    type1c2208      Num       8                
+             407    type1c2209      Num       8                
+             408    type1c2210      Num       8                
+             409    type1c2211      Num       8                
+             410    type1c2212      Num       8                
+             411    type31701       Num       8                
+             412    type31702       Num       8                
+             413    type31703       Num       8                
+             414    type31704       Num       8                
+             415    type31705       Num       8                
+             416    type31706       Num       8                
+             417    type31707       Num       8                
+             418    type31708       Num       8                
+             419    type31709       Num       8                
+             420    type31710       Num       8                
+             421    type31711       Num       8                
+             422    type31712       Num       8                
+             423    type31801       Num       8                
+             424    type31802       Num       8                
+             425    type31803       Num       8                
+             426    type31804       Num       8                
+             427    type31805       Num       8                
+             428    type31806       Num       8                
+             429    type31807       Num       8                
+             430    type31808       Num       8                
+ 
+/home/rsparapa/git/CTSI/BERD/snippet15.sas                                  
+                                           09:52 Saturday, March 8, 2025  17
+
+                           The CONTENTS Procedure
+
+                         Variables in Creation Order
+ 
+               #    Variable        Type    Len    Label
+
+             431    type31809       Num       8                
+             432    type31810       Num       8                
+             433    type31811       Num       8                
+             434    type31812       Num       8                
+             435    type31901       Num       8                
+             436    type31902       Num       8                
+             437    type31903       Num       8                
+             438    type31904       Num       8                
+             439    type31905       Num       8                
+             440    type31906       Num       8                
+             441    type31907       Num       8                
+             442    type31908       Num       8                
+             443    type31909       Num       8                
+             444    type31910       Num       8                
+             445    type31911       Num       8                
+             446    type31912       Num       8                
+             447    type32001       Num       8                
+             448    type32002       Num       8                
+             449    type32003       Num       8                
+             450    type32004       Num       8                
+             451    type32005       Num       8                
+             452    type32006       Num       8                
+             453    type32007       Num       8                
+             454    type32008       Num       8                
+             455    type32009       Num       8                
+             456    type32010       Num       8                
+             457    type32011       Num       8                
+             458    type32012       Num       8                
+             459    type32101       Num       8                
+             460    type32102       Num       8                
+             461    type32103       Num       8                
+             462    type32104       Num       8                
+             463    type32105       Num       8                
+             464    type32106       Num       8                
+             465    type32107       Num       8                
+             466    type32108       Num       8                
+             467    type32109       Num       8                
+             468    type32110       Num       8                
+             469    type32111       Num       8                
+             470    type32112       Num       8                
+             471    type32201       Num       8                
+             472    type32202       Num       8                
+             473    type32203       Num       8                
+ 
+/home/rsparapa/git/CTSI/BERD/snippet15.sas                                  
+                                           09:52 Saturday, March 8, 2025  18
+
+                           The CONTENTS Procedure
+
+                         Variables in Creation Order
+ 
+               #    Variable        Type    Len    Label
+
+             474    type32204       Num       8                
+             475    type32205       Num       8                
+             476    type32206       Num       8                
+             477    type32207       Num       8                
+             478    type32208       Num       8                
+             479    type32209       Num       8                
+             480    type32210       Num       8                
+             481    type32211       Num       8                
+             482    type32212       Num       8                
+             483    misc1701        Num       8                
+             484    misc1702        Num       8                
+             485    misc1703        Num       8                
+             486    misc1704        Num       8                
+             487    misc1705        Num       8                
+             488    misc1706        Num       8                
+             489    misc1707        Num       8                
+             490    misc1708        Num       8                
+             491    misc1709        Num       8                
+             492    misc1710        Num       8                
+             493    misc1711        Num       8                
+             494    misc1712        Num       8                
+             495    misc1801        Num       8                
+             496    misc1802        Num       8                
+             497    misc1803        Num       8                
+             498    misc1804        Num       8                
+             499    misc1805        Num       8                
+             500    misc1806        Num       8                
+             501    misc1807        Num       8                
+             502    misc1808        Num       8                
+             503    misc1809        Num       8                
+             504    misc1810        Num       8                
+             505    misc1811        Num       8                
+             506    misc1812        Num       8                
+             507    misc1901        Num       8                
+             508    misc1902        Num       8                
+             509    misc1903        Num       8                
+             510    misc1904        Num       8                
+             511    misc1905        Num       8                
+             512    misc1906        Num       8                
+             513    misc1907        Num       8                
+             514    misc1908        Num       8                
+             515    misc1909        Num       8                
+             516    misc1910        Num       8                
+ 
+/home/rsparapa/git/CTSI/BERD/snippet15.sas                                  
+                                           09:52 Saturday, March 8, 2025  19
+
+                           The CONTENTS Procedure
+
+                         Variables in Creation Order
+ 
+               #    Variable        Type    Len    Label
+
+             517    misc1911        Num       8                
+             518    misc1912        Num       8                
+             519    misc2001        Num       8                
+             520    misc2002        Num       8                
+             521    misc2003        Num       8                
+             522    misc2004        Num       8                
+             523    misc2005        Num       8                
+             524    misc2006        Num       8                
+             525    misc2007        Num       8                
+             526    misc2008        Num       8                
+             527    misc2009        Num       8                
+             528    misc2010        Num       8                
+             529    misc2011        Num       8                
+             530    misc2012        Num       8                
+             531    misc2101        Num       8                
+             532    misc2102        Num       8                
+             533    misc2103        Num       8                
+             534    misc2104        Num       8                
+             535    misc2105        Num       8                
+             536    misc2106        Num       8                
+             537    misc2107        Num       8                
+             538    misc2108        Num       8                
+             539    misc2109        Num       8                
+             540    misc2110        Num       8                
+             541    misc2111        Num       8                
+             542    misc2112        Num       8                
+             543    misc2201        Num       8                
+             544    misc2202        Num       8                
+             545    misc2203        Num       8                
+             546    misc2204        Num       8                
+             547    misc2205        Num       8                
+             548    misc2206        Num       8                
+             549    misc2207        Num       8                
+             550    misc2208        Num       8                
+             551    misc2209        Num       8                
+             552    misc2210        Num       8                
+             553    misc2211        Num       8                
+             554    misc2212        Num       8                
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet15.sas                                  

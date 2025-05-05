@@ -1,0 +1,212 @@
+                                          17:17 Thursday, March 13, 2025   1
+
+                             The FREQ Procedure
+
+                                            Cumulative    Cumulative
+        pxtotal    Frequency     Percent     Frequency      Percent
+        ------------------------------------------------------------
+              1        4232       67.58          4232        67.58  
+              2        1134       18.11          5366        85.69  
+              3         467        7.46          5833        93.15  
+              4         217        3.47          6050        96.61  
+              5          91        1.45          6141        98.07  
+              6          48        0.77          6189        98.83  
+              7          27        0.43          6216        99.27  
+              8          14        0.22          6230        99.49  
+              9          13        0.21          6243        99.70  
+             10           8        0.13          6251        99.82  
+             11           2        0.03          6253        99.86  
+             12           2        0.03          6255        99.89  
+             13           1        0.02          6256        99.90  
+             14           1        0.02          6257        99.92  
+             15           3        0.05          6260        99.97  
+             17           1        0.02          6261        99.98  
+             18           1        0.02          6262       100.00  
+
+
+                                              Cumulative    Cumulative
+     afib_closure    Frequency     Percent     Frequency      Percent
+     -----------------------------------------------------------------
+                0        4501       71.88          4501        71.88  
+                1        1556       24.85          6057        96.73  
+                2         166        2.65          6223        99.38  
+                3          38        0.61          6261        99.98  
+                4           1        0.02          6262       100.00  
+
+
+                                            Cumulative    Cumulative
+       ablation    Frequency     Percent     Frequency      Percent
+       -------------------------------------------------------------
+              0        3256       52.00          3256        52.00  
+              1        2624       41.90          5880        93.90  
+              2         316        5.05          6196        98.95  
+              3          52        0.83          6248        99.78  
+              4          12        0.19          6260        99.97  
+              5           2        0.03          6262       100.00  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet14.sas                                  
+                                          17:17 Thursday, March 13, 2025   2
+
+                             The FREQ Procedure
+
+                                               Cumulative    Cumulative
+     cardioversion    Frequency     Percent     Frequency      Percent
+     ------------------------------------------------------------------
+                 0        2208       35.26          2208        35.26  
+                 1        2779       44.38          4987        79.64  
+                 2         769       12.28          5756        91.92  
+                 3         299        4.77          6055        96.69  
+                 4         105        1.68          6160        98.37  
+                 5          49        0.78          6209        99.15  
+                 6          26        0.42          6235        99.57  
+                 7          10        0.16          6245        99.73  
+                 8           5        0.08          6250        99.81  
+                 9           5        0.08          6255        99.89  
+                10           1        0.02          6256        99.90  
+                11           1        0.02          6257        99.92  
+                12           2        0.03          6259        99.95  
+                13           1        0.02          6260        99.97  
+                14           1        0.02          6261        99.98  
+                15           1        0.02          6262       100.00  
+
+
+                                            Cumulative    Cumulative
+        closure    Frequency     Percent     Frequency      Percent
+        ------------------------------------------------------------
+              0        5849       93.40          5849        93.40  
+              1         410        6.55          6259        99.95  
+              2           3        0.05          6262       100.00  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet14.sas                                  
+                                          17:17 Thursday, March 13, 2025   3
+
+                           The CONTENTS Procedure
+
+Data Set Name        CRDW.SNIPPET14               Observations          6262
+Member Type          DATA                         Variables             43  
+Engine               V9                           Indexes               0   
+Created              03/13/2025 17:17:07          Observation Length    312 
+Last Modified        03/13/2025 17:17:07          Deleted Observations  0   
+Protection                                        Compressed            NO  
+Data Set Type                                     Sorted                NO  
+Label                                                                       
+Data Representation  SOLARIS_X86_64,                                        
+                     LINUX_X86_64, ALPHA_TRU64,                             
+                     LINUX_IA64                                             
+Encoding             latin1  Western (ISO)                                  
+
+
+                     Engine/Host Dependent Information
+
+Data Set Page Size          65536                                           
+Number of Data Set Pages    31                                              
+First Data Page             1                                               
+Max Obs per Page            209                                             
+Obs in First Data Page      187                                             
+Number of Data Set Repairs  0                                               
+Filename                    /data/shared/04224/CTSI/libname/                
+                            crdw/snippet14.sas7bdat                         
+Release Created             9.0401M8                                        
+Host Created                Linux                                           
+Inode Number                42949763116                                     
+Access Permission           rw-r--r--                                       
+Owner Name                  rsparapa                                        
+File Size                   2MB                                             
+File Size (bytes)           2097152                                         
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet14.sas                                  
+                                          17:17 Thursday, March 13, 2025   4
+
+                           The CONTENTS Procedure
+
+                         Variables in Creation Order
+ 
+           #    Variable         Type    Len    Format    Informat
+
+           1    px               Char     18    $16.      $16.    
+           2    patient_hash     Char     16    $16.      $16.    
+           3    px1              Char      5                      
+           4    px2              Char      5                      
+           5    px3              Char      5                      
+           6    px4              Char      5                      
+           7    px5              Char      5                      
+           8    px6              Char      5                      
+           9    px7              Char      5                      
+          10    px8              Char      5                      
+          11    px9              Char      5                      
+          12    px10             Char      5                      
+          13    px11             Char      5                      
+          14    px12             Char      5                      
+          15    px13             Char      5                      
+          16    px14             Char      5                      
+          17    px15             Char      5                      
+          18    px16             Char      5                      
+          19    px17             Char      5                      
+          20    px18             Char      5                      
+          21    pxdate1          Num       8    DATE7.            
+          22    pxdate2          Num       8    DATE7.            
+          23    pxdate3          Num       8    DATE7.            
+          24    pxdate4          Num       8    DATE7.            
+          25    pxdate5          Num       8    DATE7.            
+          26    pxdate6          Num       8    DATE7.            
+          27    pxdate7          Num       8    DATE7.            
+          28    pxdate8          Num       8    DATE7.            
+          29    pxdate9          Num       8    DATE7.            
+          30    pxdate10         Num       8    DATE7.            
+          31    pxdate11         Num       8    DATE7.            
+          32    pxdate12         Num       8    DATE7.            
+          33    pxdate13         Num       8    DATE7.            
+          34    pxdate14         Num       8    DATE7.            
+          35    pxdate15         Num       8    DATE7.            
+          36    pxdate16         Num       8    DATE7.            
+          37    pxdate17         Num       8    DATE7.            
+          38    pxdate18         Num       8    DATE7.            
+          39    pxtotal          Num       8                      
+          40    ablation         Num       8                      
+          41    cardioversion    Num       8                      
+          42    closure          Num       8                      
+          43    afib_closure     Num       8                      
+ 
+/home/rsparapa/git/CTSI/BERD/snippet14.sas                                  

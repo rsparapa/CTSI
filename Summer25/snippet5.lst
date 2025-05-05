@@ -1,0 +1,159 @@
+                                           11:55 Tuesday, April 22, 2025   1
+
+                                 adv_directive_      birth_   adv_directive_
+Obs    birth_date_shifted          date_shifted        date        date
+
+  1    13JUN1916:00:00:00                     .   13JUN1916             .   
+  2    28FEB1973:00:00:00                     .   28FEB1973             .   
+  3    04SEP1967:00:00:00                     .   04SEP1967             .   
+  4    25MAR1969:00:00:00                     .   25MAR1969             .   
+  5    06NOV1976:00:00:00                     .   06NOV1976             .   
+  6    28APR1952:00:00:00                     .   28APR1952             .   
+  7    17NOV1961:00:00:00                     .   17NOV1961             .   
+  8    13AUG1948:00:00:00                     .   13AUG1948             .   
+  9    06JAN1958:00:00:00                     .   06JAN1958             .   
+ 10    17MAY1971:00:00:00                     .   17MAY1971             .   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet5.sas                                   
+                                           11:55 Tuesday, April 22, 2025   2
+
+                           The CONTENTS Procedure
+
+Data Set Name        CRDW.SNIPPET5                 Observations          10 
+Member Type          DATA                          Variables             40 
+Engine               V9                            Indexes               0  
+Created              04/22/2025 11:55:06           Observation Length    512
+Last Modified        04/22/2025 11:55:06           Deleted Observations  0  
+Protection                                         Compressed            NO 
+Data Set Type                                      Sorted                NO 
+Label                                                                       
+Data Representation  SOLARIS_X86_64,                                        
+                     LINUX_X86_64, ALPHA_TRU64,                             
+                     LINUX_IA64                                             
+Encoding             latin1  Western (ISO)                                  
+
+
+                     Engine/Host Dependent Information
+
+Data Set Page Size          65536                                           
+Number of Data Set Pages    1                                               
+First Data Page             1                                               
+Max Obs per Page            127                                             
+Obs in First Data Page      10                                              
+Number of Data Set Repairs  0                                               
+Filename                    /data/shared/04224/afib/libname/                
+                            crdw/snippet5.sas7bdat                          
+Release Created             9.0401M8                                        
+Host Created                Linux                                           
+Inode Number                42949763076                                     
+Access Permission           rw-r--r--                                       
+Owner Name                  rsparapa                                        
+File Size                   128KB                                           
+File Size (bytes)           131072                                          
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet5.sas                                   
+                                           11:55 Tuesday, April 22, 2025   3
+
+                           The CONTENTS Procedure
+
+                        Variables in Creation Order
+ 
+       #    Variable                       Type    Len    Format
+
+       1    vital_status_source            Char     22               
+       2    death_date_source              Char     22               
+       3    death_date_precision           Char     10               
+       4    vital_status                   Char      8               
+       5    military_branch_name           Char     23               
+       6    zip3                           Char      3               
+       7    veteran_status_c               Char      1               
+       8    secondary_ruca_code_2010       Char      4               
+       9    ethnicity                      Char     12               
+      10    primary_care_provider_name     Char     55               
+      11    ped_gest_age                   Char     15               
+      12    adi_narank                     Char      5               
+      13    state_c                        Char      3               
+      14    race                           Char     41               
+      15    research_contact_pref          Char     14               
+      16    race_c                         Char      2               
+      17    sex                            Char      7               
+      18    state_name                     Char     30               
+      19    patient_hash                   Char     16               
+      20    hispanic_c                     Char      2               
+      21    sex_c                          Char      1               
+      22    language_code                  Char      3               
+      23    geocode_result                 Char     22               
+      24    marital_status                 Char     17               
+      25    primary_care_provider_title    Char     18               
+      26    need_interpreter               Char      1               
+      27    adv_directive_yn               Char      1               
+      28    veteran_status_name            Char     18               
+      29    language                       Char     22               
+      30    gender_identity                Char     22               
+      31    employment_status              Char     23               
+      32    txp_pat_yn                     Char      1               
+      33    gender_identity_c              Num       8               
+      34    birth_date_shifted             Num       8    DATETIME19.
+      35    marital_status_c               Num       8               
+      36    employment_status_c            Num       8               
+      37    branch_of_service_c            Num       8               
+      38    adv_directive_date_shifted     Num       8    DATETIME19.
+      39    birth_date                     Num       8    DATE9.     
+      40    adv_directive_date             Num       8    DATE9.     
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet5.sas                                   

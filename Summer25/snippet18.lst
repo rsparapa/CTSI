@@ -1,0 +1,96 @@
+                                                                                         12:34 Tuesday, April 22, 2025   1
+
+                                                    The FREQ Procedure
+
+                                                                 Cumulative    Cumulative
+                                amio    Frequency     Percent     Frequency      Percent
+                                ---------------------------------------------------------
+                                   0        2547       53.65          2547        53.65  
+                                  1+        2200       46.35          4747       100.00  
+
+
+                                                                      Cumulative    Cumulative
+                            cardioversion    Frequency     Percent     Frequency      Percent
+                            ------------------------------------------------------------------
+                                        0        3127       65.87          3127        65.87  
+                                       1+        1620       34.13          4747       100.00  
+
+
+                                                                   Cumulative    Cumulative
+                              ablation    Frequency     Percent     Frequency      Percent
+                              -------------------------------------------------------------
+                                     0        3830       80.68          3830        80.68  
+                                    1+         917       19.32          4747       100.00  
+
+
+                                                                 Cumulative    Cumulative
+                                 aad    Frequency     Percent     Frequency      Percent
+                                 --------------------------------------------------------
+                                   0        4025       84.79          4025        84.79  
+                                  1+         722       15.21          4747       100.00  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet18.sas                                                                                
+                                                                                         12:34 Tuesday, April 22, 2025   2
+
+                           Obs    amio    cardioversion    ablation    aad    COUNT    PERCENT
+
+                             1      0           0              0        0      1546    32.5679
+                             2     1+           0              0        0       951    20.0337
+                             3     1+          1+              0        0       692    14.5776
+                             4     1+          1+             1+        0       436     9.1847
+                             5      0           0              0       1+       351     7.3941
+                             6      0          1+              0       1+       147     3.0967
+                             7      0          1+             1+       1+       146     3.0756
+                             8      0          1+              0        0       143     3.0124
+                             9     1+           0             1+        0       121     2.5490
+                            10      0           0             1+        0        80     1.6853
+                            11      0           0             1+       1+        78     1.6431
+                            12      0          1+             1+        0        56     1.1797
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet18.sas                                                                                

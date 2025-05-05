@@ -1,0 +1,790 @@
+                                          17:08 Thursday, March 13, 2025   1
+
+                           The CONTENTS Procedure
+
+Data Set Name        CRDW.SNIPPET13               Observations          4747
+Member Type          DATA                         Variables             48  
+Engine               V9                           Indexes               0   
+Created              03/13/2025 17:08:06          Observation Length    1448
+Last Modified        03/13/2025 17:08:06          Deleted Observations  0   
+Protection                                        Compressed            NO  
+Data Set Type                                     Sorted                NO  
+Label                                                                       
+Data Representation  SOLARIS_X86_64,                                        
+                     LINUX_X86_64, ALPHA_TRU64,                             
+                     LINUX_IA64                                             
+Encoding             latin1  Western (ISO)                                  
+
+
+                     Engine/Host Dependent Information
+
+Data Set Page Size          122880                                          
+Number of Data Set Pages    57                                              
+First Data Page             1                                               
+Max Obs per Page            84                                              
+Obs in First Data Page      79                                              
+Number of Data Set Repairs  0                                               
+Filename                    /data/shared/04224/CTSI/libname/                
+                            crdw/snippet13.sas7bdat                         
+Release Created             9.0401M8                                        
+Host Created                Linux                                           
+Inode Number                42949763132                                     
+Access Permission           rw-r--r--                                       
+Owner Name                  rsparapa                                        
+File Size                   7MB                                             
+File Size (bytes)           7127040                                         
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet13.sas                                  
+                                          17:08 Thursday, March 13, 2025   2
+
+                           The CONTENTS Procedure
+
+                         Variables in Creation Order
+ 
+         #    Variable                    Type    Len    Format
+
+         1    patient_hash                Char     16               
+         2    last_date                   Num       8    DATE7.     
+         3    first_date                  Num       8    DATE7.     
+         4    patient_trac_id             Char     16               
+         5    gender                      Char      6               
+         6    race                        Char     16               
+         7    afib                        Num       8               
+         8    aflt                        Num       8               
+         9    test_demographics_id        Char     16               
+        10    data_type                   Char      7               
+        11    site_name                   Char     29               
+        12    acquisition_device          Char      5               
+        13    overreader_last_name        Char     22               
+        14    overreader_first_name       Char     13               
+        15    overreader_id               Char      5               
+        16    status                      Char     11               
+        17    location_name               Char     32               
+        18    room_id                     Char     28               
+        19    test_reason                 Char     67               
+        20    diagnosis_stmt              Char    895               
+        21    acquisition_time            Num       8    DATETIME19.
+        22    acquisition_date_shifted    Num       8    DATETIME19.
+        23    acquisition_time_date       Num       8    DATE9.     
+        24    acquisition_date            Num       8    DATE9.     
+        25    afib_date                   Num       8    DATE7.     
+        26    aflt_date                   Num       8    DATE7.     
+        27    resting_ecg_meas_id         Char     16               
+        28    systolic_bp                 Num       8               
+        29    diastolic_bp                Num       8               
+        30    ventricular_rate            Num       8               
+        31    atrial_rate                 Num       8               
+        32    printerval                  Num       8               
+        33    qrsduration                 Num       8               
+        34    qtinterval                  Num       8               
+        35    qtcorrected                 Num       8               
+        36    paxis                       Num       8               
+        37    raxis                       Num       8               
+        38    taxis                       Num       8               
+        39    qrscount                    Num       8               
+        40    qonset                      Num       8               
+        41    qoffset                     Num       8               
+        42    ponset                      Num       8               
+        43    poffset                     Num       8               
+ 
+/home/rsparapa/git/CTSI/BERD/snippet13.sas                                  
+                                          17:08 Thursday, March 13, 2025   3
+
+                           The CONTENTS Procedure
+
+                         Variables in Creation Order
+ 
+         #    Variable                    Type    Len    Format
+
+        44    toffset                     Num       8               
+        45    ecgsample_base              Num       8               
+        46    ecgsample_exponent          Num       8               
+        47    qtc_frederica               Num       8               
+        48    diff                        Num       8               
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet13.sas                                  
+                                          17:08 Thursday, March 13, 2025   4
+
+                          The UNIVARIATE Procedure
+                              Variable:  diff
+
+                                  Moments
+
+      N                        4747    Sum Weights               4747
+      Mean               499.853802    Sum Observations       2372806
+      Std Deviation      424.172188    Variance            179922.045
+      Skewness           1.09048417    Kurtosis            0.79575117
+      Uncorrected SS     2039966128    Corrected SS         853910027
+      Coeff Variation    84.8592501    Std Error Mean      6.15648143
+
+
+                         Basic Statistical Measures
+ 
+               Location                    Variability
+
+           Mean     499.8538     Std Deviation          424.17219
+           Median   381.0000     Variance                  179922
+           Mode      34.0000     Range                       2095
+                                 Interquartile Range    616.00000
+
+  Note: The mode displayed is the smallest of 5 modes with a count of 23.
+
+
+                         Tests for Location: Mu0=0
+ 
+              Test           -Statistic-    -----p Value------
+
+              Student's t    t  81.19147    Pr > |t|    <.0001
+              Sign           M    2373.5    Pr >= |M|   <.0001
+              Signed Rank    S   5634689    Pr >= |S|   <.0001
+
+
+                          Quantiles (Definition 5)
+ 
+                           Level         Quantile
+
+                           100% Max          2126
+                           99%               1768
+                           95%               1343
+                           90%               1090
+                           75% Q3             758
+                           50% Median         381
+                           25% Q1             142
+                           10%                 62
+                           5%                  44
+                           1%                  33
+                           0% Min              31
+ 
+/home/rsparapa/git/CTSI/BERD/snippet13.sas                                  
+                                          17:08 Thursday, March 13, 2025   5
+
+                          The UNIVARIATE Procedure
+                              Variable:  diff
+
+                            Extreme Observations
+ 
+                    ----Lowest----        ----Highest---
+ 
+                    Value      Obs        Value      Obs
+
+                       31     4595         2126     4739
+                       31     4594         2126     4740
+                       31     3361         2126     4741
+                       31     3360         2126     4742
+                       31     3187         2126     4743
+
+
+                          Histogram                         #        Boxplot
+   2150+*                                                  16           0
+       .*                                                   2           0
+       .*                                                   6           0
+       .**                                                 20           0
+       .**                                                 33           0
+       .*                                                  18           0
+       .**                                                 37           |
+   1450+****                                               71           |
+       .****                                               67           |
+       .*****                                              92           |
+       .******                                            100           |
+       .*********                                         154           |
+       .**************                                    257           |
+       .************                                      217           |
+    750+*************                                     238        +-----+
+       .****************                                  299        |     |
+       .***************                                   284        |     |
+       .*********************                             396        |  +  |
+       .*************************                         460        *-----*
+       .***************************                       506        |     |
+       .*******************************                   585        +-----+
+     50+***********************************************   889           |
+        ----+----+----+----+----+----+----+----+----+--
+        * may represent up to 19 counts
+
+
+
+
+
+
+
+
+
+/home/rsparapa/git/CTSI/BERD/snippet13.sas
+                                          17:08 Thursday, March 13, 2025   6
+
+                          The UNIVARIATE Procedure
+                              Variable:  diff
+
+                               Normal Probability Plot
+            2150+                                                  *
+                |                                                  *
+                |                                                  *
+                |                                                 **
+                |                                              ***
+                |                                              *
+                |                                            ***  ++
+            1450+                                          ***  ++
+                |                                         ** +++
+                |                                       ***++
+                |                                      **++
+                |                                    ***+
+                |                                  ***
+                |                                ***
+             750+                              +**
+                |                            +***
+                |                          +***
+                |                       ++***
+                |                     ++***
+                |                  ++****
+                |                *****
+              50+*****************
+                 +----+----+----+----+----+----+----+----+----+----+
+                     -2        -1         0        +1        +2
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet13.sas                                  
+                                          17:08 Thursday, March 13, 2025   7
+
+                          The UNIVARIATE Procedure
+                        Variable:  ventricular_rate
+
+                                  Moments
+
+      N                        4747    Sum Weights               4747
+      Mean               123.024226    Sum Observations        583996
+      Std Deviation      19.1901469    Variance            368.261739
+      Skewness           1.14824493    Kurtosis            1.52120685
+      Uncorrected SS       73593426    Corrected SS        1747770.21
+      Coeff Variation    15.5986732    Std Error Mean      0.27852789
+
+
+                         Basic Statistical Measures
+ 
+               Location                    Variability
+
+           Mean     123.0242     Std Deviation           19.19015
+           Median   118.0000     Variance               368.26174
+           Mode     101.0000     Range                  137.00000
+                                 Interquartile Range     26.00000
+
+
+                         Tests for Location: Mu0=0
+ 
+              Test           -Statistic-    -----p Value------
+
+              Student's t    t  441.6945    Pr > |t|    <.0001
+              Sign           M    2373.5    Pr >= |M|   <.0001
+              Signed Rank    S   5634689    Pr >= |S|   <.0001
+
+
+                          Quantiles (Definition 5)
+ 
+                           Level         Quantile
+
+                           100% Max           237
+                           99%                182
+                           95%                159
+                           90%                150
+                           75% Q3             134
+                           50% Median         118
+                           25% Q1             108
+                           10%                103
+                           5%                 101
+                           1%                 100
+                           0% Min             100
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet13.sas                                  
+                                          17:08 Thursday, March 13, 2025   8
+
+                          The UNIVARIATE Procedure
+                        Variable:  ventricular_rate
+
+                            Extreme Observations
+ 
+                    ----Lowest----        ----Highest---
+ 
+                    Value      Obs        Value      Obs
+
+                      100     4731          212     4352
+                      100     4572          219     4285
+                      100     4554          221     2322
+                      100     4501          236      274
+                      100     4382          237     3375
+
+
+                          Histogram                          #       Boxplot
+    235+*                                                    2          *
+       .*                                                    1          *
+       .*                                                    3          0
+       .*                                                    5          0
+       .*                                                   17          0
+       .*                                                   26          0
+       .**                                                  58          0
+       .****                                               118          |
+       .*********                                          266          |
+       .**************                                     405          |
+       .*********************                              605       +-----+
+       .**************************                         752       |  +  |
+       .************************************              1060       *-----*
+    105+************************************************  1429       +-----+
+        ----+----+----+----+----+----+----+----+----+---
+        * may represent up to 30 counts
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/home/rsparapa/git/CTSI/BERD/snippet13.sas
+                                          17:08 Thursday, March 13, 2025   9
+
+                          The UNIVARIATE Procedure
+                        Variable:  ventricular_rate
+
+                               Normal Probability Plot
+             235+                                                  *
+                |                                                  *
+                |                                                  *
+                |                                                  *
+                |                                                  *
+                |                                                ***
+                |                                             **** +
+                |                                          ****++++
+                |                                      *****++
+                |                                  *****+
+                |                             +*****
+                |                        ++*****
+                |                   +*******
+             105+*********************
+                 +----+----+----+----+----+----+----+----+----+----+
+                     -2        -1         0        +1        +2
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet13.sas                                  
+                                          17:08 Thursday, March 13, 2025  10
+
+                          The UNIVARIATE Procedure
+                           Variable:  atrial_rate
+
+                                  Moments
+
+      N                        2602    Sum Weights               2602
+      Mean               172.156418    Sum Observations        447951
+      Std Deviation      83.9165413    Variance             7041.9859
+      Skewness           1.27964597    Kurtosis            0.60333854
+      Uncorrected SS       95433845    Corrected SS        18316205.3
+      Coeff Variation    48.7443583    Std Error Mean      1.64510616
+
+
+                         Basic Statistical Measures
+ 
+               Location                    Variability
+
+           Mean     172.1564     Std Deviation           83.91654
+           Median   131.0000     Variance                    7042
+           Mode     105.0000     Range                  435.00000
+                                 Interquartile Range    116.00000
+
+
+                         Tests for Location: Mu0=0
+ 
+              Test           -Statistic-    -----p Value------
+
+              Student's t    t  104.6476    Pr > |t|    <.0001
+              Sign           M      1301    Pr >= |M|   <.0001
+              Signed Rank    S   1693252    Pr >= |S|   <.0001
+
+
+                          Quantiles (Definition 5)
+ 
+                           Level         Quantile
+
+                           100% Max           535
+                           99%                416
+                           95%                340
+                           90%                308
+                           75% Q3             227
+                           50% Median         131
+                           25% Q1             111
+                           10%                104
+                           5%                 101
+                           1%                 100
+                           0% Min             100
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet13.sas                                  
+                                          17:08 Thursday, March 13, 2025  11
+
+                          The UNIVARIATE Procedure
+                           Variable:  atrial_rate
+
+                            Extreme Observations
+ 
+                    ----Lowest----        ----Highest---
+ 
+                    Value      Obs        Value      Obs
+
+                      100     4572          468     3226
+                      100     4501          468     4351
+                      100     4257          500      583
+                      100     4163          535      261
+                      100     4155          535     2666
+
+
+                               Missing Values
+ 
+                                       -----Percent Of-----
+                Missing                             Missing
+                  Value       Count     All Obs         Obs
+
+                      .        2145       45.19      100.00
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet13.sas                                  
+                                          17:08 Thursday, March 13, 2025  12
+
+                          The UNIVARIATE Procedure
+                           Variable:  atrial_rate
+
+                          Histogram                         #        Boxplot
+    530+*                                                   2           0
+       .*                                                   1           0
+       .
+       .*                                                   4           0
+       .*                                                   7           0
+       .
+       .*                                                  13           0
+    390+**                                                 36           |
+       .**                                                 30           |
+       .***                                                50           |
+       .****                                               64           |
+       .******                                            110           |
+       .****                                               81           |
+       .******                                            115           |
+    250+******                                            108           |
+       .****                                               71        +-----+
+       .**                                                 40        |     |
+       .**                                                 42        |     |
+       .******                                            111        |  +  |
+       .*************                                     258        |     |
+       .***********************                           476        *-----*
+    110+***********************************************   983        +-----+
+        ----+----+----+----+----+----+----+----+----+--
+        * may represent up to 21 counts
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/home/rsparapa/git/CTSI/BERD/snippet13.sas
+                                          17:08 Thursday, March 13, 2025  13
+
+                          The UNIVARIATE Procedure
+                           Variable:  atrial_rate
+
+                               Normal Probability Plot
+             530+                                                  *
+                |                                                  *
+                |
+                |                                                  *
+                |                                                  *
+                |
+                |                                                ***
+             390+                                             **** +
+                |                                           ***  ++
+                |                                         ***  ++
+                |                                       *** +++
+                |                                     *** ++
+                |                                   ***+++
+                |                                  **++
+             250+                                ***+
+                |                               **+
+                |                             ++*
+                |                          +++ **
+                |                        ++   **
+                |                      ++   ***
+                |                   +++******
+             110+***********************
+                 +----+----+----+----+----+----+----+----+----+----+
+                     -2        -1         0        +1        +2
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet13.sas                                  
+                                          17:08 Thursday, March 13, 2025  14
+
+                             The FREQ Procedure
+
+     diagnosis_stmt                              Frequency     Percent
+     -----------------------------------------------------------------
+     *** Critical Test Result: High HR Atrial           1       12.50 
+     *** Suspect unspecified pacemaker failur           7       87.50 
+
+                                                Cumulative    Cumulative
+    diagnosis_stmt                               Frequency      Percent
+    --------------------------------------------------------------------
+    *** Critical Test Result: High HR Atrial            1        12.50  
+    *** Suspect unspecified pacemaker failur            8       100.00  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet13.sas                                  
+                                                                                        17:08 Thursday, March 13, 2025  15
+
+ Obs diagnosis_stmt
+
+1192 *** Suspect unspecified pacemaker failure Atrial fibrillation with rapid ventricular response with premature ventricu
+1755 *** Suspect unspecified pacemaker failure Atrial tachycardia Left axis deviation Septal infarct (cited on or before 0
+2809 *** Suspect unspecified pacemaker failure Atrial fibrillation with rapid ventricular response with premature ventricu
+3304 *** Critical Test Result: High HR Atrial fibrillation with rapid ventricular response Rightward axis Abnormal ECG Whe
+3528 *** Suspect unspecified pacemaker failure Atrial fibrillation with rapid ventricular response Left axis deviation Can
+3656 *** Suspect unspecified pacemaker failure Atrial fibrillation with rapid ventricular response Left axis deviation Lef
+4066 *** Suspect unspecified pacemaker failure Atrial fibrillation with rapid ventricular response with occasionla paced b
+4458 *** Suspect unspecified pacemaker failure Atrial fibrillation with rapid ventricular response with premature ventricu
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet13.sas                                                                                

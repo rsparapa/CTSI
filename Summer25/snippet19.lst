@@ -1,0 +1,159 @@
+                                           12:54 Tuesday, April 22, 2025   1
+
+                             The FREQ Procedure
+
+                                sample_base
+ 
+                                                 Cumulative    Cumulative
+  sample_base           Frequency     Percent     Frequency      Percent
+  -----------------------------------------------------------------------
+  240                      84722        4.57         84722         4.57  
+  250                     298584       16.10        383306        20.67  
+  500                    1471123       79.33       1854429       100.00  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet19.sas                                  
+                                           12:54 Tuesday, April 22, 2025   2
+
+                           The CONTENTS Procedure
+
+Data Set Name        CRDW.EKG_WAVEFORM            Observations          4741
+Member Type          DATA                         Variables             12  
+Engine               V9                           Indexes               0   
+Created              04/22/2025 12:54:51          Observation Length    120 
+Last Modified        04/22/2025 12:54:51          Deleted Observations  0   
+Protection                                        Compressed            NO  
+Data Set Type                                     Sorted                YES 
+Label                                                                       
+Data Representation  SOLARIS_X86_64,                                        
+                     LINUX_X86_64, ALPHA_TRU64,                             
+                     LINUX_IA64                                             
+Encoding             latin1  Western (ISO)                                  
+
+
+                     Engine/Host Dependent Information
+
+Data Set Page Size          65536                                           
+Number of Data Set Pages    9                                               
+First Data Page             1                                               
+Max Obs per Page            545                                             
+Obs in First Data Page      517                                             
+Number of Data Set Repairs  0                                               
+Filename                    /data/shared/04224/afib/libname/                
+                            crdw/ekg_waveform.sas7bdat                      
+Release Created             9.0401M8                                        
+Host Created                Linux                                           
+Inode Number                42949763077                                     
+Access Permission           rw-r--r--                                       
+Owner Name                  rsparapa                                        
+File Size                   640KB                                           
+File Size (bytes)           655360                                          
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet19.sas                                  
+                                           12:54 Tuesday, April 22, 2025   3
+
+                           The CONTENTS Procedure
+
+                         Variables in Creation Order
+ 
+                   #    Variable               Type    Len
+
+                   1    sample_type            Char     18
+                   2    sample_base            Char      3
+                   3    waveform_type          Char      6
+                   4    waveform_id            Char     16
+                   5    ac_filter              Char      4
+                   6    patient_trac_id        Char     16
+                   7    patient_hash           Char     16
+                   8    waveform_start_time    Num       8
+                   9    number_of_leads        Num       8
+                  10    sample_exponent        Num       8
+                  11    high_pass_filter       Num       8
+                  12    low_pass_filter        Num       8
+
+
+                              Sort Information
+
+                         Sortedby       waveform_id
+                         Validated      YES        
+                         Character Set  ASCII      
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet19.sas                                  

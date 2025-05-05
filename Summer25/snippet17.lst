@@ -1,0 +1,1007 @@
+                                           12:00 Saturday, March 8, 2025   1
+
+                             The FREQ Procedure
+
+                                           Cumulative    Cumulative
+         antic    Frequency     Percent     Frequency      Percent
+         ----------------------------------------------------------
+             1       63037       50.26         63037        50.26  
+             2       22350       17.82         85387        68.07  
+             3       10037        8.00         95424        76.08  
+             4        6059        4.83        101483        80.91  
+             5        4164        3.32        105647        84.23  
+             6        3012        2.40        108659        86.63  
+             7        2467        1.97        111126        88.59  
+             8        1941        1.55        113067        90.14  
+             9        1582        1.26        114649        91.40  
+            10        1299        1.04        115948        92.44  
+            11        1052        0.84        117000        93.28  
+            12         922        0.74        117922        94.01  
+            13         856        0.68        118778        94.69  
+            14         692        0.55        119470        95.25  
+            15         677        0.54        120147        95.79  
+            16         615        0.49        120762        96.28  
+            17         535        0.43        121297        96.70  
+            18         462        0.37        121759        97.07  
+            19         477        0.38        122236        97.45  
+            20         394        0.31        122630        97.77  
+            21         359        0.29        122989        98.05  
+            22         333        0.27        123322        98.32  
+            23         281        0.22        123603        98.54  
+            24         232        0.18        123835        98.73  
+            25         235        0.19        124070        98.91  
+            26         161        0.13        124231        99.04  
+            27         163        0.13        124394        99.17  
+            28         138        0.11        124532        99.28  
+            29         101        0.08        124633        99.36  
+            30          95        0.08        124728        99.44  
+            31          80        0.06        124808        99.50  
+            32          86        0.07        124894        99.57  
+            33          66        0.05        124960        99.62  
+            34          50        0.04        125010        99.66  
+            35          43        0.03        125053        99.70  
+            36          22        0.02        125075        99.71  
+            37          41        0.03        125116        99.75  
+            38          24        0.02        125140        99.77  
+            39          28        0.02        125168        99.79  
+            40          24        0.02        125192        99.81  
+            41          27        0.02        125219        99.83  
+            42          14        0.01        125233        99.84  
+            43          15        0.01        125248        99.85  
+            44          11        0.01        125259        99.86  
+ 
+/home/rsparapa/git/CTSI/BERD/snippet17.sas                                  
+                                           12:00 Saturday, March 8, 2025   2
+
+                             The FREQ Procedure
+
+                                           Cumulative    Cumulative
+         antic    Frequency     Percent     Frequency      Percent
+         ----------------------------------------------------------
+            45          11        0.01        125270        99.87  
+            46          15        0.01        125285        99.88  
+            47          13        0.01        125298        99.89  
+            48           9        0.01        125307        99.90  
+            49          12        0.01        125319        99.91  
+            50           6        0.00        125325        99.91  
+            51           7        0.01        125332        99.92  
+            52           8        0.01        125340        99.93  
+            53           8        0.01        125348        99.93  
+            54           5        0.00        125353        99.94  
+            55           9        0.01        125362        99.94  
+            56           7        0.01        125369        99.95  
+            57           6        0.00        125375        99.95  
+            58           4        0.00        125379        99.96  
+            59           6        0.00        125385        99.96  
+            60           4        0.00        125389        99.96  
+            61           5        0.00        125394        99.97  
+            62           8        0.01        125402        99.98  
+            63           1        0.00        125403        99.98  
+            64           6        0.00        125409        99.98  
+            65           2        0.00        125411        99.98  
+            66           1        0.00        125412        99.98  
+            67           4        0.00        125416        99.99  
+            68           5        0.00        125421        99.99  
+            69           3        0.00        125424        99.99  
+            70           2        0.00        125426        99.99  
+            71           3        0.00        125429       100.00  
+            72           4        0.00        125433       100.00  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet17.sas                                  
+                                           12:00 Saturday, March 8, 2025   3
+
+                             The FREQ Procedure
+
+                                          Cumulative    Cumulative
+         warf    Frequency     Percent     Frequency      Percent
+         ---------------------------------------------------------
+            0      104784       83.54        104784        83.54  
+            1        8522        6.79        113306        90.33  
+            2        2906        2.32        116212        92.65  
+            3        1448        1.15        117660        93.80  
+            4         877        0.70        118537        94.50  
+            5         653        0.52        119190        95.02  
+            6         537        0.43        119727        95.45  
+            7         456        0.36        120183        95.81  
+            8         369        0.29        120552        96.11  
+            9         381        0.30        120933        96.41  
+           10         344        0.27        121277        96.69  
+           11         289        0.23        121566        96.92  
+           12         328        0.26        121894        97.18  
+           13         327        0.26        122221        97.44  
+           14         253        0.20        122474        97.64  
+           15         307        0.24        122781        97.89  
+           16         274        0.22        123055        98.10  
+           17         272        0.22        123327        98.32  
+           18         305        0.24        123632        98.56  
+           19         252        0.20        123884        98.77  
+           20         217        0.17        124101        98.94  
+           21         216        0.17        124317        99.11  
+           22         196        0.16        124513        99.27  
+           23         164        0.13        124677        99.40  
+           24         150        0.12        124827        99.52  
+           25         103        0.08        124930        99.60  
+           26          92        0.07        125022        99.67  
+           27          81        0.06        125103        99.74  
+           28          62        0.05        125165        99.79  
+           29          40        0.03        125205        99.82  
+           30          43        0.03        125248        99.85  
+           31          38        0.03        125286        99.88  
+           32          27        0.02        125313        99.90  
+           33          18        0.01        125331        99.92  
+           34          16        0.01        125347        99.93  
+           35          11        0.01        125358        99.94  
+           36          13        0.01        125371        99.95  
+           37          13        0.01        125384        99.96  
+           38           8        0.01        125392        99.97  
+           39           3        0.00        125395        99.97  
+           40           6        0.00        125401        99.97  
+           41           4        0.00        125405        99.98  
+           42           6        0.00        125411        99.98  
+           43           1        0.00        125412        99.98  
+ 
+/home/rsparapa/git/CTSI/BERD/snippet17.sas                                  
+                                           12:00 Saturday, March 8, 2025   4
+
+                             The FREQ Procedure
+
+                                          Cumulative    Cumulative
+         warf    Frequency     Percent     Frequency      Percent
+         ---------------------------------------------------------
+           44           2        0.00        125414        99.98  
+           45           1        0.00        125415        99.99  
+           47           3        0.00        125418        99.99  
+           48           2        0.00        125420        99.99  
+           49           1        0.00        125421        99.99  
+           50           1        0.00        125422        99.99  
+           51           1        0.00        125423        99.99  
+           52           1        0.00        125424        99.99  
+           54           1        0.00        125425        99.99  
+           55           2        0.00        125427       100.00  
+           56           1        0.00        125428       100.00  
+           60           1        0.00        125429       100.00  
+           61           1        0.00        125430       100.00  
+           64           1        0.00        125431       100.00  
+           67           1        0.00        125432       100.00  
+           72           1        0.00        125433       100.00  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet17.sas                                  
+                                           12:00 Saturday, March 8, 2025   5
+
+                             The FREQ Procedure
+
+                                            Cumulative    Cumulative
+       factorxa    Frequency     Percent     Frequency      Percent
+       -------------------------------------------------------------
+              0       88071       70.21         88071        70.21  
+              1       18794       14.98        106865        85.20  
+              2        6567        5.24        113432        90.43  
+              3        3430        2.73        116862        93.17  
+              4        2214        1.77        119076        94.93  
+              5        1530        1.22        120606        96.15  
+              6        1193        0.95        121799        97.10  
+              7         938        0.75        122737        97.85  
+              8         718        0.57        123455        98.42  
+              9         567        0.45        124022        98.88  
+             10         407        0.32        124429        99.20  
+             11         272        0.22        124701        99.42  
+             12         207        0.17        124908        99.58  
+             13         132        0.11        125040        99.69  
+             14         119        0.09        125159        99.78  
+             15          71        0.06        125230        99.84  
+             16          53        0.04        125283        99.88  
+             17          39        0.03        125322        99.91  
+             18          26        0.02        125348        99.93  
+             19          17        0.01        125365        99.95  
+             20          11        0.01        125376        99.95  
+             21          11        0.01        125387        99.96  
+             22           8        0.01        125395        99.97  
+             23          10        0.01        125405        99.98  
+             24           6        0.00        125411        99.98  
+             25           7        0.01        125418        99.99  
+             26           3        0.00        125421        99.99  
+             27           2        0.00        125423        99.99  
+             28           1        0.00        125424        99.99  
+             30           1        0.00        125425        99.99  
+             31           1        0.00        125426        99.99  
+             32           2        0.00        125428       100.00  
+             34           1        0.00        125429       100.00  
+             40           1        0.00        125430       100.00  
+             42           1        0.00        125431       100.00  
+             49           1        0.00        125432       100.00  
+             54           1        0.00        125433       100.00  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet17.sas                                  
+                                           12:00 Saturday, March 8, 2025   6
+
+                             The FREQ Procedure
+
+                                            Cumulative    Cumulative
+       thrombin    Frequency     Percent     Frequency      Percent
+       -------------------------------------------------------------
+              0      123960       98.83        123960        98.83  
+              1        1008        0.80        124968        99.63  
+              2         229        0.18        125197        99.81  
+              3          71        0.06        125268        99.87  
+              4          45        0.04        125313        99.90  
+              5          27        0.02        125340        99.93  
+              6          22        0.02        125362        99.94  
+              7          16        0.01        125378        99.96  
+              8          13        0.01        125391        99.97  
+              9          13        0.01        125404        99.98  
+             10          13        0.01        125417        99.99  
+             11           4        0.00        125421        99.99  
+             12           3        0.00        125424        99.99  
+             13           2        0.00        125426        99.99  
+             14           3        0.00        125429       100.00  
+             16           2        0.00        125431       100.00  
+             17           1        0.00        125432       100.00  
+             21           1        0.00        125433       100.00  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet17.sas                                  
+                                           12:00 Saturday, March 8, 2025   7
+
+                             The FREQ Procedure
+
+                                          Cumulative    Cumulative
+         lmwh    Frequency     Percent     Frequency      Percent
+         ---------------------------------------------------------
+            0       28649       22.84         28649        22.84  
+            1       54763       43.66         83412        66.50  
+            2       18941       15.10        102353        81.60  
+            3        7632        6.08        109985        87.68  
+            4        4140        3.30        114125        90.98  
+            5        2617        2.09        116742        93.07  
+            6        1746        1.39        118488        94.46  
+            7        1269        1.01        119757        95.47  
+            8         935        0.75        120692        96.22  
+            9         693        0.55        121385        96.77  
+           10         562        0.45        121947        97.22  
+           11         474        0.38        122421        97.60  
+           12         383        0.31        122804        97.90  
+           13         365        0.29        123169        98.20  
+           14         300        0.24        123469        98.43  
+           15         255        0.20        123724        98.64  
+           16         216        0.17        123940        98.81  
+           17         172        0.14        124112        98.95  
+           18         149        0.12        124261        99.07  
+           19         132        0.11        124393        99.17  
+           20          94        0.07        124487        99.25  
+           21         104        0.08        124591        99.33  
+           22          77        0.06        124668        99.39  
+           23          63        0.05        124731        99.44  
+           24          53        0.04        124784        99.48  
+           25          69        0.06        124853        99.54  
+           26          44        0.04        124897        99.57  
+           27          52        0.04        124949        99.61  
+           28          42        0.03        124991        99.65  
+           29          40        0.03        125031        99.68  
+           30          34        0.03        125065        99.71  
+           31          28        0.02        125093        99.73  
+           32          35        0.03        125128        99.76  
+           33          21        0.02        125149        99.77  
+           34          20        0.02        125169        99.79  
+           35          21        0.02        125190        99.81  
+           36          12        0.01        125202        99.82  
+           37          25        0.02        125227        99.84  
+           38          16        0.01        125243        99.85  
+           39          13        0.01        125256        99.86  
+           40          14        0.01        125270        99.87  
+           41          12        0.01        125282        99.88  
+           42           6        0.00        125288        99.88  
+           43          12        0.01        125300        99.89  
+ 
+/home/rsparapa/git/CTSI/BERD/snippet17.sas                                  
+                                           12:00 Saturday, March 8, 2025   8
+
+                             The FREQ Procedure
+
+                                          Cumulative    Cumulative
+         lmwh    Frequency     Percent     Frequency      Percent
+         ---------------------------------------------------------
+           44           7        0.01        125307        99.90  
+           45           8        0.01        125315        99.91  
+           46           9        0.01        125324        99.91  
+           47           8        0.01        125332        99.92  
+           48           3        0.00        125335        99.92  
+           49           8        0.01        125343        99.93  
+           50           3        0.00        125346        99.93  
+           51           6        0.00        125352        99.94  
+           52           5        0.00        125357        99.94  
+           53           5        0.00        125362        99.94  
+           54           4        0.00        125366        99.95  
+           55           9        0.01        125375        99.95  
+           56           4        0.00        125379        99.96  
+           57           1        0.00        125380        99.96  
+           58           5        0.00        125385        99.96  
+           59           7        0.01        125392        99.97  
+           60           2        0.00        125394        99.97  
+           61           6        0.00        125400        99.97  
+           62           6        0.00        125406        99.98  
+           63           1        0.00        125407        99.98  
+           64           4        0.00        125411        99.98  
+           65           2        0.00        125413        99.98  
+           66           1        0.00        125414        99.98  
+           67           4        0.00        125418        99.99  
+           68           4        0.00        125422        99.99  
+           69           3        0.00        125425        99.99  
+           70           2        0.00        125427       100.00  
+           71           3        0.00        125430       100.00  
+           72           3        0.00        125433       100.00  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet17.sas                                  
+                                           12:00 Saturday, March 8, 2025   9
+
+                           The CONTENTS Procedure
+
+Data Set Name        CRDW.ANTIC                 Observations          125433
+Member Type          DATA                       Variables             396   
+Engine               V9                         Indexes               0     
+Created              03/08/2025 12:01:51        Observation Length    3176  
+Last Modified        03/08/2025 12:01:51        Deleted Observations  0     
+Protection                                      Compressed            NO    
+Data Set Type                                   Sorted                NO    
+Label                                                                       
+Data Representation  SOLARIS_X86_64,                                        
+                     LINUX_X86_64,                                          
+                     ALPHA_TRU64, LINUX_IA64                                
+Encoding             latin1  Western (ISO)                                  
+
+
+                     Engine/Host Dependent Information
+
+  Data Set Page Size          131072                                     
+  Number of Data Set Pages    3060                                       
+  First Data Page             1                                          
+  Max Obs per Page            41                                         
+  Obs in First Data Page      25                                         
+  Number of Data Set Repairs  0                                          
+  Filename                    /data/shared/AI/libname/crdw/antic.sas7bdat
+  Release Created             9.0401M8                                   
+  Host Created                Linux                                      
+  Inode Number                43040116747                                
+  Access Permission           rw-r--r--                                  
+  Owner Name                  rsparapa                                   
+  File Size                   383MB                                      
+  File Size (bytes)           401211392                                  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet17.sas                                  
+                                           12:00 Saturday, March 8, 2025  10
+
+                           The CONTENTS Procedure
+
+                         Variables in Creation Order
+ 
+               #    Variable        Type    Len    Label
+
+               1    patient_hash    Char     16    patient_hash
+               2    antic           Num       8                
+               3    warf            Num       8                
+               4    factorxa        Num       8                
+               5    thrombin        Num       8                
+               6    lmwh            Num       8                
+               7    antic17         Num       8                
+               8    antic18         Num       8                
+               9    antic19         Num       8                
+              10    antic20         Num       8                
+              11    antic21         Num       8                
+              12    antic22         Num       8                
+              13    warf17          Num       8                
+              14    warf18          Num       8                
+              15    warf19          Num       8                
+              16    warf20          Num       8                
+              17    warf21          Num       8                
+              18    warf22          Num       8                
+              19    factorxa17      Num       8                
+              20    factorxa18      Num       8                
+              21    factorxa19      Num       8                
+              22    factorxa20      Num       8                
+              23    factorxa21      Num       8                
+              24    factorxa22      Num       8                
+              25    thrombin17      Num       8                
+              26    thrombin18      Num       8                
+              27    thrombin19      Num       8                
+              28    thrombin20      Num       8                
+              29    thrombin21      Num       8                
+              30    thrombin22      Num       8                
+              31    lmwh17          Num       8                
+              32    lmwh18          Num       8                
+              33    lmwh19          Num       8                
+              34    lmwh20          Num       8                
+              35    lmwh21          Num       8                
+              36    lmwh22          Num       8                
+              37    antic1701       Num       8                
+              38    antic1702       Num       8                
+              39    antic1703       Num       8                
+              40    antic1704       Num       8                
+              41    antic1705       Num       8                
+              42    antic1706       Num       8                
+              43    antic1707       Num       8                
+ 
+/home/rsparapa/git/CTSI/BERD/snippet17.sas                                  
+                                           12:00 Saturday, March 8, 2025  11
+
+                           The CONTENTS Procedure
+
+                         Variables in Creation Order
+ 
+               #    Variable        Type    Len    Label
+
+              44    antic1708       Num       8                
+              45    antic1709       Num       8                
+              46    antic1710       Num       8                
+              47    antic1711       Num       8                
+              48    antic1712       Num       8                
+              49    antic1801       Num       8                
+              50    antic1802       Num       8                
+              51    antic1803       Num       8                
+              52    antic1804       Num       8                
+              53    antic1805       Num       8                
+              54    antic1806       Num       8                
+              55    antic1807       Num       8                
+              56    antic1808       Num       8                
+              57    antic1809       Num       8                
+              58    antic1810       Num       8                
+              59    antic1811       Num       8                
+              60    antic1812       Num       8                
+              61    antic1901       Num       8                
+              62    antic1902       Num       8                
+              63    antic1903       Num       8                
+              64    antic1904       Num       8                
+              65    antic1905       Num       8                
+              66    antic1906       Num       8                
+              67    antic1907       Num       8                
+              68    antic1908       Num       8                
+              69    antic1909       Num       8                
+              70    antic1910       Num       8                
+              71    antic1911       Num       8                
+              72    antic1912       Num       8                
+              73    antic2001       Num       8                
+              74    antic2002       Num       8                
+              75    antic2003       Num       8                
+              76    antic2004       Num       8                
+              77    antic2005       Num       8                
+              78    antic2006       Num       8                
+              79    antic2007       Num       8                
+              80    antic2008       Num       8                
+              81    antic2009       Num       8                
+              82    antic2010       Num       8                
+              83    antic2011       Num       8                
+              84    antic2012       Num       8                
+              85    antic2101       Num       8                
+              86    antic2102       Num       8                
+ 
+/home/rsparapa/git/CTSI/BERD/snippet17.sas                                  
+                                           12:00 Saturday, March 8, 2025  12
+
+                           The CONTENTS Procedure
+
+                         Variables in Creation Order
+ 
+               #    Variable        Type    Len    Label
+
+              87    antic2103       Num       8                
+              88    antic2104       Num       8                
+              89    antic2105       Num       8                
+              90    antic2106       Num       8                
+              91    antic2107       Num       8                
+              92    antic2108       Num       8                
+              93    antic2109       Num       8                
+              94    antic2110       Num       8                
+              95    antic2111       Num       8                
+              96    antic2112       Num       8                
+              97    antic2201       Num       8                
+              98    antic2202       Num       8                
+              99    antic2203       Num       8                
+             100    antic2204       Num       8                
+             101    antic2205       Num       8                
+             102    antic2206       Num       8                
+             103    antic2207       Num       8                
+             104    antic2208       Num       8                
+             105    antic2209       Num       8                
+             106    antic2210       Num       8                
+             107    antic2211       Num       8                
+             108    antic2212       Num       8                
+             109    warf1701        Num       8                
+             110    warf1702        Num       8                
+             111    warf1703        Num       8                
+             112    warf1704        Num       8                
+             113    warf1705        Num       8                
+             114    warf1706        Num       8                
+             115    warf1707        Num       8                
+             116    warf1708        Num       8                
+             117    warf1709        Num       8                
+             118    warf1710        Num       8                
+             119    warf1711        Num       8                
+             120    warf1712        Num       8                
+             121    warf1801        Num       8                
+             122    warf1802        Num       8                
+             123    warf1803        Num       8                
+             124    warf1804        Num       8                
+             125    warf1805        Num       8                
+             126    warf1806        Num       8                
+             127    warf1807        Num       8                
+             128    warf1808        Num       8                
+             129    warf1809        Num       8                
+ 
+/home/rsparapa/git/CTSI/BERD/snippet17.sas                                  
+                                           12:00 Saturday, March 8, 2025  13
+
+                           The CONTENTS Procedure
+
+                         Variables in Creation Order
+ 
+               #    Variable        Type    Len    Label
+
+             130    warf1810        Num       8                
+             131    warf1811        Num       8                
+             132    warf1812        Num       8                
+             133    warf1901        Num       8                
+             134    warf1902        Num       8                
+             135    warf1903        Num       8                
+             136    warf1904        Num       8                
+             137    warf1905        Num       8                
+             138    warf1906        Num       8                
+             139    warf1907        Num       8                
+             140    warf1908        Num       8                
+             141    warf1909        Num       8                
+             142    warf1910        Num       8                
+             143    warf1911        Num       8                
+             144    warf1912        Num       8                
+             145    warf2001        Num       8                
+             146    warf2002        Num       8                
+             147    warf2003        Num       8                
+             148    warf2004        Num       8                
+             149    warf2005        Num       8                
+             150    warf2006        Num       8                
+             151    warf2007        Num       8                
+             152    warf2008        Num       8                
+             153    warf2009        Num       8                
+             154    warf2010        Num       8                
+             155    warf2011        Num       8                
+             156    warf2012        Num       8                
+             157    warf2101        Num       8                
+             158    warf2102        Num       8                
+             159    warf2103        Num       8                
+             160    warf2104        Num       8                
+             161    warf2105        Num       8                
+             162    warf2106        Num       8                
+             163    warf2107        Num       8                
+             164    warf2108        Num       8                
+             165    warf2109        Num       8                
+             166    warf2110        Num       8                
+             167    warf2111        Num       8                
+             168    warf2112        Num       8                
+             169    warf2201        Num       8                
+             170    warf2202        Num       8                
+             171    warf2203        Num       8                
+             172    warf2204        Num       8                
+ 
+/home/rsparapa/git/CTSI/BERD/snippet17.sas                                  
+                                           12:00 Saturday, March 8, 2025  14
+
+                           The CONTENTS Procedure
+
+                         Variables in Creation Order
+ 
+               #    Variable        Type    Len    Label
+
+             173    warf2205        Num       8                
+             174    warf2206        Num       8                
+             175    warf2207        Num       8                
+             176    warf2208        Num       8                
+             177    warf2209        Num       8                
+             178    warf2210        Num       8                
+             179    warf2211        Num       8                
+             180    warf2212        Num       8                
+             181    factorxa1701    Num       8                
+             182    factorxa1702    Num       8                
+             183    factorxa1703    Num       8                
+             184    factorxa1704    Num       8                
+             185    factorxa1705    Num       8                
+             186    factorxa1706    Num       8                
+             187    factorxa1707    Num       8                
+             188    factorxa1708    Num       8                
+             189    factorxa1709    Num       8                
+             190    factorxa1710    Num       8                
+             191    factorxa1711    Num       8                
+             192    factorxa1712    Num       8                
+             193    factorxa1801    Num       8                
+             194    factorxa1802    Num       8                
+             195    factorxa1803    Num       8                
+             196    factorxa1804    Num       8                
+             197    factorxa1805    Num       8                
+             198    factorxa1806    Num       8                
+             199    factorxa1807    Num       8                
+             200    factorxa1808    Num       8                
+             201    factorxa1809    Num       8                
+             202    factorxa1810    Num       8                
+             203    factorxa1811    Num       8                
+             204    factorxa1812    Num       8                
+             205    factorxa1901    Num       8                
+             206    factorxa1902    Num       8                
+             207    factorxa1903    Num       8                
+             208    factorxa1904    Num       8                
+             209    factorxa1905    Num       8                
+             210    factorxa1906    Num       8                
+             211    factorxa1907    Num       8                
+             212    factorxa1908    Num       8                
+             213    factorxa1909    Num       8                
+             214    factorxa1910    Num       8                
+             215    factorxa1911    Num       8                
+ 
+/home/rsparapa/git/CTSI/BERD/snippet17.sas                                  
+                                           12:00 Saturday, March 8, 2025  15
+
+                           The CONTENTS Procedure
+
+                         Variables in Creation Order
+ 
+               #    Variable        Type    Len    Label
+
+             216    factorxa1912    Num       8                
+             217    factorxa2001    Num       8                
+             218    factorxa2002    Num       8                
+             219    factorxa2003    Num       8                
+             220    factorxa2004    Num       8                
+             221    factorxa2005    Num       8                
+             222    factorxa2006    Num       8                
+             223    factorxa2007    Num       8                
+             224    factorxa2008    Num       8                
+             225    factorxa2009    Num       8                
+             226    factorxa2010    Num       8                
+             227    factorxa2011    Num       8                
+             228    factorxa2012    Num       8                
+             229    factorxa2101    Num       8                
+             230    factorxa2102    Num       8                
+             231    factorxa2103    Num       8                
+             232    factorxa2104    Num       8                
+             233    factorxa2105    Num       8                
+             234    factorxa2106    Num       8                
+             235    factorxa2107    Num       8                
+             236    factorxa2108    Num       8                
+             237    factorxa2109    Num       8                
+             238    factorxa2110    Num       8                
+             239    factorxa2111    Num       8                
+             240    factorxa2112    Num       8                
+             241    factorxa2201    Num       8                
+             242    factorxa2202    Num       8                
+             243    factorxa2203    Num       8                
+             244    factorxa2204    Num       8                
+             245    factorxa2205    Num       8                
+             246    factorxa2206    Num       8                
+             247    factorxa2207    Num       8                
+             248    factorxa2208    Num       8                
+             249    factorxa2209    Num       8                
+             250    factorxa2210    Num       8                
+             251    factorxa2211    Num       8                
+             252    factorxa2212    Num       8                
+             253    thrombin1701    Num       8                
+             254    thrombin1702    Num       8                
+             255    thrombin1703    Num       8                
+             256    thrombin1704    Num       8                
+             257    thrombin1705    Num       8                
+             258    thrombin1706    Num       8                
+ 
+/home/rsparapa/git/CTSI/BERD/snippet17.sas                                  
+                                           12:00 Saturday, March 8, 2025  16
+
+                           The CONTENTS Procedure
+
+                         Variables in Creation Order
+ 
+               #    Variable        Type    Len    Label
+
+             259    thrombin1707    Num       8                
+             260    thrombin1708    Num       8                
+             261    thrombin1709    Num       8                
+             262    thrombin1710    Num       8                
+             263    thrombin1711    Num       8                
+             264    thrombin1712    Num       8                
+             265    thrombin1801    Num       8                
+             266    thrombin1802    Num       8                
+             267    thrombin1803    Num       8                
+             268    thrombin1804    Num       8                
+             269    thrombin1805    Num       8                
+             270    thrombin1806    Num       8                
+             271    thrombin1807    Num       8                
+             272    thrombin1808    Num       8                
+             273    thrombin1809    Num       8                
+             274    thrombin1810    Num       8                
+             275    thrombin1811    Num       8                
+             276    thrombin1812    Num       8                
+             277    thrombin1901    Num       8                
+             278    thrombin1902    Num       8                
+             279    thrombin1903    Num       8                
+             280    thrombin1904    Num       8                
+             281    thrombin1905    Num       8                
+             282    thrombin1906    Num       8                
+             283    thrombin1907    Num       8                
+             284    thrombin1908    Num       8                
+             285    thrombin1909    Num       8                
+             286    thrombin1910    Num       8                
+             287    thrombin1911    Num       8                
+             288    thrombin1912    Num       8                
+             289    thrombin2001    Num       8                
+             290    thrombin2002    Num       8                
+             291    thrombin2003    Num       8                
+             292    thrombin2004    Num       8                
+             293    thrombin2005    Num       8                
+             294    thrombin2006    Num       8                
+             295    thrombin2007    Num       8                
+             296    thrombin2008    Num       8                
+             297    thrombin2009    Num       8                
+             298    thrombin2010    Num       8                
+             299    thrombin2011    Num       8                
+             300    thrombin2012    Num       8                
+             301    thrombin2101    Num       8                
+ 
+/home/rsparapa/git/CTSI/BERD/snippet17.sas                                  
+                                           12:00 Saturday, March 8, 2025  17
+
+                           The CONTENTS Procedure
+
+                         Variables in Creation Order
+ 
+               #    Variable        Type    Len    Label
+
+             302    thrombin2102    Num       8                
+             303    thrombin2103    Num       8                
+             304    thrombin2104    Num       8                
+             305    thrombin2105    Num       8                
+             306    thrombin2106    Num       8                
+             307    thrombin2107    Num       8                
+             308    thrombin2108    Num       8                
+             309    thrombin2109    Num       8                
+             310    thrombin2110    Num       8                
+             311    thrombin2111    Num       8                
+             312    thrombin2112    Num       8                
+             313    thrombin2201    Num       8                
+             314    thrombin2202    Num       8                
+             315    thrombin2203    Num       8                
+             316    thrombin2204    Num       8                
+             317    thrombin2205    Num       8                
+             318    thrombin2206    Num       8                
+             319    thrombin2207    Num       8                
+             320    thrombin2208    Num       8                
+             321    thrombin2209    Num       8                
+             322    thrombin2210    Num       8                
+             323    thrombin2211    Num       8                
+             324    thrombin2212    Num       8                
+             325    lmwh1701        Num       8                
+             326    lmwh1702        Num       8                
+             327    lmwh1703        Num       8                
+             328    lmwh1704        Num       8                
+             329    lmwh1705        Num       8                
+             330    lmwh1706        Num       8                
+             331    lmwh1707        Num       8                
+             332    lmwh1708        Num       8                
+             333    lmwh1709        Num       8                
+             334    lmwh1710        Num       8                
+             335    lmwh1711        Num       8                
+             336    lmwh1712        Num       8                
+             337    lmwh1801        Num       8                
+             338    lmwh1802        Num       8                
+             339    lmwh1803        Num       8                
+             340    lmwh1804        Num       8                
+             341    lmwh1805        Num       8                
+             342    lmwh1806        Num       8                
+             343    lmwh1807        Num       8                
+             344    lmwh1808        Num       8                
+ 
+/home/rsparapa/git/CTSI/BERD/snippet17.sas                                  
+                                           12:00 Saturday, March 8, 2025  18
+
+                           The CONTENTS Procedure
+
+                         Variables in Creation Order
+ 
+               #    Variable        Type    Len    Label
+
+             345    lmwh1809        Num       8                
+             346    lmwh1810        Num       8                
+             347    lmwh1811        Num       8                
+             348    lmwh1812        Num       8                
+             349    lmwh1901        Num       8                
+             350    lmwh1902        Num       8                
+             351    lmwh1903        Num       8                
+             352    lmwh1904        Num       8                
+             353    lmwh1905        Num       8                
+             354    lmwh1906        Num       8                
+             355    lmwh1907        Num       8                
+             356    lmwh1908        Num       8                
+             357    lmwh1909        Num       8                
+             358    lmwh1910        Num       8                
+             359    lmwh1911        Num       8                
+             360    lmwh1912        Num       8                
+             361    lmwh2001        Num       8                
+             362    lmwh2002        Num       8                
+             363    lmwh2003        Num       8                
+             364    lmwh2004        Num       8                
+             365    lmwh2005        Num       8                
+             366    lmwh2006        Num       8                
+             367    lmwh2007        Num       8                
+             368    lmwh2008        Num       8                
+             369    lmwh2009        Num       8                
+             370    lmwh2010        Num       8                
+             371    lmwh2011        Num       8                
+             372    lmwh2012        Num       8                
+             373    lmwh2101        Num       8                
+             374    lmwh2102        Num       8                
+             375    lmwh2103        Num       8                
+             376    lmwh2104        Num       8                
+             377    lmwh2105        Num       8                
+             378    lmwh2106        Num       8                
+             379    lmwh2107        Num       8                
+             380    lmwh2108        Num       8                
+             381    lmwh2109        Num       8                
+             382    lmwh2110        Num       8                
+             383    lmwh2111        Num       8                
+             384    lmwh2112        Num       8                
+             385    lmwh2201        Num       8                
+             386    lmwh2202        Num       8                
+             387    lmwh2203        Num       8                
+ 
+/home/rsparapa/git/CTSI/BERD/snippet17.sas                                  
+                                           12:00 Saturday, March 8, 2025  19
+
+                           The CONTENTS Procedure
+
+                         Variables in Creation Order
+ 
+               #    Variable        Type    Len    Label
+
+             388    lmwh2204        Num       8                
+             389    lmwh2205        Num       8                
+             390    lmwh2206        Num       8                
+             391    lmwh2207        Num       8                
+             392    lmwh2208        Num       8                
+             393    lmwh2209        Num       8                
+             394    lmwh2210        Num       8                
+             395    lmwh2211        Num       8                
+             396    lmwh2212        Num       8                
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet17.sas                                  

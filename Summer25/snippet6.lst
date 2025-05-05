@@ -1,0 +1,106 @@
+                                            11:55 Tuesday, March 4, 2025   1
+
+                           The CONTENTS Procedure
+
+Data Set Name        CRDW.MEDISPAN               Observations          32777
+Member Type          DATA                        Variables             14   
+Engine               V9                          Indexes               0    
+Created              03/04/2025 19:39:01         Observation Length    256  
+Last Modified        03/04/2025 19:39:01         Deleted Observations  0    
+Protection                                       Compressed            NO   
+Data Set Type                                    Sorted                NO   
+Label                                                                       
+Data Representation  SOLARIS_X86_64,                                        
+                     LINUX_X86_64, ALPHA_TRU64,                             
+                     LINUX_IA64                                             
+Encoding             latin1  Western (ISO)                                  
+
+
+                     Engine/Host Dependent Information
+
+ Data Set Page Size          65536                                         
+ Number of Data Set Pages    129                                           
+ First Data Page             1                                             
+ Max Obs per Page            255                                           
+ Obs in First Data Page      241                                           
+ Number of Data Set Repairs  0                                             
+ Filename                    /data/shared/AI/libname/crdw/medispan.sas7bdat
+ Release Created             9.0401M8                                      
+ Host Created                Linux                                         
+ Inode Number                42949795853                                   
+ Access Permission           rw-r--r--                                     
+ Owner Name                  rsparapa                                      
+ File Size                   8MB                                           
+ File Size (bytes)           8519680                                       
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet6.sas                                   
+                                            11:55 Tuesday, March 4, 2025   2
+
+                           The CONTENTS Procedure
+
+                        Variables in Creation Order
+ 
+     #    Variable                 Type    Len    Label
+
+     1    pharm_class              Char     33    pharm_class          
+     2    pharm_subclass           Char     57    pharm_subclass       
+     3    ingredient_rxcui_name    Char    106    ingredient_rxcui_name
+     4    route                    Char      5    mar_route            
+     5    mar_count                Num       8    Frequency Count      
+     6    order_count              Num       8    Frequency Count      
+     7    gpi_group                Char      2                         
+     8    gpi_class                Char      2                         
+     9    gpi_subclass             Char      2                         
+    10    gpi_base                 Char      2                         
+    11    gpi_name                 Char      2                         
+    12    gpi_form                 Char      2                         
+    13    gpi_dose                 Char      2                         
+    14    gpi                      Char     20    gpi                  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet6.sas                                   

@@ -1,0 +1,106 @@
+                                            10:11 Friday, April 25, 2025   1
+
+                           The CONTENTS Procedure
+
+Data Set Name        CRDW.EKG_LEAD_DATA          Observations          37928
+Member Type          DATA                        Variables             20   
+Engine               V9                          Indexes               0    
+Created              04/25/2025 10:50:43         Observation Length    13704
+Last Modified        04/25/2025 10:50:43         Deleted Observations  0    
+Protection                                       Compressed            NO   
+Data Set Type                                    Sorted                NO   
+Label                                                                       
+Data Representation  SOLARIS_X86_64,                                        
+                     LINUX_X86_64, ALPHA_TRU64,                             
+                     LINUX_IA64                                             
+Encoding             latin1  Western (ISO)                                  
+
+
+                     Engine/Host Dependent Information
+
+Data Set Page Size          131072                                          
+Number of Data Set Pages    4215                                            
+First Data Page             1                                               
+Max Obs per Page            9                                               
+Obs in First Data Page      9                                               
+Number of Data Set Repairs  0                                               
+Filename                    /data/shared/04224/afib/libname/                
+                            crdw/ekg_lead_data.sas7bdat                     
+Release Created             9.0401M8                                        
+Host Created                Linux                                           
+Inode Number                42949763081                                     
+Access Permission           rw-r--r--                                       
+Owner Name                  rsparapa                                        
+File Size                   527MB                                           
+File Size (bytes)           552599552                                       
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet21.sas                                  
+                                            10:11 Friday, April 25, 2025   2
+
+                           The CONTENTS Procedure
+
+                        Variables in Creation Order
+ 
+  #    Variable                        Type      Len    Format    Informat
+
+  1    lead_data_id                    Char       16                      
+  2    waveform_id                     Char       16                      
+  3    lead_amplitude_units            Char       10                      
+  4    lead_low_limit                  Char        6                      
+  5    lead_id                         Char        3                      
+  6    wave_form_data                  Char    13532                      
+  7    patient_hash                    Char       16                      
+  8    patient_trac_id                 Char       16                      
+  9    lead_byte_count_total           Num         8                      
+ 10    lead_time_offset                Num         8                      
+ 11    lead_sample_count_total         Num         8                      
+ 12    lead_amplitude_units_per_bit    Num         8                      
+ 13    lead_high_limit                 Num         8                      
+ 14    lead_offset_first_sample        Num         8                      
+ 15    first_sample_baseline           Num         8                      
+ 16    lead_sample_size                Num         8                      
+ 17    lead_off                        Char        5    $5.       $5.     
+ 18    excessive_acnoise               Char        5    $5.       $5.     
+ 19    muscle_noise                    Char        5    $5.       $5.     
+ 20    lead_data_crc32                 Num         8                      
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet21.sas                                  

@@ -1,0 +1,530 @@
+\documentclass[11pt,pdftex,dvipsnames,usenames]{beamer}
+\setbeameroption{show notes}
+%\usepackage[round]{natbib}
+%\usepackage{amsmath}
+%\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\DeclareGraphicsExtensions{.ps,.eps,.pdf,.jpg,.png}
+\usefonttheme[onlymath]{serif}
+%\usepackage[cmintegrals,cmbraces]{newtxmath}
+\usetheme{default}
+\usecolortheme{dove}
+
+%\usepackage{cancel}
+%\usepackage{tikz}
+%\usepackage[english]{babel}
+\usepackage{statex2}
+\usepackage{verbatim}
+\usepackage{color}
+\usepackage{courier}
+\usepackage{listings}
+\usepackage{fancyvrb}
+%\usepackage{pgf} %portable graphics format
+%\usepackage[autobold]{statex2}
+%\usepackage{enumitem}
+\mode<presentation>
+{
+  %\usetheme{Warsaw}
+  % or ...
+  \setbeamercovered{transparent}
+  % or whatever (possibly just delete it)
+
+  \setbeamertemplate{navigation symbols}{}
+  \usefonttheme[onlysmall]{structurebold}
+  %\usefonttheme{structurebold}
+}
+\addtobeamertemplate{navigation symbols}{}{%
+    \usebeamerfont{footline}%
+  \setbeamertemplate{navigation symbols}{}
+    \usebeamercolor[fg]{footline}%
+    \hspace{1em}%
+    \insertframenumber/\inserttotalframenumber
+}
+% \newcommand*{\BART}{\mathrm{BART}\ }
+% \newcommand*{\Wei}[2]{\mathrm{Wei}\wrap[()]{#1, #2}}
+% \newcommand*{\HBART}{\mathrm{HBART}\ }
+% \newcommand*{\corr}{\mathrm{corr}}
+% \newcommand*{\abs}{\mathrm{abs}}
+% \newcommand*{\DP}[2]{\mb{\mathrm{DP}}\wrap[()]{\mb{#1,\ #2}}}
+%\newcommand*{\EV}[2]{\mb{\mathrm{ExtremeValue}}\wrap[()]{\mb{#1,\ #2}}}
+%\newcommand*{\Wei}[2]{\mathrm{Wei}\wrap[()]{#1, #2}}
+
+\lstset{basicstyle=\small\ttfamily}
+%\lstset{basicstyle=\footnotesize\ttfamily,breaklines=true}
+\lstdefinestyle{customR}{
+  % belowcaptionskip=1\baselineskip,
+  % breaklines=true,
+  frame=LT,
+  % xleftmargin=\parindent,
+  language=R,
+showstringspaces=false,
+morekeywords={addmargins,dbConnect,dbGetQuery,Postgres,str},
+%emphstyle=\color{RedViolet},
+  % showstringspaces=false,
+  % basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\color{VioletRed},
+  commentstyle=\color{BrickRed},
+  identifierstyle=\color{black},
+  stringstyle=\color{ForestGreen},
+}
+\lstdefinestyle{customSAS}{
+  frame=LT,
+  language=SAS,
+showstringspaces=false,
+morekeywords={array,by,data,datafile,dblib,dbdata,endsas,global,if,in,include,keep,let,libname,merge,options,out,proc,qsas,quit,run,select,set,var,where},
+  keywordstyle=\color{VioletRed},
+  commentstyle=\color{BrickRed},
+  identifierstyle=\color{black},
+  stringstyle=\color{ForestGreen},
+morecomment=[s]{/*}{*/},
+morecomment=[s]{*}{;},
+}
+
+\RecustomVerbatimCommand{\VerbatimInput}{VerbatimInput}%
+{% fontsize=\footnotesize,
+ % %
+ % frame=lines,  % top and bottom rule only
+ % framesep=2em, % separation between frame and text
+ % rulecolor=\color{Gray},
+ % %
+ % label=\fbox{\color{Black}data.txt},
+ % labelposition=topline,
+ % %
+ % commandchars=\|\(\), % escape character and argument delimiters for
+ %                      % commands within the verbatim
+ % commentchar=*        % comment character
+}
+
+\title{An introduction to the CRDW with SQL and SAS}
+%\author{Kristen Osinski, Rodney Sparapani and Bradley Taylor}
+\date{M1540: May 12, 2025}
+\begin{document}
+\bibliographystyle{plainnat}
+
+\titlepage
+\boldmath
+% 0. Intro
+
+ 
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Overview}}
+\begin{itemize}
+%\item Research with Electronic Health Records (EHR) 
+\item The CTSI Clinical Research Data Warehouse (CRDW)
+\item An overview of the CRDW Jupyterhub environment 
+\item Brief history of SQL and SAS
+\item Hands-on experience with Jupyterhub %by thoughtful examples
+%\item Short introduction to RASMACRO 
+\item Online resources: 
+links are  \textcolor{PineGreen}{[green]} in square brackets
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{CRDW Data Horizon
+and Important Eras}}
+
+\begin{itemize}
+\item 1989: North American Association of Central Cancer Registries
+  (NAACCR) for Froedtert %Memorial Lutheran Hospital % and Community Memorial
+\item 1999 to 2018, November: GE/IDX billing
+%\item 2001: NAACCR for St.\ Joseph's West Bend
+%\item 2003: Philips IntelliSpace Cardiovascular/Xcelera for echos
+\item 2004: EPIC EHR debuts at Froedtert
+\item 2005: GE MUSE for EKGs
+%\item 2005 to 2007: National Provider Identifiers (NPI) transition
+\item 2009: American Recovery and Reinvestment Act mandates {\it meaningful use} of EHR (i.e., not just for billing purposes)
+%\item 2011: Affordable Care Act mandates {\it meaningful use} of EHR
+\item 2012, May: EPIC EHR Community Memorial Menominee Falls
+\item 2013: Philips Xcelera Cardiology for echocardiograms
+\item \textcolor{red}{2013, July: EPIC EHR for Community Physicians Clinics} 
+\item 2013, September: EPIC EHR St.\ Joseph's West Bend
+\item 2015: Elekta/MOSAIQ radiotherapy dosage
+\item \textcolor{blue}{2015, October: ICD-10 era begins}
+%\item 2020, March: COVID-19 pandemic declared
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Resources}}
+
+\begin{itemize}
+\item This presentation, programs, etc.\ are available online\\
+\textcolor{PineGreen}{[\href{https://github.com/rsparapa/CTSI/tree/main/BERD}{at my \texttt{github.com} repository}]}
+%\item \textcolor{PineGreen}{[\href{https://ctsi.mcw.edu/about/history/support/berd}
+%{Biostatistics, Epidemiology and Research Design (BERD)}]}
+%\item \textcolor{PineGreen}{[\href{https://ctsi.mcw.edu/investigator/services/ctsi-mini-grants/biostatistical-consultation}
+%{BERD Mini-grants}]}
+%\item \textcolor{PineGreen}{[\href{https://www.mcw.edu/departments/biostatistics/biostatistics-consulting-service}{Biostatistics Consulting Service (BCS)}]}
+\item \textcolor{PineGreen}{[\href{https://www.i2b2.org}
+{i2b2: informatics for integrating biology and the bedside}]}
+\item \textcolor{PineGreen}{[\href{https://ctsi.mcw.edu/data-science-informatics/cbmi/crdw/bmi-resource-links}
+{CTSI Biomedical Informatics links}]}
+\item \textcolor{PineGreen}{[\href{https://share.ctsi.mcw.edu/s/8gj39XFxP9oeGGY}{CTSI Honest Broker Data Dictionary}]}
+\item \textcolor{PineGreen}{[\href{https://en.wikipedia.org/wiki/Project_Jupyter}{Project Jupyter}]}
+\item CRDW Jupyterhub \textcolor{PineGreen}{[\href{https://jupyter.ctsi.mcw.edu}{https://jupyter.ctsi.mcw.edu}]}
+\item \textcolor{PineGreen}{[\href{https://www.cdc.gov/nchs/icd/icd9cm.htm}
+{ICD-9 manuals available for download}]}
+\item \textcolor{PineGreen}{[\href{https://icd10cmtool.cdc.gov}
+{US Centers for Disease Control \& Prevention (CDC)\\ 
+ICD-10-CM Browser}]}
+\item \textcolor{PineGreen}{[\href{https://www.nber.org/research/data/icd-9-cm-and-icd-10-cm-and-icd-10-pcs-crosswalk-or-general-equivalence-mappings}
+{US Centers for Medicare \& Medicaid Services (CMS) \\
+(with the CDC) ICD-9 to, and from, ICD-10 crosswalk \\
+of General Equivalence Mappings (GEM)}]}
+%\item \textcolor{PineGreen}{[\href{https://www.neighborhoodatlas.medicine.wisc.edu}{Area Deprivation Index (ADI): out of favor}]}
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{CRDW Tables}}
+%\begin{center}
+\begin{tabular}{lll}
+Table Name \texttt{fh\_hb\_NAME\_jupyter} & 
+\textcolor{PineGreen}{[\href{https://share.ctsi.mcw.edu/s/8gj39XFxP9oeGGY}{Title in Documentation}]} \\ \hline
+\texttt{demographics}       & ``Patient Demographics'' \\ 
+\multicolumn{3}{l}{One record per patient: birth date, gender, 
+race/ethnicity, death, etc.} \\ \hline 
+\texttt{diagnosis}          & ``Diagnosis (Dx)'' \\
+\multicolumn{3}{l}{Combo of EPIC/billing with ICD-9/ICD-10 
+diagnosis codes} \\  \hline  
+\texttt{diagnostic\_results}& ``Diagnostic Results'' \\
+\multicolumn{3}{l}{Combo of mainly EPIC with MOSAIQ (for radiotherapy dosage)} \\  \hline  
+\texttt{encounters}       & ``Encounters'' \\ 
+\multicolumn{3}{l}{Dates/types of all patient encounters} \\ \hline 
+\texttt{mar\_table}         & ``Medications Administered''\\
+\multicolumn{3}{l}{EPIC \textcolor{red}{medications given} with Medi-Span pharm class/sub-class} \\   \hline 
+\texttt{med\_orders\_table} & ``Medication Orders'' \\
+\multicolumn{3}{l}{EPIC prescription orders \textcolor{blue}{(not fills!)} along with Medi-Span} \\  \hline  
+\texttt{procs}              & ``Procedures (Px)'' \\
+\multicolumn{3}{l}{Combo of EPIC/billing with 
+\textcolor{red}{ICD-9/ICD-10} 
+and \textcolor{blue}{HCPCS/CPT codes}} \\  \hline  
+\texttt{vitals}             & ``Vitals'' \\
+\multicolumn{3}{l}{EPIC vital signs such as height/weight, blood pressure,
+temp, etc. } \\   \hline 
+\end{tabular}
+%\end{center}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{CRDW Tables: ``Froedtert Only'' means adults}}
+%\begin{center}
+\begin{tabular}{lll}
+%\multicolumn{2}{c}{Froedtert Only (Meaning Adults Only)} \\
+Table Name  \texttt{fh\_hb\_NAME\_jupyter} & 
+\textcolor{PineGreen}{[\href{https://share.ctsi.mcw.edu/s/8gj39XFxP9oeGGY}{Title in Documentation}]} \\ \hline
+%\texttt{encounters}       & ``Encounters'' \\ 
+%\multicolumn{3}{l}{Dates/types of all patient encounters} \\ \hline 
+\texttt{naaccr}       & ``NAACCR Data'' \\ 
+\multicolumn{3}{l}{North American Association of Central Cancer Registries} \\ \hline 
+\texttt{surgical\_case}       & ``Surgical Case'' \\ 
+\multicolumn{3}{l}{Including anesthesia, \texttt{asa\_rating\_c}, surgical service, etc.} \\ \hline
+%\multicolumn{2}{l}{These are actual table names: unlike \texttt{fh\_hb\_NAME\_jupyter}} \\
+%\multicolumn{2}{l}{\texttt{ekg\_patient\_tracings}, \texttt{ekg\_order},} \\
+%\multicolumn{2}{l}{\texttt{ekg\_test\_demographics}, \texttt{ekg\_resting\_ecg\_meas},} \\
+%\multicolumn{2}{l}{\texttt{ekg\_qrs\_times\_types}, \texttt{ekg\_waveform},} \\
+%\multicolumn{2}{l}{\texttt{ekg\_lead\_data}, \texttt{ekg\_pharma\_data},} \\
+%\multicolumn{2}{l}{\texttt{ekg\_meas\_matrix} \& \texttt{ekg\_meas\_matrix\_leads}} \\
+\multicolumn{2}{l}{\texttt{echo} \qquad \qquad \qquad \qquad \quad ``Echocardiogram Exam Results''} \\ 
+\multicolumn{3}{l}{Echocardiogram data from Philips Xcelera: Appendix B} \\ \hline
+\multicolumn{2}{l}{Actual table names starting with \texttt{ekg\_}} \\
+\multicolumn{3}{l}{GE Healthcare's MUSE for electrocardiograms: Appendix A} \\ \hline
+\end{tabular}
+
+\end{frame}
+
+\begin{comment}
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{What is an Electronic Health Record?}}
+
+\begin{itemize}
+\item Electronic Medical Record (EMR) and\\ 
+Electronic Health Record (EHR)\\
+are often used interchangeably
+\item However, there is a subtle distinction
+\item Technically, the EMR is merely a digital version (whether of
+  digital provenance or scanned images) of what used to be a paper
+  {\it medical record} (a misnomer anyway since NOT limited to
+  merely medicine)
+\item Typically, the EMR is a collection of health-related data
+\item Doctor/nursing/etc.\ notes: not available in the CRDW
+\item Imaging, laboratory results, vital signs, etc. 
+\item Whereas the EHR is an information management system like EPIC
+  providing convenient access to the EMR along with other ancillary
+  digital capabilities such as \textcolor{red}{billing}/scheduling,
+  prescription pharmaceutical orders and modern data sources 
+including X-ray/CAT/MRI scans,  chemo-/radio-therapy dosage,
+  electrocardiograms, echocardiograms, etc.
+\end{itemize}
+
+\end{frame}
+\end{comment}
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{What is an Honest Broker?}}
+
+\begin{itemize}
+\item
+``A neutral intermediary ... between the individual whose ... data are being studied, and the researcher. The honest broker collects and collates pertinent information ... replaces identifiers with a code, and releases only coded information to the researcher.''
+ \textcolor{PineGreen}{[\href{https://www.hhs.gov/ohrp/sachrp-committee/recommendations/2011-october-13-letter-attachment-d/index.html}{US
+     Health and Human Services FAQ}]}
+\item CTSI Biomedical Informatics is the Honest Broker!
+\item The term originated in diplomacy meaning an entity
+accepted as impartial by all sides in a negotiation
+\item German Chancellor Otto von Bismarck first used the term,\\
+  applying it to himself, as an intermediary in negotiations
+  between Russia and the Ottoman Empire\\ (Auray-Blais and Patenaude,
+  BMC Medical Ethics 2006)
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Honest Broker De-identification}}
+
+\begin{itemize}
+\item Jupyterhub data is brought ``up-to-date'' on Wednesday nights
+\item HIPAA de-identification provided by the Honest Broker
+\item For example, patient names, etc.\ are removed
+\item The Medical Record Number (MRN),
+  \textcolor{red}{\texttt{patient\_mrn}},\\ is replaced by 
+  \textcolor{red}{\texttt{patient\_hash}} which is an encrypted
+  key
+\item \textcolor{red}{\texttt{patient\_hash}} is unchanging so that
+the MRNs could be retrieved if you have IRB approval for identified
+data
+\item All dates for each patient are de-identified by a\\
+\textcolor{blue}{single} random integer from -10 to 10 (with zero excluded)
+\item This allows any two date differentials to be calculated
+exactly such as the age of a diagnosis with respect to birth date
+\item Geographically, we have only state of residence and\\
+ZIP code shortened to the first 3 digits 
+\item Yet, addresses were geocoded to Census Block Groups (CBG)\\ 
+for the corresponding Area Deprivation Index (ADI)\\
+however, the ADI is out of favor and will be replaced
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{A brief introduction to SQL}}
+
+\begin{itemize}
+\item Structured Query Language (SQL) 
+\item The syntax/semantics for interacting with\\
+relational database management systems
+\item Originally developed by IBM: now an industry standard
+\item \textcolor{PineGreen}{[\href{https://www.iso.org/standard/63555.html}
+{SQL:2016 AKA ISO/IEC 9075:2016}]}
+\item \textcolor{PineGreen}{[\href{https://www.tiobe.com/tiobe-index}
+{The TIOBE Index of programming language popularity}]}\\ (circa 03/25)
+\item SQL is ranked 7
+\item First appeared in 1974
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{A brief introduction to SAS}}
+
+\begin{itemize}
+\item The SAS language is a proprietary for-fee fourth-generation\\ domain-specific environment for data science
+\item \textcolor{PineGreen}{[\href{https://SAS.com}{https://SAS.com}]}
+\item \textcolor{PineGreen}{[\href{https://support.sas.com/en/documentation.html}{https://support.sas.com/en/documentation.html}]}
+\item Convenient naturally vectorized \texttt{DATASTEP} language 
+\item You don't buy SAS, you rent it annually
+\item The MCW site license goes from June to May
+\item SAS is free on the Biostatistics/CAPS Linux cluster
+%\item It is free for students and members of Biostatistics/CAPS
+%\item For others its cheap, use the IS ticket system to order\\
+%\textcolor{PineGreen}{[\href{https://mcwcherwellapp.mcwcorp.net/CherwellPortal}{https://mcwcherwellapp.mcwcorp.net/CherwellPortal}]} \\
+%\$60 for SAS on the RCC cluster and for Windows installs  
+\item On the TIOBE Index of programming language popularity (circa 03/25)
+\item SAS is ranked 25 
+\item First appeared in 1972
+\item The RASMACRO collection of my GPL SAS macros 
+\texttt{/usr/local/sasmacro}
+%\textcolor{PineGreen}{[\href{https://github.com/rsparapa/rasmacro}{https://github.com/rsparapa/rasmacro}]}
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}\frametitle{Atrial fibrillation (AFIB) and atrial flutter (AFLT)}
+\begin{itemize}
+\item AFIB is most common arrhythmia seen in clinical practice
+\item Cause: fibrillating atria {\it f waves}: 300 to 600 bpm
+\item AFLT is a closely related condition but less common
+\item Cause: atrial {\it flutter waves}: 250 to 350 bpm
+\item Typically distressed patients seen in the ER
+\item Where AFIB/AFLT is diagnosed with an ECG
+\item AHA forecasts 12M AFIB patients in 2030 
+\item AFIB: 5X RR for stroke
+\item AFIB: 2X RR for all-cause mortality and cognitive dysfunction
+\item AFIB associated with heart failure and sudden death
+%\item Ventricular rate during untreated AFIB: 100 to 250 bpm
+\item {\it paroxysmal} AFIB: spontaneous remitting within 7 days 
+\item {\it persistent} AFIB: continuing for more than 7 days 
+\item {\it longstanding persistent} AFIB: for more than 1 year
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}\frametitle{Atrial fibrillation (AFIB) and atrial flutter (AFLT)}
+\begin{itemize}
+\item How to assemble an AFIB/AFLT cohort from the CRDW?
+\item We need to identify the index event and its ECG
+\item ICD-10-CM codes for AFIB: I48
+\item Except for the AFLT codes: I48.3, I48.4 and I48.92
+\item Ventricular rate during untreated AFIB: 100 to 250 bpm
+%\item AFIB: fibrillating atria {\it f waves}: 300 to 600 bpm
+%\item AFLT: atrial {\it flutter waves}: 250 to 350 bpm
+
+\item Treatments: ablation, cardioversion, closure and drugs
+\item However, atrial pacemakers are NOT effective 
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Electrocardiograms (ECG): Frontal leads}
+\begin{center}
+\includegraphics[scale=0.6]{.temp/frontal.jpg}
+\end{center}
+David Strauss and Douglas Schocken\\ 
+Marriott’s practical electrocardiography 
+%Wolters Kluwer, 13th edition, 2020
+\end{frame}
+
+\begin{frame}\frametitle{Electrocardiograms (ECG): Precordial leads}
+\begin{center}
+\includegraphics[scale=0.6]{.temp/precordial.jpg}
+\end{center}
+David Strauss and Douglas Schocken\\ 
+Marriott’s practical electrocardiography
+%Wolters Kluwer, 13th edition, 2020
+\end{frame}
+
+\begin{frame}\frametitle{Atrial fibrillation/flutter}
+\includegraphics[scale=0.325]{.temp/ECGannotated.png}
+\end{frame}
+
+\begin{frame}\frametitle{Left atrial appendage closure}
+\begin{center}
+\includegraphics[scale=0.25]{.temp/closure.png}
+\end{center}
+Calkins, Tomaselli \& Morady 2012
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\bf\textcolor{blue}{Hands-on with the CRDW: username and password}}
+\begin{center}
+\includegraphics[scale=0.7]{.temp/username.png}
+\end{center}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{\bf\textcolor{blue}{Hands-on with the CRDW: \texttt{autoexec.sas}}}
+\lstinputlisting[style=customSAS]{snippet0.sas}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\bf\textcolor{blue}{Hands-on with the CRDW: \texttt{libname} to database}}
+\lstinputlisting[style=customSAS]{snippet1.sas}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\bf\textcolor{blue}{Hands-on with the CRDW: SAS pass-through SQL}}
+\lstinputlisting[style=customSAS]{snippet2.sas}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\bf\textcolor{blue}{Hands-on with the CRDW:
+Open \texttt{snippet3.sas}}}
+\lstinputlisting[style=customSAS]{snippet3.sas}
+\end{frame}
+
+\begin{comment}
+\begin{frame}[fragile]
+\frametitle{\bf\textcolor{blue}{Hands-on with the CRDW:
+Open \texttt{snippet4.sas}}}
+\lstinputlisting[style=customSAS]{snippet4.sas}
+\end{frame}
+\end{comment}
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with the CRDW}}
+\lstinputlisting[style=customSAS]{snippet5.sas}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Medi-Span, GPI and RxNorm
+Medical Nomenclature}}
+\begin{itemize}
+\item \textcolor{PineGreen}{[\href{https://www.wolterskluwer.com/en/solutions/medi-span/about/gpi}
+{Medi-Span Generic Product Identifier (GPI)}]}
+\item The Wolters Kluwer Medi-Span brand database, called the Medispan
+  Electronic Drug File, links the GPI code to other prescription drug
+  classification codes
+\item \textcolor{PineGreen}{[\href{https://www.nlm.nih.gov/research/umls/rxnorm/index.html}{RxNorm}]} is part of Unified Medical Language System (UMLS)
+  terminology maintained by the US National Library
+  of Medicine (NLM)
+\item GPI and RxNorm codes are available on two CRDW tables
+\item ``Medication Orders'' for medicinal prescriptions (not fills!): \texttt{fh\_hb\_med\_orders\_table\_jupyter}
+\item ``Medications Administered'' for medicine given: \texttt{fh\_hb\_mar\_table\_jupyter} 
+\item Example variables of interest
+\item \texttt{pharm\_class}: pharmacologic class
+\item \texttt{pharm\_subclass}: pharmacologic subclass
+\item \texttt{ingredient\_rxcui\_name}: RxNorm Concept Unique Identifier (CUI) name
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with the CRDW}}
+\begin{itemize}
+\item You can update this lookup table of drug nomenclature\\ 
+\item RESOURCE INTENSIVE: DON'T DO IT TODAY \texttt{snippet6.sas}
+\item But you can see the output right now: \texttt{medispan.csv}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with the CRDW}}
+\lstinputlisting[style=customSAS]{snippet6.sas}
+\end{frame}
+
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with the CRDW: 
+\textcolor{PineGreen}{[\href{https://icd10cmtool.cdc.gov}
+{ICD-10-CM Browser}]}}}
+\lstinputlisting[style=customSAS]{snippet7.sas}
+\end{frame}
+
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with the CRDW: AFIB warehouse}}
+\lstinputlisting[style=customSAS]{snippet8.sas}
+\end{frame}
+
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with the CRDW: AFLT warehouse}}
+\lstinputlisting[style=customSAS]{snippet9.sas}
+\end{frame}
+
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with the CRDW: ECGs}}
+\lstinputlisting[style=customSAS]{snippet10.sas}
+\end{frame}
+
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with the CRDW: ECGs}}
+\lstinputlisting[style=customSAS]{snippet11.sas}
+\end{frame}
+
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with the CRDW: ECGs}}
+\lstinputlisting[style=customSAS]{snippet12.sas}
+\end{frame}
+
+
+\begin{frame}[fragile]\frametitle{\bf\textcolor{blue}{Hands-on with the CRDW: ECGs}}
+\lstinputlisting[style=customSAS]{snippet13.sas}
+\end{frame}
+
+\end{document}
+

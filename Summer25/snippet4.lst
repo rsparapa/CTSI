@@ -1,0 +1,106 @@
+                                           10:57 Tuesday, March 11, 2025   1
+
+------------------------- table_name=ekg_lead_data -------------------------
+
+                  Obs    column_name                    len
+
+                    5    wave_form_data               13532
+
+
+------------------------ table_name=ekg_meas_matrix ------------------------
+
+                  Obs    column_name                    len
+
+                    9    raw_data                      3490
+
+
+--------------------- table_name=ekg_test_demographics ---------------------
+
+                  Obs    column_name                    len
+
+                   40    diagnosis_stmt                 895
+
+
+-------------------- table_name=fh_hb_diagnosis_jupyter --------------------
+
+                  Obs    column_name                    len
+
+                  126    dx_name                        233
+
+
+--------------- table_name=fh_hb_diagnostic_results_jupyter ----------------
+
+                  Obs    column_name                    len
+
+                  159    src_value                      254
+
+
+----------------- table_name=fh_hb_genomic_summary_jupyter -----------------
+
+                  Obs    column_name                    len
+
+                  353    nucl_var                       369
+
+
+-------------------- table_name=fh_hb_genomics_jupyter ---------------------
+
+                  Obs    column_name                    len
+
+                  363    altered_n                      360
+                  373    nucleotide_variant             369
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet4.sas                                   
+                                           10:57 Tuesday, March 11, 2025   2
+
+---------------- table_name=fh_hb_med_orders_table_jupyter -----------------
+
+                  Obs    column_name                    len
+
+                  496    quantity                       254
+
+
+------------------ table_name=fh_hb_problem_list_jupyter -------------------
+
+                  Obs    column_name                    len
+
+                 1265    dx_code_description            219
+
+
+---------------------- table_name=fh_hb_procs_jupyter ----------------------
+
+                  Obs    column_name                    len
+
+                 1279    procedure_name                 255
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet4.sas                                   

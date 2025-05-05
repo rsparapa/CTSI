@@ -1,0 +1,318 @@
+                                          16:26 Thursday, March 13, 2025   1
+
+                             The FREQ Procedure
+
+                                           Cumulative    Cumulative
+        aflt17    Frequency     Percent     Frequency      Percent
+        -----------------------------------------------------------
+             0        5510       85.56          5510        85.56  
+             1         781       12.13          6291        97.69  
+             2         117        1.82          6408        99.50  
+             3          23        0.36          6431        99.86  
+             4           9        0.14          6440       100.00  
+
+
+                                           Cumulative    Cumulative
+        aflt18    Frequency     Percent     Frequency      Percent
+        -----------------------------------------------------------
+             0        5217       81.01          5217        81.01  
+             1        1028       15.96          6245        96.97  
+             2         150        2.33          6395        99.30  
+             3          36        0.56          6431        99.86  
+             4           6        0.09          6437        99.95  
+             5           3        0.05          6440       100.00  
+
+
+                                           Cumulative    Cumulative
+        aflt19    Frequency     Percent     Frequency      Percent
+        -----------------------------------------------------------
+             0        5026       78.04          5026        78.04  
+             1        1162       18.04          6188        96.09  
+             2         201        3.12          6389        99.21  
+             3          37        0.57          6426        99.78  
+             4          11        0.17          6437        99.95  
+             5           3        0.05          6440       100.00  
+
+
+                                           Cumulative    Cumulative
+        aflt20    Frequency     Percent     Frequency      Percent
+        -----------------------------------------------------------
+             0        5050       78.42          5050        78.42  
+             1        1166       18.11          6216        96.52  
+             2         178        2.76          6394        99.29  
+             3          29        0.45          6423        99.74  
+             4          12        0.19          6435        99.92  
+             5           5        0.08          6440       100.00  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet9.sas                                   
+                                          16:26 Thursday, March 13, 2025   2
+
+                             The FREQ Procedure
+
+                                           Cumulative    Cumulative
+        aflt21    Frequency     Percent     Frequency      Percent
+        -----------------------------------------------------------
+             0        4940       76.71          4940        76.71  
+             1        1270       19.72          6210        96.43  
+             2         179        2.78          6389        99.21  
+             3          34        0.53          6423        99.74  
+             4          12        0.19          6435        99.92  
+             5           2        0.03          6437        99.95  
+             6           2        0.03          6439        99.98  
+             8           1        0.02          6440       100.00  
+
+
+                                           Cumulative    Cumulative
+        aflt22    Frequency     Percent     Frequency      Percent
+        -----------------------------------------------------------
+             0        4873       75.67          4873        75.67  
+             1        1321       20.51          6194        96.18  
+             2         175        2.72          6369        98.90  
+             3          50        0.78          6419        99.67  
+             4          16        0.25          6435        99.92  
+             5           2        0.03          6437        99.95  
+             6           2        0.03          6439        99.98  
+             7           1        0.02          6440       100.00  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet9.sas                                   
+                                          16:26 Thursday, March 13, 2025   3
+
+                             The FREQ Procedure
+
+                                                   Cumulative   Cumulative
+ aflt17   aflt18   aflt19   Frequency    Percent    Frequency     Percent
+ -------------------------------------------------------------------------
+ 0:1      0:1      0:1          5886      91.40         5886       91.40  
+ 0:1      0:1      2+            219       3.40         6105       94.80  
+ 0:1      2+       0:1           165       2.56         6270       97.36  
+ 0:1      2+       2+             21       0.33         6291       97.69  
+ 2+       0:1      0:1           130       2.02         6421       99.70  
+ 2+       0:1      2+             10       0.16         6431       99.86  
+ 2+       2+       0:1             7       0.11         6438       99.97  
+ 2+       2+       2+              2       0.03         6440      100.00  
+
+
+                                                   Cumulative   Cumulative
+ aflt20   aflt21   aflt22   Frequency    Percent    Frequency     Percent
+ -------------------------------------------------------------------------
+ 0:1      0:1      0:1          5803      90.11         5803       90.11  
+ 0:1      0:1      2+            214       3.32         6017       93.43  
+ 0:1      2+       0:1           178       2.76         6195       96.20  
+ 0:1      2+       2+             21       0.33         6216       96.52  
+ 2+       0:1      0:1           188       2.92         6404       99.44  
+ 2+       0:1      2+              5       0.08         6409       99.52  
+ 2+       2+       0:1            25       0.39         6434       99.91  
+ 2+       2+       2+              6       0.09         6440      100.00  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet9.sas                                   
+                                          16:26 Thursday, March 13, 2025   4
+
+                           The CONTENTS Procedure
+
+Data Set Name        CRDW.SNIPPET9                Observations          6440
+Member Type          DATA                         Variables             79  
+Engine               V9                           Indexes               0   
+Created              03/13/2025 16:26:47          Observation Length    640 
+Last Modified        03/13/2025 16:26:47          Deleted Observations  0   
+Protection                                        Compressed            NO  
+Data Set Type                                     Sorted                NO  
+Label                                                                       
+Data Representation  SOLARIS_X86_64,                                        
+                     LINUX_X86_64, ALPHA_TRU64,                             
+                     LINUX_IA64                                             
+Encoding             latin1  Western (ISO)                                  
+
+
+                     Engine/Host Dependent Information
+
+Data Set Page Size          65536                                           
+Number of Data Set Pages    64                                              
+First Data Page             1                                               
+Max Obs per Page            102                                             
+Obs in First Data Page      84                                              
+Number of Data Set Repairs  0                                               
+Filename                    /data/shared/04224/CTSI/libname/                
+                            crdw/snippet9.sas7bdat                          
+Release Created             9.0401M8                                        
+Host Created                Linux                                           
+Inode Number                42949763115                                     
+Access Permission           rw-r--r--                                       
+Owner Name                  rsparapa                                        
+File Size                   4MB                                             
+File Size (bytes)           4259840                                         
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet9.sas                                   
+                                          16:26 Thursday, March 13, 2025   5
+
+                           The CONTENTS Procedure
+
+                        Variables in Creation Order
+ 
+   #    Variable        Type    Len    Format    Informat    Label
+
+   1    patient_hash    Char     16    $16.      $16.        patient_hash
+   2    aflt17          Num       8                                      
+   3    aflt18          Num       8                                      
+   4    aflt19          Num       8                                      
+   5    aflt20          Num       8                                      
+   6    aflt21          Num       8                                      
+   7    aflt22          Num       8                                      
+   8    aflt1701        Num       8                                      
+   9    aflt1702        Num       8                                      
+  10    aflt1703        Num       8                                      
+  11    aflt1704        Num       8                                      
+  12    aflt1705        Num       8                                      
+  13    aflt1706        Num       8                                      
+  14    aflt1707        Num       8                                      
+  15    aflt1708        Num       8                                      
+  16    aflt1709        Num       8                                      
+  17    aflt1710        Num       8                                      
+  18    aflt1711        Num       8                                      
+  19    aflt1712        Num       8                                      
+  20    aflt1801        Num       8                                      
+  21    aflt1802        Num       8                                      
+  22    aflt1803        Num       8                                      
+  23    aflt1804        Num       8                                      
+  24    aflt1805        Num       8                                      
+  25    aflt1806        Num       8                                      
+  26    aflt1807        Num       8                                      
+  27    aflt1808        Num       8                                      
+  28    aflt1809        Num       8                                      
+  29    aflt1810        Num       8                                      
+  30    aflt1811        Num       8                                      
+  31    aflt1812        Num       8                                      
+  32    aflt1901        Num       8                                      
+  33    aflt1902        Num       8                                      
+  34    aflt1903        Num       8                                      
+  35    aflt1904        Num       8                                      
+  36    aflt1905        Num       8                                      
+  37    aflt1906        Num       8                                      
+  38    aflt1907        Num       8                                      
+  39    aflt1908        Num       8                                      
+  40    aflt1909        Num       8                                      
+  41    aflt1910        Num       8                                      
+  42    aflt1911        Num       8                                      
+  43    aflt1912        Num       8                                      
+ 
+/home/rsparapa/git/CTSI/BERD/snippet9.sas                                   
+                                          16:26 Thursday, March 13, 2025   6
+
+                           The CONTENTS Procedure
+
+                        Variables in Creation Order
+ 
+   #    Variable        Type    Len    Format    Informat    Label
+
+  44    aflt2001        Num       8                                      
+  45    aflt2002        Num       8                                      
+  46    aflt2003        Num       8                                      
+  47    aflt2004        Num       8                                      
+  48    aflt2005        Num       8                                      
+  49    aflt2006        Num       8                                      
+  50    aflt2007        Num       8                                      
+  51    aflt2008        Num       8                                      
+  52    aflt2009        Num       8                                      
+  53    aflt2010        Num       8                                      
+  54    aflt2011        Num       8                                      
+  55    aflt2012        Num       8                                      
+  56    aflt2101        Num       8                                      
+  57    aflt2102        Num       8                                      
+  58    aflt2103        Num       8                                      
+  59    aflt2104        Num       8                                      
+  60    aflt2105        Num       8                                      
+  61    aflt2106        Num       8                                      
+  62    aflt2107        Num       8                                      
+  63    aflt2108        Num       8                                      
+  64    aflt2109        Num       8                                      
+  65    aflt2110        Num       8                                      
+  66    aflt2111        Num       8                                      
+  67    aflt2112        Num       8                                      
+  68    aflt2201        Num       8                                      
+  69    aflt2202        Num       8                                      
+  70    aflt2203        Num       8                                      
+  71    aflt2204        Num       8                                      
+  72    aflt2205        Num       8                                      
+  73    aflt2206        Num       8                                      
+  74    aflt2207        Num       8                                      
+  75    aflt2208        Num       8                                      
+  76    aflt2209        Num       8                                      
+  77    aflt2210        Num       8                                      
+  78    aflt2211        Num       8                                      
+  79    aflt2212        Num       8                                      
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet9.sas                                   

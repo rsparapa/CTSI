@@ -1,0 +1,1824 @@
+                                                                                         11:50 Tuesday, April 22, 2025   1
+
+                                                  The CONTENTS Procedure
+
+         Data Set Name        CRDW.SCHEMA                                              Observations          1997
+         Member Type          DATA                                                     Variables             44  
+         Engine               V9                                                       Indexes               0   
+         Created              04/22/2025 11:50:06                                      Observation Length    3904
+         Last Modified        04/22/2025 11:50:06                                      Deleted Observations  0   
+         Protection                                                                    Compressed            NO  
+         Data Set Type                                                                 Sorted                NO  
+         Label                                                                                                   
+         Data Representation  SOLARIS_X86_64, LINUX_X86_64, ALPHA_TRU64, LINUX_IA64                              
+         Encoding             latin1  Western (ISO)                                                              
+
+
+                                            Engine/Host Dependent Information
+
+                     Data Set Page Size          131072                                              
+                     Number of Data Set Pages    61                                                  
+                     First Data Page             1                                                   
+                     Max Obs per Page            33                                                  
+                     Obs in First Data Page      31                                                  
+                     Number of Data Set Repairs  0                                                   
+                     Filename                    /data/shared/04224/afib/libname/crdw/schema.sas7bdat
+                     Release Created             9.0401M8                                            
+                     Host Created                Linux                                               
+                     Inode Number                42949763072                                         
+                     Access Permission           rw-r--r--                                           
+                     Owner Name                  rsparapa                                            
+                     File Size                   8MB                                                 
+                     File Size (bytes)           8126464                                             
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet3.sas                                                                                 
+                                                                                         11:50 Tuesday, April 22, 2025   2
+
+                                                  The CONTENTS Procedure
+
+                                               Variables in Creation Order
+ 
+                   #    Variable                    Type    Len    Informat    Label
+
+                   1    table_catalog               Char     63    $63.        table_catalog           
+                   2    table_schema                Char     63    $63.        table_schema            
+                   3    table_name                  Char     63    $63.        table_name              
+                   4    column_name                 Char     63    $63.        column_name             
+                   5    ordinal_position            Num       8    11.         ordinal_position        
+                   6    column_default              Char    255    $255.       column_default          
+                   7    is_nullable                 Char      3    $3.         is_nullable             
+                   8    data_type                   Char    255    $255.       data_type               
+                   9    character_maximum_length    Num       8    11.         character_maximum_length
+                  10    character_octet_length      Num       8    11.         character_octet_length  
+                  11    numeric_precision           Num       8    11.         numeric_precision       
+                  12    numeric_precision_radix     Num       8    11.         numeric_precision_radix 
+                  13    numeric_scale               Num       8    11.         numeric_scale           
+                  14    datetime_precision          Num       8    11.         datetime_precision      
+                  15    interval_type               Char    255    $255.       interval_type           
+                  16    interval_precision          Num       8    11.         interval_precision      
+                  17    character_set_catalog       Char     63    $63.        character_set_catalog   
+                  18    character_set_schema        Char     63    $63.        character_set_schema    
+                  19    character_set_name          Char     63    $63.        character_set_name      
+                  20    collation_catalog           Char     63    $63.        collation_catalog       
+                  21    collation_schema            Char     63    $63.        collation_schema        
+                  22    collation_name              Char     63    $63.        collation_name          
+                  23    domain_catalog              Char     63    $63.        domain_catalog          
+                  24    domain_schema               Char     63    $63.        domain_schema           
+                  25    domain_name                 Char     63    $63.        domain_name             
+                  26    udt_catalog                 Char     63    $63.        udt_catalog             
+                  27    udt_schema                  Char     63    $63.        udt_schema              
+                  28    udt_name                    Char     63    $63.        udt_name                
+                  29    scope_catalog               Char     63    $63.        scope_catalog           
+                  30    scope_schema                Char     63    $63.        scope_schema            
+                  31    scope_name                  Char     63    $63.        scope_name              
+                  32    maximum_cardinality         Num       8    11.         maximum_cardinality     
+                  33    dtd_identifier              Char     63    $63.        dtd_identifier          
+                  34    is_self_referencing         Char      3    $3.         is_self_referencing     
+                  35    is_identity                 Char      3    $3.         is_identity             
+                  36    identity_generation         Char    255    $255.       identity_generation     
+                  37    identity_start              Char    255    $255.       identity_start          
+                  38    identity_increment          Char    255    $255.       identity_increment      
+ 
+/home/rsparapa/git/CTSI/BERD/snippet3.sas                                                                                 
+                                                                                         11:50 Tuesday, April 22, 2025   3
+
+                                                  The CONTENTS Procedure
+
+                                               Variables in Creation Order
+ 
+                   #    Variable                    Type    Len    Informat    Label
+
+                  39    identity_maximum            Char    255    $255.       identity_maximum        
+                  40    identity_minimum            Char    255    $255.       identity_minimum        
+                  41    identity_cycle              Char      3    $3.         identity_cycle          
+                  42    is_generated                Char    255    $255.       is_generated            
+                  43    generation_expression       Char    255    $255.       generation_expression   
+                  44    is_updatable                Char      3    $3.         is_updatable            
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet3.sas                                                                                 
+                                                                                         11:50 Tuesday, April 22, 2025   4
+
+                                                    The FREQ Procedure
+
+                                                      table_catalog
+ 
+                                                                         Cumulative    Cumulative
+                         table_catalog          Frequency     Percent     Frequency      Percent
+                         ------------------------------------------------------------------------
+                         fh_jupyter_hub_hbdb        1997      100.00          1997       100.00  
+
+
+                                                      table_schema
+ 
+                               table_                             Cumulative    Cumulative
+                               schema    Frequency     Percent     Frequency      Percent
+                               -----------------------------------------------------------
+                               public        1997      100.00          1997       100.00  
+
+
+                                                        data_type
+ 
+                                                                             Cumulative    Cumulative
+                     data_type                      Frequency     Percent     Frequency      Percent
+                     --------------------------------------------------------------------------------
+                     ARRAY                                17        0.85            17         0.85  
+                     bigint                              152        7.61           169         8.46  
+                     boolean                               3        0.15           172         8.61  
+                     character                             2        0.10           174         8.71  
+                     character varying                   684       34.25           858        42.96  
+                     double precision                     36        1.80           894        44.77  
+                     integer                             144        7.21          1038        51.98  
+                     numeric                             115        5.76          1153        57.74  
+                     text                                678       33.95          1831        91.69  
+                     time without time zone                2        0.10          1833        91.79  
+                     timestamp without time zone         164        8.21          1997       100.00  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet3.sas                                                                                 
+                                                                                         11:50 Tuesday, April 22, 2025   5
+
+                                                    The FREQ Procedure
+
+                                                       table_name
+ 
+                                                                               Cumulative    Cumulative
+                  table_name                          Frequency     Percent     Frequency      Percent
+                  -------------------------------------------------------------------------------------
+                  ekg_lead_data                              6        0.44             6         0.44  
+                  ekg_meas_matrix                            3        0.22             9         0.66  
+                  ekg_meas_matrix_leads                      3        0.22            12         0.88  
+                  ekg_order                                 13        0.95            25         1.83  
+                  ekg_patient_tracings                       4        0.29            29         2.13  
+                  ekg_pharma_data                            4        0.29            33         2.42  
+                  ekg_qrs_times_types                        2        0.15            35         2.57  
+                  ekg_resting_ecg_meas                       2        0.15            37         2.71  
+                  ekg_test_demographics                     13        0.95            50         3.67  
+                  ekg_waveform                               6        0.44            56         4.11  
+                  fh_hb_address_hx_jupyter                   9        0.66            65         4.77  
+                  fh_hb_adt_jupyter                         10        0.73            75         5.50  
+                  fh_hb_allergy_hx_jupyter                   7        0.51            82         6.01  
+                  fh_hb_biospecimen_jupyter                  9        0.66            91         6.67  
+                  fh_hb_demographics_jupyter                33        2.42           124         9.09  
+                  fh_hb_diagnosis_jupyter                   15        1.10           139        10.19  
+                  fh_hb_diagnostic_results_jupyter          21        1.54           160        11.73  
+                  fh_hb_dm_wll_all_jupyter                 115        8.43           275        20.16  
+                  fh_hb_echo_jupyter                         8        0.59           283        20.75  
+                  fh_hb_enc_notes_jupyter                   18        1.32           301        22.07  
+                  fh_hb_encounters_jupyter                  51        3.74           352        25.81  
+                  fh_hb_genomic_summary_jupyter             10        0.73           362        26.54  
+                  fh_hb_genomics_jupyter                    35        2.57           397        29.11  
+                  fh_hb_imaging_orders_jupyter              18        1.32           415        30.43  
+                  fh_hb_immunization_jupyter                27        1.98           442        32.40  
+                  fh_hb_mar_table_jupyter                   30        2.20           472        34.60  
+                  fh_hb_med_orders_table_jupyter            27        1.98           499        36.58  
+                  fh_hb_naaccr_jupyter                     731       53.59          1230        90.18  
+                  fh_hb_noah_basic_jupyter                   1        0.07          1231        90.25  
+                  fh_hb_noah_complete_jupyter                1        0.07          1232        90.32  
+                  fh_hb_ob_mom_baby_jupyter                 31        2.27          1263        92.60  
+                  fh_hb_problem_list_jupyter                 9        0.66          1272        93.26  
+                  fh_hb_procs_jupyter                       15        1.10          1287        94.35  
+                  fh_hb_sdoh_jupyter                         9        0.66          1296        95.01  
+                  fh_hb_social_hx_jupyter                   48        3.52          1344        98.53  
+                  fh_hb_surgical_case_jupyter               18        1.32          1362        99.85  
+                  fh_hb_vitals_jupyter                       2        0.15          1364       100.00  
+ 
+/home/rsparapa/git/CTSI/BERD/snippet3.sas                                                                                 
+                                                                                         11:50 Tuesday, April 22, 2025   6
+
+                        Obs    table_name                          column_name
+
+                          1    fh_hb_naaccr_jupyter                date_of_last_cancer_sta_n1773  
+                          4    fh_hb_dm_wll_all_jupyter            on_anthypert_yn                
+                          5    fh_hb_social_hx_jupyter             ipv_physical_abuse_name        
+                          6    fh_hb_naaccr_jupyter                comorbid_complication9_n3163   
+                          7    fh_hb_naaccr_jupyter                ln_head_and_neck_levels_n3878  
+                          8    fh_hb_surgical_case_jupyter         room_id                        
+                          9    fh_hb_naaccr_jupyter                tumor_size_summary_n756        
+                         12    fh_hb_genomic_summary_jupyter       provider_id                    
+                         13    fh_hb_naaccr_jupyter                peritoneal_cytology_n3911      
+                         14    fh_hb_demographics_jupyter          vital_status_source            
+                         15    fh_hb_naaccr_jupyter                text_remarks_n2680             
+                         16    fh_hb_encounters_jupyter            payor_type_primary_c           
+                         17    fh_hb_naaccr_jupyter                census_block_group2010_n363    
+                         19    fh_hb_sdoh_jupyter                  flo_meas_id                    
+                         22    fh_hb_naaccr_jupyter                derived_neoadjuv_rx_fla_n3600  
+                         23    fh_hb_naaccr_jupyter                eod_old4_digit_n860            
+                         25    fh_hb_naaccr_jupyter                rx_summ_systemic_sur_se_n1639  
+                         26    fh_hb_naaccr_jupyter                phase2_radiation_extern_n1512  
+                         27    fh_hb_biospecimen_jupyter           specimen_type                  
+                         30    fh_hb_address_hx_jupyter            state_name                     
+                         32    fh_hb_diagnosis_jupyter             encounter_hash                 
+                         33    fh_hb_naaccr_jupyter                rx_summ_transplnt_endoc_n3250  
+                         34    fh_hb_naaccr_jupyter                mets_at_dx_lung_n1116          
+                         35    fh_hb_naaccr_jupyter                physician_managing_n2460       
+                         38    fh_hb_naaccr_jupyter                comorbid_complication2_n3120   
+                         39    fh_hb_naaccr_jupyter                over_ride_cs7_n3756            
+                         40    fh_hb_surgical_case_jupyter         case_id_hash                   
+                         41    fh_hb_naaccr_jupyter                census_occ_code19702000_n270   
+                         42    fh_hb_naaccr_jupyter                cs_extension_n2810             
+                         43    fh_hb_naaccr_jupyter                census_tr_certainty2000_n365   
+                         46    fh_hb_naaccr_jupyter                rad_boost_dose_cgy_n3210       
+                         47    fh_hb_adt_jupyter                   pat_class_c                    
+                         48    fh_hb_diagnosis_jupyter             dx_origin                      
+                         49    fh_hb_naaccr_jupyter                behavior_icd_o1_n1972          
+                         51    fh_hb_naaccr_jupyter                mitotic_rate_melanoma_n3893    
+                         52    fh_hb_naaccr_jupyter                path_order_phys_lic_no5_n7104  
+                         53    fh_hb_encounters_jupyter            discharge_prov_id              
+                         54    fh_hb_naaccr_jupyter                rqrs_ncdb_submission_fl_n2155  
+                         55    fh_hb_naaccr_jupyter                schema_discriminator1_n3926    
+                         56    fh_hb_naaccr_jupyter                her2_ihc_summary_n3850         
+                         57    fh_hb_naaccr_jupyter                derived_seer_cmb_m_src_n3626   
+                         58    fh_hb_encounters_jupyter            enc_type                       
+ 
+/home/rsparapa/git/CTSI/BERD/snippet3.sas                                                                                 
+                                                                                         11:50 Tuesday, April 22, 2025   7
+
+                        Obs    table_name                          column_name
+
+                         59    fh_hb_genomic_summary_jupyter       var_type                       
+                         60    fh_hb_naaccr_jupyter                rx_summ_surg_oth_reg_di_n1294  
+                         61    fh_hb_naaccr_jupyter                birthplace_country_n254        
+                         62    fh_hb_naaccr_jupyter                hcg_pre_orchiectomy_lab_n3848  
+                         63    fh_hb_dm_wll_all_jupyter            chlamydia_risk_assessment_yn   
+                         64    fh_hb_naaccr_jupyter                anemia_n3811                   
+                         65    fh_hb_naaccr_jupyter                sarcomatoid_features_n3925     
+                         66    fh_hb_med_orders_table_jupyter      mix_parent_medication_name     
+                         67    fh_hb_mar_table_jupyter             auth_provider_type             
+                         70    fh_hb_immunization_jupyter          imm_product                    
+                         72    fh_hb_genomics_jupyter              pos_1                          
+                         73    fh_hb_med_orders_table_jupyter      auth_provider                  
+                         74    fh_hb_enc_notes_jupyter             loinc                          
+                         77    fh_hb_naaccr_jupyter                site_icd_o1_n1960              
+                         78    fh_hb_naaccr_jupyter                rx_hosp_scope_reg_ln_su_n672   
+                         79    fh_hb_surgical_case_jupyter         patient_hash                   
+                         81    fh_hb_naaccr_jupyter                date_of_mult_tumors_fla_n439   
+                         82    fh_hb_naaccr_jupyter                derived_postrx7_stge_gr_n3492  
+                         84    fh_hb_naaccr_jupyter                text_dx_proc_pe_n2520          
+                         85    fh_hb_naaccr_jupyter                coc_coding_sys_original_n2150  
+                         86    ekg_waveform                        sample_type                    
+                         87    fh_hb_surgical_case_jupyter         or_status                      
+                         88    fh_hb_ob_mom_baby_jupyter           baby_disch_disp                
+                         91    fh_hb_problem_list_jupyter          dx_code_description            
+                         92    fh_hb_mar_table_jupyter             ordering_mode                  
+                         93    fh_hb_naaccr_jupyter                grade_path_system_n449         
+                         94    fh_hb_naaccr_jupyter                derived_ajcc6_m_n2980          
+                         95    fh_hb_naaccr_jupyter                computed_ethnicity_n200        
+                         96    fh_hb_imaging_orders_jupyter        primary_clinical_indication    
+                         97    fh_hb_naaccr_jupyter                census_occ_ind_sys7000_n330    
+                         98    fh_hb_naaccr_jupyter                cs_lymph_nodes_eval_n2840      
+                        100    fh_hb_naaccr_jupyter                phase1_total_dose_n1507        
+                        102    fh_hb_diagnosis_jupyter             dx_source                      
+                        103    fh_hb_social_hx_jupyter             fin_resource_strain_name       
+                        104    fh_hb_naaccr_jupyter                tnm_path_n_n890                
+                        105    fh_hb_naaccr_jupyter                rad_location_of_rx_n1550       
+                        106    fh_hb_naaccr_jupyter                icd_o2_conversion_flag_n1980   
+                        107    fh_hb_med_orders_table_jupyter      pharm_class                    
+                        109    fh_hb_biospecimen_jupyter           specimen_status                
+                        111    fh_hb_immunization_jupyter          immun_type_name                
+                        113    fh_hb_ob_mom_baby_jupyter           baby_patient_hash              
+                        115    fh_hb_naaccr_jupyter                derived_eod2018_t_n785         
+ 
+/home/rsparapa/git/CTSI/BERD/snippet3.sas                                                                                 
+                                                                                         11:50 Tuesday, April 22, 2025   8
+
+                        Obs    table_name                          column_name
+
+                        116    fh_hb_naaccr_jupyter                measured_thickness_n3888       
+                        117    fh_hb_dm_wll_all_jupyter            prev_care_sc_chlamydia_cmt     
+                        120    fh_hb_encounters_jupyter            location_name                  
+                        121    fh_hb_naaccr_jupyter                derived_ajcc6_n_descrip_n2970  
+                        122    fh_hb_naaccr_jupyter                coc_accredited_flag_n2152      
+                        123    fh_hb_naaccr_jupyter                phase2_dose_per_fractio_n1511  
+                        124    fh_hb_genomic_summary_jupyter       nucl_var                       
+                        127    fh_hb_naaccr_jupyter                telephone_n2360                
+                        129    fh_hb_naaccr_jupyter                npcr_derived_clin_stg_g_n3650  
+                        130    fh_hb_biospecimen_jupyter           patient_hash                   
+                        131    fh_hb_encounters_jupyter            src_enc_type_c                 
+                        132    fh_hb_naaccr_jupyter                ln_size_n3883                  
+                        133    fh_hb_social_hx_jupyter             ipv_sexual_abuse_name          
+                        135    fh_hb_naaccr_jupyter                b_symptoms_n3812               
+                        137    fh_hb_naaccr_jupyter                over_ride_site_type_n2030      
+                        138    fh_hb_naaccr_jupyter                tumor_growth_pattern_n3935     
+                        139    fh_hb_med_orders_table_jupyter      medication_name                
+                        141    fh_hb_naaccr_jupyter                rx_hosp_surg_oth9802_n748      
+                        142    fh_hb_naaccr_jupyter                mets_at_dx_other_n1117         
+                        144    fh_hb_immunization_jupyter          immunization_abbr              
+                        146    fh_hb_naaccr_jupyter                number_of_cores_examine_n3897  
+                        147    fh_hb_med_orders_table_jupyter      auth_prov_id                   
+                        148    fh_hb_immunization_jupyter          physical_site                  
+                        149    fh_hb_immunization_jupyter          imm_historic_adm_yn            
+                        150    fh_hb_naaccr_jupyter                ajcc_tnm_post_therapy_t_n1021  
+                        152    fh_hb_naaccr_jupyter                derived_prerx7_m_n3460         
+                        153    fh_hb_surgical_case_jupyter         surgery_encounter_hash         
+                        158    fh_hb_naaccr_jupyter                addr_current_city_n1810        
+                        159    fh_hb_naaccr_jupyter                bilirubin_pretreatment__n3813  
+                        160    fh_hb_encounters_jupyter            payer_type_secondary_c         
+                        163    fh_hb_naaccr_jupyter                rx_text_hormone_n2650          
+                        164    fh_hb_dm_wll_all_jupyter            has_cervix_yn                  
+                        165    fh_hb_naaccr_jupyter                ajcc_tnm_post_therapy_n_n1022  
+                        166    fh_hb_naaccr_jupyter                path_reporting_fac_id5_n7014   
+                        168    fh_hb_dm_wll_all_jupyter            has_chronic_renal_failure_yn   
+                        169    fh_hb_naaccr_jupyter                rx_hosp_surg_site9802_n746     
+                        170    fh_hb_genomics_jupyter              wildtype                       
+                        171    fh_hb_dm_wll_all_jupyter            ttl_chl_l_ord_id_hash          
+                        172    fh_hb_naaccr_jupyter                birthplace_n250                
+                        173    fh_hb_imaging_orders_jupyter        procedure_name                 
+                        174    fh_hb_naaccr_jupyter                rx_date_surgery_flag_n1201     
+                        175    fh_hb_naaccr_jupyter                s_category_clinical_n3923      
+ 
+/home/rsparapa/git/CTSI/BERD/snippet3.sas                                                                                 
+                                                                                         11:50 Tuesday, April 22, 2025   9
+
+                        Obs    table_name                          column_name
+
+                        176    fh_hb_naaccr_jupyter                subsq_rx4th_course_rad_n1712   
+                        178    fh_hb_naaccr_jupyter                diagnostic_confirmation_n490   
+                        179    fh_hb_naaccr_jupyter                over_ride_ss_tnm_n_n1982       
+                        181    fh_hb_naaccr_jupyter                number_of_cores_positiv_n3898  
+                        184    fh_hb_naaccr_jupyter                place_of_death_country_n1944   
+                        185    fh_hb_dm_wll_all_jupyter            has_depression_yn              
+                        186    fh_hb_encounters_jupyter            admission_provider_npi         
+                        187    fh_hb_naaccr_jupyter                over_ride_age_site_morp_n1990  
+                        188    fh_hb_naaccr_jupyter                date_of_last_contact_fl_n1751  
+                        189    fh_hb_naaccr_jupyter                npi_physician4_n2505           
+                        191    fh_hb_demographics_jupyter          death_date_source              
+                        192    fh_hb_surgical_case_jupyter         postop_dest                    
+                        193    fh_hb_mar_table_jupyter             auth_provider                  
+                        194    fh_hb_naaccr_jupyter                hiv_status_n3859               
+                        195    fh_hb_adt_jupyter                   pat_service_c                  
+                        196    fh_hb_demographics_jupyter          death_date_precision           
+                        197    fh_hb_naaccr_jupyter                kit_gene_immunohistoche_n3865  
+                        198    fh_hb_naaccr_jupyter                physician4_n2500               
+                        199    fh_hb_naaccr_jupyter                number_of_examined_para_n3899  
+                        200    fh_hb_naaccr_jupyter                rx_hosp_surg_oth_reg_di_n674   
+                        201    fh_hb_naaccr_jupyter                ln_laterality_n3881            
+                        205    fh_hb_naaccr_jupyter                icd_o3_conversion_flag_n2116   
+                        206    fh_hb_encounters_jupyter            ed_disposition_c               
+                        210    fh_hb_naaccr_jupyter                extranodal_extension_he_n3831  
+                        212    fh_hb_naaccr_jupyter                mitotic_count_uveal_mel_n3892  
+                        213    fh_hb_encounters_jupyter            patient_hash                   
+                        215    fh_hb_naaccr_jupyter                text_primary_site_title_n2580  
+                        216    fh_hb_naaccr_jupyter                path_reporting_fac_id4_n7013   
+                        217    fh_hb_ob_mom_baby_jupyter           mom_receive_antibiotics        
+                        218    fh_hb_naaccr_jupyter                rx_hosp_surg_app2010_n668      
+                        220    fh_hb_naaccr_jupyter                pediatric_staging_syste_n1130  
+                        222    ekg_test_demographics               diagnosis_stmt                 
+                        223    fh_hb_ob_mom_baby_jupyter           birth_encounter_hash           
+                        224    fh_hb_encounters_jupyter            adt_arrival_sts_c              
+                        225    fh_hb_naaccr_jupyter                recurrence_type1st_n1880       
+                        226    fh_hb_dm_wll_all_jupyter            has_cad_yn                     
+                        230    fh_hb_naaccr_jupyter                subsq_rx3rdcrs_date_fla_n1681  
+                        231    fh_hb_naaccr_jupyter                chromosome8q_status_n3822      
+                        232    fh_hb_dm_wll_all_jupyter            is_in_relationship_yn          
+                        234    fh_hb_naaccr_jupyter                kras_n3866                     
+                        237    fh_hb_naaccr_jupyter                military_record_no_suff_n2310  
+                        238    fh_hb_genomics_jupyter              reference_n                    
+ 
+/home/rsparapa/git/CTSI/BERD/snippet3.sas                                                                                 
+                                                                                         11:50 Tuesday, April 22, 2025  10
+
+                        Obs    table_name                          column_name
+
+                        240    fh_hb_naaccr_jupyter                organomegaly_n3907             
+                        241    fh_hb_allergy_hx_jupyter            hx_severity_name               
+                        243    fh_hb_naaccr_jupyter                icd_revision_comorbid_n3165    
+                        244    fh_hb_dm_wll_all_jupyter            has_leukemia_yn                
+                        245    fh_hb_demographics_jupyter          vital_status                   
+                        246    fh_hb_encounters_jupyter            adt_arrival_sts_name           
+                        247    fh_hb_naaccr_jupyter                patient_id_number_n20          
+                        248    fh_hb_naaccr_jupyter                subsq_rx3rd_course_brm_n1695   
+                        249    fh_hb_naaccr_jupyter                follow_up_contact_name_n2394   
+                        251    fh_hb_dm_wll_all_jupyter            has_complement_deficiency_yn   
+                        252    fh_hb_dm_wll_all_jupyter            had_utero_exp_diethyl_yn       
+                        253    fh_hb_naaccr_jupyter                tumor_marker3_n1170            
+                        255    fh_hb_naaccr_jupyter                ruca2010_n341                  
+                        256    fh_hb_dm_wll_all_jupyter            needs_covid_booster_yn         
+                        257    fh_hb_diagnostic_results_jupyter    res_quant_or_qual              
+                        259    fh_hb_naaccr_jupyter                path_reporting_fac_id1_n7010   
+                        260    ekg_test_demographics               overreader_id                  
+                        264    fh_hb_dm_wll_all_jupyter            has_asthma_yn                  
+                        265    fh_hb_naaccr_jupyter                seer_site_specific_fact_n3700  
+                        266    fh_hb_imaging_orders_jupyter        encounter_hash                 
+                        267    fh_hb_naaccr_jupyter                phase3_radiation_primar_n1524  
+                        268    fh_hb_encounters_jupyter            admit_conf_stat_c              
+                        270    ekg_meas_matrix                     meas_matrix_id                 
+                        271    fh_hb_dm_wll_all_jupyter            sex_c                          
+                        275    fh_hb_adt_jupyter                   pat_class_name                 
+                        277    fh_hb_naaccr_jupyter                rx_date_hormone_flag_n1231     
+                        280    fh_hb_genomics_jupyter              pos_2                          
+                        282    fh_hb_naaccr_jupyter                coding_system_for_eod_n870     
+                        284    fh_hb_naaccr_jupyter                over_ride_cs5_n3754            
+                        287    fh_hb_imaging_orders_jupyter        px_type                        
+                        288    fh_hb_naaccr_jupyter                derived_ajcc6_m_descrip_n2990  
+                        290    fh_hb_genomics_jupyter              tx                             
+                        291    fh_hb_vitals_jupyter                encounter_hash                 
+                        292    fh_hb_procs_jupyter                 px_type                        
+                        293    fh_hb_naaccr_jupyter                cs_site_specific_factor_n2867  
+                        295    fh_hb_naaccr_jupyter                state_at_dx_geocode2010_n83    
+                        296    fh_hb_dm_wll_all_jupyter            has_cong_or_acq_asplenia_yn    
+                        297    fh_hb_dm_wll_all_jupyter            prev_care_sc_breast_cancer_cmt 
+                        301    fh_hb_dm_wll_all_jupyter            uses_any_tobac_yn              
+                        303    fh_hb_naaccr_jupyter                hcg_pre_orchiectomy_ran_n3849  
+                        305    fh_hb_mar_table_jupyter             order_dose_unit                
+                        306    fh_hb_naaccr_jupyter                cs_site_specific_factor_n2890  
+ 
+/home/rsparapa/git/CTSI/BERD/snippet3.sas                                                                                 
+                                                                                         11:50 Tuesday, April 22, 2025  11
+
+                        Obs    table_name                          column_name
+
+                        307    fh_hb_dm_wll_all_jupyter            on_bp_med_yn                   
+                        311    fh_hb_immunization_jupyter          external_id                    
+                        313    fh_hb_demographics_jupyter          military_branch_name           
+                        314    fh_hb_naaccr_jupyter                addr_current_postal_cod_n1830  
+                        315    fh_hb_mar_table_jupyter             part_of_mix_yn                 
+                        317    fh_hb_naaccr_jupyter                tumor_record_number_n60        
+                        318    fh_hb_naaccr_jupyter                text_dx_proc_op_n2560          
+                        319    fh_hb_naaccr_jupyter                social_security_number_n2320   
+                        320    fh_hb_genomics_jupyter              gene_name                      
+                        323    ekg_lead_data                       wave_form_data                 
+                        324    fh_hb_naaccr_jupyter                ajcc_tnm_clin_m_n1003          
+                        325    fh_hb_naaccr_jupyter                path_report_number2_n7091      
+                        328    fh_hb_problem_list_jupyter          dx_code_type                   
+                        329    fh_hb_echo_jupyter                  study_id_encrypted             
+                        330    fh_hb_med_orders_table_jupyter      dose_unit                      
+                        332    ekg_waveform                        sample_base                    
+                        333    fh_hb_immunization_jupyter          cm_phy_owner_id                
+                        337    fh_hb_encounters_jupyter            ed_disposition_name            
+                        338    fh_hb_naaccr_jupyter                chromosome19q_loss_of_h_n3802  
+                        339    fh_hb_naaccr_jupyter                ruralurban_continuum200_n3310  
+                        340    ekg_order                           comments                       
+                        343    fh_hb_encounters_jupyter            admission_provider_id          
+                        344    fh_hb_procs_jupyter                 enc_type                       
+                        345    fh_hb_imaging_orders_jupyter        px                             
+                        346    fh_hb_naaccr_jupyter                afp_post_orchiectomy_ra_n3806  
+                        349    fh_hb_naaccr_jupyter                rx_text_chemo_n2640            
+                        351    ekg_lead_data                       waveform_id                    
+                        353    fh_hb_diagnostic_results_jupyter    src_value                      
+                        354    fh_hb_dm_wll_all_jupyter            hist_cad_yn                    
+                        356    fh_hb_social_hx_jupyter             alcohol_oz_per_wk              
+                        357    fh_hb_naaccr_jupyter                multiplicity_counter_n446      
+                        358    fh_hb_dm_wll_all_jupyter            has_complement_inhibitor_yn    
+                        359    fh_hb_naaccr_jupyter                phase1_dose_per_fractio_n1501  
+                        362    fh_hb_allergy_hx_jupyter            hx_allergy_type_name           
+                        363    fh_hb_naaccr_jupyter                cause_of_death_n1910           
+                        365    fh_hb_naaccr_jupyter                seer_site_specific_fact_n3702  
+                        366    fh_hb_dm_wll_all_jupyter            had_stemcell_transplant_yn     
+                        367    fh_hb_social_hx_jupyter             unknown_fam_hx_yn              
+                        370    fh_hb_sdoh_jupyter                  encounter_hash                 
+                        371    fh_hb_naaccr_jupyter                rx_summ_brm_n1410              
+                        372    fh_hb_naaccr_jupyter                regional_nodes_positive_n820   
+                        374    ekg_pharma_data                     pharma_data_id                 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet3.sas                                                                                 
+                                                                                         11:50 Tuesday, April 22, 2025  12
+
+                        Obs    table_name                          column_name
+
+                        375    fh_hb_dm_wll_all_jupyter            obesity_fol_up_plan_yn         
+                        376    fh_hb_diagnostic_results_jupyter    provider_name                  
+                        378    fh_hb_naaccr_jupyter                surv_flag_presumed_aliv_n1786  
+                        379    fh_hb_naaccr_jupyter                ldh_pre_orchiectomy_ran_n3868  
+                        380    fh_hb_naaccr_jupyter                gleason_patterns_clinic_n3838  
+                        381    fh_hb_mar_table_jupyter             medication_name                
+                        383    fh_hb_naaccr_jupyter                ruralurban_continuum201_n3312  
+                        385    fh_hb_naaccr_jupyter                name_first_n2240               
+                        386    fh_hb_naaccr_jupyter                cs_mets_at_dx_liver_n2853      
+                        387    fh_hb_dm_wll_all_jupyter            had_stroke_yn                  
+                        390    fh_hb_naaccr_jupyter                place_of_death_n1940           
+                        391    fh_hb_mar_table_jupyter             quantity                       
+                        392    fh_hb_diagnostic_results_jupyter    patient_hash                   
+                        393    fh_hb_naaccr_jupyter                crc_checksum_n2081             
+                        394    fh_hb_diagnosis_jupyter             provider_id                    
+                        395    fh_hb_dm_wll_all_jupyter            has_diabetes_yn                
+                        397    fh_hb_naaccr_jupyter                medicare_beneficiary_id_n2315  
+                        398    fh_hb_naaccr_jupyter                comorbid_complication6_n3160   
+                        399    fh_hb_naaccr_jupyter                phase1_number_of_fracti_n1503  
+                        400    fh_hb_naaccr_jupyter                eod_regional_nodes_n774        
+                        402    fh_hb_naaccr_jupyter                mets_at_dx_bone_n1112          
+                        403    fh_hb_naaccr_jupyter                county_at_dx_analysis_n89      
+                        405    fh_hb_genomic_summary_jupyter       variant_class                  
+                        406    fh_hb_naaccr_jupyter                adenoid_cystic_basaloid_n3803  
+                        407    fh_hb_social_hx_jupyter             tobacco_pak_per_dy             
+                        408    fh_hb_naaccr_jupyter                subsq_rx2ndcrs_date_fla_n1661  
+                        410    fh_hb_enc_notes_jupyter             enc_type                       
+                        413    fh_hb_naaccr_jupyter                npcr_derived_ajcc8_tnm__n3645  
+                        414    fh_hb_naaccr_jupyter                primary_sclerosing_chol_n3917  
+                        415    fh_hb_naaccr_jupyter                over_ride_cs4_n3753            
+                        416    fh_hb_dm_wll_all_jupyter            has_lipid_disorder_yn          
+                        417    fh_hb_naaccr_jupyter                over_ride_histology_n2040      
+                        418    fh_hb_naaccr_jupyter                gleason_score_clinical_n3840   
+                        419    fh_hb_dm_wll_all_jupyter            has_cvd_yn                     
+                        420    fh_hb_naaccr_jupyter                subsq_rx3rd_surg_oth_n1698     
+                        421    fh_hb_naaccr_jupyter                over_ride_site_lat_seqn_n2010  
+                        423    fh_hb_procs_jupyter                 patient_hash                   
+                        424    fh_hb_diagnosis_jupyter             pdx                            
+                        425    fh_hb_naaccr_jupyter                name_spouse_parent_n2290       
+                        426    fh_hb_naaccr_jupyter                patient_system_id_hosp_n21     
+                        428    fh_hb_naaccr_jupyter                phase3_radiation_extern_n1522  
+                        429    fh_hb_naaccr_jupyter                tumor_marker2_n1160            
+ 
+/home/rsparapa/git/CTSI/BERD/snippet3.sas                                                                                 
+                                                                                         11:50 Tuesday, April 22, 2025  13
+
+                        Obs    table_name                          column_name
+
+                        433    fh_hb_naaccr_jupyter                ln_assessment_method_pa_n3872  
+                        434    fh_hb_naaccr_jupyter                over_ride_report_source_n2050  
+                        435    fh_hb_naaccr_jupyter                secondary_diagnosis9_n3796     
+                        436    fh_hb_demographics_jupyter          zip3                           
+                        437    fh_hb_naaccr_jupyter                over_ride_tnm_stage_n1992      
+                        438    fh_hb_social_hx_jupyter             church_attendance_name         
+                        440    fh_hb_enc_notes_jupyter             author_prov_id                 
+                        441    fh_hb_genomics_jupyter              tmb_status                     
+                        442    fh_hb_social_hx_jupyter             food_insecurity_scarce_name    
+                        446    ekg_meas_matrix                     raw_data                       
+                        447    fh_hb_naaccr_jupyter                npcr_derived_path_stg_g_n3655  
+                        448    fh_hb_naaccr_jupyter                birthplace_state_n252          
+                        449    fh_hb_naaccr_jupyter                addr_at_dx_postal_code_n100    
+                        450    fh_hb_naaccr_jupyter                path_report_number3_n7092      
+                        452    fh_hb_naaccr_jupyter                ldh_post_orchiectomy_ra_n3867  
+                        453    fh_hb_imaging_orders_jupyter        i2b2_provider_id               
+                        454    fh_hb_naaccr_jupyter                patient_hash                   
+                        455    fh_hb_naaccr_jupyter                heritable_trait_n3856          
+                        456    fh_hb_naaccr_jupyter                text_usual_industry_n320       
+                        459    fh_hb_demographics_jupyter          veteran_status_c               
+                        460    fh_hb_diagnostic_results_jupyter    order_proc_id_hash             
+                        463    fh_hb_naaccr_jupyter                follow_up_contact_suppl_n2393  
+                        466    fh_hb_naaccr_jupyter                follow_up_source_centra_n1791  
+                        467    ekg_pharma_data                     pharma_unique_ecgid            
+                        468    fh_hb_naaccr_jupyter                cs_mets_eval_n2860             
+                        469    fh_hb_naaccr_jupyter                phase1_radiation_treatm_n1506  
+                        470    fh_hb_social_hx_jupyter             patient_hash                   
+                        472    fh_hb_address_hx_jupyter            geocode_result                 
+                        474    fh_hb_naaccr_jupyter                archive_fin_n3100              
+                        475    fh_hb_social_hx_jupyter             socialization_freq_name        
+                        476    fh_hb_naaccr_jupyter                tumor_deposits_n3934           
+                        479    fh_hb_naaccr_jupyter                rx_summ_reg_ln_examined_n1296  
+                        480    fh_hb_naaccr_jupyter                path_order_phys_lic_no4_n7103  
+                        481    fh_hb_naaccr_jupyter                gis_coordinate_quality_n366    
+                        483    fh_hb_dm_wll_all_jupyter            has_connect_tissue_disorder_yn 
+                        484    fh_hb_naaccr_jupyter                age_at_diagnosis_n230          
+                        486    fh_hb_naaccr_jupyter                tumor_marker1_n1150            
+                        488    fh_hb_social_hx_jupyter             snuff_yn                       
+                        489    fh_hb_naaccr_jupyter                chromosome1p_loss_of_he_n3801  
+                        492    fh_hb_diagnostic_results_jupyter    loinc_code                     
+                        493    fh_hb_naaccr_jupyter                ipsilateral_adrenal_gla_n3861  
+                        495    fh_hb_procs_jupyter                 provider_id                    
+ 
+/home/rsparapa/git/CTSI/BERD/snippet3.sas                                                                                 
+                                                                                         11:50 Tuesday, April 22, 2025  14
+
+                        Obs    table_name                          column_name
+
+                        496    fh_hb_naaccr_jupyter                ruca2000_n339                  
+                        498    fh_hb_social_hx_jupyter             phys_act_days_per_week_name    
+                        501    fh_hb_naaccr_jupyter                her2_ish_dual_probe_rat_n3852  
+                        504    fh_hb_naaccr_jupyter                derived_ss1977_flag_n3040      
+                        505    fh_hb_procs_jupyter                 encounter_hash                 
+                        507    fh_hb_ob_mom_baby_jupyter           mom_receive_steroids           
+                        509    fh_hb_echo_jupyter                  study_loc                      
+                        510    fh_hb_encounters_jupyter            drg_name                       
+                        511    fh_hb_naaccr_jupyter                derived_postrx7_t_n3480        
+                        512    fh_hb_social_hx_jupyter             diaphragm_yn                   
+                        514    fh_hb_diagnostic_results_jupyter    result_unit                    
+                        516    fh_hb_mar_table_jupyter             gpi                            
+                        517    fh_hb_naaccr_jupyter                mets_at_dx_brain_n1113         
+                        519    fh_hb_encounters_jupyter            appt_status_name               
+                        520    fh_hb_naaccr_jupyter                subsq_rx3rd_reg_ln_rem_n1699   
+                        522    fh_hb_diagnostic_results_jupyter    px                             
+                        523    fh_hb_naaccr_jupyter                addr_at_dx_state_n80           
+                        525    fh_hb_naaccr_jupyter                nhia_derived_hisp_origi_n191   
+                        526    fh_hb_naaccr_jupyter                rx_summ_reconstruct1st_n1330   
+                        527    fh_hb_naaccr_jupyter                derived_summary_stage20_n762   
+                        530    fh_hb_address_hx_jupyter            patient_hash                   
+                        531    fh_hb_med_orders_table_jupyter      part_of_mix_yn                 
+                        534    fh_hb_naaccr_jupyter                text_usual_occupation_n310     
+                        535    fh_hb_dm_wll_all_jupyter            fam_hist_cvd_yn                
+                        536    fh_hb_social_hx_jupyter             inserts_yn                     
+                        537    fh_hb_diagnostic_results_jupyter    encounter_hash                 
+                        538    fh_hb_naaccr_jupyter                text_dx_proc_x_ray_scan_n2530  
+                        539    fh_hb_naaccr_jupyter                separate_tumor_nodules_n3929   
+                        541    ekg_test_demographics               overreader_first_name          
+                        542    fh_hb_med_orders_table_jupyter      mix_ingredient_type            
+                        544    fh_hb_naaccr_jupyter                rx_coding_system_curren_n1460  
+                        546    fh_hb_naaccr_jupyter                subsq_rx3rd_course_rad_n1692   
+                        548    fh_hb_naaccr_jupyter                race1_n160                     
+                        549    fh_hb_naaccr_jupyter                cs_mets_at_dx_bone_n2851       
+                        550    fh_hb_ob_mom_baby_jupyter           delivery_method                
+                        551    fh_hb_imaging_orders_jupyter        acc_num_hash                   
+                        553    fh_hb_naaccr_jupyter                cs_site_specific_factor_n2862  
+                        554    fh_hb_naaccr_jupyter                rad_no_of_treatment_vol_n1520  
+                        555    fh_hb_dm_wll_all_jupyter            prev_care_sc_visual_impair_cmt 
+                        556    fh_hb_genomics_jupyter              amp_del                        
+                        559    fh_hb_sdoh_jupyter                  patient_hash                   
+                        562    fh_hb_naaccr_jupyter                cs_site_specific_factor_n2870  
+ 
+/home/rsparapa/git/CTSI/BERD/snippet3.sas                                                                                 
+                                                                                         11:50 Tuesday, April 22, 2025  15
+
+                        Obs    table_name                          column_name
+
+                        563    fh_hb_echo_jupyter                  x_order_id_encrypted           
+                        566    fh_hb_naaccr_jupyter                extranodal_extension_cl_n3830  
+                        567    fh_hb_naaccr_jupyter                date_conclusive_dx_flag_n448   
+                        568    fh_hb_naaccr_jupyter                tnm_path_m_n900                
+                        569    fh_hb_naaccr_jupyter                derived_seer_combined_n_n3618  
+                        570    ekg_pharma_data                     patient_trac_id                
+                        571    fh_hb_procs_jupyter                 provider_title                 
+                        572    fh_hb_naaccr_jupyter                census_block_group2000_n362    
+                        573    fh_hb_dm_wll_all_jupyter            prev_care_sc_hiv_cmt           
+                        574    fh_hb_naaccr_jupyter                comorbid_complication1_n3110   
+                        575    fh_hb_naaccr_jupyter                subsq_rx2nd_reg_ln_rem_n1679   
+                        577    fh_hb_dm_wll_all_jupyter            is_bp_treated_yn               
+                        578    fh_hb_naaccr_jupyter                institution_referred_fr_n2410  
+                        579    fh_hb_naaccr_jupyter                over_ride_cs15_n3764           
+                        580    fh_hb_naaccr_jupyter                cs_mets_at_dx_brain_n2852      
+                        581    fh_hb_dm_wll_all_jupyter            has_hodgkin_disease_yn         
+                        582    fh_hb_encounters_jupyter            visit_provider_id              
+                        583    fh_hb_dm_wll_all_jupyter            has_breast_cancer_yn           
+                        585    fh_hb_naaccr_jupyter                medical_record_number_n2300    
+                        587    fh_hb_naaccr_jupyter                phase2_number_of_fracti_n1513  
+                        588    fh_hb_social_hx_jupyter             club_member_name               
+                        589    fh_hb_address_hx_jupyter            state_c                        
+                        591    fh_hb_encounters_jupyter            means_of_depart_c              
+                        593    fh_hb_dm_wll_all_jupyter            has_nephrotic_syndrome_yn      
+                        594    fh_hb_demographics_jupyter          secondary_ruca_code_2010       
+                        595    fh_hb_naaccr_jupyter                derived_ss1977_n3010           
+                        596    fh_hb_naaccr_jupyter                race4_n163                     
+                        597    fh_hb_naaccr_jupyter                surv_mos_active_followu_n1784  
+                        598    fh_hb_surgical_case_jupyter         case_class                     
+                        599    fh_hb_naaccr_jupyter                state_at_dx_geocode1970_n81    
+                        601    fh_hb_sdoh_jupyter                  social_determinant             
+                        602    fh_hb_naaccr_jupyter                county_at_dx_geocode199_n94    
+                        603    fh_hb_naaccr_jupyter                surv_mos_presumed_alive_n1787  
+                        604    fh_hb_dm_wll_all_jupyter            has_medicaid_coverage_yn       
+                        605    fh_hb_demographics_jupyter          ethnicity                      
+                        606    fh_hb_naaccr_jupyter                ln_distant_assessment_m_n3874  
+                        607    ekg_order                           extra_order_data2              
+                        608    fh_hb_social_hx_jupyter             encounter_hash                 
+                        609    fh_hb_allergy_hx_jupyter            reaction_name                  
+                        610    fh_hb_social_hx_jupyter             food_insecurity_worry_name     
+                        611    fh_hb_naaccr_jupyter                derived_eod2018_m_n795         
+                        613    fh_hb_naaccr_jupyter                adenopathy_n3804               
+ 
+/home/rsparapa/git/CTSI/BERD/snippet3.sas                                                                                 
+                                                                                         11:50 Tuesday, April 22, 2025  16
+
+                        Obs    table_name                          column_name
+
+                        614    fh_hb_naaccr_jupyter                eod_mets_n776                  
+                        617    fh_hb_naaccr_jupyter                accession_number_hosp_n550     
+                        620    fh_hb_naaccr_jupyter                record_type_n10                
+                        621    fh_hb_naaccr_jupyter                census_block_grp197090_n368    
+                        622    fh_hb_dm_wll_all_jupyter            has_cochlear_implants_yn       
+                        623    fh_hb_naaccr_jupyter                ajcc_tnm_path_m_n1013          
+                        624    fh_hb_naaccr_jupyter                rx_summ_chemo_n1390            
+                        625    fh_hb_social_hx_jupyter             spermicide_yn                  
+                        631    fh_hb_dm_wll_all_jupyter            has_anemia_yn                  
+                        632    fh_hb_naaccr_jupyter                uric2010_n346                  
+                        633    fh_hb_surgical_case_jupyter         log_id_hash                    
+                        634    fh_hb_genomics_jupyter              sample_site                    
+                        637    fh_hb_imaging_orders_jupyter        enc_type                       
+                        638    fh_hb_naaccr_jupyter                over_ride_cs3_n3752            
+                        640    fh_hb_dm_wll_all_jupyter            has_abdom_aortic_aneurysm_yn   
+                        641    fh_hb_echo_jupyter                  proc_name                      
+                        644    fh_hb_naaccr_jupyter                her2_overall_summary_n3855     
+                        645    fh_hb_naaccr_jupyter                seer_site_specific_fact_n3708  
+                        648    fh_hb_naaccr_jupyter                derived_prerx7_n_descri_n3452  
+                        650    fh_hb_naaccr_jupyter                ln_assessment_method_fe_n3871  
+                        651    fh_hb_naaccr_jupyter                date_regional_lymph_nod_n683   
+                        652    fh_hb_social_hx_jupyter             pipes_yn                       
+                        653    fh_hb_enc_notes_jupyter             note_type_name                 
+                        654    fh_hb_naaccr_jupyter                date_of1st_contact_flag_n581   
+                        655    fh_hb_naaccr_jupyter                secondary_diagnosis2_n3782     
+                        656    fh_hb_naaccr_jupyter                her2_ish_summary_n3854         
+                        659    fh_hb_naaccr_jupyter                gestational_trophoblast_n3837  
+                        660    fh_hb_naaccr_jupyter                cs_version_input_curren_n2937  
+                        661    fh_hb_biospecimen_jupyter           protocol_name                  
+                        662    fh_hb_naaccr_jupyter                rx_text_radiation_other_n2630  
+                        663    fh_hb_encounters_jupyter            visit_provider_title           
+                        665    fh_hb_vitals_jupyter                patient_hash                   
+                        667    fh_hb_dm_wll_all_jupyter            prev_care_sc_obesity_cmt       
+                        668    fh_hb_naaccr_jupyter                comorbid_complication7_n3161   
+                        669    fh_hb_naaccr_jupyter                afp_pretreatment_lab_va_n3810  
+                        672    fh_hb_ob_mom_baby_jupyter           placental_abruption            
+                        675    fh_hb_naaccr_jupyter                rx_date_other_flag_n1251       
+                        677    fh_hb_naaccr_jupyter                rad_regional_rx_modalit_n1570  
+                        678    fh_hb_naaccr_jupyter                derived_prerx7_n_n3450         
+                        679    fh_hb_med_orders_table_jupyter      pharm_subclass                 
+                        680    fh_hb_allergy_hx_jupyter            allergen_type_name             
+                        681    fh_hb_imaging_orders_jupyter        patient_hash                   
+ 
+/home/rsparapa/git/CTSI/BERD/snippet3.sas                                                                                 
+                                                                                         11:50 Tuesday, April 22, 2025  17
+
+                        Obs    table_name                          column_name
+
+                        682    fh_hb_naaccr_jupyter                county_at_dx_geocode201_n96    
+                        683    fh_hb_naaccr_jupyter                seer_type_of_follow_up_n2180   
+                        684    fh_hb_naaccr_jupyter                addr_current_state_n1820       
+                        685    ekg_meas_matrix                     patient_trac_id                
+                        686    fh_hb_sdoh_jupyter                  answer_score                   
+                        687    fh_hb_naaccr_jupyter                cs_site_specific_factor_n2877  
+                        688    fh_hb_genomics_jupyter              copy_number                    
+                        690    fh_hb_imaging_orders_jupyter        i2b2_provider_title            
+                        691    fh_hb_genomics_jupyter              allele_freq                    
+                        692    fh_hb_diagnostic_results_jupyter    norm_modifier_low              
+                        694    fh_hb_demographics_jupyter          primary_care_provider_name     
+                        695    fh_hb_address_hx_jupyter            geocode_score                  
+                        698    fh_hb_surgical_case_jupyter         asa                            
+                        699    fh_hb_demographics_jupyter          primary_care_provider_id       
+                        700    fh_hb_naaccr_jupyter                diagnostic_proc7387_n2200      
+                        701    fh_hb_naaccr_jupyter                microsatellite_instabil_n3890  
+                        702    fh_hb_mar_table_jupyter             order_status                   
+                        705    fh_hb_naaccr_jupyter                over_ride_name_sex_n2078       
+                        706    fh_hb_naaccr_jupyter                name_suffix_n2270              
+                        707    fh_hb_ob_mom_baby_jupyter           gest_age_wks                   
+                        710    fh_hb_naaccr_jupyter                tnm_clin_descriptor_n980       
+                        712    fh_hb_med_orders_table_jupyter      ordering_mode                  
+                        713    fh_hb_naaccr_jupyter                subsq_rx3rd_course_oth_n1696   
+                        717    fh_hb_social_hx_jupyter             female_partner_yn              
+                        718    fh_hb_dm_wll_all_jupyter            cur_prim_prod_type_c           
+                        720    fh_hb_immunization_jupyter          imm_answer_id                  
+                        722    fh_hb_encounters_jupyter            src_enc_type_name              
+                        726    fh_hb_naaccr_jupyter                eod_primary_tumor_n772         
+                        727    fh_hb_dm_wll_all_jupyter            has_iatro_immunosupp_yn        
+                        729    fh_hb_naaccr_jupyter                ulceration_n3936               
+                        730    fh_hb_naaccr_jupyter                total_dose_n1533               
+                        732    ekg_lead_data                       lead_data_id                   
+                        735    fh_hb_dm_wll_all_jupyter            ttl_chl_l_unit                 
+                        739    fh_hb_naaccr_jupyter                s_category_pathological_n3924  
+                        740    fh_hb_dm_wll_all_jupyter            is_adult_yn                    
+                        741    fh_hb_echo_jupyter                  patient_hash                   
+                        743    fh_hb_dm_wll_all_jupyter            cur_prim_fin_class_c           
+                        744    fh_hb_naaccr_jupyter                follow_up_contact_state_n1844  
+                        745    fh_hb_diagnostic_results_jupyter    procedure_name                 
+                        746    fh_hb_dm_wll_all_jupyter            has_hiv_yn                     
+                        747    fh_hb_naaccr_jupyter                derived_postrx7_n_n3482        
+                        750    fh_hb_encounters_jupyter            department_specialty           
+ 
+/home/rsparapa/git/CTSI/BERD/snippet3.sas                                                                                 
+                                                                                         11:50 Tuesday, April 22, 2025  18
+
+                        Obs    table_name                          column_name
+
+                        751    fh_hb_naaccr_jupyter                census_tract2000_n130          
+                        756    fh_hb_naaccr_jupyter                reason_for_no_radiation_n1430  
+                        757    fh_hb_naaccr_jupyter                path_ordering_fac_no4_n7193    
+                        760    fh_hb_naaccr_jupyter                comorbid_complication8_n3162   
+                        762    fh_hb_naaccr_jupyter                physician_follow_up_n2470      
+                        763    fh_hb_biospecimen_jupyter           initial_diagnosis              
+                        764    fh_hb_naaccr_jupyter                phase2_total_dose_n1517        
+                        765    fh_hb_naaccr_jupyter                bone_invasion_n3815            
+                        766    fh_hb_naaccr_jupyter                hcg_post_orchiectomy_la_n3846  
+                        768    fh_hb_naaccr_jupyter                ki67_n3863                     
+                        770    fh_hb_naaccr_jupyter                type_of_reporting_sourc_n500   
+                        773    fh_hb_naaccr_jupyter                over_ride_cs2_n3751            
+                        774    fh_hb_dm_wll_all_jupyter            low_life_exp_yn                
+                        777    fh_hb_naaccr_jupyter                recurrence_date1st_flag_n1861  
+                        778    fh_hb_naaccr_jupyter                over_ride_cs14_n3763           
+                        780    fh_hb_naaccr_jupyter                her2_ish_dual_probe_cop_n3851  
+                        781    fh_hb_encounters_jupyter            hosp_serv_name                 
+                        784    fh_hb_immunization_jupyter          status                         
+                        785    fh_hb_social_hx_jupyter             injection_yn                   
+                        787    fh_hb_naaccr_jupyter                derived_ajcc6_t_n2940          
+                        788    fh_hb_med_orders_table_jupyter      frequency                      
+                        789    fh_hb_naaccr_jupyter                coc_coding_sys_current_n2140   
+                        793    fh_hb_social_hx_jupyter             cigarettes_yn                  
+                        795    fh_hb_naaccr_jupyter                phase3_number_of_fracti_n1523  
+                        796    fh_hb_genomic_summary_jupyter       test_type                      
+                        798    fh_hb_demographics_jupyter          ped_gest_age                   
+                        799    fh_hb_encounters_jupyter            visit_provider_name            
+                        801    fh_hb_naaccr_jupyter                path_order_phys_lic_no3_n7102  
+                        802    fh_hb_mar_table_jupyter             freq_id                        
+                        806    fh_hb_naaccr_jupyter                seer_record_number_n2190       
+                        807    ekg_test_demographics               overreader_last_name           
+                        808    fh_hb_ob_mom_baby_jupyter           baby_ethnicity                 
+                        809    fh_hb_naaccr_jupyter                county_at_dx_geocode200_n95    
+                        810    fh_hb_mar_table_jupyter             frequency                      
+                        811    fh_hb_naaccr_jupyter                record_number_recode_n1775     
+                        812    fh_hb_naaccr_jupyter                creatinine_pretreatment_n3825  
+                        813    fh_hb_dm_wll_all_jupyter            prior_ascvd_event_yn           
+                        814    fh_hb_naaccr_jupyter                race_coding_sys_origina_n180   
+                        815    fh_hb_dm_wll_all_jupyter            had_heart_attack_yn            
+                        818    fh_hb_naaccr_jupyter                ldh_pretreatment_level_n3869   
+                        819    fh_hb_surgical_case_jupyter         log_type                       
+                        820    fh_hb_naaccr_jupyter                vendor_name_n2170              
+ 
+/home/rsparapa/git/CTSI/BERD/snippet3.sas                                                                                 
+                                                                                         11:50 Tuesday, April 22, 2025  19
+
+                        Obs    table_name                          column_name
+
+                        822    fh_hb_diagnosis_jupyter             dx_code                        
+                        823    fh_hb_naaccr_jupyter                cs_site_specific_factor_n2920  
+                        825    fh_hb_naaccr_jupyter                path_report_type4_n7483        
+                        826    fh_hb_naaccr_jupyter                grade_pathological_n3844       
+                        828    fh_hb_naaccr_jupyter                seer_site_specific_fact_n3706  
+                        829    fh_hb_demographics_jupyter          adi_narank                     
+                        831    fh_hb_naaccr_jupyter                seer_summary_stage2000_n759    
+                        832    fh_hb_naaccr_jupyter                subsq_rx2nd_course_horm_n1674  
+                        833    fh_hb_social_hx_jupyter             sponge_yn                      
+                        834    fh_hb_naaccr_jupyter                cs_site_specific_factor_n2910  
+                        835    fh_hb_naaccr_jupyter                estrogen_receptor_total_n3828  
+                        836    fh_hb_naaccr_jupyter                path_report_number4_n7093      
+                        837    fh_hb_procs_jupyter                 sourcesystem_cd                
+                        838    fh_hb_immunization_jupyter          mfg_title                      
+                        839    fh_hb_med_orders_table_jupyter      gpi                            
+                        840    fh_hb_naaccr_jupyter                reporting_facility_n540        
+                        842    fh_hb_naaccr_jupyter                tnm_path_t_n880                
+                        843    fh_hb_diagnosis_jupyter             dx_poa                         
+                        844    fh_hb_encounters_jupyter            discharge_prov_npi             
+                        845    fh_hb_biospecimen_jupyter           tumor_site                     
+                        846    fh_hb_naaccr_jupyter                ajcc_tnm_clin_n_n1002          
+                        847    fh_hb_naaccr_jupyter                follow_up_contact_nost_n2392   
+                        848    ekg_order                           extra_order_data1              
+                        849    fh_hb_dm_wll_all_jupyter            prev_care_sc_osteoporosis_cmt  
+                        850    fh_hb_naaccr_jupyter                follow_up_source_n1790         
+                        851    fh_hb_naaccr_jupyter                multigene_signature_met_n3894  
+                        852    fh_hb_naaccr_jupyter                tnm_clin_t_n940                
+                        853    fh_hb_encounters_jupyter            encounter_hash                 
+                        854    fh_hb_genomic_summary_jupyter       sourcesystem_cd                
+                        855    fh_hb_naaccr_jupyter                laterality_n410                
+                        856    fh_hb_naaccr_jupyter                grade_icd_o1_n1973             
+                        858    fh_hb_diagnostic_results_jupyter    px_type                        
+                        861    fh_hb_naaccr_jupyter                pleural_effusion_n3913         
+                        862    fh_hb_naaccr_jupyter                figo_stage_n3836               
+                        863    fh_hb_encounters_jupyter            department_external_name       
+                        864    fh_hb_enc_notes_jupyter             note_status_c                  
+                        865    fh_hb_genomic_summary_jupyter       provider_name                  
+                        867    fh_hb_encounters_jupyter            surgical_svc_name              
+                        868    fh_hb_naaccr_jupyter                progesterone_receptor_t_n3916  
+                        871    fh_hb_naaccr_jupyter                occupation_source_n290         
+                        872    fh_hb_naaccr_jupyter                name_middle_n2250              
+                        873    fh_hb_naaccr_jupyter                ajcc_id_n995                   
+ 
+/home/rsparapa/git/CTSI/BERD/snippet3.sas                                                                                 
+                                                                                         11:50 Tuesday, April 22, 2025  20
+
+                        Obs    table_name                          column_name
+
+                        874    fh_hb_immunization_jupyter          imm_scanned_barcode            
+                        875    fh_hb_naaccr_jupyter                phase1_radiation_to_dra_n1505  
+                        877    fh_hb_naaccr_jupyter                over_ride_leuk_lymphoma_n2070  
+                        879    fh_hb_genomics_jupyter              test_type                      
+                        880    fh_hb_naaccr_jupyter                spanish_hispanic_origin_n190   
+                        881    fh_hb_naaccr_jupyter                rx_hosp_scope_reg9802_n747     
+                        882    fh_hb_diagnosis_jupyter             enc_type                       
+                        883    fh_hb_genomics_jupyter              variant_type                   
+                        884    fh_hb_surgical_case_jupyter         surgical_service               
+                        885    fh_hb_naaccr_jupyter                seer_coding_sys_origina_n2130  
+                        886    fh_hb_naaccr_jupyter                text_dx_proc_lab_tests_n2550   
+                        888    fh_hb_naaccr_jupyter                institution_referred_to_n2420  
+                        890    fh_hb_naaccr_jupyter                addr_at_dx_no_street_n2330     
+                        892    fh_hb_naaccr_jupyter                surv_flag_active_follow_n1783  
+                        893    fh_hb_demographics_jupyter          state_c                        
+                        894    fh_hb_social_hx_jupyter             ipv_fear_name                  
+                        897    fh_hb_diagnostic_results_jupyter    result_modifier                
+                        898    fh_hb_procs_jupyter                 order_proc_id_hash             
+                        899    fh_hb_naaccr_jupyter                gleason_score_pathologi_n3841  
+                        900    fh_hb_naaccr_jupyter                ldh_pretreatment_lab_va_n3932  
+                        901    fh_hb_genomics_jupyter              gene_symbol                    
+                        902    fh_hb_naaccr_jupyter                autopsy_n1930                  
+                        905    fh_hb_encounters_jupyter            visit_type_id                  
+                        907    fh_hb_social_hx_jupyter             abstinence_yn                  
+                        908    fh_hb_naaccr_jupyter                major_vein_involvement_n3886   
+                        910    fh_hb_naaccr_jupyter                breslow_tumor_thickness_n3817  
+                        911    fh_hb_enc_notes_jupyter             note_type_c                    
+                        912    fh_hb_naaccr_jupyter                cs_tumor_size_n2800            
+                        913    ekg_order                           extra_order_data3              
+                        914    fh_hb_immunization_jupyter          document_dcs_id                
+                        915    fh_hb_genomics_jupyter              gene_1                         
+                        916    fh_hb_med_orders_table_jupyter      auth_prov_title                
+                        917    fh_hb_naaccr_jupyter                ihs_link_n192                  
+                        918    fh_hb_naaccr_jupyter                ajcc_tnm_post_therapy_s_n1024  
+                        919    fh_hb_naaccr_jupyter                over_ride_ss_nodespos_n1981    
+                        922    fh_hb_naaccr_jupyter                subsq_rx2nd_course_rad_n1672   
+                        923    fh_hb_naaccr_jupyter                phase3_radiation_treatm_n1526  
+                        924    fh_hb_mar_table_jupyter             mar_dose                       
+                        925    fh_hb_naaccr_jupyter                place_of_death_state_n1942     
+                        926    fh_hb_naaccr_jupyter                addr_current_country_n1832     
+                        927    fh_hb_dm_wll_all_jupyter            has_typ_2_diabetes_yn          
+                        928    fh_hb_diagnostic_results_jupyter    specimen_type                  
+ 
+/home/rsparapa/git/CTSI/BERD/snippet3.sas                                                                                 
+                                                                                         11:50 Tuesday, April 22, 2025  21
+
+                        Obs    table_name                          column_name
+
+                        929    fh_hb_diagnosis_jupyter             patient_hash                   
+                        930    fh_hb_procs_jupyter                 order_type_name                
+                        931    fh_hb_genomics_jupyter              usat_stability                 
+                        938    fh_hb_naaccr_jupyter                over_ride_hospseq_site_n1988   
+                        939    fh_hb_naaccr_jupyter                grade_path_value_n441          
+                        940    fh_hb_naaccr_jupyter                cs_site_specific_factor_n2865  
+                        941    fh_hb_naaccr_jupyter                ln_head_and_neck_levels_n3877  
+                        942    fh_hb_genomic_summary_jupyter       patient_hash                   
+                        943    fh_hb_immunization_jupyter          cm_log_owner_id                
+                        944    fh_hb_naaccr_jupyter                chromosome3_status_n3821       
+                        945    fh_hb_naaccr_jupyter                census_tract_certainty2_n369   
+                        946    fh_hb_med_orders_table_jupyter      quantity                       
+                        949    fh_hb_dm_wll_all_jupyter            prev_care_sc_colorect_can_cmt  
+                        950    fh_hb_naaccr_jupyter                cs_site_specific_factor_n2876  
+                        951    fh_hb_naaccr_jupyter                rx_summ_surg_rad_seq_n1380     
+                        952    fh_hb_surgical_case_jupyter         asa_rating_c                   
+                        953    fh_hb_mar_table_jupyter             ingredient_rxcui               
+                        956    fh_hb_naaccr_jupyter                derived_ajcc6_n_n2960          
+                        957    fh_hb_naaccr_jupyter                rx_summ_surgical_approc_n1310  
+                        959    fh_hb_naaccr_jupyter                site_coding_sys_current_n450   
+                        960    fh_hb_encounters_jupyter            discharge_status_c             
+                        961    fh_hb_naaccr_jupyter                state_at_dx_geocode2000_n82    
+                        963    fh_hb_mar_table_jupyter             mix_parent_medication_name     
+                        964    fh_hb_naaccr_jupyter                residual_tumor_volume_p_n3921  
+                        968    fh_hb_naaccr_jupyter                cs_site_specific_factor_n2875  
+                        969    fh_hb_genomic_summary_jupyter       sample_site                    
+                        971    fh_hb_demographics_jupyter          race                           
+                        972    fh_hb_naaccr_jupyter                npcr_derived_ajcc8_tnm__n3646  
+                        973    fh_hb_naaccr_jupyter                over_ride_cs17_n3766           
+                        975    fh_hb_naaccr_jupyter                derived_ajcc_flag_n3030        
+                        976    fh_hb_diagnosis_jupyter             sourcesystem_cd                
+                        977    fh_hb_naaccr_jupyter                cs_site_specific_factor_n2866  
+                        978    fh_hb_naaccr_jupyter                rx_hosp_palliative_proc_n3280  
+                        979    fh_hb_naaccr_jupyter                perineural_invasion_n3909      
+                        981    fh_hb_naaccr_jupyter                sentinel_lymph_nodes_ex_n834   
+                        982    fh_hb_dm_wll_all_jupyter            prev_care_sc_lung_cancer_cmt   
+                        983    fh_hb_naaccr_jupyter                cs_tumor_size_ext_eval_n2820   
+                        984    fh_hb_naaccr_jupyter                derived_ajcc6_t_descrip_n2950  
+                        985    fh_hb_naaccr_jupyter                cs_lymph_nodes_n2830           
+                        986    fh_hb_naaccr_jupyter                registry_type_n30              
+                        988    fh_hb_dm_wll_all_jupyter            has_hemoglobinopathies_yn      
+                        989    fh_hb_naaccr_jupyter                extranodal_extension_he_n3832  
+ 
+/home/rsparapa/git/CTSI/BERD/snippet3.sas                                                                                 
+                                                                                         11:50 Tuesday, April 22, 2025  22
+
+                        Obs    table_name                          column_name
+
+                        990    fh_hb_naaccr_jupyter                npi_physician_follow_up_n2475  
+                        992    fh_hb_social_hx_jupyter             ill_drug_user_name             
+                        993    fh_hb_naaccr_jupyter                derived_ajcc7_n_descrip_n3412  
+                        994    fh_hb_dm_wll_all_jupyter            had_colectomy_yn               
+                        995    fh_hb_naaccr_jupyter                derived_ajcc7_t_n3400          
+                        996    fh_hb_naaccr_jupyter                subsq_rx3rd_scope_ln_su_n1697  
+                        997    fh_hb_naaccr_jupyter                over_ride_tnm_tis_n1993        
+                        999    fh_hb_dm_wll_all_jupyter            has_lung_cancer_yn             
+                       1000    fh_hb_surgical_case_jupyter         encounter_hash                 
+                       1001    fh_hb_dm_wll_all_jupyter            has_chf_yn                     
+                       1002    fh_hb_dm_wll_all_jupyter            has_alcoholism_yn              
+                       1003    fh_hb_procs_jupyter                 procedure_source               
+                       1004    fh_hb_naaccr_jupyter                derived_ss2000_n3020           
+                       1005    fh_hb_naaccr_jupyter                over_ride_site_lat_morp_n2074  
+                       1006    fh_hb_naaccr_jupyter                follow_up_contact_posta_n1846  
+                       1007    fh_hb_dm_wll_all_jupyter            had_solid_organ_transplant_yn  
+                       1008    fh_hb_naaccr_jupyter                progesterone_receptor_s_n3915  
+                       1009    fh_hb_dm_wll_all_jupyter            fracture_risk_assessment_yn    
+                       1010    fh_hb_problem_list_jupyter          hospital_pl_yn                 
+                       1011    fh_hb_naaccr_jupyter                over_ride_surg_dxconf_n2020    
+                       1013    fh_hb_naaccr_jupyter                thrombocytopenia_n3933         
+                       1014    fh_hb_ob_mom_baby_jupyter           mom_disch_disp                 
+                       1015    fh_hb_dm_wll_all_jupyter            had_hysterectomy_yn            
+                       1017    fh_hb_naaccr_jupyter                histology_icd_o1_n1971         
+                       1018    fh_hb_social_hx_jupyter             other_transport_needs_name     
+                       1020    fh_hb_dm_wll_all_jupyter            has_cong_or_acq_immunodef_yn   
+                       1021    fh_hb_encounters_jupyter            drg                            
+                       1025    fh_hb_naaccr_jupyter                subsq_rx4th_course_brm_n1715   
+                       1027    ekg_patient_tracings                patient_hash                   
+                       1028    fh_hb_naaccr_jupyter                npi_archive_fin_n3105          
+                       1029    fh_hb_naaccr_jupyter                rx_hosp_dx_stg_proc_n740       
+                       1030    fh_hb_diagnostic_results_jupyter    specimen_source                
+                       1031    fh_hb_diagnostic_results_jupyter    norm_modifier_high             
+                       1033    fh_hb_mar_table_jupyter             patient_hash                   
+                       1034    fh_hb_naaccr_jupyter                name_alias_n2280               
+                       1035    fh_hb_naaccr_jupyter                date_of_diagnosis_flag_n391    
+                       1037    fh_hb_encounters_jupyter            admission_provider_name        
+                       1038    fh_hb_diagnosis_jupyter             dx_type                        
+                       1039    fh_hb_naaccr_jupyter                follow_up_contact_city_n1842   
+                       1040    fh_hb_naaccr_jupyter                cs_mets_at_dx_n2850            
+                       1041    fh_hb_imaging_orders_jupyter        reading_radiologist_name       
+                       1043    fh_hb_enc_notes_jupyter             department_name                
+ 
+/home/rsparapa/git/CTSI/BERD/snippet3.sas                                                                                 
+                                                                                         11:50 Tuesday, April 22, 2025  23
+
+                        Obs    table_name                          column_name
+
+                       1045    fh_hb_dm_wll_all_jupyter            prev_care_sc_typ_2_diab_cmt    
+                       1046    fh_hb_naaccr_jupyter                path_ordering_fac_no3_n7192    
+                       1050    fh_hb_naaccr_jupyter                cs_site_specific_factor_n2868  
+                       1052    fh_hb_biospecimen_jupyter           pathology_status               
+                       1053    fh_hb_genomic_summary_jupyter       gene                           
+                       1054    fh_hb_dm_wll_all_jupyter            has_generalized_malignancy_yn  
+                       1055    ekg_pharma_data                     pharma_cart_id                 
+                       1056    fh_hb_dm_wll_all_jupyter            has_had_dengue_yn              
+                       1057    fh_hb_mar_table_jupyter             order_class                    
+                       1058    fh_hb_genomics_jupyter              protein_seq_variant            
+                       1061    fh_hb_dm_wll_all_jupyter            has_precanc_cerv_lesion_yn     
+                       1062    fh_hb_naaccr_jupyter                rx_summ_surg_site9802_n1646    
+                       1063    fh_hb_naaccr_jupyter                unusual_follow_up_metho_n1850  
+                       1064    fh_hb_ob_mom_baby_jupyter           delivery_encounter_hash        
+                       1065    fh_hb_social_hx_jupyter             med_transport_needs_name       
+                       1073    fh_hb_naaccr_jupyter                derived_prerx7_m_descri_n3462  
+                       1074    fh_hb_naaccr_jupyter                over_ride_cs12_n3761           
+                       1075    fh_hb_naaccr_jupyter                histology_icd_o2_n420          
+                       1076    fh_hb_naaccr_jupyter                rx_summ_surg_oth9802_n1648     
+                       1077    fh_hb_naaccr_jupyter                comorbid_complication10_n3164  
+                       1078    fh_hb_naaccr_jupyter                cs_site_specific_factor_n2872  
+                       1079    fh_hb_naaccr_jupyter                seer_summary_stage1977_n760    
+                       1080    fh_hb_naaccr_jupyter                rx_text_surgery_n2610          
+                       1081    fh_hb_social_hx_jupyter             edu_level_name                 
+                       1082    fh_hb_naaccr_jupyter                oncotype_dx_risk_level__n3905  
+                       1083    fh_hb_naaccr_jupyter                mets_at_dx_distant_ln_n1114    
+                       1085    fh_hb_social_hx_jupyter             condom_yn                      
+                       1086    fh_hb_naaccr_jupyter                derived_ss2000_flag_n3050      
+                       1087    fh_hb_naaccr_jupyter                registry_id_n40                
+                       1088    fh_hb_genomics_jupyter              status                         
+                       1090    fh_hb_naaccr_jupyter                cs_site_specific_factor_n2879  
+                       1091    fh_hb_naaccr_jupyter                census_tr_poverty_indic_n145   
+                       1092    fh_hb_naaccr_jupyter                race_napiia_n193               
+                       1093    fh_hb_naaccr_jupyter                comorbid_complication5_n3150   
+                       1094    fh_hb_naaccr_jupyter                oncotype_dx_recurrence__n3903  
+                       1097    fh_hb_naaccr_jupyter                derived_seer_combined_m_n3620  
+                       1098    fh_hb_naaccr_jupyter                over_ride_cs1_n3750            
+                       1102    fh_hb_naaccr_jupyter                peripheral_blood_involv_n3910  
+                       1103    fh_hb_mar_table_jupyter             pharm_subclass                 
+                       1105    fh_hb_naaccr_jupyter                secondary_diagnosis8_n3794     
+                       1106    fh_hb_encounters_jupyter            discharge_prov_title           
+                       1107    fh_hb_naaccr_jupyter                rx_summ_hormone_n1400          
+ 
+/home/rsparapa/git/CTSI/BERD/snippet3.sas                                                                                 
+                                                                                         11:50 Tuesday, April 22, 2025  24
+
+                        Obs    table_name                          column_name
+
+                       1108    fh_hb_ob_mom_baby_jupyter           mom_ht_ftin                    
+                       1109    fh_hb_naaccr_jupyter                ambiguous_terminology_d_n442   
+                       1113    fh_hb_naaccr_jupyter                sequence_number_central_n380   
+                       1114    fh_hb_naaccr_jupyter                cs_site_specific_factor_n2861  
+                       1115    fh_hb_naaccr_jupyter                derived_ajcc7_n_n3410          
+                       1116    fh_hb_naaccr_jupyter                ln_distant_mediastinal__n3875  
+                       1117    fh_hb_social_hx_jupyter             pill_yn                        
+                       1119    fh_hb_problem_list_jupyter          epic_dx_description            
+                       1120    fh_hb_dm_wll_all_jupyter            has_hep_c_yn                   
+                       1122    fh_hb_dm_wll_all_jupyter            smoking_user_yn                
+                       1124    fh_hb_ob_mom_baby_jupyter           maternal_dvt                   
+                       1125    fh_hb_encounters_jupyter            drg_type                       
+                       1128    fh_hb_echo_jupyter                  study_reason                   
+                       1129    fh_hb_naaccr_jupyter                date_of_inpt_disch_flag_n601   
+                       1130    ekg_test_demographics               room_id                        
+                       1131    fh_hb_dm_wll_all_jupyter            has_cervix_2_yn                
+                       1132    fh_hb_social_hx_jupyter             male_partner_yn                
+                       1133    fh_hb_naaccr_jupyter                ajcc_tnm_path_t_n1011          
+                       1135    fh_hb_encounters_jupyter            admission_provider_title       
+                       1136    fh_hb_ob_mom_baby_jupyter           patient_hash                   
+                       1138    fh_hb_naaccr_jupyter                naaccr_record_version_n50      
+                       1140    fh_hb_naaccr_jupyter                cs_site_specific_factor_n2874  
+                       1141    fh_hb_social_hx_jupyter             clubmtg_attendance_name        
+                       1142    fh_hb_naaccr_jupyter                behavior_icd_o2_n430           
+                       1143    fh_hb_imaging_orders_jupyter        i2b2_provider_name             
+                       1145    fh_hb_naaccr_jupyter                subsq_rx4th_surg_oth_n1718     
+                       1146    fh_hb_naaccr_jupyter                vital_status_n1760             
+                       1147    fh_hb_naaccr_jupyter                ln_assessment_method_pe_n3873  
+                       1148    fh_hb_encounters_jupyter            means_of_arrv_c                
+                       1150    fh_hb_naaccr_jupyter                quality_of_survival_n1780      
+                       1151    fh_hb_naaccr_jupyter                comorbid_complication3_n3130   
+                       1152    fh_hb_naaccr_jupyter                tobacco_use_smoking_status_n344
+                       1154    fh_hb_naaccr_jupyter                path_ordering_fac_no1_n7190    
+                       1155    fh_hb_naaccr_jupyter                rx_hosp_chemo_n700             
+                       1156    fh_hb_dm_wll_all_jupyter            has_medicare_coverage_yn       
+                       1158    fh_hb_naaccr_jupyter                rx_date_radiation_ended_n3221  
+                       1159    fh_hb_dm_wll_all_jupyter            nonhisp_african_amer_yn        
+                       1161    ekg_test_demographics               acquisition_device             
+                       1162    fh_hb_naaccr_jupyter                seer_coding_sys_current_n2120  
+                       1163    fh_hb_immunization_jupyter          immnztn_dualsign_id            
+                       1164    fh_hb_naaccr_jupyter                ca125_pretreatment_inte_n3818  
+                       1165    fh_hb_social_hx_jupyter             alcohol_use_name               
+ 
+/home/rsparapa/git/CTSI/BERD/snippet3.sas                                                                                 
+                                                                                         11:50 Tuesday, April 22, 2025  25
+
+                        Obs    table_name                          column_name
+
+                       1168    fh_hb_naaccr_jupyter                behavior_code_icd_o3_n523      
+                       1170    fh_hb_naaccr_jupyter                over_ride_site_tnm_stgg_n1989  
+                       1171    fh_hb_ob_mom_baby_jupyter           baby_race                      
+                       1172    fh_hb_naaccr_jupyter                census_tract2010_n135          
+                       1173    fh_hb_naaccr_jupyter                phase3_total_dose_n1527        
+                       1174    fh_hb_naaccr_jupyter                vital_status_recode_n1762      
+                       1175    fh_hb_naaccr_jupyter                methylation_of_o6_methy_n3889  
+                       1176    fh_hb_naaccr_jupyter                morph_coding_sys_origin_n480   
+                       1179    fh_hb_naaccr_jupyter                tnm_path_descriptor_n920       
+                       1181    fh_hb_naaccr_jupyter                marital_status_at_dx_n150      
+                       1182    fh_hb_genomics_jupyter              sourcesystem_cd                
+                       1183    fh_hb_encounters_jupyter            means_of_arrv_name             
+                       1184    fh_hb_naaccr_jupyter                over_ride_cs6_n3755            
+                       1186    fh_hb_mar_table_jupyter             mar_action                     
+                       1189    fh_hb_naaccr_jupyter                derived_ajcc7_m_descrip_n3422  
+                       1190    fh_hb_mar_table_jupyter             pharm_class                    
+                       1192    fh_hb_naaccr_jupyter                cs_site_specific_factor_n2878  
+                       1193    fh_hb_naaccr_jupyter                measured_basal_diameter_n3887  
+                       1194    fh_hb_naaccr_jupyter                derived_prerx7_stage_gr_n3470  
+                       1195    fh_hb_imaging_orders_jupyter        order_type_name                
+                       1197    fh_hb_diagnostic_results_jupyter    component_name                 
+                       1198    fh_hb_genomics_jupyter              position                       
+                       1199    fh_hb_naaccr_jupyter                international_normalize_n3860  
+                       1200    ekg_order                           his_location                   
+                       1201    ekg_meas_matrix_leads               meas_matrix_id                 
+                       1203    fh_hb_naaccr_jupyter                derived_seer_clin_stg_g_n3610  
+                       1204    fh_hb_enc_notes_jupyter             author_prov_type               
+                       1206    fh_hb_naaccr_jupyter                ajcc_tnm_post_therapy_t_n1033  
+                       1207    fh_hb_naaccr_jupyter                secondary_diagnosis5_n3788     
+                       1209    fh_hb_naaccr_jupyter                casefinding_source_n501        
+                       1212    fh_hb_dm_wll_all_jupyter            has_breasts_yn                 
+                       1214    fh_hb_naaccr_jupyter                ajcc_tnm_path_n_suffix_n1035   
+                       1215    fh_hb_problem_list_jupyter          patient_hash                   
+                       1217    fh_hb_naaccr_jupyter                esophagus_and_egj_tumor_n3829  
+                       1222    fh_hb_procs_jupyter                 px                             
+                       1225    ekg_resting_ecg_meas                resting_ecg_meas_id            
+                       1226    fh_hb_mar_table_jupyter             order_med_id_hash              
+                       1227    ekg_order                           ordering_md_id                 
+                       1229    fh_hb_naaccr_jupyter                text_dx_proc_path_n2570        
+                       1230    fh_hb_naaccr_jupyter                eod_old2_digit_n850            
+                       1232    fh_hb_naaccr_jupyter                over_ride_cs8_n3757            
+                       1233    fh_hb_naaccr_jupyter                secondary_diagnosis6_n3790     
+ 
+/home/rsparapa/git/CTSI/BERD/snippet3.sas                                                                                 
+                                                                                         11:50 Tuesday, April 22, 2025  26
+
+                        Obs    table_name                          column_name
+
+                       1234    fh_hb_naaccr_jupyter                number_of_examined_pelv_n3900  
+                       1236    fh_hb_naaccr_jupyter                physician_primary_surg_n2480   
+                       1237    fh_hb_naaccr_jupyter                addr_current_supplement_n2355  
+                       1241    fh_hb_adt_jupyter                   pat_service_name               
+                       1243    fh_hb_naaccr_jupyter                response_to_neoadjuvant_n3922  
+                       1244    fh_hb_genomics_jupyter              reference_seq_name             
+                       1245    fh_hb_naaccr_jupyter                npi_physician_managing_n2465   
+                       1246    fh_hb_naaccr_jupyter                fibrosis_score_n3835           
+                       1247    fh_hb_naaccr_jupyter                visceral_and_parietal_p_n3937  
+                       1248    fh_hb_allergy_hx_jupyter            hx_status_name                 
+                       1249    fh_hb_genomics_jupyter              variant_class                  
+                       1250    fh_hb_naaccr_jupyter                ajcc_tnm_path_n_n1012          
+                       1251    fh_hb_naaccr_jupyter                over_ride_cs18_n3767           
+                       1256    fh_hb_surgical_case_jupyter         postop_dest_c                  
+                       1257    fh_hb_naaccr_jupyter                tnm_clin_staged_by_n990        
+                       1258    fh_hb_procs_jupyter                 proc_code                      
+                       1259    fh_hb_dm_wll_all_jupyter            hdl_l_unit                     
+                       1261    ekg_test_demographics               location_name                  
+                       1262    fh_hb_social_hx_jupyter             implant_yn                     
+                       1263    fh_hb_naaccr_jupyter                computed_ethnicity_sour_n210   
+                       1264    fh_hb_naaccr_jupyter                cs_site_specific_factor_n2873  
+                       1265    fh_hb_dm_wll_all_jupyter            hist_non_cad_athero_yn         
+                       1266    ekg_qrs_times_types                 qrs_times_types_id             
+                       1267    fh_hb_dm_wll_all_jupyter            has_obesity_yn                 
+                       1268    fh_hb_naaccr_jupyter                rx_date_dx_stg_proc_fla_n1281  
+                       1271    fh_hb_naaccr_jupyter                tnm_clin_m_n960                
+                       1277    fh_hb_naaccr_jupyter                oncotype_dx_risk_level__n3906  
+                       1278    ekg_test_demographics               patient_trac_id                
+                       1279    fh_hb_demographics_jupyter          research_contact_pref          
+                       1280    fh_hb_dm_wll_all_jupyter            has_hyptn_prob_yn              
+                       1281    fh_hb_naaccr_jupyter                tnm_path_stage_group_n910      
+                       1283    fh_hb_dm_wll_all_jupyter            has_breasts_2_yn               
+                       1285    fh_hb_immunization_jupyter          patient_hash                   
+                       1286    fh_hb_med_orders_table_jupyter      patient_hash                   
+                       1287    fh_hb_naaccr_jupyter                eod_old13_digit_n840           
+                       1288    fh_hb_naaccr_jupyter                secondary_diagnosis3_n3784     
+                       1289    fh_hb_imaging_orders_jupyter        proc_code                      
+                       1291    fh_hb_dm_wll_all_jupyter            prev_care_sc_abd_aor_aneur_cmt 
+                       1292    fh_hb_naaccr_jupyter                race5_n164                     
+                       1296    ekg_order                           his_ordering_md_last_name      
+                       1299    fh_hb_naaccr_jupyter                hcg_post_orchiectomy_ra_n3847  
+                       1300    fh_hb_naaccr_jupyter                seer_other_cod_n1915           
+ 
+/home/rsparapa/git/CTSI/BERD/snippet3.sas                                                                                 
+                                                                                         11:50 Tuesday, April 22, 2025  27
+
+                        Obs    table_name                          column_name
+
+                       1301    fh_hb_naaccr_jupyter                over_ride_cs19_n3768           
+                       1302    ekg_waveform                        waveform_type                  
+                       1303    fh_hb_genomics_jupyter              gene_2                         
+                       1304    fh_hb_naaccr_jupyter                cs_site_specific_factor_n2863  
+                       1305    fh_hb_naaccr_jupyter                path_report_type5_n7484        
+                       1307    fh_hb_naaccr_jupyter                derived_eod2018_stage_g_n818   
+                       1309    fh_hb_naaccr_jupyter                gleason_patterns_pathol_n3839  
+                       1310    fh_hb_med_orders_table_jupyter      dose                           
+                       1313    fh_hb_naaccr_jupyter                creatinine_pretreatment_n3824  
+                       1314    fh_hb_naaccr_jupyter                rx_hosp_radiation_n690         
+                       1315    fh_hb_naaccr_jupyter                physician3_n2490               
+                       1316    fh_hb_genomics_jupyter              diagnosis                      
+                       1317    fh_hb_naaccr_jupyter                icd_revision_number_n1920      
+                       1319    fh_hb_naaccr_jupyter                name_maiden_n2390              
+                       1323    fh_hb_ob_mom_baby_jupyter           del_meth_id                    
+                       1324    fh_hb_imaging_orders_jupyter        order_status_name              
+                       1325    fh_hb_genomics_jupyter              re_type                        
+                       1327    fh_hb_naaccr_jupyter                number_of_positive_para_n3901  
+                       1328    fh_hb_naaccr_jupyter                ajcc_tnm_clin_t_suffix_n1031   
+                       1329    fh_hb_naaccr_jupyter                phase3_radiation_to_dra_n1525  
+                       1330    fh_hb_genomics_jupyter              chromosome                     
+                       1331    fh_hb_naaccr_jupyter                uric2000_n345                  
+                       1334    ekg_order                           patient_trac_id                
+                       1337    fh_hb_naaccr_jupyter                text_histology_title_n2590     
+                       1338    fh_hb_encounters_jupyter            visit_provider_npi             
+                       1339    fh_hb_naaccr_jupyter                over_ride_site_behavior_n2071  
+                       1340    fh_hb_enc_notes_jupyter             author_prov_specialties        
+                       1341    fh_hb_naaccr_jupyter                ajcc_tnm_post_therapy_n_n1036  
+                       1343    fh_hb_naaccr_jupyter                over_ride_cs13_n3762           
+                       1344    fh_hb_dm_wll_all_jupyter            mammo_excl_yn                  
+                       1346    fh_hb_naaccr_jupyter                cs_site_specific_factor_n2900  
+                       1348    fh_hb_naaccr_jupyter                readm_same_hosp30_days_n3190   
+                       1349    fh_hb_naaccr_jupyter                path_report_type2_n7481        
+                       1350    ekg_lead_data                       lead_id                        
+                       1352    fh_hb_naaccr_jupyter                subsq_rx4th_reg_ln_rem_n1719   
+                       1353    fh_hb_naaccr_jupyter                path_order_phys_lic_no1_n7100  
+                       1354    ekg_test_demographics               status                         
+                       1355    fh_hb_demographics_jupyter          race_c                         
+                       1356    ekg_order                           his_ordering_md_first_name     
+                       1357    fh_hb_naaccr_jupyter                rx_date_brm_flag_n1241         
+                       1358    fh_hb_naaccr_jupyter                next_follow_up_source_n1800    
+                       1364    fh_hb_naaccr_jupyter                radiation_treatment_dis_n1531  
+ 
+/home/rsparapa/git/CTSI/BERD/snippet3.sas                                                                                 
+                                                                                         11:50 Tuesday, April 22, 2025  28
+
+                        Obs    table_name                          column_name
+
+                       1365    fh_hb_naaccr_jupyter                serum_beta2_microglobul_n3931  
+                       1366    fh_hb_demographics_jupyter          sex                            
+                       1368    fh_hb_immunization_jupyter          lot                            
+                       1369    fh_hb_naaccr_jupyter                eod_extension_prost_pat_n800   
+                       1371    fh_hb_naaccr_jupyter                npi_registry_id_n45            
+                       1372    fh_hb_ob_mom_baby_jupyter           baby_sex                       
+                       1373    fh_hb_med_orders_table_jupyter      order_class                    
+                       1374    fh_hb_naaccr_jupyter                afp_post_orchiectomy_la_n3805  
+                       1375    fh_hb_dm_wll_all_jupyter            has_chlamydia_yn               
+                       1376    fh_hb_dm_wll_all_jupyter            has_csf_leaks_yn               
+                       1378    fh_hb_dm_wll_all_jupyter            sexually_active_yn             
+                       1379    fh_hb_naaccr_jupyter                path_reporting_fac_id3_n7012   
+                       1380    fh_hb_naaccr_jupyter                rx_hosp_reg_ln_removed_n676    
+                       1383    fh_hb_naaccr_jupyter                subsq_rx2nd_surg_oth_n1678     
+                       1385    fh_hb_naaccr_jupyter                rx_summ_scope_reg9802_n1647    
+                       1386    fh_hb_naaccr_jupyter                tumor_size_clinical_n752       
+                       1388    fh_hb_naaccr_jupyter                rx_summ_scope_reg_ln_su_n1292  
+                       1389    fh_hb_genomics_jupyter              provider_id                    
+                       1390    fh_hb_naaccr_jupyter                rx_summ_radiation_n1360        
+                       1391    fh_hb_naaccr_jupyter                derived_prerx7_t_descri_n3442  
+                       1392    fh_hb_naaccr_jupyter                path_report_type1_n7480        
+                       1393    fh_hb_naaccr_jupyter                ldh_upper_limits_of_nor_n3870  
+                       1394    fh_hb_naaccr_jupyter                census_occ_code2010_n282       
+                       1396    fh_hb_naaccr_jupyter                her2_ish_single_probe_c_n3853  
+                       1397    fh_hb_naaccr_jupyter                sequence_number_hospital_n560  
+                       1398    fh_hb_encounters_jupyter            hosp_serv_c                    
+                       1399    fh_hb_encounters_jupyter            discharge_status_name          
+                       1400    fh_hb_naaccr_jupyter                rx_date_chemo_flag_n1221       
+                       1402    fh_hb_naaccr_jupyter                rx_hosp_surg_prim_site_n670    
+                       1403    fh_hb_dm_wll_all_jupyter            has_lymphomas_yn               
+                       1407    fh_hb_social_hx_jupyter             rhythm_yn                      
+                       1408    fh_hb_naaccr_jupyter                ajcc_tnm_clin_t_n1001          
+                       1410    fh_hb_naaccr_jupyter                rx_summ_surgical_margin_n1320  
+                       1411    fh_hb_dm_wll_all_jupyter            osteo_scrn_excl_yn             
+                       1413    fh_hb_social_hx_jupyter             chew_yn                        
+                       1414    fh_hb_naaccr_jupyter                date_of_death_canada_fl_n1756  
+                       1415    fh_hb_social_hx_jupyter             ipv_emotional_abuse_name       
+                       1416    fh_hb_naaccr_jupyter                rad_regional_dose_cgy_n1510    
+                       1417    fh_hb_adt_jupyter                   patient_hash                   
+                       1418    fh_hb_naaccr_jupyter                path_ordering_fac_no5_n7194    
+                       1421    fh_hb_enc_notes_jupyter             encounter_hash                 
+                       1422    fh_hb_encounters_jupyter            discharge_prov_name            
+ 
+/home/rsparapa/git/CTSI/BERD/snippet3.sas                                                                                 
+                                                                                         11:50 Tuesday, April 22, 2025  29
+
+                        Obs    table_name                          column_name
+
+                       1423    fh_hb_address_hx_jupyter            geocode_precision              
+                       1424    fh_hb_demographics_jupyter          state_name                     
+                       1425    fh_hb_naaccr_jupyter                census_ind_code19702000_n280   
+                       1427    fh_hb_naaccr_jupyter                site_coding_sys_origina_n460   
+                       1428    fh_hb_naaccr_jupyter                rx_summ_surg_prim_site_n1290   
+                       1429    fh_hb_enc_notes_jupyter             author_name                    
+                       1432    fh_hb_naaccr_jupyter                rad_boost_rx_modality_n3200    
+                       1433    fh_hb_naaccr_jupyter                addr_at_dx_country_n102        
+                       1434    fh_hb_imaging_orders_jupyter        reading_radiologist_title      
+                       1435    fh_hb_naaccr_jupyter                sex_n220                       
+                       1436    fh_hb_genomics_jupyter              nucleotide_variant             
+                       1437    fh_hb_naaccr_jupyter                ajcc_tnm_clin_stage_gro_n1004  
+                       1438    fh_hb_sdoh_jupyter                  loinc_answer_code              
+                       1439    fh_hb_naaccr_jupyter                race_coding_sys_current_n170   
+                       1440    fh_hb_dm_wll_all_jupyter            has_periph_vasc_dis_yn         
+                       1441    fh_hb_demographics_jupyter          patient_hash                   
+                       1443    fh_hb_naaccr_jupyter                rx_text_radiation_n2620        
+                       1444    fh_hb_social_hx_jupyter             daily_stress_name              
+                       1445    fh_hb_immunization_jupyter          dose                           
+                       1447    fh_hb_med_orders_table_jupyter      specific_rxcui_type            
+                       1448    fh_hb_naaccr_jupyter                derived_seer_combined_t_n3616  
+                       1449    fh_hb_naaccr_jupyter                inpatient_status_n605          
+                       1450    fh_hb_naaccr_jupyter                rx_date_radiation_flag_n1211   
+                       1452    fh_hb_biospecimen_jupyter           specimen_bar_code              
+                       1455    fh_hb_naaccr_jupyter                rx_summ_other_n1420            
+                       1456    fh_hb_naaccr_jupyter                mult_tum_rpt_as_one_pri_n444   
+                       1457    fh_hb_naaccr_jupyter                over_ride_coc_site_type_n1987  
+                       1459    fh_hb_diagnosis_jupyter             raw_pdx                        
+                       1460    fh_hb_naaccr_jupyter                derived_ajcc7_m_n3420          
+                       1464    fh_hb_naaccr_jupyter                subsq_rx3rd_course_horm_n1694  
+                       1466    fh_hb_dm_wll_all_jupyter            prev_care_sc_lipid_disords_cmt 
+                       1467    fh_hb_dm_wll_all_jupyter            prev_care_sc_cerv_cancer_cmt   
+                       1468    fh_hb_naaccr_jupyter                afp_pretreatment_interp_n3809  
+                       1470    fh_hb_naaccr_jupyter                afp_pre_orchiectomy_ran_n3808  
+                       1471    ekg_waveform                        waveform_id                    
+                       1472    fh_hb_naaccr_jupyter                high_risk_histologic_fe_n3858  
+                       1473    fh_hb_enc_notes_jupyter             src_enc_type_name              
+                       1475    fh_hb_diagnostic_results_jupyter    provider_title                 
+                       1476    fh_hb_genomics_jupyter              tmb_score_units                
+                       1477    fh_hb_naaccr_jupyter                rx_hosp_brm_n720               
+                       1481    fh_hb_naaccr_jupyter                npi_inst_referred_from_n2415   
+                       1482    fh_hb_naaccr_jupyter                latitude_n2352                 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet3.sas                                                                                 
+                                                                                         11:50 Tuesday, April 22, 2025  30
+
+                        Obs    table_name                          column_name
+
+                       1483    fh_hb_naaccr_jupyter                derived_seer_cmb_stg_gr_n3614  
+                       1484    fh_hb_naaccr_jupyter                reason_for_no_surgery_n1340    
+                       1486    fh_hb_demographics_jupyter          hispanic_c                     
+                       1488    fh_hb_adt_jupyter                   event_type                     
+                       1490    fh_hb_med_orders_table_jupyter      order_med_id_hash              
+                       1492    fh_hb_naaccr_jupyter                cs_version_input_origin_n2935  
+                       1494    fh_hb_noah_basic_jupyter            patient_hash                   
+                       1495    fh_hb_immunization_jupyter          defer_reason_c                 
+                       1497    fh_hb_naaccr_jupyter                ruralurban_continuum199_n3300  
+                       1498    fh_hb_naaccr_jupyter                derived_seer_path_stg_g_n3605  
+                       1501    fh_hb_social_hx_jupyter             surgical_yn                    
+                       1502    fh_hb_naaccr_jupyter                tumor_size_pathologic_n754     
+                       1503    fh_hb_naaccr_jupyter                rx_date_surgical_disch__n3181  
+                       1504    fh_hb_naaccr_jupyter                cs_site_specific_factor_n2880  
+                       1506    fh_hb_demographics_jupyter          sex_c                          
+                       1507    fh_hb_naaccr_jupyter                ajcc_tnm_path_stage_gro_n1014  
+                       1510    fh_hb_social_hx_jupyter             tobacco_used_years             
+                       1511    fh_hb_dm_wll_all_jupyter            has_ckd_yn                     
+                       1514    fh_hb_encounters_jupyter            sourcesystem_cd                
+                       1516    fh_hb_naaccr_jupyter                path_report_type3_n7482        
+                       1517    fh_hb_encounters_jupyter            admit_conf_stat_name           
+                       1518    fh_hb_diagnostic_results_jupyter    abnormal_ind                   
+                       1519    fh_hb_naaccr_jupyter                oncotype_dx_recurrence__n3904  
+                       1520    fh_hb_adt_jupyter                   department_specialty           
+                       1521    fh_hb_dm_wll_all_jupyter            has_multiple_myeloma_yn        
+                       1522    fh_hb_diagnosis_jupyter             provider_name                  
+                       1524    fh_hb_genomics_jupyter              provider_name                  
+                       1527    fh_hb_naaccr_jupyter                phase2_radiation_to_dra_n1515  
+                       1528    fh_hb_naaccr_jupyter                circumferential_resecti_n3823  
+                       1531    fh_hb_naaccr_jupyter                rx_date_most_defin_surg_n3171  
+                       1532    fh_hb_adt_jupyter                   encounter_hash                 
+                       1533    fh_hb_enc_notes_jupyter             patient_hash                   
+                       1534    fh_hb_genomics_jupyter              strand                         
+                       1535    fh_hb_naaccr_jupyter                extravascular_matrix_pa_n3834  
+                       1536    ekg_waveform                        ac_filter                      
+                       1538    fh_hb_surgical_case_jupyter         loc_name                       
+                       1540    fh_hb_naaccr_jupyter                phase1_radiation_extern_n1502  
+                       1541    fh_hb_naaccr_jupyter                over_ride_ss_tnm_m_n1983       
+                       1543    ekg_order                           hist_test_type                 
+                       1545    fh_hb_demographics_jupyter          language_code                  
+                       1548    fh_hb_procs_jupyter                 procedure_name                 
+                       1549    fh_hb_naaccr_jupyter                county_at_dx_n90               
+ 
+/home/rsparapa/git/CTSI/BERD/snippet3.sas                                                                                 
+                                                                                         11:50 Tuesday, April 22, 2025  31
+
+                        Obs    table_name                          column_name
+
+                       1552    fh_hb_naaccr_jupyter                eod_extension_n790             
+                       1555    fh_hb_dm_wll_all_jupyter            has_cervi_carci_yn             
+                       1556    fh_hb_naaccr_jupyter                race3_n162                     
+                       1558    fh_hb_naaccr_jupyter                derived_ajcc6_stage_grp_n3000  
+                       1559    fh_hb_naaccr_jupyter                mets_at_dx_liver_n1115         
+                       1560    ekg_test_demographics               data_type                      
+                       1563    fh_hb_naaccr_jupyter                histologic_type_icd_o3_n522    
+                       1564    fh_hb_naaccr_jupyter                phase1_radiation_primar_n1504  
+                       1565    fh_hb_naaccr_jupyter                grade_post_therapy_n3845       
+                       1566    fh_hb_enc_notes_jupyter             note_csn_hash                  
+                       1567    fh_hb_demographics_jupyter          geocode_result                 
+                       1568    fh_hb_naaccr_jupyter                tnm_clin_stage_group_n970      
+                       1569    fh_hb_naaccr_jupyter                afp_pre_orchiectomy_lab_n3807  
+                       1570    fh_hb_naaccr_jupyter                invasion_beyond_capsule_n3864  
+                       1573    fh_hb_naaccr_jupyter                jak2_n3862                     
+                       1574    fh_hb_echo_jupyter                  study_modality                 
+                       1575    fh_hb_naaccr_jupyter                path_ordering_fac_no2_n7191    
+                       1576    ekg_waveform                        patient_trac_id                
+                       1577    fh_hb_naaccr_jupyter                subsq_rx2nd_scope_ln_su_n1677  
+                       1578    fh_hb_genomics_jupyter              gene_id                        
+                       1579    fh_hb_naaccr_jupyter                following_registry_n2440       
+                       1580    fh_hb_procs_jupyter                 provider_name                  
+                       1581    fh_hb_naaccr_jupyter                addr_at_dx_city_n70            
+                       1583    fh_hb_naaccr_jupyter                ln_head_and_neck_levels_n3876  
+                       1584    fh_hb_adt_jupyter                   department_name                
+                       1587    fh_hb_med_orders_table_jupyter      freq_id                        
+                       1588    fh_hb_naaccr_jupyter                path_report_number1_n7090      
+                       1589    fh_hb_naaccr_jupyter                derived_eod2018_n_n815         
+                       1590    fh_hb_naaccr_jupyter                rx_date_systemic_flag_n3231    
+                       1591    fh_hb_ob_mom_baby_jupyter           pregest_dm                     
+                       1592    fh_hb_naaccr_jupyter                census_tr_certainty2010_n367   
+                       1593    fh_hb_enc_notes_jupyter             loinc_name                     
+                       1594    fh_hb_naaccr_jupyter                seer_cause_specific_cod_n1914  
+                       1595    fh_hb_naaccr_jupyter                over_ride_cs9_n3758            
+                       1596    ekg_lead_data                       lead_amplitude_units           
+                       1597    fh_hb_naaccr_jupyter                brain_molecular_markers_n3816  
+                       1598    fh_hb_naaccr_jupyter                bilirubin_pretreatment__n3814  
+                       1599    fh_hb_ob_mom_baby_jupyter           baby_yob_shifted               
+                       1601    fh_hb_naaccr_jupyter                ajcc_tnm_clin_n_suffix_n1034   
+                       1603    fh_hb_encounters_jupyter            adm_for_surg_yn                
+                       1604    fh_hb_dm_wll_all_jupyter            has_chronic_lung_disease_yn    
+                       1606    fh_hb_encounters_jupyter            admit_source_c                 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet3.sas                                                                                 
+                                                                                         11:50 Tuesday, April 22, 2025  32
+
+                        Obs    table_name                          column_name
+
+                       1607    fh_hb_naaccr_jupyter                cs_site_specific_factor_n2869  
+                       1609    fh_hb_naaccr_jupyter                eod_lymph_node_involv_n810     
+                       1610    ekg_test_demographics               test_reason                    
+                       1611    fh_hb_demographics_jupyter          marital_status                 
+                       1612    fh_hb_naaccr_jupyter                text_place_of_diagnosis_n2690  
+                       1614    ekg_order                           reason_for_test                
+                       1615    fh_hb_naaccr_jupyter                cea_pretreatment_interp_n3819  
+                       1616    fh_hb_naaccr_jupyter                abstracted_by_n570             
+                       1618    fh_hb_naaccr_jupyter                addr_at_dx_supplementl_n2335   
+                       1619    fh_hb_naaccr_jupyter                tnm_path_staged_by_n930        
+                       1621    fh_hb_naaccr_jupyter                pediatric_staged_by_n1140      
+                       1623    fh_hb_naaccr_jupyter                cs_version_derived_n2936       
+                       1624    fh_hb_naaccr_jupyter                rx_text_brm_n2660              
+                       1626    fh_hb_genomics_jupyter              vus                            
+                       1629    fh_hb_naaccr_jupyter                cea_pretreatment_lab_va_n3820  
+                       1630    fh_hb_dm_wll_all_jupyter            cur_pcp_prov_id                
+                       1631    fh_hb_ob_mom_baby_jupyter           mom_ethnicity                  
+                       1633    fh_hb_naaccr_jupyter                subsq_rx2nd_course_surg_n1671  
+                       1634    fh_hb_naaccr_jupyter                secondary_diagnosis7_n3792     
+                       1635    fh_hb_encounters_jupyter            payor_type_primary_name        
+                       1636    fh_hb_sdoh_jupyter                  loinc_question_code            
+                       1637    fh_hb_naaccr_jupyter                over_ride_cs20_n3769           
+                       1638    ekg_order                           requisition_number             
+                       1639    ekg_test_demographics               test_demographics_id           
+                       1640    fh_hb_naaccr_jupyter                phase2_radiation_primar_n1514  
+                       1643    fh_hb_naaccr_jupyter                number_of_phases_of_rad_n1532  
+                       1644    fh_hb_immunization_jupyter          encounter_hash                 
+                       1646    fh_hb_med_orders_table_jupyter      encounter_hash                 
+                       1648    fh_hb_address_hx_jupyter            adi_narank                     
+                       1651    fh_hb_dm_wll_all_jupyter            patient_hash                   
+                       1652    fh_hb_encounters_jupyter            means_of_depart_name           
+                       1653    fh_hb_demographics_jupyter          primary_care_provider_title    
+                       1658    fh_hb_naaccr_jupyter                npi_physician3_n2495           
+                       1659    ekg_qrs_times_types                 patient_trac_id                
+                       1660    fh_hb_med_orders_table_jupyter      ingredient_rxcui_name          
+                       1662    fh_hb_immunization_jupyter          given_by_user_id               
+                       1663    fh_hb_naaccr_jupyter                npi_reporting_facility_n545    
+                       1665    fh_hb_ob_mom_baby_jupyter           del_dept_name                  
+                       1666    fh_hb_med_orders_table_jupyter      order_status                   
+                       1669    fh_hb_enc_notes_jupyter             note_status_name               
+                       1671    fh_hb_naaccr_jupyter                path_report_number5_n7094      
+                       1673    fh_hb_naaccr_jupyter                phase2_radiation_treatm_n1516  
+ 
+/home/rsparapa/git/CTSI/BERD/snippet3.sas                                                                                 
+                                                                                         11:50 Tuesday, April 22, 2025  33
+
+                        Obs    table_name                          column_name
+
+                       1676    fh_hb_naaccr_jupyter                date_sentinel_lymph_nod_n833   
+                       1677    fh_hb_dm_wll_all_jupyter            hiv_risk_assessment_yn         
+                       1678    fh_hb_naaccr_jupyter                rx_summ_surgery_type_n1640     
+                       1682    fh_hb_dm_wll_all_jupyter            has_afib_yn                    
+                       1683    fh_hb_demographics_jupyter          need_interpreter               
+                       1684    fh_hb_naaccr_jupyter                summary_stage2018_n764         
+                       1685    fh_hb_naaccr_jupyter                date1st_crs_rx_coc_flag_n1271  
+                       1686    fh_hb_naaccr_jupyter                pediatric_stage_n1120          
+                       1688    fh_hb_enc_notes_jupyter             department_specialty           
+                       1689    fh_hb_genomics_jupyter              patient_hash                   
+                       1691    fh_hb_naaccr_jupyter                over_ride_ill_define_si_n2060  
+                       1692    fh_hb_naaccr_jupyter                census_cod_sys19708090_n120    
+                       1693    fh_hb_dm_wll_all_jupyter            has_hypertension_yn            
+                       1694    fh_hb_dm_wll_all_jupyter            in_long_term_care_yn           
+                       1695    fh_hb_naaccr_jupyter                grade_n440                     
+                       1696    fh_hb_dm_wll_all_jupyter            hdl_l_ord_id_hash              
+                       1697    fh_hb_mar_table_jupyter             specific_rxcui                 
+                       1698    fh_hb_problem_list_jupyter          dx_code                        
+                       1701    fh_hb_naaccr_jupyter                over_ride_hospseq_dxcon_n1986  
+                       1702    fh_hb_imaging_orders_jupyter        reading_radiologist_prov_id    
+                       1703    fh_hb_genomics_jupyter              altered_n                      
+                       1704    fh_hb_med_orders_table_jupyter      auth_provider_type             
+                       1706    fh_hb_immunization_jupyter          ndc_num_id                     
+                       1707    fh_hb_naaccr_jupyter                census_tract2020_n125          
+                       1708    fh_hb_encounters_jupyter            visit_type_name                
+                       1709    fh_hb_mar_table_jupyter             auth_prov_title                
+                       1710    ekg_order                           order_id                       
+                       1711    fh_hb_social_hx_jupyter             sexually_active_name           
+                       1712    fh_hb_naaccr_jupyter                subsq_rx_reconstruct_de_n1741  
+                       1715    fh_hb_naaccr_jupyter                regional_nodes_examined_n830   
+                       1716    fh_hb_naaccr_jupyter                morph_coding_sys_curren_n470   
+                       1717    fh_hb_med_orders_table_jupyter      ingredient_rxcui               
+                       1719    fh_hb_naaccr_jupyter                nccn_international_prog_n3896  
+                       1720    fh_hb_immunization_jupyter          route_name                     
+                       1723    fh_hb_naaccr_jupyter                derived_ajcc7_t_descrip_n3402  
+                       1724    fh_hb_diagnosis_jupyter             dx_name                        
+                       1725    fh_hb_dm_wll_all_jupyter            prior_cvd_event_yn             
+                       1726    fh_hb_problem_list_jupyter          principal_pl_yn                
+                       1728    fh_hb_naaccr_jupyter                rx_summ_dx_stg_proc_n1350      
+                       1729    fh_hb_ob_mom_baby_jupyter           baby_birth_wt_gms              
+                       1731    fh_hb_naaccr_jupyter                text_staging_n2600             
+                       1732    fh_hb_naaccr_jupyter                high_risk_cytogenetics_n3857   
+ 
+/home/rsparapa/git/CTSI/BERD/snippet3.sas                                                                                 
+                                                                                         11:50 Tuesday, April 22, 2025  34
+
+                        Obs    table_name                          column_name
+
+                       1734    fh_hb_ob_mom_baby_jupyter           ob_parity                      
+                       1735    fh_hb_enc_notes_jupyter             note_hash                      
+                       1736    fh_hb_naaccr_jupyter                addr_current_no_street_n2350   
+                       1738    ekg_test_demographics               site_name                      
+                       1739    fh_hb_biospecimen_jupyter           body_site                      
+                       1741    fh_hb_naaccr_jupyter                npi_following_registry_n2445   
+                       1742    fh_hb_encounters_jupyter            surgical_svc_c                 
+                       1743    fh_hb_naaccr_jupyter                percent_necrosis_post_n_n3908  
+                       1744    fh_hb_mar_table_jupyter             order_dose                     
+                       1745    fh_hb_naaccr_jupyter                class_of_case_n610             
+                       1747    fh_hb_naaccr_jupyter                ln_isolated_tumor_cells_n3880  
+                       1748    fh_hb_dm_wll_all_jupyter            prev_care_sc_high_bp_cmt       
+                       1749    fh_hb_encounters_jupyter            payer_type_secondary_name      
+                       1750    fh_hb_naaccr_jupyter                ln_status_femoral_ingui_n3884  
+                       1752    fh_hb_social_hx_jupyter             living_w_spouse_name           
+                       1753    fh_hb_dm_wll_all_jupyter            has_colorectal_cancer_yn       
+                       1754    fh_hb_ob_mom_baby_jupyter           mom_race                       
+                       1756    fh_hb_dm_wll_all_jupyter            has_copd_yn                    
+                       1758    fh_hb_naaccr_jupyter                over_ride_seqno_dxconf_n2000   
+                       1759    fh_hb_diagnosis_jupyter             provider_title                 
+                       1761    fh_hb_demographics_jupyter          adv_directive_yn               
+                       1764    fh_hb_naaccr_jupyter                subsq_rx4th_course_surg_n1711  
+                       1765    fh_hb_naaccr_jupyter                secondary_diagnosis10_n3798    
+                       1767    fh_hb_ob_mom_baby_jupyter           preeclampsia                   
+                       1769    fh_hb_allergy_hx_jupyter            patient_hash                   
+                       1770    fh_hb_immunization_jupyter          immunization_name              
+                       1773    fh_hb_ob_mom_baby_jupyter           ob_gravidity                   
+                       1774    fh_hb_ob_mom_baby_jupyter           mom_patient_hash               
+                       1775    fh_hb_naaccr_jupyter                over_ride_cs10_n3759           
+                       1776    fh_hb_naaccr_jupyter                date_of_inpt_adm_flag_n591     
+                       1777    fh_hb_naaccr_jupyter                extranodal_extension_pa_n3833  
+                       1778    fh_hb_dm_wll_all_jupyter            has_non_cad_athero_yn          
+                       1780    fh_hb_naaccr_jupyter                census_ind_code2010_n272       
+                       1781    fh_hb_naaccr_jupyter                over_ride_tnm3_n1994           
+                       1782    fh_hb_naaccr_jupyter                census_block_group2020_n361    
+                       1783    fh_hb_dm_wll_all_jupyter            has_chronic_liver_disease_yn   
+                       1785    fh_hb_naaccr_jupyter                ehr_reporting_n2508            
+                       1787    fh_hb_naaccr_jupyter                secondary_diagnosis1_n3780     
+                       1791    fh_hb_naaccr_jupyter                rx_summ_treatment_statu_n1285  
+                       1792    fh_hb_naaccr_jupyter                npi_physician_primary_s_n2485  
+                       1794    fh_hb_med_orders_table_jupyter      specific_rxcui                 
+                       1795    fh_hb_naaccr_jupyter                grade_clinical_n3843           
+ 
+/home/rsparapa/git/CTSI/BERD/snippet3.sas                                                                                 
+                                                                                         11:50 Tuesday, April 22, 2025  35
+
+                        Obs    table_name                          column_name
+
+                       1797    fh_hb_immunization_jupyter          site_name                      
+                       1798    fh_hb_naaccr_jupyter                subsq_rx3rd_course_chem_n1693  
+                       1799    fh_hb_naaccr_jupyter                estrogen_receptor_summa_n3827  
+                       1801    fh_hb_surgical_case_jupyter         mallampati_score               
+                       1802    fh_hb_demographics_jupyter          veteran_status_name            
+                       1803    fh_hb_naaccr_jupyter                secondary_diagnosis4_n3786     
+                       1804    fh_hb_naaccr_jupyter                text_dx_proc_scopes_n2540      
+                       1805    fh_hb_naaccr_jupyter                longitude_n2354                
+                       1806    fh_hb_naaccr_jupyter                path_order_phys_lic_no2_n7101  
+                       1807    fh_hb_dm_wll_all_jupyter            cad_risk_factors_yn            
+                       1808    ekg_resting_ecg_meas                patient_trac_id                
+                       1809    fh_hb_naaccr_jupyter                serum_albumin_pretreatm_n3930  
+                       1810    fh_hb_naaccr_jupyter                rx_summ_rad_to_cns_n1370       
+                       1811    fh_hb_naaccr_jupyter                ln_positive_axillary_le_n3882  
+                       1813    fh_hb_demographics_jupyter          language                       
+                       1814    fh_hb_naaccr_jupyter                npi_inst_referred_to_n2425     
+                       1815    fh_hb_naaccr_jupyter                census_tract19708090_n110      
+                       1816    fh_hb_naaccr_jupyter                ajcc_tnm_path_t_suffix_n1032   
+                       1817    fh_hb_social_hx_jupyter             phys_act_min_per_sess_name     
+                       1818    fh_hb_naaccr_jupyter                primary_payer_at_dx_n630       
+                       1820    fh_hb_naaccr_jupyter                over_ride_site_lat_eod_n2073   
+                       1821    fh_hb_dm_wll_all_jupyter            prev_care_sc_obes_interv_cmt   
+                       1823    fh_hb_naaccr_jupyter                race2_n161                     
+                       1825    fh_hb_immunization_jupyter          rec_archived_yn                
+                       1826    fh_hb_naaccr_jupyter                over_ride_acsn_class_se_n1985  
+                       1829    fh_hb_naaccr_jupyter                derived_ajcc7_stage_grp_n3430  
+                       1830    fh_hb_dm_wll_all_jupyter            has_factorb_deficiency_yn      
+                       1831    fh_hb_naaccr_jupyter                schema_discriminator2_n3927    
+                       1834    fh_hb_naaccr_jupyter                microvascular_density_n3891    
+                       1835    fh_hb_mar_table_jupyter             specific_rxcui_type            
+                       1836    fh_hb_naaccr_jupyter                subsq_rx2nd_course_chem_n1673  
+                       1837    fh_hb_ob_mom_baby_jupyter           mom_marital_status             
+                       1839    fh_hb_dm_wll_all_jupyter            has_chronic_heart_disease_yn   
+                       1840    fh_hb_problem_list_jupyter          encounter_hash                 
+                       1841    fh_hb_echo_jupyter                  ordering_physician             
+                       1842    fh_hb_dm_wll_all_jupyter            hep_c_risk_assessment_yn       
+                       1844    fh_hb_address_hx_jupyter            secondary_ruca_code_2010       
+                       1846    fh_hb_naaccr_jupyter                phase3_dose_per_fractio_n1521  
+                       1847    ekg_meas_matrix_leads               meas_matrix_lead_id            
+                       1849    fh_hb_social_hx_jupyter             iud_yn                         
+                       1850    fh_hb_naaccr_jupyter                lymph_vascular_invasion_n1182  
+                       1851    fh_hb_encounters_jupyter            department_name                
+ 
+/home/rsparapa/git/CTSI/BERD/snippet3.sas                                                                                 
+                                                                                         11:50 Tuesday, April 22, 2025  36
+
+                        Obs    table_name                          column_name
+
+                       1852    fh_hb_naaccr_jupyter                date_initial_rx_seer_fl_n1261  
+                       1856    fh_hb_problem_list_jupyter          chronic_yn                     
+                       1858    fh_hb_naaccr_jupyter                rad_treatment_volume_n1540     
+                       1861    fh_hb_allergy_hx_jupyter            hx_description                 
+                       1863    fh_hb_naaccr_jupyter                cs_site_specific_factor_n2930  
+                       1864    fh_hb_naaccr_jupyter                rx_summ_palliative_proc_n3270  
+                       1869    fh_hb_noah_complete_jupyter         patient_hash                   
+                       1870    fh_hb_sdoh_jupyter                  meas_value                     
+                       1871    fh_hb_naaccr_jupyter                census_tr_cert19708090_n364    
+                       1872    fh_hb_naaccr_jupyter                gleason_tertiary_patter_n3842  
+                       1873    fh_hb_naaccr_jupyter                subsq_rx4th_course_chem_n1713  
+                       1875    fh_hb_naaccr_jupyter                derived_seer_cmb_t_src_n3622   
+                       1876    fh_hb_naaccr_jupyter                rx_text_other_n2670            
+                       1877    fh_hb_naaccr_jupyter                prostate_pathological_e_n3919  
+                       1878    ekg_patient_tracings                gender                         
+                       1880    fh_hb_ob_mom_baby_jupyter           anesth_conc                    
+                       1881    fh_hb_naaccr_jupyter                cs_site_specific_factor_n2864  
+                       1882    fh_hb_naaccr_jupyter                estrogen_receptor_perce_n3826  
+                       1883    fh_hb_adt_jupyter                   room_id                        
+                       1884    fh_hb_sdoh_jupyter                  disp_name                      
+                       1885    fh_hb_demographics_jupyter          gender_identity                
+                       1886    fh_hb_naaccr_jupyter                state_requestor_items_n2220    
+                       1887    fh_hb_naaccr_jupyter                ln_head_and_neck_other_n3879   
+                       1889    fh_hb_naaccr_jupyter                over_ride_cs16_n3765           
+                       1890    fh_hb_naaccr_jupyter                date_of_birth_flag_n241        
+                       1895    fh_hb_social_hx_jupyter             tobacco_user_name              
+                       1897    fh_hb_naaccr_jupyter                cs_site_specific_factor_n2871  
+                       1899    fh_hb_naaccr_jupyter                followup_contact_countr_n1847  
+                       1900    fh_hb_naaccr_jupyter                multigene_signature_res_n3895  
+                       1901    fh_hb_naaccr_jupyter                subsq_rx2nd_course_brm_n1675   
+                       1902    fh_hb_naaccr_jupyter                profound_immune_suppres_n3918  
+                       1904    fh_hb_mar_table_jupyter             encounter_hash                 
+                       1905    fh_hb_address_hx_jupyter            zip3                           
+                       1906    fh_hb_naaccr_jupyter                subsq_rx4thcrs_date_fla_n1701  
+                       1907    fh_hb_social_hx_jupyter             phone_communication_name       
+                       1908    fh_hb_naaccr_jupyter                cancer_status_n1770            
+                       1909    ekg_lead_data                       lead_low_limit                 
+                       1910    fh_hb_naaccr_jupyter                dc_state_file_number_n2380     
+                       1912    fh_hb_naaccr_jupyter                over_ride_cs11_n3760           
+                       1913    fh_hb_naaccr_jupyter                npcr_specific_field_n3720      
+                       1914    fh_hb_mar_table_jupyter             auth_prov_id                   
+                       1916    fh_hb_demographics_jupyter          employment_status              
+ 
+/home/rsparapa/git/CTSI/BERD/snippet3.sas                                                                                 
+                                                                                         11:50 Tuesday, April 22, 2025  37
+
+                        Obs    table_name                          column_name
+
+                       1917    fh_hb_naaccr_jupyter                industry_source_n300           
+                       1918    fh_hb_dm_wll_all_jupyter            prev_care_sc_hep_c_cmt         
+                       1919    fh_hb_mar_table_jupyter             mar_route                      
+                       1921    fh_hb_naaccr_jupyter                psa_lab_value_n3920            
+                       1922    fh_hb_diagnostic_results_jupyter    provider_id                    
+                       1925    fh_hb_naaccr_jupyter                rx_hosp_hormone_n710           
+                       1927    ekg_patient_tracings                patient_trac_id                
+                       1929    fh_hb_mar_table_jupyter             ingredient_rxcui_name          
+                       1930    fh_hb_surgical_case_jupyter         room_name                      
+                       1932    fh_hb_naaccr_jupyter                subsq_rx4th_scope_ln_su_n1717  
+                       1933    fh_hb_naaccr_jupyter                state_at_dx_geocode2020_n84    
+                       1934    fh_hb_ob_mom_baby_jupyter           rupture_membrane_type          
+                       1935    ekg_meas_matrix_leads               lead_id                        
+                       1936    fh_hb_naaccr_jupyter                primary_site_n400              
+                       1937    fh_hb_naaccr_jupyter                rx_hosp_other_n730             
+                       1938    fh_hb_naaccr_jupyter                eod_tumor_size_n780            
+                       1940    fh_hb_naaccr_jupyter                sentinel_lymph_nodes_po_n835   
+                       1941    fh_hb_naaccr_jupyter                derived_prerx7_t_n3440         
+                       1943    fh_hb_naaccr_jupyter                derived_postrx7_m_n3490        
+                       1944    fh_hb_naaccr_jupyter                seer_site_specific_fact_n3710  
+                       1945    ekg_patient_tracings                race                           
+                       1946    fh_hb_naaccr_jupyter                over_ride_site_eod_dx_d_n2072  
+                       1947    fh_hb_naaccr_jupyter                comorbid_complication4_n3140   
+                       1948    fh_hb_naaccr_jupyter                derived_seer_cmb_n_src_n3624   
+                       1950    fh_hb_naaccr_jupyter                progesterone_receptor_p_n3914  
+                       1951    fh_hb_surgical_case_jupyter         service_c                      
+                       1952    fh_hb_demographics_jupyter          txp_pat_yn                     
+                       1953    fh_hb_naaccr_jupyter                county_current_n1840           
+                       1954    fh_hb_naaccr_jupyter                seer_site_specific_fact_n3704  
+                       1955    fh_hb_naaccr_jupyter                cs_mets_at_dx_lung_n2854       
+                       1956    fh_hb_dm_wll_all_jupyter            evaluate_as_male_yn            
+                       1957    fh_hb_med_orders_table_jupyter      order_route                    
+                       1958    fh_hb_procs_jupyter                 order_status_name              
+                       1959    fh_hb_immunization_jupyter          entry_user_id                  
+                       1961    fh_hb_naaccr_jupyter                number_of_positive_pelv_n3902  
+                       1962    fh_hb_mar_table_jupyter             mix_ingredient_type            
+                       1964    fh_hb_dm_wll_all_jupyter            has_properdin_deficiency_yn    
+                       1965    fh_hb_naaccr_jupyter                tnm_edition_number_n1060       
+                       1967    fh_hb_immunization_jupyter          external_system                
+                       1968    fh_hb_social_hx_jupyter             cigars_yn                      
+                       1969    fh_hb_naaccr_jupyter                name_prefix_n2260              
+                       1970    fh_hb_naaccr_jupyter                path_reporting_fac_id2_n7011   
+ 
+/home/rsparapa/git/CTSI/BERD/snippet3.sas                                                                                 
+                                                                                         11:50 Tuesday, April 22, 2025  38
+
+                        Obs    table_name                          column_name
+
+                       1972    fh_hb_naaccr_jupyter                subsq_rx3rd_course_surg_n1691  
+                       1973    fh_hb_naaccr_jupyter                tnm_clin_n_n950                
+                       1974    fh_hb_naaccr_jupyter                county_at_dx_geocode202_n97    
+                       1977    fh_hb_naaccr_jupyter                name_last_n2230                
+                       1978    fh_hb_naaccr_jupyter                npcr_derived_ajcc8_tnm__n3647  
+                       1979    fh_hb_mar_table_jupyter             mar_dose_unit                  
+                       1980    fh_hb_imaging_orders_jupyter        order_proc_id_hash             
+                       1981    fh_hb_dm_wll_all_jupyter            evaluate_as_female_yn          
+                       1982    fh_hb_naaccr_jupyter                ajcc_tnm_post_therapy_m_n1023  
+                       1984    fh_hb_naaccr_jupyter                subsq_rx2nd_course_oth_n1676   
+                       1985    fh_hb_ob_mom_baby_jupyter           gestational_dm                 
+                       1986    fh_hb_encounters_jupyter            admit_source_name              
+                       1987    fh_hb_naaccr_jupyter                subsq_rx4th_course_horm_n1714  
+                       1989    fh_hb_naaccr_jupyter                schema_discriminator3_n3928    
+                       1990    fh_hb_naaccr_jupyter                lymphocytosis_n3885            
+                       1991    fh_hb_dm_wll_all_jupyter            has_osteoporosis_yn            
+                       1992    fh_hb_diagnostic_results_jupyter    src_unit                       
+                       1994    fh_hb_dm_wll_all_jupyter            has_liver_dis_yn               
+                       1995    fh_hb_naaccr_jupyter                subsq_rx4th_course_oth_n1716   
+                       1996    fh_hb_naaccr_jupyter                schema_id_n3800                
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/BERD/snippet3.sas                                                                                 
