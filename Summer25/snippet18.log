@@ -1,4 +1,4 @@
-1                                                          The SAS System                                  12:39 Friday, May 9, 2025
+1                                                          The SAS System                                  16:00 Friday, May 9, 2025
 
 NOTE: Unable to open SASUSER.PROFILE. WORK.PROFILE will be opened instead.
 NOTE: All profile changes will be lost at the end of the session.
@@ -22,8 +22,8 @@ NOTE: Additional host information:
  Linux LIN X64 3.10.0-514.10.2.el7.x86_64 #1 SMP Fri Mar 3 00:04:05 UTC 2017 x86_64 CentOS Linux release 7.9.2009 (Core) 
 
 NOTE: SAS initialization used:
-      real time           0.06 seconds
-      cpu time            0.03 seconds
+      real time           0.03 seconds
+      cpu time            0.04 seconds
       
 
 NOTE: AUTOEXEC processing beginning; file is /home/rsparapa/git/CTSI/Summer25/autoexec.sas.
@@ -52,7 +52,7 @@ NOTE: Copyright (c) 2004-2007 Rodney Sparapani
 NOTE: You have called the macro _UNWIND, 2004-11-23.
 NOTE: Copyright (c) 2001-2004 Rodney Sparapani
  
-2                              The SAS System      12:39 Friday, May 9, 2025
+2                              The SAS System      16:00 Friday, May 9, 2025
 
 NOTE: You have called the macro _COUNT, 2022-06-07.
 NOTE: Copyright (c) 2001-2022 Rodney Sparapani
@@ -106,7 +106,7 @@ step.
     or %SGANNO_HELP(ALL) for details on all SGANNO macros.
  
 MPRINT(SGANNO):  ;
-3                              The SAS System      12:39 Friday, May 9, 2025
+3                              The SAS System      16:00 Friday, May 9, 2025
 
  
 *** ANNOTATE macros are now available ***
@@ -127,174 +127,651 @@ NOTE: Libref PWD was successfully assigned as follows:
 NOTE: AUTOEXEC processing completed.
 
 1          
-2          data persistent;
-3              merge crdw.snippet13(in=snippet13)
-4                  crdw.snippet14(in=snippet14) crdw.aad(in=inaad);
-5              by patient_hash;
-6              if snippet13;
-7          
-8              if snippet14=0 then do;
-9                  ablation=0;
-10                 cardioversion=0;
-11                 closure=0;
-12             end;
-13         
-14             if inaad=0 then do;
-15                 amio=0;
-16                 type1a=0;
-17                 type1b=0;
-18                 type1c=0;
-19                 type3=0;
-20                 misc=0;
-21                 aad=0;
-22             end;
-23             else if amio then aad=0;
-24         run;
+2          
+3          data persistent;
+4              merge crdw.snippet13(in=snippet13)
+5                  crdw.snippet14(in=snippet14) crdw.aad(in=inaad);
+6              by patient_hash;
+7              if snippet13;
+8          
+9              if snippet14=0 then do;
+10                 ablation=0;
+11                 cardioversion=0;
+12                 closure=0;
+13             end;
+14         
+15             if inaad=0 then do;
+16                 amio=0;
+17                 type1a=0;
+18                 type1b=0;
+19                 type1c=0;
+20                 type3=0;
+21                 misc=0;
+22                 aad=0;
+23             end;
+24             else if amio then aad=0;
+25         
+26             tx=amio+cardioversion+ablation+aad+closure;
+27         run;
 
 NOTE: There were 4747 observations read from the data set CRDW.SNIPPET13.
 NOTE: There were 6262 observations read from the data set CRDW.SNIPPET14.
 NOTE: There were 21957 observations read from the data set CRDW.AAD.
-NOTE: The data set WORK.PERSISTENT has 4747 observations and 643 variables.
+NOTE: The data set WORK.PERSISTENT has 4747 observations and 644 variables.
 NOTE: DATA statement used (Total process time):
-      real time           0.13 seconds
-      cpu time            0.13 seconds
+      real time           0.12 seconds
+4                              The SAS System      16:00 Friday, May 9, 2025
+
+      cpu time            0.12 seconds
       
 
-4                              The SAS System      12:39 Friday, May 9, 2025
-
-25         
-26         proc sort data=persistent;
-27             by patient_hash patient_trac_id;
-28         run;
+28         
+29         proc sort data=persistent;
+30             by patient_hash patient_trac_id;
+31         run;
 
 NOTE: There were 4747 observations read from the data set WORK.PERSISTENT.
-NOTE: The data set WORK.PERSISTENT has 4747 observations and 643 variables.
+NOTE: The data set WORK.PERSISTENT has 4747 observations and 644 variables.
 NOTE: PROCEDURE SORT used (Total process time):
-      real time           0.07 seconds
-      cpu time            0.08 seconds
+      real time           0.05 seconds
+      cpu time            0.06 seconds
       
 
-29         
-30         data crdw.persistent;
-31             merge
-32                 persistent(in=persistent)
-33                 crdw.interp(keep=patient_hash patient_trac_id
-34                 afib aflut rename=(afib=aci_afib aflut=aci_aflt))
-35             ;
-36             /* automatic computerized interpretation (ACI) */
-37             by patient_hash patient_trac_id;
-38         
-39             if persistent;
-40         run;
-
-NOTE: There were 4747 observations read from the data set WORK.PERSISTENT.
-NOTE: There were 1167019 observations read from the data set CRDW.INTERP.
-NOTE: The data set CRDW.PERSISTENT has 4747 observations and 645 variables.
-NOTE: DATA statement used (Total process time):
-      real time           1.31 seconds
-      cpu time            1.32 seconds
-      
-
-41         
-42         proc freq;
-43             tables afib*aflt;
-44         run;
-
-NOTE: There were 4747 observations read from the data set CRDW.PERSISTENT.
-NOTE: The PROCEDURE FREQ printed page 1.
-NOTE: PROCEDURE FREQ used (Total process time):
-      real time           0.02 seconds
-      cpu time            0.01 seconds
-      
-
-45         
-46         title 'AFIB and not AFLT';
-47         proc freq;
-48             where afib & aflt=0;
-49             tables aci_afib*aci_aflt;
-50         run;
-
-5                              The SAS System      12:39 Friday, May 9, 2025
-
-NOTE: There were 3411 observations read from the data set CRDW.PERSISTENT.
-      WHERE afib and (aflt=0);
-NOTE: The PROCEDURE FREQ printed page 2.
-NOTE: PROCEDURE FREQ used (Total process time):
-      real time           0.01 seconds
-      cpu time            0.02 seconds
-      
-
-51         
-52         title 'AFLT';
-53         proc freq;
-54             where aflt;
-55             tables aci_afib*aci_aflt;
-56         run;
-
-NOTE: There were 1336 observations read from the data set CRDW.PERSISTENT.
-      WHERE aflt;
-NOTE: The PROCEDURE FREQ printed page 3.
-NOTE: PROCEDURE FREQ used (Total process time):
-      real time           0.00 seconds
-      cpu time            0.01 seconds
-      
-
-57         
-58         title;
-59         options ps=49 ls=122;
-60         
-61         proc format;
-62             value present
-63                 1-high='1+'
-64             ;
-NOTE: Format PRESENT has been output.
-65         run;
-
-NOTE: PROCEDURE FORMAT used (Total process time):
-      real time           0.00 seconds
-      cpu time            0.00 seconds
-      
-
-66         
-67         title 'VERITAS agreement with CRDW';
-68         
-69         proc freq;
-70             where aci_afib | aci_aflt;
-71             format ablation cardioversion amio aad closure present.;
-72             tables amio cardioversion ablation aad closure;
-73             tables amio*cardioversion*ablation*aad*closure / list missing
-6                                                     The SAS System                             12:39 Friday, May 9, 2025
-
-74                 noprint out=persistent;
-75         run;
-
-NOTE: There were 2906 observations read from the data set CRDW.PERSISTENT.
-      WHERE aci_afib or aci_aflt;
-NOTE: The data set WORK.PERSISTENT has 22 observations and 7 variables.
-NOTE: The PROCEDURE FREQ printed page 4.
-NOTE: PROCEDURE FREQ used (Total process time):
-      real time           0.03 seconds
-      cpu time            0.03 seconds
-      
-
-76         
-77         %_sort(data=persistent, out=persistent, by=descending count);
-NOTE: You have called the macro _SORT, 2016-11-16
-NOTE: Copyright (c) 2001-2016 Rodney Sparapani
+32         
+33         
+34         %_dblib(data=db.fh_hb_demographics_jupyter);
+NOTE: You have called the macro _DBLIB, 2025-03-11.
+NOTE: Copyright (c) 2025 Rodney Sparapani
  
 NOTE: You have called the macro _REQUIRE, 2004-03-29.
 NOTE: Copyright (c) 2001-2004 Rodney Sparapani
  
-MPRINT(_SORT):  ;
-NOTE: You have called the macro _OPTION, 2004-03-29.
-NOTE: Copyright (c) 2001-2004 Rodney Sparapani
- 
+MPRINT(_DBLIB):  ;
 NOTE: You have called the macro _LIB, 2007-08-01.
 NOTE: Copyright (c) 2001-2007 Rodney Sparapani
  
 NOTE: You have called the macro _DATA, 2007-07-31.
 NOTE: Copyright (c) 2001-2007 Rodney Sparapani
  
+MPRINT(_DBLIB):   proc sql;
+MPRINT(_DBLIB):   connect to postgres as crdw (user=rsparapani 
+password=RSP#ygbzqp26t5W#Jyph2 server="garth.ctsi.mcw.edu" 
+database="fh_jupyter_hub_hbdb");
+MPRINT(_DBLIB):   create table schema as select * from connection to crdw 
+(select * from information_schema.columns where table_schema = 'public') 
+where table_name="fh_hb_demographics_jupyter";
+NOTE: Table WORK.SCHEMA created, with 40 rows and 44 columns.
+
+MPRINT(_DBLIB):   disconnect from crdw;
+MPRINT(_DBLIB):   quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.15 seconds
+      cpu time            0.08 seconds
+      
+
+MPRINT(_DBLIB):   data dbdates;
+MPRINT(_DBLIB):   set schema;
+MPRINT(_DBLIB):   where data_type=:"time";
+MPRINT(_DBLIB):   run;
+
+5                              The SAS System      16:00 Friday, May 9, 2025
+
+NOTE: There were 3 observations read from the data set WORK.SCHEMA.
+      WHERE data_type=:'time';
+NOTE: The data set WORK.DBDATES has 3 observations and 44 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+NOTE: You have called the macro _LEVEL, 2011-09-01.
+NOTE: Copyright (c) 2002-2011 Rodney Sparapani
+ 
+NOTE: You have called the macro _NOBS, 2007-07-11.
+NOTE: Copyright (c) 2001-2007 Rodney Sparapani
+ 
+NOTE: You have called the macro _DSEXIST, 2007-08-01.
+NOTE: Copyright (c) 2001-2007 Rodney Sparapani
+ 
+NOTE: You have called the macro _SUFFIX, 2004-10-26.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _VERSION, 2006-02-15.
+NOTE: Copyright (c) 2001-2006 Rodney Sparapani
+ 
+NOTE: You have called the macro _DIR, 2004-11-23.
+NOTE: Copyright (c) 2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _FILE, 2004-11-23.
+NOTE: Copyright (c) 2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _OPTION, 2004-03-29.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+MPRINT(_DBLIB):   data dblen;
+MPRINT(_DBLIB):   set schema;
+MPRINT(_DBLIB):   where data_type in:('character', 'text');
+MPRINT(_DBLIB):   column_name=lowcase(column_name);
+MPRINT(_DBLIB):   run;
+
+NOTE: There were 33 observations read from the data set WORK.SCHEMA.
+      WHERE data_type in: ('character', 'text');
+NOTE: The data set WORK.DBLEN has 33 observations and 44 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   proc sql;
+MPRINT(_DBLIB):   connect to postgres as crdw (user=rsparapani 
+password=RSP#ygbzqp26t5W#Jyph2 server="garth.ctsi.mcw.edu" 
+database="fh_jupyter_hub_hbdb");
+NOTE: You have called the macro _INDEXW, 2009-11-19.
+NOTE: Copyright (c) 2009 Rodney Sparapani
+6                              The SAS System      16:00 Friday, May 9, 2025
+
+ 
+MPRINT(_DBLIB):   create table length as select * from connection to crdw 
+(select
+MPRINT(_DBLIB):   max(length(patient_hash)) as patient_hash,
+MPRINT(_DBLIB):   max(length(sex_c)) as sex_c,
+MPRINT(_DBLIB):   max(length(sex)) as sex,
+MPRINT(_DBLIB):   max(length(gender_identity)) as gender_identity,
+MPRINT(_DBLIB):   max(length(vital_status)) as vital_status,
+MPRINT(_DBLIB):   max(length(research_contact_pref)) as 
+research_contact_pref,
+MPRINT(_DBLIB):   max(length(marital_status)) as marital_status,
+MPRINT(_DBLIB):   max(length(employment_status)) as employment_status,
+MPRINT(_DBLIB):   max(length(race_c)) as race_c,
+MPRINT(_DBLIB):   max(length(race)) as race,
+MPRINT(_DBLIB):   max(length(hispanic_c)) as hispanic_c,
+MPRINT(_DBLIB):   max(length(ethnicity)) as ethnicity,
+MPRINT(_DBLIB):   max(length(language_code)) as language_code,
+MPRINT(_DBLIB):   max(length(language)) as language,
+MPRINT(_DBLIB):   max(length(need_interpreter)) as need_interpreter,
+MPRINT(_DBLIB):   max(length(state_c)) as state_c,
+MPRINT(_DBLIB):   max(length(state_name)) as state_name,
+MPRINT(_DBLIB):   max(length(zip3)) as zip3,
+MPRINT(_DBLIB):   max(length(ped_gest_age)) as ped_gest_age,
+MPRINT(_DBLIB):   max(length(primary_care_provider_id)) as 
+primary_care_provider_id,
+MPRINT(_DBLIB):   max(length(primary_care_provider_name)) as 
+primary_care_provider_name,
+MPRINT(_DBLIB):   max(length(primary_care_provider_title)) as 
+primary_care_provider_title,
+MPRINT(_DBLIB):   max(length(death_date_precision)) as death_date_precision,
+MPRINT(_DBLIB):   max(length(vital_status_source)) as vital_status_source,
+MPRINT(_DBLIB):   max(length(death_date_source)) as death_date_source,
+MPRINT(_DBLIB):   max(length(geocode_result)) as geocode_result,
+MPRINT(_DBLIB):   max(length(adi_narank)) as adi_narank,
+MPRINT(_DBLIB):   max(length(secondary_ruca_code_2010)) as 
+secondary_ruca_code_2010,
+MPRINT(_DBLIB):   max(length(military_branch_name)) as military_branch_name,
+MPRINT(_DBLIB):   max(length(veteran_status_c)) as veteran_status_c,
+MPRINT(_DBLIB):   max(length(veteran_status_name)) as veteran_status_name,
+MPRINT(_DBLIB):   max(length(adv_directive_yn)) as adv_directive_yn,
+MPRINT(_DBLIB):   max(length(txp_pat_yn)) as txp_pat_yn from 
+fh_hb_demographics_jupyter);
+NOTE: Table WORK.LENGTH created, with 1 rows and 33 columns.
+
+MPRINT(_DBLIB):   disconnect from crdw;
+MPRINT(_DBLIB):   quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.69 seconds
+      cpu time            0.02 seconds
+      
+
+MPRINT(_DBLIB):   data _null_;
+7                              The SAS System      16:00 Friday, May 9, 2025
+
+MPRINT(_DBLIB):   set length;
+MPRINT(_DBLIB):   call symput("dbmax_text", trim(max(of 
+patient_hash--txp_pat_yn)));
+MPRINT(_DBLIB):   call symput("len1", trim(patient_hash));
+MPRINT(_DBLIB):   call symput("len2", trim(sex_c));
+MPRINT(_DBLIB):   call symput("len3", trim(sex));
+MPRINT(_DBLIB):   call symput("len4", trim(gender_identity));
+MPRINT(_DBLIB):   call symput("len5", trim(vital_status));
+MPRINT(_DBLIB):   call symput("len6", trim(research_contact_pref));
+MPRINT(_DBLIB):   call symput("len7", trim(marital_status));
+MPRINT(_DBLIB):   call symput("len8", trim(employment_status));
+MPRINT(_DBLIB):   call symput("len9", trim(race_c));
+MPRINT(_DBLIB):   call symput("len10", trim(race));
+MPRINT(_DBLIB):   call symput("len11", trim(hispanic_c));
+MPRINT(_DBLIB):   call symput("len12", trim(ethnicity));
+MPRINT(_DBLIB):   call symput("len13", trim(language_code));
+MPRINT(_DBLIB):   call symput("len14", trim(language));
+MPRINT(_DBLIB):   call symput("len15", trim(need_interpreter));
+MPRINT(_DBLIB):   call symput("len16", trim(state_c));
+MPRINT(_DBLIB):   call symput("len17", trim(state_name));
+MPRINT(_DBLIB):   call symput("len18", trim(zip3));
+MPRINT(_DBLIB):   call symput("len19", trim(ped_gest_age));
+MPRINT(_DBLIB):   call symput("len20", trim(primary_care_provider_id));
+MPRINT(_DBLIB):   call symput("len21", trim(primary_care_provider_name));
+MPRINT(_DBLIB):   call symput("len22", trim(primary_care_provider_title));
+MPRINT(_DBLIB):   call symput("len23", trim(death_date_precision));
+MPRINT(_DBLIB):   call symput("len24", trim(vital_status_source));
+MPRINT(_DBLIB):   call symput("len25", trim(death_date_source));
+MPRINT(_DBLIB):   call symput("len26", trim(geocode_result));
+MPRINT(_DBLIB):   call symput("len27", trim(adi_narank));
+MPRINT(_DBLIB):   call symput("len28", trim(secondary_ruca_code_2010));
+MPRINT(_DBLIB):   call symput("len29", trim(military_branch_name));
+MPRINT(_DBLIB):   call symput("len30", trim(veteran_status_c));
+MPRINT(_DBLIB):   call symput("len31", trim(veteran_status_name));
+MPRINT(_DBLIB):   call symput("len32", trim(adv_directive_yn));
+MPRINT(_DBLIB):   call symput("len33", trim(txp_pat_yn));
+MPRINT(_DBLIB):   run;
+
+NOTE: Numeric values have been converted to character 
+      values at the places given by: (Line):(Column).
+      34:33   34:1    34:1    34:1    34:1    34:1    34:1    34:1
+      34:1    34:1    34:1    34:1    34:1    34:1    34:1    34:1
+      34:1    34:1    34:1    34:1    34:1    34:1    34:1    34:1
+      34:1    34:1    34:1    34:1    34:1    34:1    34:1    34:1
+      34:1    34:1    
+NOTE: There were 1 observations read from the data set WORK.LENGTH.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(_DBLIB):   libname db postgres user = "rsparapani" password = 
+8                              The SAS System      16:00 Friday, May 9, 2025
+
+"RSP#ygbzqp26t5W#Jyph2" server = "garth.ctsi.mcw.edu" database = 
+"fh_jupyter_hub_hbdb" client_encoding = "utf-8" dbmax_text = 55 
+sql_functions = all port=5432 ;
+NOTE: Libref DB was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: garth.ctsi.mcw.edu
+35         
+36         data patient_hash;
+37             set persistent;
+38             by patient_hash;
+39             keep patient_hash;
+40             if first.patient_hash;
+41         run;
+
+NOTE: There were 4747 observations read from the data set WORK.PERSISTENT.
+NOTE: The data set WORK.PATIENT_HASH has 1468 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+42         
+43         proc sql;
+44             create table demographics as
+45             select *
+46                 from patient_hash a
+47                 inner join db.&dbdata b
+48                 on a.patient_hash=b.patient_hash
+49                 order by patient_hash;
+WARNING: Column named patient_hash is duplicated in a select expression (or 
+         a view). Explicit references to it will be to the first one.
+WARNING: Variable patient_hash already exists on file WORK.DEMOGRAPHICS.
+NOTE: Table WORK.DEMOGRAPHICS created, with 1467 rows and 40 columns.
+
+50         quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           31.57 seconds
+      cpu time            31.57 seconds
+      
+
+51         
+52         %_dbdata(out=crdw.demographics);
+NOTE: You have called the macro _DBDATA, 2025-03-10.
+NOTE: Copyright (c) 2025 Rodney Sparapani
+ 
+MPRINT(_DBDATA):  ;
+NOTE: You have called the macro _BLIST, 2008-03-03.
+NOTE: Copyright (c) 2004-2008 Rodney Sparapani
+ 
+MPRINT(_DBDATA):   data crdw.demographics;
+MPRINT(_DBDATA):   length
+MPRINT(_DBDATA):   patient_hash $ 16
+9                              The SAS System      16:00 Friday, May 9, 2025
+
+MPRINT(_DBDATA):   sex_c $ 1
+MPRINT(_DBDATA):   sex $ 7
+MPRINT(_DBDATA):   gender_identity $ 22
+MPRINT(_DBDATA):   vital_status $ 8
+MPRINT(_DBDATA):   research_contact_pref $ 14
+MPRINT(_DBDATA):   marital_status $ 17
+MPRINT(_DBDATA):   employment_status $ 23
+MPRINT(_DBDATA):   race_c $ 2
+MPRINT(_DBDATA):   race $ 41
+MPRINT(_DBDATA):   hispanic_c $ 2
+MPRINT(_DBDATA):   ethnicity $ 12
+MPRINT(_DBDATA):   language_code $ 3
+MPRINT(_DBDATA):   language $ 22
+MPRINT(_DBDATA):   need_interpreter $ 1
+MPRINT(_DBDATA):   state_c $ 3
+MPRINT(_DBDATA):   state_name $ 30
+MPRINT(_DBDATA):   zip3 $ 3
+MPRINT(_DBDATA):   ped_gest_age $ 15
+MPRINT(_DBDATA):   primary_care_provider_id $ 8
+MPRINT(_DBDATA):   primary_care_provider_name $ 55
+MPRINT(_DBDATA):   primary_care_provider_title $ 18
+MPRINT(_DBDATA):   death_date_precision $ 10
+MPRINT(_DBDATA):   vital_status_source $ 22
+MPRINT(_DBDATA):   death_date_source $ 22
+MPRINT(_DBDATA):   geocode_result $ 22
+MPRINT(_DBDATA):   adi_narank $ 5
+MPRINT(_DBDATA):   secondary_ruca_code_2010 $ 4
+MPRINT(_DBDATA):   military_branch_name $ 23
+MPRINT(_DBDATA):   veteran_status_c $ 1
+MPRINT(_DBDATA):   veteran_status_name $ 18
+MPRINT(_DBDATA):   adv_directive_yn $ 1
+MPRINT(_DBDATA):   txp_pat_yn $ 1;
+MPRINT(_DBDATA):   set WORK.DEMOGRAPHICS ;
+MPRINT(_DBDATA):   attrib _all_ label=' ';
+MPRINT(_DBDATA):   format patient_hash sex_c sex gender_identity 
+vital_status research_contact_pref marital_status employment_status race_c 
+race hispanic_c ethnicity language_code language need_interpreter state_c 
+state_name zip3 ped_gest_age primary_care_provider_id 
+primary_care_provider_name primary_care_provider_title death_date_precision 
+vital_status_source death_date_source geocode_result adi_narank 
+secondary_ruca_code_2010 military_branch_name veteran_status_c 
+veteran_status_name adv_directive_yn txp_pat_yn _numeric_;
+MPRINT(_DBDATA):   informat patient_hash sex_c sex gender_identity 
+vital_status research_contact_pref marital_status employment_status race_c 
+race hispanic_c ethnicity language_code language need_interpreter state_c 
+state_name zip3 ped_gest_age primary_care_provider_id 
+primary_care_provider_name primary_care_provider_title death_date_precision 
+vital_status_source death_date_source geocode_result adi_narank 
+secondary_ruca_code_2010 military_branch_name veteran_status_c 
+veteran_status_name adv_directive_yn txp_pat_yn _numeric_;
+MPRINT(_DBDATA):   informat adv_directive_date_shifted;
+MPRINT(_DBDATA):   format adv_directive_date date9. 
+10                             The SAS System      16:00 Friday, May 9, 2025
+
+adv_directive_date_shifted datetime19.;
+MPRINT(_DBDATA):   adv_directive_date=datepart(adv_directive_date_shifted);
+MPRINT(_DBDATA):   informat birth_date_shifted;
+MPRINT(_DBDATA):   format birth_date date9. birth_date_shifted datetime19.;
+MPRINT(_DBDATA):   birth_date=datepart(birth_date_shifted);
+MPRINT(_DBDATA):   informat death_date_shifted;
+MPRINT(_DBDATA):   format death_date date9. death_date_shifted datetime19.;
+MPRINT(_DBDATA):   death_date=datepart(death_date_shifted);
+MPRINT(_DBDATA):   run;
+
+WARNING: Multiple lengths were specified for the variable sex_c by input 
+         data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable sex by input data 
+         set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable gender_identity 
+         by input data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable vital_status by 
+         input data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable 
+         research_contact_pref by input data set(s). This can cause 
+         truncation of data.
+WARNING: Multiple lengths were specified for the variable marital_status by 
+         input data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable employment_status 
+         by input data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable race_c by input 
+         data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable race by input 
+         data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable hispanic_c by 
+         input data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable ethnicity by 
+         input data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable language_code by 
+         input data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable language by input 
+         data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable need_interpreter 
+         by input data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable state_c by input 
+         data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable state_name by 
+         input data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable zip3 by input 
+         data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable ped_gest_age by 
+         input data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable 
+         primary_care_provider_id by input data set(s). This can cause 
+         truncation of data.
+WARNING: Multiple lengths were specified for the variable 
+         primary_care_provider_title by input data set(s). This can cause 
+11                             The SAS System      16:00 Friday, May 9, 2025
+
+         truncation of data.
+WARNING: Multiple lengths were specified for the variable 
+         death_date_precision by input data set(s). This can cause 
+         truncation of data.
+WARNING: Multiple lengths were specified for the variable 
+         vital_status_source by input data set(s). This can cause 
+         truncation of data.
+WARNING: Multiple lengths were specified for the variable death_date_source 
+         by input data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable geocode_result by 
+         input data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable adi_narank by 
+         input data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable 
+         secondary_ruca_code_2010 by input data set(s). This can cause 
+         truncation of data.
+WARNING: Multiple lengths were specified for the variable 
+         military_branch_name by input data set(s). This can cause 
+         truncation of data.
+WARNING: Multiple lengths were specified for the variable veteran_status_c 
+         by input data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable 
+         veteran_status_name by input data set(s). This can cause 
+         truncation of data.
+WARNING: Multiple lengths were specified for the variable adv_directive_yn 
+         by input data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable txp_pat_yn by 
+         input data set(s). This can cause truncation of data.
+NOTE: Missing values were generated as a result of performing an operation 
+      on missing values.
+      Each place is given by: (Number of times) at (Line):(Column).
+      464 at 52:80   679 at 52:80   
+NOTE: There were 1467 observations read from the data set WORK.DEMOGRAPHICS.
+NOTE: The data set CRDW.DEMOGRAPHICS has 1467 observations and 43 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.06 seconds
+      cpu time            0.04 seconds
+      
+
+53         
+54         proc contents varnum;
+55         run;
+
+NOTE: PROCEDURE CONTENTS used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+NOTE: The PROCEDURE CONTENTS printed pages 1-2.
+
+56         
+57         data persistent;
+58             merge crdw.demographics persistent;
+12                             The SAS System      16:00 Friday, May 9, 2025
+
+59             by patient_hash;
+60         
+61             age=intck('year', birth_date, acquisition_date);
+62         run;
+
+NOTE: Missing values were generated as a result of performing an operation 
+      on missing values.
+      Each place is given by: (Number of times) at (Line):(Column).
+      5 at 61:9   
+NOTE: There were 1467 observations read from the data set CRDW.DEMOGRAPHICS.
+NOTE: There were 4747 observations read from the data set WORK.PERSISTENT.
+NOTE: The data set WORK.PERSISTENT has 4747 observations and 686 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.06 seconds
+      cpu time            0.06 seconds
+      
+
+63         
+64         data crdw.persistent;
+65             merge
+66                 persistent(in=persistent)
+67                 crdw.interp(keep=patient_hash patient_trac_id
+68                 afib aflut rename=(afib=aci_afib aflut=aci_aflt))
+69             /* automatic computerized interpretation (ACI) */
+70             ;
+71             by patient_hash patient_trac_id;
+72         
+73             if 40<=age<90;
+74         run;
+
+NOTE: There were 4747 observations read from the data set WORK.PERSISTENT.
+NOTE: There were 1167019 observations read from the data set CRDW.INTERP.
+NOTE: The data set CRDW.PERSISTENT has 4255 observations and 688 variables.
+NOTE: DATA statement used (Total process time):
+      real time           1.53 seconds
+      cpu time            1.42 seconds
+      
+
+75         
+76         proc format;
+77             value age
+78                 40-64='40:64'
+79                 65-79='65:79'
+80                 80-89='80:89'
+81             ;
+NOTE: Format AGE has been output.
+82         
+83             value present
+84                 1-high='1+'
+85             ;
+NOTE: Format PRESENT has been output.
+86         run;
+13                             The SAS System      16:00 Friday, May 9, 2025
+
+
+NOTE: PROCEDURE FORMAT used (Total process time):
+      real time           0.29 seconds
+      cpu time            0.28 seconds
+      
+
+87         
+88         proc freq;
+89             tables age;
+90             format age age.;
+91         run;
+
+NOTE: There were 4255 observations read from the data set CRDW.PERSISTENT.
+NOTE: The PROCEDURE FREQ printed page 3.
+NOTE: PROCEDURE FREQ used (Total process time):
+      real time           0.06 seconds
+      cpu time            0.02 seconds
+      
+
+92         
+93         proc freq;
+94             where aci_afib=aci_aflt=.;
+95             tables acquisition_date;
+96             format acquisition_date year4.;
+97         run;
+
+NOTE: There were 345 observations read from the data set CRDW.PERSISTENT.
+      WHERE (aci_afib=aci_aflt) and (aci_aflt=.);
+NOTE: The PROCEDURE FREQ printed page 4.
+NOTE: PROCEDURE FREQ used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.02 seconds
+      
+
+98         
+99         proc freq;
+100            tables afib*aflt;
+101        run;
+
+NOTE: There were 4255 observations read from the data set CRDW.PERSISTENT.
+NOTE: The PROCEDURE FREQ printed page 5.
+NOTE: PROCEDURE FREQ used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+102        
+103        title 'AFIB and not AFLT';
+104        proc freq;
+105            where afib & aflt=0;
+106            tables aci_afib*aci_aflt;
+107        run;
+14                             The SAS System      16:00 Friday, May 9, 2025
+
+
+NOTE: There were 3046 observations read from the data set CRDW.PERSISTENT.
+      WHERE afib and (aflt=0);
+NOTE: The PROCEDURE FREQ printed page 6.
+NOTE: PROCEDURE FREQ used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.02 seconds
+      
+
+108        
+109        title 'AFLT';
+110        proc freq;
+111            where aflt;
+112            tables aci_afib*aci_aflt;
+113        run;
+
+NOTE: There were 1209 observations read from the data set CRDW.PERSISTENT.
+      WHERE aflt;
+NOTE: The PROCEDURE FREQ printed page 7.
+NOTE: PROCEDURE FREQ used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+114        
+115        title;
+116        options ps=49 ls=122;
+117        
+118        title 'VERITAS agreement with CRDW';
+119        
+120        proc freq;
+121            where aci_afib | aci_aflt;
+122            format age age. tx present.;
+123            tables tx*age;
+124        run;
+
+NOTE: There were 2807 observations read from the data set CRDW.PERSISTENT.
+      WHERE aci_afib or aci_aflt;
+NOTE: The PROCEDURE FREQ printed page 8.
+NOTE: PROCEDURE FREQ used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+125        
+126        proc freq;
+127            where aci_afib | aci_aflt;
+15                                                    The SAS System                             16:00 Friday, May 9, 2025
+
+128            format ablation cardioversion amio aad closure present.;
+129            tables amio cardioversion ablation aad closure;
+130            tables amio*cardioversion*ablation*aad*closure / list missing
+131                noprint out=persistent;
+132        run;
+
+NOTE: There were 2807 observations read from the data set CRDW.PERSISTENT.
+      WHERE aci_afib or aci_aflt;
+NOTE: The data set WORK.PERSISTENT has 22 observations and 7 variables.
+NOTE: The PROCEDURE FREQ printed page 9.
+NOTE: PROCEDURE FREQ used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+133        
+134        %_sort(data=persistent, out=persistent, by=descending count);
+NOTE: You have called the macro _SORT, 2016-11-16
+NOTE: Copyright (c) 2001-2016 Rodney Sparapani
+ 
+MPRINT(_SORT):  ;
 MPRINT(_SORT):   proc sort out=work.persistent (sortedby=descending count) data=
 MPRINT(_SORT):   work.persistent (
 MPRINT(_SORT):   );
@@ -312,37 +789,37 @@ MPRINT(_SORT):   run;
 NOTE: There were 22 observations read from the data set WORK.PERSISTENT.
 NOTE: The data set WORK.PERSISTENT has 22 observations and 7 variables.
 NOTE: PROCEDURE SORT used (Total process time):
-7                                                     The SAS System                             12:39 Friday, May 9, 2025
-
       real time           0.00 seconds
-      cpu time            0.01 seconds
+      cpu time            0.00 seconds
       
 
-78         
-79         proc print;
-80         run;
+135        
+136        proc print;
+137        run;
 
 NOTE: There were 22 observations read from the data set WORK.PERSISTENT.
-NOTE: The PROCEDURE PRINT printed page 5.
+16                                                    The SAS System                             16:00 Friday, May 9, 2025
+
+NOTE: The PROCEDURE PRINT printed page 10.
 NOTE: PROCEDURE PRINT used (Total process time):
       real time           0.00 seconds
       cpu time            0.00 seconds
       
 
-81         
-82         options ps=54 ls=76;
-83         
-84         proc contents varnum;
-85         run;
+138        
+139        options ps=54 ls=76;
+140        
+141        proc contents varnum data=crdw.persistent;
+142        run;
 
 NOTE: PROCEDURE CONTENTS used (Total process time):
-      real time           0.01 seconds
-      cpu time            0.00 seconds
+      real time           0.00 seconds
+      cpu time            0.01 seconds
       
-NOTE: The PROCEDURE CONTENTS printed pages 6-7.
+NOTE: The PROCEDURE CONTENTS printed pages 11-27.
 
 NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
 NOTE: The SAS System used:
-      real time           1.86 seconds
-      cpu time            1.79 seconds
+      real time           35.22 seconds
+      cpu time            34.14 seconds
       

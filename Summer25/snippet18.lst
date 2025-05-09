@@ -1,4 +1,216 @@
-                                               12:39 Friday, May 9, 2025   1
+                                               16:00 Friday, May 9, 2025   1
+
+                           The CONTENTS Procedure
+
+Data Set Name        CRDW.DEMOGRAPHICS            Observations          1467
+Member Type          DATA                         Variables             43  
+Engine               V9                           Indexes               0   
+Created              05/09/2025 16:01:07          Observation Length    536 
+Last Modified        05/09/2025 16:01:07          Deleted Observations  0   
+Protection                                        Compressed            NO  
+Data Set Type                                     Sorted                NO  
+Label                                                                       
+Data Representation  SOLARIS_X86_64,                                        
+                     LINUX_X86_64, ALPHA_TRU64,                             
+                     LINUX_IA64                                             
+Encoding             latin1  Western (ISO)                                  
+
+
+                     Engine/Host Dependent Information
+
+Data Set Page Size          65536                                           
+Number of Data Set Pages    13                                              
+First Data Page             1                                               
+Max Obs per Page            122                                             
+Obs in First Data Page      108                                             
+Number of Data Set Repairs  0                                               
+Filename                    /data/shared/04224/afib/libname/                
+                            crdw/demographics.sas7bdat                      
+Release Created             9.0401M8                                        
+Host Created                Linux                                           
+Inode Number                42949763078                                     
+Access Permission           rw-r--r--                                       
+Owner Name                  rsparapa                                        
+File Size                   896KB                                           
+File Size (bytes)           917504                                          
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/Summer25/snippet18.sas                              
+                                               16:00 Friday, May 9, 2025   2
+
+                           The CONTENTS Procedure
+
+                        Variables in Creation Order
+ 
+       #    Variable                       Type    Len    Format
+
+       1    patient_hash                   Char     16               
+       2    sex_c                          Char      1               
+       3    sex                            Char      7               
+       4    gender_identity                Char     22               
+       5    vital_status                   Char      8               
+       6    research_contact_pref          Char     14               
+       7    marital_status                 Char     17               
+       8    employment_status              Char     23               
+       9    race_c                         Char      2               
+      10    race                           Char     41               
+      11    hispanic_c                     Char      2               
+      12    ethnicity                      Char     12               
+      13    language_code                  Char      3               
+      14    language                       Char     22               
+      15    need_interpreter               Char      1               
+      16    state_c                        Char      3               
+      17    state_name                     Char     30               
+      18    zip3                           Char      3               
+      19    ped_gest_age                   Char     15               
+      20    primary_care_provider_id       Char      8               
+      21    primary_care_provider_name     Char     55               
+      22    primary_care_provider_title    Char     18               
+      23    death_date_precision           Char     10               
+      24    vital_status_source            Char     22               
+      25    death_date_source              Char     22               
+      26    geocode_result                 Char     22               
+      27    adi_narank                     Char      5               
+      28    secondary_ruca_code_2010       Char      4               
+      29    military_branch_name           Char     23               
+      30    veteran_status_c               Char      1               
+      31    veteran_status_name            Char     18               
+      32    adv_directive_yn               Char      1               
+      33    txp_pat_yn                     Char      1               
+      34    gender_identity_c              Num       8               
+      35    birth_date_shifted             Num       8    DATETIME19.
+      36    death_date_shifted             Num       8    DATETIME19.
+      37    marital_status_c               Num       8               
+      38    employment_status_c            Num       8               
+      39    branch_of_service_c            Num       8               
+      40    adv_directive_date_shifted     Num       8    DATETIME19.
+      41    adv_directive_date             Num       8    DATE9.     
+      42    birth_date                     Num       8    DATE9.     
+      43    death_date                     Num       8    DATE9.     
+ 
+/home/rsparapa/git/CTSI/Summer25/snippet18.sas                              
+                                               16:00 Friday, May 9, 2025   3
+
+                             The FREQ Procedure
+
+                                           Cumulative    Cumulative
+           age    Frequency     Percent     Frequency      Percent
+         ----------------------------------------------------------
+         40:64        1278       30.04          1278        30.04  
+         65:79        1887       44.35          3165        74.38  
+         80:89        1090       25.62          4255       100.00  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/Summer25/snippet18.sas                              
+                                               16:00 Friday, May 9, 2025   4
+
+                             The FREQ Procedure
+
+                                                Cumulative    Cumulative
+   acquisition_date    Frequency     Percent     Frequency      Percent
+   ---------------------------------------------------------------------
+               2017          48       13.91            48        13.91  
+               2018          79       22.90           127        36.81  
+               2019          97       28.12           224        64.93  
+               2020          69       20.00           293        84.93  
+               2021          30        8.70           323        93.62  
+               2022          22        6.38           345       100.00  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/Summer25/snippet18.sas                              
+                                               16:00 Friday, May 9, 2025   5
 
                              The FREQ Procedure
 
@@ -11,18 +223,18 @@
                     Row Pct  |
                     Col Pct  |       0|       1|  Total
                     ---------+--------+--------+
-                           0 |      0 |    356 |    356
-                             |   0.00 |   7.50 |   7.50
+                           0 |      0 |    324 |    324
+                             |   0.00 |   7.61 |   7.61
                              |   0.00 | 100.00 |
-                             |   0.00 |  26.65 |
+                             |   0.00 |  26.80 |
                     ---------+--------+--------+
-                           1 |   3411 |    980 |   4391
-                             |  71.86 |  20.64 |  92.50
-                             |  77.68 |  22.32 |
-                             | 100.00 |  73.35 |
+                           1 |   3046 |    885 |   3931
+                             |  71.59 |  20.80 |  92.39
+                             |  77.49 |  22.51 |
+                             | 100.00 |  73.20 |
                     ---------+--------+--------+
-                    Total        3411     1336     4747
-                                71.86    28.14   100.00
+                    Total        3046     1209     4255
+                                71.59    28.41   100.00
  
  
  
@@ -51,8 +263,8 @@
  
  
 /home/rsparapa/git/CTSI/Summer25/snippet18.sas                              
-                             AFIB and not AFLT                             2
-                                                   12:39 Friday, May 9, 2025
+                             AFIB and not AFLT                             6
+                                                   16:00 Friday, May 9, 2025
 
                              The FREQ Procedure
 
@@ -65,20 +277,20 @@
                     Row Pct  |
                     Col Pct  |       0|       1|  Total
                     ---------+--------+--------+
-                           0 |    834 |    149 |    983
-                             |  28.66 |   5.12 |  33.78
-                             |  84.84 |  15.16 |
-                             |  30.21 | 100.00 |
+                           0 |    800 |    145 |    945
+                             |  28.41 |   5.15 |  33.56
+                             |  84.66 |  15.34 |
+                             |  29.95 | 100.00 |
                     ---------+--------+--------+
-                           1 |   1927 |      0 |   1927
-                             |  66.22 |   0.00 |  66.22
+                           1 |   1871 |      0 |   1871
+                             |  66.44 |   0.00 |  66.44
                              | 100.00 |   0.00 |
-                             |  69.79 |   0.00 |
+                             |  70.05 |   0.00 |
                     ---------+--------+--------+
-                    Total        2761      149     2910
-                                94.88     5.12   100.00
+                    Total        2671      145     2816
+                                94.85     5.15   100.00
 
-                          Frequency Missing = 501
+                          Frequency Missing = 230
  
  
  
@@ -105,7 +317,7 @@
  
  
 /home/rsparapa/git/CTSI/Summer25/snippet18.sas                              
-                                    AFLT       12:39 Friday, May 9, 2025   3
+                                    AFLT       16:00 Friday, May 9, 2025   7
 
                              The FREQ Procedure
 
@@ -118,20 +330,20 @@
                     Row Pct  |
                     Col Pct  |       0|       1|  Total
                     ---------+--------+--------+
-                           0 |    316 |    453 |    769
-                             |  27.57 |  39.53 |  67.10
-                             |  41.09 |  58.91 |
-                             |  45.60 | 100.00 |
+                           0 |    303 |    428 |    731
+                             |  27.70 |  39.12 |  66.82
+                             |  41.45 |  58.55 |
+                             |  45.50 | 100.00 |
                     ---------+--------+--------+
-                           1 |    377 |      0 |    377
-                             |  32.90 |   0.00 |  32.90
+                           1 |    363 |      0 |    363
+                             |  33.18 |   0.00 |  33.18
                              | 100.00 |   0.00 |
-                             |  54.40 |   0.00 |
+                             |  54.50 |   0.00 |
                     ---------+--------+--------+
-                    Total         693      453     1146
-                                60.47    39.53   100.00
+                    Total         666      428     1094
+                                60.88    39.12   100.00
 
-                          Frequency Missing = 190
+                          Frequency Missing = 115
  
  
  
@@ -159,43 +371,92 @@
  
  
 /home/rsparapa/git/CTSI/Summer25/snippet18.sas                              
-                                               VERITAS agreement with CRDW                   12:39 Friday, May 9, 2025   4
+                                               VERITAS agreement with CRDW                   16:00 Friday, May 9, 2025   8
+
+                                                    The FREQ Procedure
+
+                                                    Table of tx by age
+
+                                       tx        age
+
+                                       Frequency|
+                                       Percent  |
+                                       Row Pct  |
+                                       Col Pct  |40:64   |65:79   |80:89   |  Total
+                                       ---------+--------+--------+--------+
+                                        0       |    162 |    308 |    347 |    817
+                                                |   5.77 |  10.97 |  12.36 |  29.11
+                                                |  19.83 |  37.70 |  42.47 |
+                                                |  20.53 |  24.96 |  44.26 |
+                                       ---------+--------+--------+--------+
+                                       1+       |    627 |    926 |    437 |   1990
+                                                |  22.34 |  32.99 |  15.57 |  70.89
+                                                |  31.51 |  46.53 |  21.96 |
+                                                |  79.47 |  75.04 |  55.74 |
+                                       ---------+--------+--------+--------+
+                                       Total         789     1234      784     2807
+                                                   28.11    43.96    27.93   100.00
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/Summer25/snippet18.sas                                                                            
+                                               VERITAS agreement with CRDW                   16:00 Friday, May 9, 2025   9
 
                                                     The FREQ Procedure
 
                                                                  Cumulative    Cumulative
                                 amio    Frequency     Percent     Frequency      Percent
                                 ---------------------------------------------------------
-                                   0        1525       52.48          1525        52.48  
-                                  1+        1381       47.52          2906       100.00  
+                                   0        1467       52.26          1467        52.26  
+                                  1+        1340       47.74          2807       100.00  
 
 
                                                                       Cumulative    Cumulative
                             cardioversion    Frequency     Percent     Frequency      Percent
                             ------------------------------------------------------------------
-                                        0        1741       59.91          1741        59.91  
-                                       1+        1165       40.09          2906       100.00  
+                                        0        1688       60.14          1688        60.14  
+                                       1+        1119       39.86          2807       100.00  
 
 
                                                                    Cumulative    Cumulative
                               ablation    Frequency     Percent     Frequency      Percent
                               -------------------------------------------------------------
-                                     0        2253       77.53          2253        77.53  
-                                    1+         653       22.47          2906       100.00  
+                                     0        2178       77.59          2178        77.59  
+                                    1+         629       22.41          2807       100.00  
 
 
                                                                  Cumulative    Cumulative
                                  aad    Frequency     Percent     Frequency      Percent
                                  --------------------------------------------------------
-                                   0        2456       84.51          2456        84.51  
-                                  1+         450       15.49          2906       100.00  
+                                   0        2381       84.82          2381        84.82  
+                                  1+         426       15.18          2807       100.00  
 
 
                                                                    Cumulative    Cumulative
                                closure    Frequency     Percent     Frequency      Percent
                                ------------------------------------------------------------
-                                     0        2846       97.94          2846        97.94  
-                                    1+          60        2.06          2906       100.00  
+                                     0        2747       97.86          2747        97.86  
+                                    1+          60        2.14          2807       100.00  
  
  
  
@@ -208,32 +469,32 @@
  
  
 /home/rsparapa/git/CTSI/Summer25/snippet18.sas                                                                            
-                                               VERITAS agreement with CRDW                   12:39 Friday, May 9, 2025   5
+                                               VERITAS agreement with CRDW                   16:00 Friday, May 9, 2025  10
 
                       Obs    amio    cardioversion    ablation    aad    closure    COUNT    PERCENT
 
-                        1      0           0              0        0        0        847     29.1466
-                        2     1+           0              0        0        0        532     18.3070
-                        3     1+          1+              0        0        0        453     15.5884
-                        4     1+          1+             1+        0        0        297     10.2202
-                        5      0           0              0       1+        0        164      5.6435
-                        6      0          1+             1+       1+        0        119      4.0950
-                        7      0          1+              0        0        0        116      3.9917
-                        8      0          1+              0       1+        0        107      3.6820
-                        9     1+           0             1+        0        0         70      2.4088
-                       10      0           0             1+       1+        0         50      1.7206
-                       11      0           0             1+        0        0         48      1.6518
-                       12      0          1+             1+        0        0         43      1.4797
-                       13      0           0              0        0       1+         13      0.4474
-                       14     1+          1+              0        0       1+         11      0.3785
-                       15     1+          1+             1+        0       1+         10      0.3441
-                       16     1+           0              0        0       1+          7      0.2409
-                       17      0           0             1+        0       1+          6      0.2065
-                       18      0          1+             1+       1+       1+          4      0.1376
-                       19      0           0             1+       1+       1+          3      0.1032
-                       20      0          1+              0       1+       1+          3      0.1032
-                       21      0          1+             1+        0       1+          2      0.0688
-                       22     1+           0             1+        0       1+          1      0.0344
+                        1      0           0              0        0        0        817     29.1058
+                        2     1+           0              0        0        0        519     18.4895
+                        3     1+          1+              0        0        0        440     15.6751
+                        4     1+          1+             1+        0        0        283     10.0819
+                        5      0           0              0       1+        0        159      5.6644
+                        6      0          1+             1+       1+        0        114      4.0613
+                        7      0          1+              0        0        0        112      3.9900
+                        8      0          1+              0       1+        0         97      3.4556
+                        9     1+           0             1+        0        0         69      2.4581
+                       10      0           0             1+        0        0         48      1.7100
+                       11      0           0             1+       1+        0         46      1.6388
+                       12      0          1+             1+        0        0         43      1.5319
+                       13      0           0              0        0       1+         13      0.4631
+                       14     1+          1+              0        0       1+         11      0.3919
+                       15     1+          1+             1+        0       1+         10      0.3563
+                       16     1+           0              0        0       1+          7      0.2494
+                       17      0           0             1+        0       1+          6      0.2138
+                       18      0          1+             1+       1+       1+          4      0.1425
+                       19      0           0             1+       1+       1+          3      0.1069
+                       20      0          1+              0       1+       1+          3      0.1069
+                       21      0          1+             1+        0       1+          2      0.0713
+                       22     1+           0             1+        0       1+          1      0.0356
  
  
  
@@ -257,20 +518,19 @@
  
  
 /home/rsparapa/git/CTSI/Summer25/snippet18.sas                                                                            
-                        VERITAS agreement with CRDW                        6
-                                                   12:39 Friday, May 9, 2025
+                        VERITAS agreement with CRDW                       11
+                                                   16:00 Friday, May 9, 2025
 
                            The CONTENTS Procedure
 
-Data Set Name        WORK.PERSISTENT               Observations          22 
-Member Type          DATA                          Variables             7  
-Engine               V9                            Indexes               0  
-Created              05/09/2025 12:39:23           Observation Length    56 
-Last Modified        05/09/2025 12:39:23           Deleted Observations  0  
-Protection                                         Compressed            NO 
-Data Set Type                                      Sorted                YES
-Label                Frequency Counts                                       
-                     and Percentages                                        
+Data Set Name        CRDW.PERSISTENT              Observations          4255
+Member Type          DATA                         Variables             688 
+Engine               V9                           Indexes               0   
+Created              05/09/2025 16:01:07          Observation Length    6696
+Last Modified        05/09/2025 16:01:07          Deleted Observations  0   
+Protection                                        Compressed            NO  
+Data Set Type                                     Sorted                NO  
+Label                                                                       
 Data Representation  SOLARIS_X86_64,                                        
                      LINUX_X86_64, ALPHA_TRU64,                             
                      LINUX_IA64                                             
@@ -279,89 +539,900 @@ Encoding             latin1  Western (ISO)
 
                      Engine/Host Dependent Information
 
-Data Set Page Size          65536                                           
-Number of Data Set Pages    1                                               
+Data Set Page Size          131072                                          
+Number of Data Set Pages    225                                             
 First Data Page             1                                               
-Max Obs per Page            1166                                            
-Obs in First Data Page      22                                              
+Max Obs per Page            19                                              
+Obs in First Data Page      6                                               
 Number of Data Set Repairs  0                                               
-Filename                    /saswork/SAS_workD9850001636E_colby.            
-                            biostat.mcw.edu/persistent.sas7bdat             
+Filename                    /data/shared/04224/afib/libname/                
+                            crdw/persistent.sas7bdat                        
 Release Created             9.0401M8                                        
 Host Created                Linux                                           
-Inode Number                4298968664                                      
+Inode Number                42949763106                                     
 Access Permission           rw-r--r--                                       
 Owner Name                  rsparapa                                        
-File Size                   128KB                                           
-File Size (bytes)           131072                                          
-
-
-                        Variables in Creation Order
+File Size                   28MB                                            
+File Size (bytes)           29622272                                        
  
-#    Variable         Type    Len    Format      Label
-
-1    amio             Num       8    PRESENT.                              
-2    cardioversion    Num       8    PRESENT.                              
-3    ablation         Num       8    PRESENT.                              
-4    aad              Num       8    PRESENT.                              
-5    closure          Num       8    PRESENT.                              
-6    COUNT            Num       8                Frequency Count           
-7    PERCENT          Num       8                Percent of Total Frequency
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
  
  
 /home/rsparapa/git/CTSI/Summer25/snippet18.sas                              
-                        VERITAS agreement with CRDW                        7
-                                                   12:39 Friday, May 9, 2025
+                        VERITAS agreement with CRDW                       12
+                                                   16:00 Friday, May 9, 2025
 
                            The CONTENTS Procedure
 
-                             Sort Information
+                         Variables in Creation Order
+ 
+   # Variable                    Type Len Format      Informat Label
 
-                      Sortedby       DESCENDING COUNT
-                      Validated      NO              
-                      Character Set  ASCII           
+   1 patient_hash                Char  16 $16.        $16.     patient_hash
+   2 sex_c                       Char   1                                  
+   3 sex                         Char   7                                  
+   4 gender_identity             Char  22                                  
+   5 vital_status                Char   8                                  
+   6 research_contact_pref       Char  14                                  
+   7 marital_status              Char  17                                  
+   8 employment_status           Char  23                                  
+   9 race_c                      Char   2                                  
+  10 race                        Char  41                                  
+  11 hispanic_c                  Char   2                                  
+  12 ethnicity                   Char  12                                  
+  13 language_code               Char   3                                  
+  14 language                    Char  22                                  
+  15 need_interpreter            Char   1                                  
+  16 state_c                     Char   3                                  
+  17 state_name                  Char  30                                  
+  18 zip3                        Char   3                                  
+  19 ped_gest_age                Char  15                                  
+  20 primary_care_provider_id    Char   8                                  
+  21 primary_care_provider_name  Char  55                                  
+  22 primary_care_provider_title Char  18                                  
+  23 death_date_precision        Char  10                                  
+  24 vital_status_source         Char  22                                  
+  25 death_date_source           Char  22                                  
+  26 geocode_result              Char  22                                  
+  27 adi_narank                  Char   5                                  
+  28 secondary_ruca_code_2010    Char   4                                  
+  29 military_branch_name        Char  23                                  
+  30 veteran_status_c            Char   1                                  
+  31 veteran_status_name         Char  18                                  
+  32 adv_directive_yn            Char   1                                  
+  33 txp_pat_yn                  Char   1                                  
+  34 gender_identity_c           Num    8                                  
+  35 birth_date_shifted          Num    8 DATETIME19.                      
+  36 death_date_shifted          Num    8 DATETIME19.                      
+  37 marital_status_c            Num    8                                  
+  38 employment_status_c         Num    8                                  
+  39 branch_of_service_c         Num    8                                  
+  40 adv_directive_date_shifted  Num    8 DATETIME19.                      
+  41 adv_directive_date          Num    8 DATE9.                           
+  42 birth_date                  Num    8 DATE9.                           
+  43 death_date                  Num    8 DATE9.                           
  
+/home/rsparapa/git/CTSI/Summer25/snippet18.sas                              
+                        VERITAS agreement with CRDW                       13
+                                                   16:00 Friday, May 9, 2025
+
+                           The CONTENTS Procedure
+
+                         Variables in Creation Order
  
+   # Variable                    Type Len Format      Informat Label
+
+  44 last_date                   Num    8 DATE7.                           
+  45 first_date                  Num    8 DATE7.                           
+  46 patient_trac_id             Char  16                                  
+  47 gender                      Char   6                                  
+  48 afib                        Num    8                                  
+  49 aflt                        Num    8                                  
+  50 test_demographics_id        Char  16                                  
+  51 data_type                   Char   7                                  
+  52 site_name                   Char  29                                  
+  53 acquisition_device          Char   5                                  
+  54 overreader_last_name        Char  22                                  
+  55 overreader_first_name       Char  13                                  
+  56 overreader_id               Char   5                                  
+  57 status                      Char  11                                  
+  58 location_name               Char  32                                  
+  59 room_id                     Char  28                                  
+  60 test_reason                 Char  67                                  
+  61 diagnosis_stmt              Char 895                                  
+  62 acquisition_time            Num    8 DATETIME19.                      
+  63 acquisition_date_shifted    Num    8 DATETIME19.                      
+  64 acquisition_time_date       Num    8 DATE9.                           
+  65 acquisition_date            Num    8 DATE9.                           
+  66 afib_date                   Num    8 DATE7.                           
+  67 aflt_date                   Num    8 DATE7.                           
+  68 resting_ecg_meas_id         Char  16                                  
+  69 systolic_bp                 Num    8                                  
+  70 diastolic_bp                Num    8                                  
+  71 ventricular_rate            Num    8                                  
+  72 atrial_rate                 Num    8                                  
+  73 printerval                  Num    8                                  
+  74 qrsduration                 Num    8                                  
+  75 qtinterval                  Num    8                                  
+  76 qtcorrected                 Num    8                                  
+  77 paxis                       Num    8                                  
+  78 raxis                       Num    8                                  
+  79 taxis                       Num    8                                  
+  80 qrscount                    Num    8                                  
+  81 qonset                      Num    8                                  
+  82 qoffset                     Num    8                                  
+  83 ponset                      Num    8                                  
+  84 poffset                     Num    8                                  
+  85 toffset                     Num    8                                  
+  86 ecgsample_base              Num    8                                  
  
+/home/rsparapa/git/CTSI/Summer25/snippet18.sas                              
+                        VERITAS agreement with CRDW                       14
+                                                   16:00 Friday, May 9, 2025
+
+                           The CONTENTS Procedure
+
+                         Variables in Creation Order
  
+   # Variable                    Type Len Format      Informat Label
+
+  87 ecgsample_exponent          Num    8                                  
+  88 qtc_frederica               Num    8                                  
+  89 diff                        Num    8                                  
+  90 px                          Char  18 $16.        $16.                 
+  91 px1                         Char   5                                  
+  92 px2                         Char   5                                  
+  93 px3                         Char   5                                  
+  94 px4                         Char   5                                  
+  95 px5                         Char   5                                  
+  96 px6                         Char   5                                  
+  97 px7                         Char   5                                  
+  98 px8                         Char   5                                  
+  99 px9                         Char   5                                  
+ 100 px10                        Char   5                                  
+ 101 px11                        Char   5                                  
+ 102 px12                        Char   5                                  
+ 103 px13                        Char   5                                  
+ 104 px14                        Char   5                                  
+ 105 px15                        Char   5                                  
+ 106 px16                        Char   5                                  
+ 107 px17                        Char   5                                  
+ 108 px18                        Char   5                                  
+ 109 pxdate1                     Num    8 DATE7.                           
+ 110 pxdate2                     Num    8 DATE7.                           
+ 111 pxdate3                     Num    8 DATE7.                           
+ 112 pxdate4                     Num    8 DATE7.                           
+ 113 pxdate5                     Num    8 DATE7.                           
+ 114 pxdate6                     Num    8 DATE7.                           
+ 115 pxdate7                     Num    8 DATE7.                           
+ 116 pxdate8                     Num    8 DATE7.                           
+ 117 pxdate9                     Num    8 DATE7.                           
+ 118 pxdate10                    Num    8 DATE7.                           
+ 119 pxdate11                    Num    8 DATE7.                           
+ 120 pxdate12                    Num    8 DATE7.                           
+ 121 pxdate13                    Num    8 DATE7.                           
+ 122 pxdate14                    Num    8 DATE7.                           
+ 123 pxdate15                    Num    8 DATE7.                           
+ 124 pxdate16                    Num    8 DATE7.                           
+ 125 pxdate17                    Num    8 DATE7.                           
+ 126 pxdate18                    Num    8 DATE7.                           
+ 127 pxtotal                     Num    8                                  
+ 128 ablation                    Num    8                                  
+ 129 cardioversion               Num    8                                  
  
+/home/rsparapa/git/CTSI/Summer25/snippet18.sas                              
+                        VERITAS agreement with CRDW                       15
+                                                   16:00 Friday, May 9, 2025
+
+                           The CONTENTS Procedure
+
+                         Variables in Creation Order
  
+   # Variable                    Type Len Format      Informat Label
+
+ 130 closure                     Num    8                                  
+ 131 afib_closure                Num    8                                  
+ 132 aad                         Num    8                                  
+ 133 amio                        Num    8                                  
+ 134 type1a                      Num    8                                  
+ 135 type1b                      Num    8                                  
+ 136 type1c                      Num    8                                  
+ 137 type3                       Num    8                                  
+ 138 misc                        Num    8                                  
+ 139 aad17                       Num    8                                  
+ 140 aad18                       Num    8                                  
+ 141 aad19                       Num    8                                  
+ 142 aad20                       Num    8                                  
+ 143 aad21                       Num    8                                  
+ 144 aad22                       Num    8                                  
+ 145 amio17                      Num    8                                  
+ 146 amio18                      Num    8                                  
+ 147 amio19                      Num    8                                  
+ 148 amio20                      Num    8                                  
+ 149 amio21                      Num    8                                  
+ 150 amio22                      Num    8                                  
+ 151 type1a17                    Num    8                                  
+ 152 type1a18                    Num    8                                  
+ 153 type1a19                    Num    8                                  
+ 154 type1a20                    Num    8                                  
+ 155 type1a21                    Num    8                                  
+ 156 type1a22                    Num    8                                  
+ 157 type1b17                    Num    8                                  
+ 158 type1b18                    Num    8                                  
+ 159 type1b19                    Num    8                                  
+ 160 type1b20                    Num    8                                  
+ 161 type1b21                    Num    8                                  
+ 162 type1b22                    Num    8                                  
+ 163 type1c17                    Num    8                                  
+ 164 type1c18                    Num    8                                  
+ 165 type1c19                    Num    8                                  
+ 166 type1c20                    Num    8                                  
+ 167 type1c21                    Num    8                                  
+ 168 type1c22                    Num    8                                  
+ 169 type317                     Num    8                                  
+ 170 type318                     Num    8                                  
+ 171 type319                     Num    8                                  
+ 172 type320                     Num    8                                  
  
+/home/rsparapa/git/CTSI/Summer25/snippet18.sas                              
+                        VERITAS agreement with CRDW                       16
+                                                   16:00 Friday, May 9, 2025
+
+                           The CONTENTS Procedure
+
+                         Variables in Creation Order
  
+   # Variable                    Type Len Format      Informat Label
+
+ 173 type321                     Num    8                                  
+ 174 type322                     Num    8                                  
+ 175 misc17                      Num    8                                  
+ 176 misc18                      Num    8                                  
+ 177 misc19                      Num    8                                  
+ 178 misc20                      Num    8                                  
+ 179 misc21                      Num    8                                  
+ 180 misc22                      Num    8                                  
+ 181 aad1701                     Num    8                                  
+ 182 aad1702                     Num    8                                  
+ 183 aad1703                     Num    8                                  
+ 184 aad1704                     Num    8                                  
+ 185 aad1705                     Num    8                                  
+ 186 aad1706                     Num    8                                  
+ 187 aad1707                     Num    8                                  
+ 188 aad1708                     Num    8                                  
+ 189 aad1709                     Num    8                                  
+ 190 aad1710                     Num    8                                  
+ 191 aad1711                     Num    8                                  
+ 192 aad1712                     Num    8                                  
+ 193 aad1801                     Num    8                                  
+ 194 aad1802                     Num    8                                  
+ 195 aad1803                     Num    8                                  
+ 196 aad1804                     Num    8                                  
+ 197 aad1805                     Num    8                                  
+ 198 aad1806                     Num    8                                  
+ 199 aad1807                     Num    8                                  
+ 200 aad1808                     Num    8                                  
+ 201 aad1809                     Num    8                                  
+ 202 aad1810                     Num    8                                  
+ 203 aad1811                     Num    8                                  
+ 204 aad1812                     Num    8                                  
+ 205 aad1901                     Num    8                                  
+ 206 aad1902                     Num    8                                  
+ 207 aad1903                     Num    8                                  
+ 208 aad1904                     Num    8                                  
+ 209 aad1905                     Num    8                                  
+ 210 aad1906                     Num    8                                  
+ 211 aad1907                     Num    8                                  
+ 212 aad1908                     Num    8                                  
+ 213 aad1909                     Num    8                                  
+ 214 aad1910                     Num    8                                  
+ 215 aad1911                     Num    8                                  
  
+/home/rsparapa/git/CTSI/Summer25/snippet18.sas                              
+                        VERITAS agreement with CRDW                       17
+                                                   16:00 Friday, May 9, 2025
+
+                           The CONTENTS Procedure
+
+                         Variables in Creation Order
  
+   # Variable                    Type Len Format      Informat Label
+
+ 216 aad1912                     Num    8                                  
+ 217 aad2001                     Num    8                                  
+ 218 aad2002                     Num    8                                  
+ 219 aad2003                     Num    8                                  
+ 220 aad2004                     Num    8                                  
+ 221 aad2005                     Num    8                                  
+ 222 aad2006                     Num    8                                  
+ 223 aad2007                     Num    8                                  
+ 224 aad2008                     Num    8                                  
+ 225 aad2009                     Num    8                                  
+ 226 aad2010                     Num    8                                  
+ 227 aad2011                     Num    8                                  
+ 228 aad2012                     Num    8                                  
+ 229 aad2101                     Num    8                                  
+ 230 aad2102                     Num    8                                  
+ 231 aad2103                     Num    8                                  
+ 232 aad2104                     Num    8                                  
+ 233 aad2105                     Num    8                                  
+ 234 aad2106                     Num    8                                  
+ 235 aad2107                     Num    8                                  
+ 236 aad2108                     Num    8                                  
+ 237 aad2109                     Num    8                                  
+ 238 aad2110                     Num    8                                  
+ 239 aad2111                     Num    8                                  
+ 240 aad2112                     Num    8                                  
+ 241 aad2201                     Num    8                                  
+ 242 aad2202                     Num    8                                  
+ 243 aad2203                     Num    8                                  
+ 244 aad2204                     Num    8                                  
+ 245 aad2205                     Num    8                                  
+ 246 aad2206                     Num    8                                  
+ 247 aad2207                     Num    8                                  
+ 248 aad2208                     Num    8                                  
+ 249 aad2209                     Num    8                                  
+ 250 aad2210                     Num    8                                  
+ 251 aad2211                     Num    8                                  
+ 252 aad2212                     Num    8                                  
+ 253 amio1701                    Num    8                                  
+ 254 amio1702                    Num    8                                  
+ 255 amio1703                    Num    8                                  
+ 256 amio1704                    Num    8                                  
+ 257 amio1705                    Num    8                                  
+ 258 amio1706                    Num    8                                  
  
+/home/rsparapa/git/CTSI/Summer25/snippet18.sas                              
+                        VERITAS agreement with CRDW                       18
+                                                   16:00 Friday, May 9, 2025
+
+                           The CONTENTS Procedure
+
+                         Variables in Creation Order
  
+   # Variable                    Type Len Format      Informat Label
+
+ 259 amio1707                    Num    8                                  
+ 260 amio1708                    Num    8                                  
+ 261 amio1709                    Num    8                                  
+ 262 amio1710                    Num    8                                  
+ 263 amio1711                    Num    8                                  
+ 264 amio1712                    Num    8                                  
+ 265 amio1801                    Num    8                                  
+ 266 amio1802                    Num    8                                  
+ 267 amio1803                    Num    8                                  
+ 268 amio1804                    Num    8                                  
+ 269 amio1805                    Num    8                                  
+ 270 amio1806                    Num    8                                  
+ 271 amio1807                    Num    8                                  
+ 272 amio1808                    Num    8                                  
+ 273 amio1809                    Num    8                                  
+ 274 amio1810                    Num    8                                  
+ 275 amio1811                    Num    8                                  
+ 276 amio1812                    Num    8                                  
+ 277 amio1901                    Num    8                                  
+ 278 amio1902                    Num    8                                  
+ 279 amio1903                    Num    8                                  
+ 280 amio1904                    Num    8                                  
+ 281 amio1905                    Num    8                                  
+ 282 amio1906                    Num    8                                  
+ 283 amio1907                    Num    8                                  
+ 284 amio1908                    Num    8                                  
+ 285 amio1909                    Num    8                                  
+ 286 amio1910                    Num    8                                  
+ 287 amio1911                    Num    8                                  
+ 288 amio1912                    Num    8                                  
+ 289 amio2001                    Num    8                                  
+ 290 amio2002                    Num    8                                  
+ 291 amio2003                    Num    8                                  
+ 292 amio2004                    Num    8                                  
+ 293 amio2005                    Num    8                                  
+ 294 amio2006                    Num    8                                  
+ 295 amio2007                    Num    8                                  
+ 296 amio2008                    Num    8                                  
+ 297 amio2009                    Num    8                                  
+ 298 amio2010                    Num    8                                  
+ 299 amio2011                    Num    8                                  
+ 300 amio2012                    Num    8                                  
+ 301 amio2101                    Num    8                                  
  
+/home/rsparapa/git/CTSI/Summer25/snippet18.sas                              
+                        VERITAS agreement with CRDW                       19
+                                                   16:00 Friday, May 9, 2025
+
+                           The CONTENTS Procedure
+
+                         Variables in Creation Order
  
+   # Variable                    Type Len Format      Informat Label
+
+ 302 amio2102                    Num    8                                  
+ 303 amio2103                    Num    8                                  
+ 304 amio2104                    Num    8                                  
+ 305 amio2105                    Num    8                                  
+ 306 amio2106                    Num    8                                  
+ 307 amio2107                    Num    8                                  
+ 308 amio2108                    Num    8                                  
+ 309 amio2109                    Num    8                                  
+ 310 amio2110                    Num    8                                  
+ 311 amio2111                    Num    8                                  
+ 312 amio2112                    Num    8                                  
+ 313 amio2201                    Num    8                                  
+ 314 amio2202                    Num    8                                  
+ 315 amio2203                    Num    8                                  
+ 316 amio2204                    Num    8                                  
+ 317 amio2205                    Num    8                                  
+ 318 amio2206                    Num    8                                  
+ 319 amio2207                    Num    8                                  
+ 320 amio2208                    Num    8                                  
+ 321 amio2209                    Num    8                                  
+ 322 amio2210                    Num    8                                  
+ 323 amio2211                    Num    8                                  
+ 324 amio2212                    Num    8                                  
+ 325 type1a1701                  Num    8                                  
+ 326 type1a1702                  Num    8                                  
+ 327 type1a1703                  Num    8                                  
+ 328 type1a1704                  Num    8                                  
+ 329 type1a1705                  Num    8                                  
+ 330 type1a1706                  Num    8                                  
+ 331 type1a1707                  Num    8                                  
+ 332 type1a1708                  Num    8                                  
+ 333 type1a1709                  Num    8                                  
+ 334 type1a1710                  Num    8                                  
+ 335 type1a1711                  Num    8                                  
+ 336 type1a1712                  Num    8                                  
+ 337 type1a1801                  Num    8                                  
+ 338 type1a1802                  Num    8                                  
+ 339 type1a1803                  Num    8                                  
+ 340 type1a1804                  Num    8                                  
+ 341 type1a1805                  Num    8                                  
+ 342 type1a1806                  Num    8                                  
+ 343 type1a1807                  Num    8                                  
+ 344 type1a1808                  Num    8                                  
  
+/home/rsparapa/git/CTSI/Summer25/snippet18.sas                              
+                        VERITAS agreement with CRDW                       20
+                                                   16:00 Friday, May 9, 2025
+
+                           The CONTENTS Procedure
+
+                         Variables in Creation Order
  
+   # Variable                    Type Len Format      Informat Label
+
+ 345 type1a1809                  Num    8                                  
+ 346 type1a1810                  Num    8                                  
+ 347 type1a1811                  Num    8                                  
+ 348 type1a1812                  Num    8                                  
+ 349 type1a1901                  Num    8                                  
+ 350 type1a1902                  Num    8                                  
+ 351 type1a1903                  Num    8                                  
+ 352 type1a1904                  Num    8                                  
+ 353 type1a1905                  Num    8                                  
+ 354 type1a1906                  Num    8                                  
+ 355 type1a1907                  Num    8                                  
+ 356 type1a1908                  Num    8                                  
+ 357 type1a1909                  Num    8                                  
+ 358 type1a1910                  Num    8                                  
+ 359 type1a1911                  Num    8                                  
+ 360 type1a1912                  Num    8                                  
+ 361 type1a2001                  Num    8                                  
+ 362 type1a2002                  Num    8                                  
+ 363 type1a2003                  Num    8                                  
+ 364 type1a2004                  Num    8                                  
+ 365 type1a2005                  Num    8                                  
+ 366 type1a2006                  Num    8                                  
+ 367 type1a2007                  Num    8                                  
+ 368 type1a2008                  Num    8                                  
+ 369 type1a2009                  Num    8                                  
+ 370 type1a2010                  Num    8                                  
+ 371 type1a2011                  Num    8                                  
+ 372 type1a2012                  Num    8                                  
+ 373 type1a2101                  Num    8                                  
+ 374 type1a2102                  Num    8                                  
+ 375 type1a2103                  Num    8                                  
+ 376 type1a2104                  Num    8                                  
+ 377 type1a2105                  Num    8                                  
+ 378 type1a2106                  Num    8                                  
+ 379 type1a2107                  Num    8                                  
+ 380 type1a2108                  Num    8                                  
+ 381 type1a2109                  Num    8                                  
+ 382 type1a2110                  Num    8                                  
+ 383 type1a2111                  Num    8                                  
+ 384 type1a2112                  Num    8                                  
+ 385 type1a2201                  Num    8                                  
+ 386 type1a2202                  Num    8                                  
+ 387 type1a2203                  Num    8                                  
  
+/home/rsparapa/git/CTSI/Summer25/snippet18.sas                              
+                        VERITAS agreement with CRDW                       21
+                                                   16:00 Friday, May 9, 2025
+
+                           The CONTENTS Procedure
+
+                         Variables in Creation Order
  
+   # Variable                    Type Len Format      Informat Label
+
+ 388 type1a2204                  Num    8                                  
+ 389 type1a2205                  Num    8                                  
+ 390 type1a2206                  Num    8                                  
+ 391 type1a2207                  Num    8                                  
+ 392 type1a2208                  Num    8                                  
+ 393 type1a2209                  Num    8                                  
+ 394 type1a2210                  Num    8                                  
+ 395 type1a2211                  Num    8                                  
+ 396 type1a2212                  Num    8                                  
+ 397 type1b1701                  Num    8                                  
+ 398 type1b1702                  Num    8                                  
+ 399 type1b1703                  Num    8                                  
+ 400 type1b1704                  Num    8                                  
+ 401 type1b1705                  Num    8                                  
+ 402 type1b1706                  Num    8                                  
+ 403 type1b1707                  Num    8                                  
+ 404 type1b1708                  Num    8                                  
+ 405 type1b1709                  Num    8                                  
+ 406 type1b1710                  Num    8                                  
+ 407 type1b1711                  Num    8                                  
+ 408 type1b1712                  Num    8                                  
+ 409 type1b1801                  Num    8                                  
+ 410 type1b1802                  Num    8                                  
+ 411 type1b1803                  Num    8                                  
+ 412 type1b1804                  Num    8                                  
+ 413 type1b1805                  Num    8                                  
+ 414 type1b1806                  Num    8                                  
+ 415 type1b1807                  Num    8                                  
+ 416 type1b1808                  Num    8                                  
+ 417 type1b1809                  Num    8                                  
+ 418 type1b1810                  Num    8                                  
+ 419 type1b1811                  Num    8                                  
+ 420 type1b1812                  Num    8                                  
+ 421 type1b1901                  Num    8                                  
+ 422 type1b1902                  Num    8                                  
+ 423 type1b1903                  Num    8                                  
+ 424 type1b1904                  Num    8                                  
+ 425 type1b1905                  Num    8                                  
+ 426 type1b1906                  Num    8                                  
+ 427 type1b1907                  Num    8                                  
+ 428 type1b1908                  Num    8                                  
+ 429 type1b1909                  Num    8                                  
+ 430 type1b1910                  Num    8                                  
  
+/home/rsparapa/git/CTSI/Summer25/snippet18.sas                              
+                        VERITAS agreement with CRDW                       22
+                                                   16:00 Friday, May 9, 2025
+
+                           The CONTENTS Procedure
+
+                         Variables in Creation Order
  
+   # Variable                    Type Len Format      Informat Label
+
+ 431 type1b1911                  Num    8                                  
+ 432 type1b1912                  Num    8                                  
+ 433 type1b2001                  Num    8                                  
+ 434 type1b2002                  Num    8                                  
+ 435 type1b2003                  Num    8                                  
+ 436 type1b2004                  Num    8                                  
+ 437 type1b2005                  Num    8                                  
+ 438 type1b2006                  Num    8                                  
+ 439 type1b2007                  Num    8                                  
+ 440 type1b2008                  Num    8                                  
+ 441 type1b2009                  Num    8                                  
+ 442 type1b2010                  Num    8                                  
+ 443 type1b2011                  Num    8                                  
+ 444 type1b2012                  Num    8                                  
+ 445 type1b2101                  Num    8                                  
+ 446 type1b2102                  Num    8                                  
+ 447 type1b2103                  Num    8                                  
+ 448 type1b2104                  Num    8                                  
+ 449 type1b2105                  Num    8                                  
+ 450 type1b2106                  Num    8                                  
+ 451 type1b2107                  Num    8                                  
+ 452 type1b2108                  Num    8                                  
+ 453 type1b2109                  Num    8                                  
+ 454 type1b2110                  Num    8                                  
+ 455 type1b2111                  Num    8                                  
+ 456 type1b2112                  Num    8                                  
+ 457 type1b2201                  Num    8                                  
+ 458 type1b2202                  Num    8                                  
+ 459 type1b2203                  Num    8                                  
+ 460 type1b2204                  Num    8                                  
+ 461 type1b2205                  Num    8                                  
+ 462 type1b2206                  Num    8                                  
+ 463 type1b2207                  Num    8                                  
+ 464 type1b2208                  Num    8                                  
+ 465 type1b2209                  Num    8                                  
+ 466 type1b2210                  Num    8                                  
+ 467 type1b2211                  Num    8                                  
+ 468 type1b2212                  Num    8                                  
+ 469 type1c1701                  Num    8                                  
+ 470 type1c1702                  Num    8                                  
+ 471 type1c1703                  Num    8                                  
+ 472 type1c1704                  Num    8                                  
+ 473 type1c1705                  Num    8                                  
  
+/home/rsparapa/git/CTSI/Summer25/snippet18.sas                              
+                        VERITAS agreement with CRDW                       23
+                                                   16:00 Friday, May 9, 2025
+
+                           The CONTENTS Procedure
+
+                         Variables in Creation Order
  
+   # Variable                    Type Len Format      Informat Label
+
+ 474 type1c1706                  Num    8                                  
+ 475 type1c1707                  Num    8                                  
+ 476 type1c1708                  Num    8                                  
+ 477 type1c1709                  Num    8                                  
+ 478 type1c1710                  Num    8                                  
+ 479 type1c1711                  Num    8                                  
+ 480 type1c1712                  Num    8                                  
+ 481 type1c1801                  Num    8                                  
+ 482 type1c1802                  Num    8                                  
+ 483 type1c1803                  Num    8                                  
+ 484 type1c1804                  Num    8                                  
+ 485 type1c1805                  Num    8                                  
+ 486 type1c1806                  Num    8                                  
+ 487 type1c1807                  Num    8                                  
+ 488 type1c1808                  Num    8                                  
+ 489 type1c1809                  Num    8                                  
+ 490 type1c1810                  Num    8                                  
+ 491 type1c1811                  Num    8                                  
+ 492 type1c1812                  Num    8                                  
+ 493 type1c1901                  Num    8                                  
+ 494 type1c1902                  Num    8                                  
+ 495 type1c1903                  Num    8                                  
+ 496 type1c1904                  Num    8                                  
+ 497 type1c1905                  Num    8                                  
+ 498 type1c1906                  Num    8                                  
+ 499 type1c1907                  Num    8                                  
+ 500 type1c1908                  Num    8                                  
+ 501 type1c1909                  Num    8                                  
+ 502 type1c1910                  Num    8                                  
+ 503 type1c1911                  Num    8                                  
+ 504 type1c1912                  Num    8                                  
+ 505 type1c2001                  Num    8                                  
+ 506 type1c2002                  Num    8                                  
+ 507 type1c2003                  Num    8                                  
+ 508 type1c2004                  Num    8                                  
+ 509 type1c2005                  Num    8                                  
+ 510 type1c2006                  Num    8                                  
+ 511 type1c2007                  Num    8                                  
+ 512 type1c2008                  Num    8                                  
+ 513 type1c2009                  Num    8                                  
+ 514 type1c2010                  Num    8                                  
+ 515 type1c2011                  Num    8                                  
+ 516 type1c2012                  Num    8                                  
  
+/home/rsparapa/git/CTSI/Summer25/snippet18.sas                              
+                        VERITAS agreement with CRDW                       24
+                                                   16:00 Friday, May 9, 2025
+
+                           The CONTENTS Procedure
+
+                         Variables in Creation Order
  
+   # Variable                    Type Len Format      Informat Label
+
+ 517 type1c2101                  Num    8                                  
+ 518 type1c2102                  Num    8                                  
+ 519 type1c2103                  Num    8                                  
+ 520 type1c2104                  Num    8                                  
+ 521 type1c2105                  Num    8                                  
+ 522 type1c2106                  Num    8                                  
+ 523 type1c2107                  Num    8                                  
+ 524 type1c2108                  Num    8                                  
+ 525 type1c2109                  Num    8                                  
+ 526 type1c2110                  Num    8                                  
+ 527 type1c2111                  Num    8                                  
+ 528 type1c2112                  Num    8                                  
+ 529 type1c2201                  Num    8                                  
+ 530 type1c2202                  Num    8                                  
+ 531 type1c2203                  Num    8                                  
+ 532 type1c2204                  Num    8                                  
+ 533 type1c2205                  Num    8                                  
+ 534 type1c2206                  Num    8                                  
+ 535 type1c2207                  Num    8                                  
+ 536 type1c2208                  Num    8                                  
+ 537 type1c2209                  Num    8                                  
+ 538 type1c2210                  Num    8                                  
+ 539 type1c2211                  Num    8                                  
+ 540 type1c2212                  Num    8                                  
+ 541 type31701                   Num    8                                  
+ 542 type31702                   Num    8                                  
+ 543 type31703                   Num    8                                  
+ 544 type31704                   Num    8                                  
+ 545 type31705                   Num    8                                  
+ 546 type31706                   Num    8                                  
+ 547 type31707                   Num    8                                  
+ 548 type31708                   Num    8                                  
+ 549 type31709                   Num    8                                  
+ 550 type31710                   Num    8                                  
+ 551 type31711                   Num    8                                  
+ 552 type31712                   Num    8                                  
+ 553 type31801                   Num    8                                  
+ 554 type31802                   Num    8                                  
+ 555 type31803                   Num    8                                  
+ 556 type31804                   Num    8                                  
+ 557 type31805                   Num    8                                  
+ 558 type31806                   Num    8                                  
+ 559 type31807                   Num    8                                  
  
+/home/rsparapa/git/CTSI/Summer25/snippet18.sas                              
+                        VERITAS agreement with CRDW                       25
+                                                   16:00 Friday, May 9, 2025
+
+                           The CONTENTS Procedure
+
+                         Variables in Creation Order
  
+   # Variable                    Type Len Format      Informat Label
+
+ 560 type31808                   Num    8                                  
+ 561 type31809                   Num    8                                  
+ 562 type31810                   Num    8                                  
+ 563 type31811                   Num    8                                  
+ 564 type31812                   Num    8                                  
+ 565 type31901                   Num    8                                  
+ 566 type31902                   Num    8                                  
+ 567 type31903                   Num    8                                  
+ 568 type31904                   Num    8                                  
+ 569 type31905                   Num    8                                  
+ 570 type31906                   Num    8                                  
+ 571 type31907                   Num    8                                  
+ 572 type31908                   Num    8                                  
+ 573 type31909                   Num    8                                  
+ 574 type31910                   Num    8                                  
+ 575 type31911                   Num    8                                  
+ 576 type31912                   Num    8                                  
+ 577 type32001                   Num    8                                  
+ 578 type32002                   Num    8                                  
+ 579 type32003                   Num    8                                  
+ 580 type32004                   Num    8                                  
+ 581 type32005                   Num    8                                  
+ 582 type32006                   Num    8                                  
+ 583 type32007                   Num    8                                  
+ 584 type32008                   Num    8                                  
+ 585 type32009                   Num    8                                  
+ 586 type32010                   Num    8                                  
+ 587 type32011                   Num    8                                  
+ 588 type32012                   Num    8                                  
+ 589 type32101                   Num    8                                  
+ 590 type32102                   Num    8                                  
+ 591 type32103                   Num    8                                  
+ 592 type32104                   Num    8                                  
+ 593 type32105                   Num    8                                  
+ 594 type32106                   Num    8                                  
+ 595 type32107                   Num    8                                  
+ 596 type32108                   Num    8                                  
+ 597 type32109                   Num    8                                  
+ 598 type32110                   Num    8                                  
+ 599 type32111                   Num    8                                  
+ 600 type32112                   Num    8                                  
+ 601 type32201                   Num    8                                  
+ 602 type32202                   Num    8                                  
  
+/home/rsparapa/git/CTSI/Summer25/snippet18.sas                              
+                        VERITAS agreement with CRDW                       26
+                                                   16:00 Friday, May 9, 2025
+
+                           The CONTENTS Procedure
+
+                         Variables in Creation Order
  
+   # Variable                    Type Len Format      Informat Label
+
+ 603 type32203                   Num    8                                  
+ 604 type32204                   Num    8                                  
+ 605 type32205                   Num    8                                  
+ 606 type32206                   Num    8                                  
+ 607 type32207                   Num    8                                  
+ 608 type32208                   Num    8                                  
+ 609 type32209                   Num    8                                  
+ 610 type32210                   Num    8                                  
+ 611 type32211                   Num    8                                  
+ 612 type32212                   Num    8                                  
+ 613 misc1701                    Num    8                                  
+ 614 misc1702                    Num    8                                  
+ 615 misc1703                    Num    8                                  
+ 616 misc1704                    Num    8                                  
+ 617 misc1705                    Num    8                                  
+ 618 misc1706                    Num    8                                  
+ 619 misc1707                    Num    8                                  
+ 620 misc1708                    Num    8                                  
+ 621 misc1709                    Num    8                                  
+ 622 misc1710                    Num    8                                  
+ 623 misc1711                    Num    8                                  
+ 624 misc1712                    Num    8                                  
+ 625 misc1801                    Num    8                                  
+ 626 misc1802                    Num    8                                  
+ 627 misc1803                    Num    8                                  
+ 628 misc1804                    Num    8                                  
+ 629 misc1805                    Num    8                                  
+ 630 misc1806                    Num    8                                  
+ 631 misc1807                    Num    8                                  
+ 632 misc1808                    Num    8                                  
+ 633 misc1809                    Num    8                                  
+ 634 misc1810                    Num    8                                  
+ 635 misc1811                    Num    8                                  
+ 636 misc1812                    Num    8                                  
+ 637 misc1901                    Num    8                                  
+ 638 misc1902                    Num    8                                  
+ 639 misc1903                    Num    8                                  
+ 640 misc1904                    Num    8                                  
+ 641 misc1905                    Num    8                                  
+ 642 misc1906                    Num    8                                  
+ 643 misc1907                    Num    8                                  
+ 644 misc1908                    Num    8                                  
+ 645 misc1909                    Num    8                                  
  
+/home/rsparapa/git/CTSI/Summer25/snippet18.sas                              
+                        VERITAS agreement with CRDW                       27
+                                                   16:00 Friday, May 9, 2025
+
+                           The CONTENTS Procedure
+
+                         Variables in Creation Order
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+   # Variable                    Type Len Format      Informat Label
+
+ 646 misc1910                    Num    8                                  
+ 647 misc1911                    Num    8                                  
+ 648 misc1912                    Num    8                                  
+ 649 misc2001                    Num    8                                  
+ 650 misc2002                    Num    8                                  
+ 651 misc2003                    Num    8                                  
+ 652 misc2004                    Num    8                                  
+ 653 misc2005                    Num    8                                  
+ 654 misc2006                    Num    8                                  
+ 655 misc2007                    Num    8                                  
+ 656 misc2008                    Num    8                                  
+ 657 misc2009                    Num    8                                  
+ 658 misc2010                    Num    8                                  
+ 659 misc2011                    Num    8                                  
+ 660 misc2012                    Num    8                                  
+ 661 misc2101                    Num    8                                  
+ 662 misc2102                    Num    8                                  
+ 663 misc2103                    Num    8                                  
+ 664 misc2104                    Num    8                                  
+ 665 misc2105                    Num    8                                  
+ 666 misc2106                    Num    8                                  
+ 667 misc2107                    Num    8                                  
+ 668 misc2108                    Num    8                                  
+ 669 misc2109                    Num    8                                  
+ 670 misc2110                    Num    8                                  
+ 671 misc2111                    Num    8                                  
+ 672 misc2112                    Num    8                                  
+ 673 misc2201                    Num    8                                  
+ 674 misc2202                    Num    8                                  
+ 675 misc2203                    Num    8                                  
+ 676 misc2204                    Num    8                                  
+ 677 misc2205                    Num    8                                  
+ 678 misc2206                    Num    8                                  
+ 679 misc2207                    Num    8                                  
+ 680 misc2208                    Num    8                                  
+ 681 misc2209                    Num    8                                  
+ 682 misc2210                    Num    8                                  
+ 683 misc2211                    Num    8                                  
+ 684 misc2212                    Num    8                                  
+ 685 tx                          Num    8                                  
+ 686 age                         Num    8                                  
+ 687 aci_afib                    Num    8                                  
+ 688 aci_aflt                    Num    8                                  
  
 /home/rsparapa/git/CTSI/Summer25/snippet18.sas                              
