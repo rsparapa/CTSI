@@ -8,6 +8,7 @@ data persistent;
     if snippet14=0 then do;
         ablation=0;
         cardioversion=0;
+        closure=0;
     end;
 
     if inaad=0 then do;
@@ -67,9 +68,9 @@ title 'VERITAS agreement with CRDW';
 
 proc freq;
     where aci_afib | aci_aflt;
-    format ablation cardioversion amio aad present.;
-    tables amio cardioversion ablation aad;
-    tables amio*cardioversion*ablation*aad / list missing
+    format ablation cardioversion amio aad closure present.;
+    tables amio cardioversion ablation aad closure;
+    tables amio*cardioversion*ablation*aad*closure / list missing
         noprint out=persistent;
 run;
 
