@@ -1,33 +1,194 @@
-                                                                                         12:34 Tuesday, April 22, 2025   1
+                                               12:02 Friday, May 9, 2025   1
+
+                             The FREQ Procedure
+
+                           Table of afib by aflt
+
+                    afib      aflt
+
+                    Frequency|
+                    Percent  |
+                    Row Pct  |
+                    Col Pct  |       0|       1|  Total
+                    ---------+--------+--------+
+                           0 |      0 |    356 |    356
+                             |   0.00 |   7.50 |   7.50
+                             |   0.00 | 100.00 |
+                             |   0.00 |  26.65 |
+                    ---------+--------+--------+
+                           1 |   3411 |    980 |   4391
+                             |  71.86 |  20.64 |  92.50
+                             |  77.68 |  22.32 |
+                             | 100.00 |  73.35 |
+                    ---------+--------+--------+
+                    Total        3411     1336     4747
+                                71.86    28.14   100.00
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/Summer25/snippet18.sas                              
+                             AFIB and not AFLT                             2
+                                                   12:02 Friday, May 9, 2025
+
+                             The FREQ Procedure
+
+                       Table of aci_afib by aci_aflt
+
+                    aci_afib     aci_aflt
+
+                    Frequency|
+                    Percent  |
+                    Row Pct  |
+                    Col Pct  |       0|       1|  Total
+                    ---------+--------+--------+
+                           0 |    834 |    149 |    983
+                             |  28.66 |   5.12 |  33.78
+                             |  84.84 |  15.16 |
+                             |  30.21 | 100.00 |
+                    ---------+--------+--------+
+                           1 |   1927 |      0 |   1927
+                             |  66.22 |   0.00 |  66.22
+                             | 100.00 |   0.00 |
+                             |  69.79 |   0.00 |
+                    ---------+--------+--------+
+                    Total        2761      149     2910
+                                94.88     5.12   100.00
+
+                          Frequency Missing = 501
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/Summer25/snippet18.sas                              
+                                    AFLT       12:02 Friday, May 9, 2025   3
+
+                             The FREQ Procedure
+
+                       Table of aci_afib by aci_aflt
+
+                    aci_afib     aci_aflt
+
+                    Frequency|
+                    Percent  |
+                    Row Pct  |
+                    Col Pct  |       0|       1|  Total
+                    ---------+--------+--------+
+                           0 |    316 |    453 |    769
+                             |  27.57 |  39.53 |  67.10
+                             |  41.09 |  58.91 |
+                             |  45.60 | 100.00 |
+                    ---------+--------+--------+
+                           1 |    377 |      0 |    377
+                             |  32.90 |   0.00 |  32.90
+                             | 100.00 |   0.00 |
+                             |  54.40 |   0.00 |
+                    ---------+--------+--------+
+                    Total         693      453     1146
+                                60.47    39.53   100.00
+
+                          Frequency Missing = 190
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/Summer25/snippet18.sas                              
+                                               VERITAS agreement with CRDW                   12:02 Friday, May 9, 2025   4
 
                                                     The FREQ Procedure
 
                                                                  Cumulative    Cumulative
                                 amio    Frequency     Percent     Frequency      Percent
                                 ---------------------------------------------------------
-                                   0        2547       53.65          2547        53.65  
-                                  1+        2200       46.35          4747       100.00  
+                                   0        1525       52.48          1525        52.48  
+                                  1+        1381       47.52          2906       100.00  
 
 
                                                                       Cumulative    Cumulative
                             cardioversion    Frequency     Percent     Frequency      Percent
                             ------------------------------------------------------------------
-                                        0        3127       65.87          3127        65.87  
-                                       1+        1620       34.13          4747       100.00  
+                                        0        1741       59.91          1741        59.91  
+                                       1+        1165       40.09          2906       100.00  
 
 
                                                                    Cumulative    Cumulative
                               ablation    Frequency     Percent     Frequency      Percent
                               -------------------------------------------------------------
-                                     0        3830       80.68          3830        80.68  
-                                    1+         917       19.32          4747       100.00  
+                                     0        2253       77.53          2253        77.53  
+                                    1+         653       22.47          2906       100.00  
 
 
                                                                  Cumulative    Cumulative
                                  aad    Frequency     Percent     Frequency      Percent
                                  --------------------------------------------------------
-                                   0        4025       84.79          4025        84.79  
-                                  1+         722       15.21          4747       100.00  
+                                   0        2456       84.51          2456        84.51  
+                                  1+         450       15.49          2906       100.00  
  
  
  
@@ -45,23 +206,24 @@
  
  
  
-/home/rsparapa/git/CTSI/BERD/snippet18.sas                                                                                
-                                                                                         12:34 Tuesday, April 22, 2025   2
+ 
+/home/rsparapa/git/CTSI/Summer25/snippet18.sas                                                                            
+                                               VERITAS agreement with CRDW                   12:02 Friday, May 9, 2025   5
 
                            Obs    amio    cardioversion    ablation    aad    COUNT    PERCENT
 
-                             1      0           0              0        0      1546    32.5679
-                             2     1+           0              0        0       951    20.0337
-                             3     1+          1+              0        0       692    14.5776
-                             4     1+          1+             1+        0       436     9.1847
-                             5      0           0              0       1+       351     7.3941
-                             6      0          1+              0       1+       147     3.0967
-                             7      0          1+             1+       1+       146     3.0756
-                             8      0          1+              0        0       143     3.0124
-                             9     1+           0             1+        0       121     2.5490
-                            10      0           0             1+        0        80     1.6853
-                            11      0           0             1+       1+        78     1.6431
-                            12      0          1+             1+        0        56     1.1797
+                             1      0           0              0        0      860     29.5939
+                             2     1+           0              0        0      539     18.5478
+                             3     1+          1+              0        0      464     15.9670
+                             4     1+          1+             1+        0      307     10.5643
+                             5      0           0              0       1+      164      5.6435
+                             6      0          1+             1+       1+      123      4.2326
+                             7      0          1+              0        0      116      3.9917
+                             8      0          1+              0       1+      110      3.7853
+                             9     1+           0             1+        0       71      2.4432
+                            10      0           0             1+        0       54      1.8582
+                            11      0           0             1+       1+       53      1.8238
+                            12      0          1+             1+        0       45      1.5485
  
  
  
@@ -93,4 +255,113 @@
  
  
  
-/home/rsparapa/git/CTSI/BERD/snippet18.sas                                                                                
+ 
+/home/rsparapa/git/CTSI/Summer25/snippet18.sas                                                                            
+                        VERITAS agreement with CRDW                        6
+                                                   12:02 Friday, May 9, 2025
+
+                           The CONTENTS Procedure
+
+Data Set Name        WORK.PERSISTENT               Observations          12 
+Member Type          DATA                          Variables             6  
+Engine               V9                            Indexes               0  
+Created              05/09/2025 12:02:43           Observation Length    48 
+Last Modified        05/09/2025 12:02:43           Deleted Observations  0  
+Protection                                         Compressed            NO 
+Data Set Type                                      Sorted                YES
+Label                Frequency Counts                                       
+                     and Percentages                                        
+Data Representation  SOLARIS_X86_64,                                        
+                     LINUX_X86_64, ALPHA_TRU64,                             
+                     LINUX_IA64                                             
+Encoding             latin1  Western (ISO)                                  
+
+
+                     Engine/Host Dependent Information
+
+Data Set Page Size          65536                                           
+Number of Data Set Pages    1                                               
+First Data Page             1                                               
+Max Obs per Page            1360                                            
+Obs in First Data Page      12                                              
+Number of Data Set Repairs  0                                               
+Filename                    /saswork/SAS_work2B27000154B7_colby.            
+                            biostat.mcw.edu/persistent.sas7bdat             
+Release Created             9.0401M8                                        
+Host Created                Linux                                           
+Inode Number                6476067705                                      
+Access Permission           rw-r--r--                                       
+Owner Name                  rsparapa                                        
+File Size                   128KB                                           
+File Size (bytes)           131072                                          
+
+
+                        Variables in Creation Order
+ 
+#    Variable         Type    Len    Format      Label
+
+1    amio             Num       8    PRESENT.                              
+2    cardioversion    Num       8    PRESENT.                              
+3    ablation         Num       8    PRESENT.                              
+4    aad              Num       8    PRESENT.                              
+5    COUNT            Num       8                Frequency Count           
+6    PERCENT          Num       8                Percent of Total Frequency
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/Summer25/snippet18.sas                              
+                        VERITAS agreement with CRDW                        7
+                                                   12:02 Friday, May 9, 2025
+
+                           The CONTENTS Procedure
+
+                             Sort Information
+
+                      Sortedby       DESCENDING COUNT
+                      Validated      NO              
+                      Character Set  ASCII           
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/home/rsparapa/git/CTSI/Summer25/snippet18.sas                              

@@ -1,5 +1,5 @@
 
-data crdw.persistent;
+data persistent;
     merge crdw.snippet13(in=snippet13)
         crdw.snippet14(in=snippet14) crdw.aad(in=inaad);
     by patient_hash;
@@ -22,10 +22,40 @@ data crdw.persistent;
     else if amio then aad=0;
 run;
 
-/*
-proc contents varnum;
+proc sort data=persistent;
+    by patient_hash patient_trac_id;
 run;
-*/
+
+data crdw.persistent;
+    merge 
+        persistent(in=persistent)
+        crdw.interp(keep=patient_hash patient_trac_id
+        afib aflut rename=(afib=aci_afib aflut=aci_aflt)) 
+    ;
+    /* automatic computerized interpretation (ACI) */
+    by patient_hash patient_trac_id;
+    
+    if persistent;
+run;
+
+proc freq;
+    tables afib*aflt;
+run;
+
+title 'AFIB and not AFLT';
+proc freq;
+    where afib & aflt=0;
+    tables aci_afib*aci_aflt;
+run;
+
+title 'AFLT';
+proc freq;
+    where aflt;
+    tables aci_afib*aci_aflt;
+run;
+
+title;
+options ps=49 ls=122;
 
 proc format;
     value present
@@ -33,9 +63,10 @@ proc format;
     ;
 run;
 
-options ps=49 ls=122;
+title 'VERITAS agreement with CRDW';
 
 proc freq;
+    where aci_afib | aci_aflt;
     format ablation cardioversion amio aad present.;
     tables amio cardioversion ablation aad;
     tables amio*cardioversion*ablation*aad / list missing
@@ -45,4 +76,9 @@ run;
 %_sort(data=persistent, out=persistent, by=descending count);
 
 proc print;
+run;
+
+options ps=54 ls=76;    
+
+proc contents varnum;
 run;
