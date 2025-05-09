@@ -5,6 +5,9 @@ endsas;
 but its very slow: it takes 6 days! 
 although SAS is written in fast C
 SG PROCs are slow-poke Java code
+for long-running jobs, you are
+better off with TORQUE
+qsas snippet25 -host cheddar -walltime 168
 */
 
 options orientation=landscape; 
