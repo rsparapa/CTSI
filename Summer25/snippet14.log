@@ -1,0 +1,499 @@
+1                                                          The SAS System                             17:17 Thursday, March 13, 2025
+
+NOTE: Copyright (c) 2023 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M8) 
+      Licensed to MEDICAL COLLEGE OF WISCONSIN - T&R SFA, Site 70183647.
+NOTE: This session is executing on the Linux 3.10.0-514.10.2.el7.x86_64 (LIN X64) platform.
+
+
+
+NOTE: Analytical products:
+      
+      SAS/STAT 15.3
+      SAS/ETS 15.3
+      SAS/OR 15.3
+      SAS/IML 15.3
+      SAS/QC 15.3
+
+NOTE: Additional host information:
+
+ Linux LIN X64 3.10.0-514.10.2.el7.x86_64 #1 SMP Fri Mar 3 00:04:05 UTC 2017 x86_64 CentOS Linux release 7.9.2009 (Core) 
+
+NOTE: SAS initialization used:
+      real time           0.02 seconds
+      cpu time            0.02 seconds
+      
+
+NOTE: AUTOEXEC processing beginning; file is /home/rsparapa/git/CTSI/BERD/autoexec.sas.
+
+NOTE: Libref CRDW was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /data/shared/04224/CTSI/libname/crdw
+NOTE: You have called the macro _IFELSE, 2008-07-15.
+NOTE: Copyright (c) 2006-2008 Rodney Sparapani
+ 
+NOTE: You have called the macro _EXIST, 2012-07-11.
+NOTE: Copyright (c) 2001-2012 Rodney Sparapani
+ 
+NOTE: You have called the macro _FN, 2024-08-03.
+NOTE: Copyright (c) 2001-2024 Rodney Sparapani
+ 
+MPRINT(_FN):   filename fn "/home/rsparapa/git/CTSI/BERD/snippet14.sas";
+MPRINT(_FN):   filename fn;
+NOTE: Fileref FN has been deassigned.
+NOTE: You have called the macro _TAIL, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _DIRCHAR, 2007-07-24.
+NOTE: Copyright (c) 2004-2007 Rodney Sparapani
+ 
+NOTE: You have called the macro _UNWIND, 2004-11-23.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _COUNT, 2022-06-07.
+NOTE: Copyright (c) 2001-2022 Rodney Sparapani
+2                              The SAS System 17:17 Thursday, March 13, 2025
+
+ 
+NOTE: You have called the macro _SUBSTR, 2004-03-29.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _HEAD, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+FN=snippet14.sas
+FNROOT=snippet14
+FNPATH=/home/rsparapa/git/CTSI/BERD/snippet14.sas
+FNDIR=/home/rsparapa/git/CTSI/BERD/
+FNTEXT=snippet14.txt
+FNHTML=snippet14.html
+FNTEX=snippet14.tex
+FNPDF=snippet14.pdf
+NOTE: You have called the macro _LJ, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _PAD, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+MPRINT(_LJ):   "/home/rsparapa/git/CTSI/BERD/snippet14.sas"
+MPRINT(_PAD):   
+"202020202020202020202020202020202020202020202020202020202020202020202020202
+0202020202020202020202020202020202020202020202020202020202020202020202020202
+020202020"X
+ 
+*** SGANNO macros are now available ***
+     NOTE: SGANNO macros (except SGANNO_HELP) should be used within data 
+step.
+ 
+ 
+ Following macros are available 
+ 
+     %SGANNO_HELP 
+     %SGARROW 
+     %SGIMAGE 
+     %SGLINE 
+     %SGOVAL 
+     %SGPOLYCONT 
+     %SGPOLYGON 
+     %SGPOLYLINE 
+     %SGRECTANGLE 
+     %SGTEXT 
+     %SGTEXTCONT 
+ 
+ Enter %SGANNO_HELP(macroname) for details on each SGANNO macro,
+    or %SGANNO_HELP(ALL) for details on all SGANNO macros.
+ 
+MPRINT(SGANNO):  ;
+ 
+3                              The SAS System 17:17 Thursday, March 13, 2025
+
+*** ANNOTATE macros are now available ***
+ 
+ For further information on ANNOTATE macros, enter,
+    %HELPANO(macroname), (for specific macros)
+    %HELPANO(ALL), (for information on all macros)
+ or %HELPANO (for a list of macro names)
+ 
+NOTE: Libref CWD was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /home/rsparapa/git/CTSI/BERD
+NOTE: Libref PWD refers to the same physical library as CWD.
+NOTE: Libref PWD was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /home/rsparapa/git/CTSI/BERD
+
+NOTE: AUTOEXEC processing completed.
+
+1          
+2          data ablation;
+3              length px $ 5;
+4              input px;
+5          datalines;
+
+NOTE: The data set WORK.ABLATION has 11 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+17         run;
+18         
+19         data cardioversion;
+20             length px $ 5;
+21             input px;
+22         datalines;
+
+NOTE: The data set WORK.CARDIOVERSION has 2 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+25         run;
+26         
+27         data closure;
+28             length px $ 5;
+29             input px;
+30         datalines;
+
+NOTE: The data set WORK.CLOSURE has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+4                              The SAS System 17:17 Thursday, March 13, 2025
+
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+32         run;
+33         
+34         data codes;
+35             set ablation cardioversion closure;
+36             by px;
+37         run;
+
+NOTE: There were 11 observations read from the data set WORK.ABLATION.
+NOTE: There were 2 observations read from the data set WORK.CARDIOVERSION.
+NOTE: There were 1 observations read from the data set WORK.CLOSURE.
+NOTE: The data set WORK.CODES has 14 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+38         
+39         %_dblib(data=db.fh_hb_procs_jupyter, var=_none_);
+NOTE: You have called the macro _DBLIB, 2025-03-11.
+NOTE: Copyright (c) 2025 Rodney Sparapani
+ 
+NOTE: You have called the macro _REQUIRE, 2004-03-29.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+MPRINT(_DBLIB):  ;
+NOTE: You have called the macro _LIB, 2007-08-01.
+NOTE: Copyright (c) 2001-2007 Rodney Sparapani
+ 
+NOTE: You have called the macro _DATA, 2007-07-31.
+NOTE: Copyright (c) 2001-2007 Rodney Sparapani
+ 
+MPRINT(_DBLIB):   proc sql;
+MPRINT(_DBLIB):   connect to postgres as crdw (user=rsparapani 
+password=RSP#ygbzqp26t5W#Jyph2 server="garth.ctsi.mcw.edu" 
+database="fh_jupyter_hub_hbdb");
+MPRINT(_DBLIB):   create table schema as select * from connection to crdw 
+(select * from information_schema.columns where table_schema = 'public') 
+where table_name="fh_hb_procs_jupyter";
+NOTE: Table WORK.SCHEMA created, with 19 rows and 44 columns.
+
+MPRINT(_DBLIB):   disconnect from crdw;
+MPRINT(_DBLIB):   quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.23 seconds
+      cpu time            0.07 seconds
+      
+
+5                              The SAS System 17:17 Thursday, March 13, 2025
+
+MPRINT(_DBLIB):   data dbdates;
+MPRINT(_DBLIB):   set schema;
+MPRINT(_DBLIB):   where data_type=:"time";
+MPRINT(_DBLIB):   run;
+
+NOTE: There were 1 observations read from the data set WORK.SCHEMA.
+      WHERE data_type=:'time';
+NOTE: The data set WORK.DBDATES has 1 observations and 44 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: You have called the macro _LEVEL, 2011-09-01.
+NOTE: Copyright (c) 2002-2011 Rodney Sparapani
+ 
+NOTE: You have called the macro _NOBS, 2007-07-11.
+NOTE: Copyright (c) 2001-2007 Rodney Sparapani
+ 
+NOTE: You have called the macro _DSEXIST, 2007-08-01.
+NOTE: Copyright (c) 2001-2007 Rodney Sparapani
+ 
+NOTE: You have called the macro _SUFFIX, 2004-10-26.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _VERSION, 2006-02-15.
+NOTE: Copyright (c) 2001-2006 Rodney Sparapani
+ 
+NOTE: You have called the macro _DIR, 2004-11-23.
+NOTE: Copyright (c) 2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _FILE, 2004-11-23.
+NOTE: Copyright (c) 2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _OPTION, 2004-03-29.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+MPRINT(_DBLIB):   data dblen;
+MPRINT(_DBLIB):   set schema;
+MPRINT(_DBLIB):   where data_type in:('character', 'text');
+MPRINT(_DBLIB):   column_name=lowcase(column_name);
+MPRINT(_DBLIB):   run;
+
+NOTE: There were 15 observations read from the data set WORK.SCHEMA.
+      WHERE data_type in: ('character', 'text');
+NOTE: The data set WORK.DBLEN has 15 observations and 44 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+6                              The SAS System 17:17 Thursday, March 13, 2025
+
+MPRINT(_DBLIB):   libname db postgres user = "rsparapani" password = 
+"RSP#ygbzqp26t5W#Jyph2" server = "garth.ctsi.mcw.edu" database = 
+"fh_jupyter_hub_hbdb" client_encoding = "utf-8" dbmax_text = 16 
+sql_functions = all port=5432 ;
+NOTE: Libref DB was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: garth.ctsi.mcw.edu
+40         
+41         data snippet14;
+42             set db.fh_hb_procs_jupyter(keep=patient_hash encounter_hash
+43                 px_type px i2b2_date_shifted);
+44             where px_type='CH' & px %_inclause(data=codes, var=px) &
+NOTE: You have called the macro _INCLAUSE, 2024-06-21.
+NOTE: Copyright (c) 2022-2024 Rodney Sparapani
+ 
+MPRINT(_INCLAUSE):   in("33250", "33251", "33254", "33255", "33256", 
+"33265", "33266", "33340", "92960", "92961", "93650", "93653", "93654", 
+"93656")
+45                 '01JAN2016:00:00:00'dt<=i2b2_date_shifted<'01JAN2024:00:0
+45       ! 0:00'dt;
+46         run;
+
+NOTE: There were 20560 observations read from the data set 
+      DB.FH_HB_PROCS_JUPYTER.
+      WHERE (px_type='CH') and px in ('33250', '33251', '33254', '33255', 
+      '33256', '33265', '33266', '33340', '92960', '92961', '93650', 
+      '93653', '93654', '93656') and (i2b2_date_shifted>='  
+      01JAN2016:00:00:00'DT and i2b2_date_shifted<'  01JAN2024:00:00:00'DT);
+NOTE: The data set WORK.SNIPPET14 has 20560 observations and 5 variables.
+NOTE: DATA statement used (Total process time):
+      real time           3.48 seconds
+      cpu time            0.14 seconds
+      
+
+47         
+48         %_dbdata(out=snippet14);
+NOTE: You have called the macro _DBDATA, 2025-03-10.
+NOTE: Copyright (c) 2025 Rodney Sparapani
+ 
+MPRINT(_DBDATA):  ;
+NOTE: You have called the macro _BLIST, 2008-03-03.
+NOTE: Copyright (c) 2004-2008 Rodney Sparapani
+ 
+MPRINT(_DBDATA):   data snippet14;
+MPRINT(_DBDATA):   length
+MPRINT(_DBDATA):  ;
+MPRINT(_DBDATA):   set WORK.SNIPPET14 ;
+MPRINT(_DBDATA):   attrib _all_ label=' ';
+MPRINT(_DBDATA):   format _numeric_;
+MPRINT(_DBDATA):   informat _numeric_;
+MPRINT(_DBDATA):   informat i2b2_date_shifted;
+7                              The SAS System 17:17 Thursday, March 13, 2025
+
+MPRINT(_DBDATA):   format i2b2_date date9. i2b2_date_shifted datetime19.;
+MPRINT(_DBDATA):   i2b2_date=datepart(i2b2_date_shifted);
+MPRINT(_DBDATA):   run;
+
+NOTE: There were 20560 observations read from the data set WORK.SNIPPET14.
+NOTE: The data set WORK.SNIPPET14 has 20560 observations and 6 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+49         
+50         %_sort(data=snippet14, out=snippet14, sort=nodupkey,
+NOTE: You have called the macro _SORT, 2016-11-16
+NOTE: Copyright (c) 2001-2016 Rodney Sparapani
+ 
+51             by=patient_hash i2b2_date px);
+MPRINT(_SORT):  ;
+MPRINT(_SORT):   proc sort nodupkey out=work.snippet14 
+(sortedby=patient_hash i2b2_date px) data=
+MPRINT(_SORT):   work.snippet14 (
+MPRINT(_SORT):   );
+NOTE: You have called the macro _BY, 2005-03-25.
+NOTE: Copyright (c) 2001-2005 Rodney Sparapani
+ 
+MPRINT(_SORT):   by
+NOTE: You have called the macro _LIST, 2013-09-04.
+NOTE: Copyright (c) 2001-2013 Rodney Sparapani
+ 
+MPRINT(_BY):   PATIENT_HASH I2B2_DATE PX
+MPRINT(_SORT):  ;
+MPRINT(_SORT):   run;
+
+NOTE: There were 20560 observations read from the data set WORK.SNIPPET14.
+NOTE: 10397 observations with duplicate key values were deleted.
+NOTE: The data set WORK.SNIPPET14 has 10163 observations and 6 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.03 seconds
+      
+
+52         
+53         /*
+54         data count;
+55             set snippet14;
+56             by patient_hash;
+57             %_retain(var=count=0, by=patient_hash);
+58             count+1;
+59             keep count;
+60             if last.patient_hash;
+61         run;
+8                              The SAS System 17:17 Thursday, March 13, 2025
+
+62         
+63         proc freq;
+64             tables count;
+65         run;
+66         endsas;
+67         */
+68         
+69         %let max=18;
+70         
+71         data crdw.snippet14;
+72             length px $ &max;
+73             set snippet14;
+74             by patient_hash;
+75             array _px(&max) $ 5 px1-px&max;
+76             array _pxdate(&max) pxdate1-pxdate&max;
+77             format pxdate1-pxdate&max date7.;
+78         
+79             keep patient_hash px afib_closure ablation cardioversion
+79       ! closure
+80                 pxtotal px1-px&max pxdate1-pxdate&max;
+81         
+82             %_retain(var=pxtotal=0 px1--px&max='' pxdate1--pxdate&max,
+82       ! by=patient_hash);
+NOTE: You have called the macro _RETAIN, 2017-02-28.
+NOTE: Copyright (c) 2001-2017 Rodney Sparapani
+ 
+MPRINT(_RETAIN):  ;
+MPRINT(_RETAIN):   retain pxtotal
+MPRINT(_RETAIN):   0 ;
+MPRINT(_RETAIN):   retain px1--px18
+NOTE: You have called the macro _INDEXC, 2004-03-29.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+MPRINT(_RETAIN):   '' ;
+MPRINT(_RETAIN):   retain pxdate1--pxdate18
+MPRINT(_RETAIN):   ;
+NOTE: You have called the macro _FIRST, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+MPRINT(_RETAIN):   if
+MPRINT(_FIRST):   (first.PATIENT_HASH)
+MPRINT(_RETAIN):   then do;
+MPRINT(_RETAIN):   pxtotal=0;
+MPRINT(_RETAIN):   array _21(*) px1--px18;
+MPRINT(_RETAIN):   do _i_=1 to hbound(_21);
+MPRINT(_RETAIN):   _21(_i_)='';
+MPRINT(_RETAIN):   end;
+MPRINT(_RETAIN):   drop _i_;
+MPRINT(_RETAIN):   array _31(*) pxdate1--pxdate18;
+MPRINT(_RETAIN):   do _i_=1 to hbound(_31);
+MPRINT(_RETAIN):   _31(_i_)=.;
+9                              The SAS System 17:17 Thursday, March 13, 2025
+
+MPRINT(_RETAIN):   end;
+MPRINT(_RETAIN):   drop _i_;
+MPRINT(_RETAIN):   end
+83         
+84             pxtotal+1;
+85         
+86             _px(pxtotal)=px;
+87             _pxdate(pxtotal)=i2b2_date;
+88         
+89             if last.patient_hash;
+90         
+91             px='';
+92             ablation=0; cardioversion=0; closure=0; afib_closure=0;
+93         
+94             do i=1 to pxtotal;
+95                 if _px(i) %_inclause(data=ablation, var=px) then do;
+MPRINT(_INCLAUSE):   in("33250", "33251", "33254", "33255", "33256", 
+"33265", "33266", "93650", "93653", "93654", "93656")
+96                     substr(px, i, 1)='A';
+97                     ablation+1;
+98                 end;
+99                 else if _px(i) %_inclause(data=cardioversion, var=px)
+99       ! then do;
+MPRINT(_INCLAUSE):   in("92960", "92961")
+100                    substr(px, i, 1)='C';
+101                    cardioversion+1;
+102                end;
+103                else if _px(i)='33340' then do;
+104                    substr(px, i, 1)='0';
+105                    closure+1;
+106                end;
+107        
+108                if _px(i) in('33340', '93656') then afib_closure+1;
+109            end;
+110        run;
+
+NOTE: There were 10163 observations read from the data set WORK.SNIPPET14.
+NOTE: The data set CRDW.SNIPPET14 has 6262 observations and 43 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.19 seconds
+      cpu time            0.09 seconds
+      
+
+111        
+112        proc freq;
+113            tables pxtotal afib_closure ablation cardioversion closure;
+114        run;
+
+NOTE: There were 6262 observations read from the data set CRDW.SNIPPET14.
+NOTE: The PROCEDURE FREQ printed pages 1-2.
+NOTE: PROCEDURE FREQ used (Total process time):
+10                             The SAS System 17:17 Thursday, March 13, 2025
+
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+115        
+116        proc contents varnum;
+117        run;
+
+NOTE: PROCEDURE CONTENTS used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+NOTE: The PROCEDURE CONTENTS printed pages 3-4.
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           4.26 seconds
+      cpu time            0.57 seconds
+      

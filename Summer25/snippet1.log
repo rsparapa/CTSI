@@ -1,0 +1,149 @@
+1                                                          The SAS System                             09:42 Thursday, March 13, 2025
+
+NOTE: Copyright (c) 2023 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M8) 
+      Licensed to MEDICAL COLLEGE OF WISCONSIN - T&R SFA, Site 70183647.
+NOTE: This session is executing on the Linux 3.10.0-514.10.2.el7.x86_64 (LIN X64) platform.
+
+
+
+NOTE: Analytical products:
+      
+      SAS/STAT 15.3
+      SAS/ETS 15.3
+      SAS/OR 15.3
+      SAS/IML 15.3
+      SAS/QC 15.3
+
+NOTE: Additional host information:
+
+ Linux LIN X64 3.10.0-514.10.2.el7.x86_64 #1 SMP Fri Mar 3 00:04:05 UTC 2017 x86_64 CentOS Linux release 7.9.2009 (Core) 
+
+NOTE: SAS initialization used:
+      real time           0.05 seconds
+      cpu time            0.03 seconds
+      
+
+NOTE: AUTOEXEC processing beginning; file is /home/rsparapa/git/CTSI/BERD/autoexec.sas.
+
+NOTE: Libref CRDW was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /data/shared/04224/CTSI/libname/crdw
+NOTE: You have called the macro _IFELSE, 2008-07-15.
+NOTE: Copyright (c) 2006-2008 Rodney Sparapani
+ 
+NOTE: You have called the macro _EXIST, 2012-07-11.
+NOTE: Copyright (c) 2001-2012 Rodney Sparapani
+ 
+NOTE: You have called the macro _FN, 2024-08-03.
+NOTE: Copyright (c) 2001-2024 Rodney Sparapani
+ 
+MPRINT(_FN):   filename fn "/home/rsparapa/git/CTSI/BERD/snippet1.sas";
+MPRINT(_FN):   filename fn;
+NOTE: Fileref FN has been deassigned.
+NOTE: You have called the macro _TAIL, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _DIRCHAR, 2007-07-24.
+NOTE: Copyright (c) 2004-2007 Rodney Sparapani
+ 
+NOTE: You have called the macro _UNWIND, 2004-11-23.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _COUNT, 2022-06-07.
+NOTE: Copyright (c) 2001-2022 Rodney Sparapani
+2                              The SAS System 09:42 Thursday, March 13, 2025
+
+ 
+NOTE: You have called the macro _SUBSTR, 2004-03-29.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _HEAD, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+FN=snippet1.sas
+FNROOT=snippet1
+FNPATH=/home/rsparapa/git/CTSI/BERD/snippet1.sas
+FNDIR=/home/rsparapa/git/CTSI/BERD/
+FNTEXT=snippet1.txt
+FNHTML=snippet1.html
+FNTEX=snippet1.tex
+FNPDF=snippet1.pdf
+NOTE: You have called the macro _LJ, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _PAD, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+MPRINT(_LJ):   "/home/rsparapa/git/CTSI/BERD/snippet1.sas"
+MPRINT(_PAD):   
+"202020202020202020202020202020202020202020202020202020202020202020202020202
+0202020202020202020202020202020202020202020202020202020202020202020202020202
+02020202020"X
+ 
+*** SGANNO macros are now available ***
+     NOTE: SGANNO macros (except SGANNO_HELP) should be used within data 
+step.
+ 
+ 
+ Following macros are available 
+ 
+     %SGANNO_HELP 
+     %SGARROW 
+     %SGIMAGE 
+     %SGLINE 
+     %SGOVAL 
+     %SGPOLYCONT 
+     %SGPOLYGON 
+     %SGPOLYLINE 
+     %SGRECTANGLE 
+     %SGTEXT 
+     %SGTEXTCONT 
+ 
+ Enter %SGANNO_HELP(macroname) for details on each SGANNO macro,
+    or %SGANNO_HELP(ALL) for details on all SGANNO macros.
+ 
+MPRINT(SGANNO):  ;
+ 
+3                              The SAS System 09:42 Thursday, March 13, 2025
+
+*** ANNOTATE macros are now available ***
+ 
+ For further information on ANNOTATE macros, enter,
+    %HELPANO(macroname), (for specific macros)
+    %HELPANO(ALL), (for information on all macros)
+ or %HELPANO (for a list of macro names)
+ 
+NOTE: Libref CWD was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /home/rsparapa/git/CTSI/BERD
+NOTE: Libref PWD refers to the same physical library as CWD.
+NOTE: Libref PWD was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /home/rsparapa/git/CTSI/BERD
+
+NOTE: AUTOEXEC processing completed.
+
+1          * snippet1.sas ;
+2          
+3          libname db postgres
+4              user            = "&user"
+5              password        = "&password"
+6              server          = "garth.ctsi.mcw.edu"
+7              database        = "fh_jupyter_hub_hbdb"
+8              dbmax_text      = 16 /* this is way too short */
+9          /*setting the length for very long character types*/
+10             client_encoding = "utf-8"
+11         /*otherwise Unicode will generate an error*/
+12             sql_functions   = all;
+NOTE: Libref DB was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: garth.ctsi.mcw.edu
+13         /*enables all SAS functions for SQL*/
+14         
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           0.20 seconds
+      cpu time            0.15 seconds
+      

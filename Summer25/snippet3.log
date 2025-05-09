@@ -1,0 +1,225 @@
+1                                                          The SAS System                              11:50 Tuesday, April 22, 2025
+
+NOTE: Copyright (c) 2023 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M8) 
+      Licensed to MEDICAL COLLEGE OF WISCONSIN - T&R SFA, Site 70183647.
+NOTE: This session is executing on the Linux 3.10.0-514.10.2.el7.x86_64 (LIN X64) platform.
+
+
+
+NOTE: Analytical products:
+      
+      SAS/STAT 15.3
+      SAS/ETS 15.3
+      SAS/OR 15.3
+      SAS/IML 15.3
+      SAS/QC 15.3
+
+NOTE: Additional host information:
+
+ Linux LIN X64 3.10.0-514.10.2.el7.x86_64 #1 SMP Fri Mar 3 00:04:05 UTC 2017 x86_64 CentOS Linux release 7.9.2009 (Core) 
+
+NOTE: SAS initialization used:
+      real time           0.02 seconds
+      cpu time            0.01 seconds
+      
+
+NOTE: AUTOEXEC processing beginning; file is /home/rsparapa/git/CTSI/BERD/autoexec.sas.
+
+NOTE: Libref CRDW was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /data/shared/04224/afib/libname/crdw
+NOTE: You have called the macro _IFELSE, 2008-07-15.
+NOTE: Copyright (c) 2006-2008 Rodney Sparapani
+ 
+NOTE: You have called the macro _EXIST, 2012-07-11.
+NOTE: Copyright (c) 2001-2012 Rodney Sparapani
+ 
+NOTE: You have called the macro _FN, 2024-08-03.
+NOTE: Copyright (c) 2001-2024 Rodney Sparapani
+ 
+MPRINT(_FN):   filename fn "/home/rsparapa/git/CTSI/BERD/snippet3.sas";
+MPRINT(_FN):   filename fn;
+NOTE: Fileref FN has been deassigned.
+NOTE: You have called the macro _TAIL, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _DIRCHAR, 2007-07-24.
+NOTE: Copyright (c) 2004-2007 Rodney Sparapani
+ 
+NOTE: You have called the macro _UNWIND, 2004-11-23.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _COUNT, 2022-06-07.
+NOTE: Copyright (c) 2001-2022 Rodney Sparapani
+2                              The SAS System  11:50 Tuesday, April 22, 2025
+
+ 
+NOTE: You have called the macro _SUBSTR, 2004-03-29.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _HEAD, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+FN=snippet3.sas
+FNROOT=snippet3
+FNPATH=/home/rsparapa/git/CTSI/BERD/snippet3.sas
+FNDIR=/home/rsparapa/git/CTSI/BERD/
+FNTEXT=snippet3.txt
+FNHTML=snippet3.html
+FNTEX=snippet3.tex
+FNPDF=snippet3.pdf
+NOTE: You have called the macro _LJ, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _PAD, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+MPRINT(_LJ):   "/home/rsparapa/git/CTSI/BERD/snippet3.sas"
+MPRINT(_PAD):   
+"202020202020202020202020202020202020202020202020202020202020202020202020202
+0202020202020202020202020202020202020202020202020202020202020202020202020202
+02020202020"X
+ 
+*** SGANNO macros are now available ***
+     NOTE: SGANNO macros (except SGANNO_HELP) should be used within data 
+step.
+ 
+ 
+ Following macros are available 
+ 
+     %SGANNO_HELP 
+     %SGARROW 
+     %SGIMAGE 
+     %SGLINE 
+     %SGOVAL 
+     %SGPOLYCONT 
+     %SGPOLYGON 
+     %SGPOLYLINE 
+     %SGRECTANGLE 
+     %SGTEXT 
+     %SGTEXTCONT 
+ 
+ Enter %SGANNO_HELP(macroname) for details on each SGANNO macro,
+    or %SGANNO_HELP(ALL) for details on all SGANNO macros.
+ 
+MPRINT(SGANNO):  ;
+ 
+*** ANNOTATE macros are now available ***
+3                              The SAS System  11:50 Tuesday, April 22, 2025
+
+ 
+ For further information on ANNOTATE macros, enter,
+    %HELPANO(macroname), (for specific macros)
+    %HELPANO(ALL), (for information on all macros)
+ or %HELPANO (for a list of macro names)
+ 
+NOTE: Libref CWD was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /home/rsparapa/git/CTSI/BERD
+NOTE: Libref PWD refers to the same physical library as CWD.
+NOTE: Libref PWD was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /home/rsparapa/git/CTSI/BERD
+
+NOTE: AUTOEXEC processing completed.
+
+1          * snippet3.sas ;
+2          
+3          proc sql;
+4             connect to postgres as crdw
+5                 (user=&user password=&password
+6                 server="garth.ctsi.mcw.edu"
+7                 database="fh_jupyter_hub_hbdb");
+8          
+9             create table schema as
+10            select *
+11                from connection to crdw
+12                (select *
+13                from information_schema.columns
+14                where table_schema = 'public');
+NOTE: Table WORK.SCHEMA created, with 1997 rows and 44 columns.
+
+15         * must be single quote: NOT "public";
+16         
+17            disconnect from crdw;
+18         quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.16 seconds
+      cpu time            0.07 seconds
+      
+
+19         
+20         data crdw.schema;
+21             set schema;
+22             format _all_;
+23         run;
+
+NOTE: There were 1997 observations read from the data set WORK.SCHEMA.
+NOTE: The data set CRDW.SCHEMA has 1997 observations and 44 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.05 seconds
+      cpu time            0.02 seconds
+4                              The SAS System  11:50 Tuesday, April 22, 2025
+
+      
+
+24         
+25         options ps=49 ls=122;
+26         
+27         proc contents varnum;
+28         run;
+
+NOTE: PROCEDURE CONTENTS used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.02 seconds
+      
+NOTE: The PROCEDURE CONTENTS printed pages 1-3.
+
+29         
+30         proc freq;
+31             tables table_catalog table_schema data_type;
+32         run;
+
+NOTE: There were 1997 observations read from the data set CRDW.SCHEMA.
+NOTE: The PROCEDURE FREQ printed page 4.
+NOTE: PROCEDURE FREQ used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+33         
+34         proc freq;
+35             where data_type in:("character", "text");
+36             tables table_name;
+37         run;
+
+NOTE: There were 1364 observations read from the data set CRDW.SCHEMA.
+      WHERE data_type in: ('character', 'text');
+NOTE: The PROCEDURE FREQ printed page 5.
+NOTE: PROCEDURE FREQ used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+38         
+39         proc print uniform;
+40             where data_type in:("character", "text");
+41             var table_name column_name;
+42         run;
+
+NOTE: There were 1364 observations read from the data set CRDW.SCHEMA.
+5                                                     The SAS System                         11:50 Tuesday, April 22, 2025
+
+      WHERE data_type in: ('character', 'text');
+NOTE: The PROCEDURE PRINT printed pages 6-38.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           0.41 seconds
+      cpu time            0.23 seconds
+      

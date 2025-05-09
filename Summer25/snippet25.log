@@ -1,0 +1,1324 @@
+1                                                          The SAS System                                  08:32 Friday, May 9, 2025
+
+NOTE: Copyright (c) 2023 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M8) 
+      Licensed to MEDICAL COLLEGE OF WISCONSIN - T&R SFA, Site 70183647.
+NOTE: This session is executing on the Linux 3.10.0-514.10.2.el7.x86_64 (LIN X64) platform.
+
+
+
+NOTE: Analytical products:
+      
+      SAS/STAT 15.3
+      SAS/ETS 15.3
+      SAS/OR 15.3
+      SAS/IML 15.3
+      SAS/QC 15.3
+
+NOTE: Additional host information:
+
+ Linux LIN X64 3.10.0-514.10.2.el7.x86_64 #1 SMP Fri Mar 3 00:04:05 UTC 2017 x86_64 CentOS Linux release 7.9.2009 (Core) 
+
+NOTE: SAS initialization used:
+      real time           0.10 seconds
+      cpu time            0.03 seconds
+      
+
+NOTE: AUTOEXEC processing beginning; file is /home/rsparapa/git/CTSI/Summer25/autoexec.sas.
+
+NOTE: Libref CRDW was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /data/shared/04224/afib/libname/crdw
+NOTE: You have called the macro _IFELSE, 2008-07-15.
+NOTE: Copyright (c) 2006-2008 Rodney Sparapani
+ 
+NOTE: You have called the macro _EXIST, 2012-07-11.
+NOTE: Copyright (c) 2001-2012 Rodney Sparapani
+ 
+NOTE: You have called the macro _FN, 2024-08-03.
+NOTE: Copyright (c) 2001-2024 Rodney Sparapani
+ 
+MPRINT(_FN):   filename fn "/home/rsparapa/git/CTSI/Summer25/snippet25.sas";
+MPRINT(_FN):   filename fn;
+NOTE: Fileref FN has been deassigned.
+NOTE: You have called the macro _TAIL, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _DIRCHAR, 2007-07-24.
+NOTE: Copyright (c) 2004-2007 Rodney Sparapani
+ 
+NOTE: You have called the macro _UNWIND, 2004-11-23.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _COUNT, 2022-06-07.
+NOTE: Copyright (c) 2001-2022 Rodney Sparapani
+2                              The SAS System      08:32 Friday, May 9, 2025
+
+ 
+NOTE: You have called the macro _SUBSTR, 2004-03-29.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _HEAD, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+FN=snippet25.sas
+FNROOT=snippet25
+FNPATH=/home/rsparapa/git/CTSI/Summer25/snippet25.sas
+FNDIR=/home/rsparapa/git/CTSI/Summer25/
+FNTEXT=snippet25.txt
+FNHTML=snippet25.html
+FNTEX=snippet25.tex
+FNPDF=snippet25.pdf
+NOTE: You have called the macro _LJ, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _PAD, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+MPRINT(_LJ):   "/home/rsparapa/git/CTSI/Summer25/snippet25.sas"
+MPRINT(_PAD):   
+"202020202020202020202020202020202020202020202020202020202020202020202020202
+0202020202020202020202020202020202020202020202020202020202020202020202020202
+0"X
+ 
+*** SGANNO macros are now available ***
+     NOTE: SGANNO macros (except SGANNO_HELP) should be used within data 
+step.
+ 
+ 
+ Following macros are available 
+ 
+     %SGANNO_HELP 
+     %SGARROW 
+     %SGIMAGE 
+     %SGLINE 
+     %SGOVAL 
+     %SGPOLYCONT 
+     %SGPOLYGON 
+     %SGPOLYLINE 
+     %SGRECTANGLE 
+     %SGTEXT 
+     %SGTEXTCONT 
+ 
+ Enter %SGANNO_HELP(macroname) for details on each SGANNO macro,
+    or %SGANNO_HELP(ALL) for details on all SGANNO macros.
+ 
+MPRINT(SGANNO):  ;
+ 
+*** ANNOTATE macros are now available ***
+3                              The SAS System      08:32 Friday, May 9, 2025
+
+ 
+ For further information on ANNOTATE macros, enter,
+    %HELPANO(macroname), (for specific macros)
+    %HELPANO(ALL), (for information on all macros)
+ or %HELPANO (for a list of macro names)
+ 
+NOTE: Libref CWD was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /home/rsparapa/git/CTSI/Summer25
+NOTE: Libref PWD refers to the same physical library as CWD.
+NOTE: Libref PWD was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /home/rsparapa/git/CTSI/Summer25
+
+NOTE: AUTOEXEC processing completed.
+
+1          *snippet25.sas;
+2          
+3          /* this script is not demanding
+4          but its very slow: it takes 6 days!
+5          although SAS is written in fast C
+6          SG PROCs are slow-poke Java code
+7          for long-running jobs, you are
+8          better off with TORQUE
+9          qsas snippet25 -host cheddar -walltime 168
+10         */
+11         
+12         options orientation=landscape;
+13         footnote;
+14         
+15         data snippet22;
+16             merge crdw.ekg_meas_matrix crdw.snippet22;
+17             by patient_hash patient_trac_id;
+18             if n(ms);
+19         run;
+
+NOTE: There were 4741 observations read from the data set 
+      CRDW.EKG_MEAS_MATRIX.
+NOTE: There were 23705000 observations read from the data set 
+      CRDW.SNIPPET22.
+NOTE: The data set WORK.SNIPPET22 has 23705000 observations and 27 
+      variables.
+NOTE: DATA statement used (Total process time):
+      real time           3:46.03
+      cpu time            1:40.40
+      
+
+20         
+21         %macro main;
+22         
+23         data patient_hash;
+24             set snippet22;
+4                              The SAS System      08:32 Friday, May 9, 2025
+
+25             by patient_hash;
+26             keep patient_hash;
+27             if first.patient_hash;
+28         run;
+29         
+30         %let nobs=%_nobs(data=patient_hash);
+31         
+32         %do i=277 %to &nobs;
+33             data _null_;
+34                 set patient_hash(obs=&i firstobs=&i);
+35                 call symput("patient_hash", trim(patient_hash));
+36             run;
+37         
+38         ods graphics on / reset imagename="&patient_hash" imagefmt=pdf;
+39         
+40         proc sgplot data=snippet22 aspect=0.25;
+41             where patient_hash="&patient_hash";
+42             by patient_trac_id nqrs print vrate;
+43             series x=ms y=ii;
+44             xaxis values=(0 to 10000 by 1000) grid minorgrid minorcount=4
+44       ! ;
+45             yaxis values=(-3 to 3 by 1) grid minorgrid minorcount=1
+45       ! label='mV';
+46         run;
+47         
+48         %_pdfjam(root=&patient_hash);
+49         
+50         x "mv &patient_hash..pdf figures/";
+51         %end;
+52         
+53         %mend main;
+54         
+55         %main;
+MPRINT(MAIN):   data patient_hash;
+MPRINT(MAIN):   set snippet22;
+MPRINT(MAIN):   by patient_hash;
+MPRINT(MAIN):   keep patient_hash;
+MPRINT(MAIN):   if first.patient_hash;
+MPRINT(MAIN):   run;
+
+NOTE: There were 23705000 observations read from the data set 
+      WORK.SNIPPET22.
+NOTE: The data set WORK.PATIENT_HASH has 1467 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           4:06.05
+      cpu time            1:02.70
+      
+
+NOTE: You have called the macro _NOBS, 2007-07-11.
+NOTE: Copyright (c) 2001-2007 Rodney Sparapani
+ 
+NOTE: You have called the macro _DSEXIST, 2007-08-01.
+5                              The SAS System      08:32 Friday, May 9, 2025
+
+NOTE: Copyright (c) 2001-2007 Rodney Sparapani
+ 
+NOTE: You have called the macro _LIB, 2007-08-01.
+NOTE: Copyright (c) 2001-2007 Rodney Sparapani
+ 
+NOTE: You have called the macro _DATA, 2007-07-31.
+NOTE: Copyright (c) 2001-2007 Rodney Sparapani
+ 
+NOTE: You have called the macro _SUFFIX, 2004-10-26.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _VERSION, 2006-02-15.
+NOTE: Copyright (c) 2001-2006 Rodney Sparapani
+ 
+NOTE: You have called the macro _DIR, 2004-11-23.
+NOTE: Copyright (c) 2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _FILE, 2004-11-23.
+NOTE: Copyright (c) 2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _OPTION, 2004-03-29.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: _NOBS is returning the value 1467
+MPRINT(MAIN):   data _null_;
+MPRINT(MAIN):   set patient_hash(obs=277 firstobs=277);
+MPRINT(MAIN):   call symput("patient_hash", trim(patient_hash));
+MPRINT(MAIN):   run;
+
+NOTE: There were 1 observations read from the data set WORK.PATIENT_HASH.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(MAIN):   ods graphics on / reset imagename="2e9aeca916537596" 
+imagefmt=pdf;
+MPRINT(MAIN):   proc sgplot data=snippet22 aspect=0.25;
+MPRINT(MAIN):   where patient_hash="2e9aeca916537596";
+MPRINT(MAIN):   by patient_trac_id nqrs print vrate;
+MPRINT(MAIN):   series x=ms y=ii;
+MPRINT(MAIN):   xaxis values=(0 to 10000 by 1000) grid minorgrid 
+minorcount=4;
+MPRINT(MAIN):   yaxis values=(-3 to 3 by 1) grid minorgrid minorcount=1 
+label='mV';
+MPRINT(MAIN):   run;
+
+NOTE: PROCEDURE SGPLOT used (Total process time):
+      real time           7:13.69
+      cpu time            1:40.66
+      
+NOTE: Listing image output written to 
+6                              The SAS System      08:32 Friday, May 9, 2025
+
+      /home/rsparapa/git/CTSI/Summer25/2e9aeca916537596.pdf.
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/2e9aeca9165375961.pdf.
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/2e9aeca9165375962.pdf.
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/2e9aeca9165375963.pdf.
+NOTE: There were 20000 observations read from the data set WORK.SNIPPET22.
+      WHERE patient_hash='2e9aeca916537596';
+
+NOTE: You have called the macro _PDFJAM, 2018-01-02.
+NOTE: Copyright (c) 2017-2018 Rodney Sparapani
+ 
+MPRINT(_PDFJAM):   x "pdfjam --landscape --paper letter -o 
+2e9aeca916537596.pdf 2e9aeca916537596.pdf 2e9aeca9165375961.pdf 
+2e9aeca9165375962.pdf 2e9aeca9165375963.pdf 2> /dev/null";
+MPRINT(_PDFJAM):   x "rm 2e9aeca9165375961.pdf 2e9aeca9165375962.pdf 
+2e9aeca9165375963.pdf";
+NOTE: graphics records written to 2e9aeca916537596.pdf
+MPRINT(_PDFJAM):  ;
+MPRINT(MAIN):  ;
+MPRINT(MAIN):   x "mv 2e9aeca916537596.pdf figures/";
+MPRINT(MAIN):   data _null_;
+MPRINT(MAIN):   set patient_hash(obs=278 firstobs=278);
+MPRINT(MAIN):   call symput("patient_hash", trim(patient_hash));
+MPRINT(MAIN):   run;
+
+NOTE: There were 1 observations read from the data set WORK.PATIENT_HASH.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(MAIN):   ods graphics on / reset imagename="2eb70fafee74c431" 
+imagefmt=pdf;
+MPRINT(MAIN):   proc sgplot data=snippet22 aspect=0.25;
+MPRINT(MAIN):   where patient_hash="2eb70fafee74c431";
+MPRINT(MAIN):   by patient_trac_id nqrs print vrate;
+MPRINT(MAIN):   series x=ms y=ii;
+MPRINT(MAIN):   xaxis values=(0 to 10000 by 1000) grid minorgrid 
+minorcount=4;
+MPRINT(MAIN):   yaxis values=(-3 to 3 by 1) grid minorgrid minorcount=1 
+label='mV';
+MPRINT(MAIN):   run;
+
+NOTE: PROCEDURE SGPLOT used (Total process time):
+      real time           7:04.93
+      cpu time            1:40.83
+      
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/2eb70fafee74c431.pdf.
+NOTE: Listing image output written to 
+7                              The SAS System      08:32 Friday, May 9, 2025
+
+      /home/rsparapa/git/CTSI/Summer25/2eb70fafee74c4311.pdf.
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/2eb70fafee74c4312.pdf.
+NOTE: There were 15000 observations read from the data set WORK.SNIPPET22.
+      WHERE patient_hash='2eb70fafee74c431';
+
+MPRINT(_PDFJAM):   x "pdfjam --landscape --paper letter -o 
+2eb70fafee74c431.pdf 2eb70fafee74c431.pdf 2eb70fafee74c4311.pdf 
+2eb70fafee74c4312.pdf 2> /dev/null";
+MPRINT(_PDFJAM):   x "rm 2eb70fafee74c4311.pdf 2eb70fafee74c4312.pdf";
+NOTE: graphics records written to 2eb70fafee74c431.pdf
+MPRINT(_PDFJAM):  ;
+MPRINT(MAIN):  ;
+MPRINT(MAIN):   x "mv 2eb70fafee74c431.pdf figures/";
+MPRINT(MAIN):   data _null_;
+MPRINT(MAIN):   set patient_hash(obs=279 firstobs=279);
+MPRINT(MAIN):   call symput("patient_hash", trim(patient_hash));
+MPRINT(MAIN):   run;
+
+NOTE: There were 1 observations read from the data set WORK.PATIENT_HASH.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(MAIN):   ods graphics on / reset imagename="2f003c8c49e54713" 
+imagefmt=pdf;
+MPRINT(MAIN):   proc sgplot data=snippet22 aspect=0.25;
+MPRINT(MAIN):   where patient_hash="2f003c8c49e54713";
+MPRINT(MAIN):   by patient_trac_id nqrs print vrate;
+MPRINT(MAIN):   series x=ms y=ii;
+MPRINT(MAIN):   xaxis values=(0 to 10000 by 1000) grid minorgrid 
+minorcount=4;
+MPRINT(MAIN):   yaxis values=(-3 to 3 by 1) grid minorgrid minorcount=1 
+label='mV';
+MPRINT(MAIN):   run;
+
+NOTE: PROCEDURE SGPLOT used (Total process time):
+      real time           7:06.73
+      cpu time            1:41.47
+      
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/2f003c8c49e54713.pdf.
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/2f003c8c49e547131.pdf.
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/2f003c8c49e547132.pdf.
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/2f003c8c49e547133.pdf.
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/2f003c8c49e547134.pdf.
+NOTE: Listing image output written to 
+8                              The SAS System      08:32 Friday, May 9, 2025
+
+      /home/rsparapa/git/CTSI/Summer25/2f003c8c49e547135.pdf.
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/2f003c8c49e547136.pdf.
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/2f003c8c49e547137.pdf.
+NOTE: There were 40000 observations read from the data set WORK.SNIPPET22.
+      WHERE patient_hash='2f003c8c49e54713';
+
+MPRINT(MAIN):  ;
+MPRINT(MAIN):   x "mv 2f003c8c49e54713.pdf figures/";
+MPRINT(MAIN):   data _null_;
+MPRINT(MAIN):   set patient_hash(obs=280 firstobs=280);
+MPRINT(MAIN):   call symput("patient_hash", trim(patient_hash));
+MPRINT(MAIN):   run;
+
+NOTE: There were 1 observations read from the data set WORK.PATIENT_HASH.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(MAIN):   ods graphics on / reset imagename="2f041f5265828cea" 
+imagefmt=pdf;
+MPRINT(MAIN):   proc sgplot data=snippet22 aspect=0.25;
+MPRINT(MAIN):   where patient_hash="2f041f5265828cea";
+MPRINT(MAIN):   by patient_trac_id nqrs print vrate;
+MPRINT(MAIN):   series x=ms y=ii;
+MPRINT(MAIN):   xaxis values=(0 to 10000 by 1000) grid minorgrid 
+minorcount=4;
+MPRINT(MAIN):   yaxis values=(-3 to 3 by 1) grid minorgrid minorcount=1 
+label='mV';
+MPRINT(MAIN):   run;
+
+NOTE: PROCEDURE SGPLOT used (Total process time):
+      real time           7:04.32
+      cpu time            1:41.25
+      
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/2f041f5265828cea.pdf.
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/2f041f5265828cea1.pdf.
+NOTE: There were 10000 observations read from the data set WORK.SNIPPET22.
+      WHERE patient_hash='2f041f5265828cea';
+
+MPRINT(_PDFJAM):   x "pdfjam --landscape --paper letter -o 
+2f041f5265828cea.pdf 2f041f5265828cea.pdf 2f041f5265828cea1.pdf 2> 
+/dev/null";
+MPRINT(_PDFJAM):   x "rm 2f041f5265828cea1.pdf";
+NOTE: graphics records written to 2f041f5265828cea.pdf
+MPRINT(_PDFJAM):  ;
+MPRINT(MAIN):  ;
+MPRINT(MAIN):   x "mv 2f041f5265828cea.pdf figures/";
+9                              The SAS System      08:32 Friday, May 9, 2025
+
+MPRINT(MAIN):   data _null_;
+MPRINT(MAIN):   set patient_hash(obs=281 firstobs=281);
+MPRINT(MAIN):   call symput("patient_hash", trim(patient_hash));
+MPRINT(MAIN):   run;
+
+NOTE: There were 1 observations read from the data set WORK.PATIENT_HASH.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(MAIN):   ods graphics on / reset imagename="2f10e355939e01a7" 
+imagefmt=pdf;
+MPRINT(MAIN):   proc sgplot data=snippet22 aspect=0.25;
+MPRINT(MAIN):   where patient_hash="2f10e355939e01a7";
+MPRINT(MAIN):   by patient_trac_id nqrs print vrate;
+MPRINT(MAIN):   series x=ms y=ii;
+MPRINT(MAIN):   xaxis values=(0 to 10000 by 1000) grid minorgrid 
+minorcount=4;
+MPRINT(MAIN):   yaxis values=(-3 to 3 by 1) grid minorgrid minorcount=1 
+label='mV';
+MPRINT(MAIN):   run;
+
+NOTE: PROCEDURE SGPLOT used (Total process time):
+      real time           7:04.16
+      cpu time            1:42.61
+      
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/2f10e355939e01a7.pdf.
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/2f10e355939e01a71.pdf.
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/2f10e355939e01a72.pdf.
+NOTE: There were 15000 observations read from the data set WORK.SNIPPET22.
+      WHERE patient_hash='2f10e355939e01a7';
+
+MPRINT(_PDFJAM):   x "pdfjam --landscape --paper letter -o 
+2f10e355939e01a7.pdf 2f10e355939e01a7.pdf 2f10e355939e01a71.pdf 
+2f10e355939e01a72.pdf 2> /dev/null";
+MPRINT(_PDFJAM):   x "rm 2f10e355939e01a71.pdf 2f10e355939e01a72.pdf";
+NOTE: graphics records written to 2f10e355939e01a7.pdf
+MPRINT(_PDFJAM):  ;
+MPRINT(MAIN):  ;
+MPRINT(MAIN):   x "mv 2f10e355939e01a7.pdf figures/";
+MPRINT(MAIN):   data _null_;
+MPRINT(MAIN):   set patient_hash(obs=282 firstobs=282);
+MPRINT(MAIN):   call symput("patient_hash", trim(patient_hash));
+MPRINT(MAIN):   run;
+
+NOTE: There were 1 observations read from the data set WORK.PATIENT_HASH.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+10                             The SAS System      08:32 Friday, May 9, 2025
+
+      cpu time            0.00 seconds
+      
+
+MPRINT(MAIN):   ods graphics on / reset imagename="2f21f8f7569668d3" 
+imagefmt=pdf;
+MPRINT(MAIN):   proc sgplot data=snippet22 aspect=0.25;
+MPRINT(MAIN):   where patient_hash="2f21f8f7569668d3";
+MPRINT(MAIN):   by patient_trac_id nqrs print vrate;
+MPRINT(MAIN):   series x=ms y=ii;
+MPRINT(MAIN):   xaxis values=(0 to 10000 by 1000) grid minorgrid 
+minorcount=4;
+MPRINT(MAIN):   yaxis values=(-3 to 3 by 1) grid minorgrid minorcount=1 
+label='mV';
+MPRINT(MAIN):   run;
+
+NOTE: PROCEDURE SGPLOT used (Total process time):
+      real time           7:03.67
+      cpu time            1:48.28
+      
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/2f21f8f7569668d3.pdf.
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/2f21f8f7569668d31.pdf.
+NOTE: There were 10000 observations read from the data set WORK.SNIPPET22.
+      WHERE patient_hash='2f21f8f7569668d3';
+
+MPRINT(_PDFJAM):   x "pdfjam --landscape --paper letter -o 
+2f21f8f7569668d3.pdf 2f21f8f7569668d3.pdf 2f21f8f7569668d31.pdf 2> 
+/dev/null";
+MPRINT(_PDFJAM):   x "rm 2f21f8f7569668d31.pdf";
+NOTE: graphics records written to 2f21f8f7569668d3.pdf
+MPRINT(_PDFJAM):  ;
+MPRINT(MAIN):  ;
+MPRINT(MAIN):   x "mv 2f21f8f7569668d3.pdf figures/";
+MPRINT(MAIN):   data _null_;
+MPRINT(MAIN):   set patient_hash(obs=283 firstobs=283);
+MPRINT(MAIN):   call symput("patient_hash", trim(patient_hash));
+MPRINT(MAIN):   run;
+
+NOTE: There were 1 observations read from the data set WORK.PATIENT_HASH.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(MAIN):   ods graphics on / reset imagename="2f53c3246e1f8f54" 
+imagefmt=pdf;
+MPRINT(MAIN):   proc sgplot data=snippet22 aspect=0.25;
+MPRINT(MAIN):   where patient_hash="2f53c3246e1f8f54";
+MPRINT(MAIN):   by patient_trac_id nqrs print vrate;
+MPRINT(MAIN):   series x=ms y=ii;
+MPRINT(MAIN):   xaxis values=(0 to 10000 by 1000) grid minorgrid 
+11                             The SAS System      08:32 Friday, May 9, 2025
+
+minorcount=4;
+MPRINT(MAIN):   yaxis values=(-3 to 3 by 1) grid minorgrid minorcount=1 
+label='mV';
+MPRINT(MAIN):   run;
+
+NOTE: PROCEDURE SGPLOT used (Total process time):
+      real time           7:03.39
+      cpu time            1:40.53
+      
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/2f53c3246e1f8f54.pdf.
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/2f53c3246e1f8f541.pdf.
+NOTE: There were 10000 observations read from the data set WORK.SNIPPET22.
+      WHERE patient_hash='2f53c3246e1f8f54';
+
+MPRINT(_PDFJAM):   x "pdfjam --landscape --paper letter -o 
+2f53c3246e1f8f54.pdf 2f53c3246e1f8f54.pdf 2f53c3246e1f8f541.pdf 2> 
+/dev/null";
+MPRINT(_PDFJAM):   x "rm 2f53c3246e1f8f541.pdf";
+NOTE: graphics records written to 2f53c3246e1f8f54.pdf
+MPRINT(_PDFJAM):  ;
+MPRINT(MAIN):  ;
+MPRINT(MAIN):   x "mv 2f53c3246e1f8f54.pdf figures/";
+MPRINT(MAIN):   data _null_;
+MPRINT(MAIN):   set patient_hash(obs=284 firstobs=284);
+MPRINT(MAIN):   call symput("patient_hash", trim(patient_hash));
+MPRINT(MAIN):   run;
+
+NOTE: There were 1 observations read from the data set WORK.PATIENT_HASH.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(MAIN):   ods graphics on / reset imagename="2f677eca569c3635" 
+imagefmt=pdf;
+MPRINT(MAIN):   proc sgplot data=snippet22 aspect=0.25;
+MPRINT(MAIN):   where patient_hash="2f677eca569c3635";
+MPRINT(MAIN):   by patient_trac_id nqrs print vrate;
+MPRINT(MAIN):   series x=ms y=ii;
+MPRINT(MAIN):   xaxis values=(0 to 10000 by 1000) grid minorgrid 
+minorcount=4;
+MPRINT(MAIN):   yaxis values=(-3 to 3 by 1) grid minorgrid minorcount=1 
+label='mV';
+MPRINT(MAIN):   run;
+
+NOTE: PROCEDURE SGPLOT used (Total process time):
+      real time           7:03.30
+      cpu time            1:40.97
+      
+NOTE: Listing image output written to 
+12                             The SAS System      08:32 Friday, May 9, 2025
+
+      /home/rsparapa/git/CTSI/Summer25/2f677eca569c3635.pdf.
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/2f677eca569c36351.pdf.
+NOTE: There were 10000 observations read from the data set WORK.SNIPPET22.
+      WHERE patient_hash='2f677eca569c3635';
+
+MPRINT(_PDFJAM):   x "pdfjam --landscape --paper letter -o 
+2f677eca569c3635.pdf 2f677eca569c3635.pdf 2f677eca569c36351.pdf 2> 
+/dev/null";
+MPRINT(_PDFJAM):   x "rm 2f677eca569c36351.pdf";
+NOTE: graphics records written to 2f677eca569c3635.pdf
+MPRINT(_PDFJAM):  ;
+MPRINT(MAIN):  ;
+MPRINT(MAIN):   x "mv 2f677eca569c3635.pdf figures/";
+MPRINT(MAIN):   data _null_;
+MPRINT(MAIN):   set patient_hash(obs=285 firstobs=285);
+MPRINT(MAIN):   call symput("patient_hash", trim(patient_hash));
+MPRINT(MAIN):   run;
+
+NOTE: There were 1 observations read from the data set WORK.PATIENT_HASH.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(MAIN):   ods graphics on / reset imagename="2fa036599b832053" 
+imagefmt=pdf;
+MPRINT(MAIN):   proc sgplot data=snippet22 aspect=0.25;
+MPRINT(MAIN):   where patient_hash="2fa036599b832053";
+MPRINT(MAIN):   by patient_trac_id nqrs print vrate;
+MPRINT(MAIN):   series x=ms y=ii;
+MPRINT(MAIN):   xaxis values=(0 to 10000 by 1000) grid minorgrid 
+minorcount=4;
+MPRINT(MAIN):   yaxis values=(-3 to 3 by 1) grid minorgrid minorcount=1 
+label='mV';
+MPRINT(MAIN):   run;
+
+NOTE: PROCEDURE SGPLOT used (Total process time):
+      real time           7:03.45
+      cpu time            1:40.37
+      
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/2fa036599b832053.pdf.
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/2fa036599b8320531.pdf.
+NOTE: There were 10000 observations read from the data set WORK.SNIPPET22.
+      WHERE patient_hash='2fa036599b832053';
+
+MPRINT(_PDFJAM):   x "pdfjam --landscape --paper letter -o 
+2fa036599b832053.pdf 2fa036599b832053.pdf 2fa036599b8320531.pdf 2> 
+/dev/null";
+MPRINT(_PDFJAM):   x "rm 2fa036599b8320531.pdf";
+13                             The SAS System      08:32 Friday, May 9, 2025
+
+NOTE: graphics records written to 2fa036599b832053.pdf
+MPRINT(_PDFJAM):  ;
+MPRINT(MAIN):  ;
+MPRINT(MAIN):   x "mv 2fa036599b832053.pdf figures/";
+MPRINT(MAIN):   data _null_;
+MPRINT(MAIN):   set patient_hash(obs=286 firstobs=286);
+MPRINT(MAIN):   call symput("patient_hash", trim(patient_hash));
+MPRINT(MAIN):   run;
+
+NOTE: There were 1 observations read from the data set WORK.PATIENT_HASH.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(MAIN):   ods graphics on / reset imagename="2fde2530ac1b2fc1" 
+imagefmt=pdf;
+MPRINT(MAIN):   proc sgplot data=snippet22 aspect=0.25;
+MPRINT(MAIN):   where patient_hash="2fde2530ac1b2fc1";
+MPRINT(MAIN):   by patient_trac_id nqrs print vrate;
+MPRINT(MAIN):   series x=ms y=ii;
+MPRINT(MAIN):   xaxis values=(0 to 10000 by 1000) grid minorgrid 
+minorcount=4;
+MPRINT(MAIN):   yaxis values=(-3 to 3 by 1) grid minorgrid minorcount=1 
+label='mV';
+MPRINT(MAIN):   run;
+
+NOTE: PROCEDURE SGPLOT used (Total process time):
+      real time           7:03.30
+      cpu time            1:42.65
+      
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/2fde2530ac1b2fc1.pdf.
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/2fde2530ac1b2fc11.pdf.
+NOTE: There were 10000 observations read from the data set WORK.SNIPPET22.
+      WHERE patient_hash='2fde2530ac1b2fc1';
+
+MPRINT(_PDFJAM):   x "pdfjam --landscape --paper letter -o 
+2fde2530ac1b2fc1.pdf 2fde2530ac1b2fc1.pdf 2fde2530ac1b2fc11.pdf 2> 
+/dev/null";
+MPRINT(_PDFJAM):   x "rm 2fde2530ac1b2fc11.pdf";
+NOTE: graphics records written to 2fde2530ac1b2fc1.pdf
+MPRINT(_PDFJAM):  ;
+MPRINT(MAIN):  ;
+MPRINT(MAIN):   x "mv 2fde2530ac1b2fc1.pdf figures/";
+MPRINT(MAIN):   data _null_;
+MPRINT(MAIN):   set patient_hash(obs=287 firstobs=287);
+MPRINT(MAIN):   call symput("patient_hash", trim(patient_hash));
+MPRINT(MAIN):   run;
+
+NOTE: There were 1 observations read from the data set WORK.PATIENT_HASH.
+14                             The SAS System      08:32 Friday, May 9, 2025
+
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(MAIN):   ods graphics on / reset imagename="2fe8886504b106f8" 
+imagefmt=pdf;
+MPRINT(MAIN):   proc sgplot data=snippet22 aspect=0.25;
+MPRINT(MAIN):   where patient_hash="2fe8886504b106f8";
+MPRINT(MAIN):   by patient_trac_id nqrs print vrate;
+MPRINT(MAIN):   series x=ms y=ii;
+MPRINT(MAIN):   xaxis values=(0 to 10000 by 1000) grid minorgrid 
+minorcount=4;
+MPRINT(MAIN):   yaxis values=(-3 to 3 by 1) grid minorgrid minorcount=1 
+label='mV';
+MPRINT(MAIN):   run;
+
+NOTE: PROCEDURE SGPLOT used (Total process time):
+      real time           7:03.97
+      cpu time            1:41.41
+      
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/2fe8886504b106f8.pdf.
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/2fe8886504b106f81.pdf.
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/2fe8886504b106f82.pdf.
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/2fe8886504b106f83.pdf.
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/2fe8886504b106f84.pdf.
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/2fe8886504b106f85.pdf.
+NOTE: There were 30000 observations read from the data set WORK.SNIPPET22.
+      WHERE patient_hash='2fe8886504b106f8';
+
+MPRINT(_PDFJAM):   x "pdfjam --landscape --paper letter -o 
+2fe8886504b106f8.pdf 2fe8886504b106f8.pdf 2fe8886504b106f81.pdf 
+2fe8886504b106f82.pdf 2fe8886504b106f83.pdf 2fe8886504b106f84.pdf 
+2fe8886504b106f85.pdf 2> /dev/null";
+MPRINT(_PDFJAM):   x "rm 2fe8886504b106f81.pdf 2fe8886504b106f82.pdf 
+2fe8886504b106f83.pdf 2fe8886504b106f84.pdf 2fe8886504b106f85.pdf";
+NOTE: graphics records written to 2fe8886504b106f8.pdf
+MPRINT(_PDFJAM):  ;
+MPRINT(MAIN):  ;
+MPRINT(MAIN):   x "mv 2fe8886504b106f8.pdf figures/";
+MPRINT(MAIN):   data _null_;
+MPRINT(MAIN):   set patient_hash(obs=288 firstobs=288);
+MPRINT(MAIN):   call symput("patient_hash", trim(patient_hash));
+MPRINT(MAIN):   run;
+
+NOTE: There were 1 observations read from the data set WORK.PATIENT_HASH.
+15                             The SAS System      08:32 Friday, May 9, 2025
+
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(MAIN):   ods graphics on / reset imagename="302e9bfe2d060754" 
+imagefmt=pdf;
+MPRINT(MAIN):   proc sgplot data=snippet22 aspect=0.25;
+MPRINT(MAIN):   where patient_hash="302e9bfe2d060754";
+MPRINT(MAIN):   by patient_trac_id nqrs print vrate;
+MPRINT(MAIN):   series x=ms y=ii;
+MPRINT(MAIN):   xaxis values=(0 to 10000 by 1000) grid minorgrid 
+minorcount=4;
+MPRINT(MAIN):   yaxis values=(-3 to 3 by 1) grid minorgrid minorcount=1 
+label='mV';
+MPRINT(MAIN):   run;
+
+NOTE: PROCEDURE SGPLOT used (Total process time):
+      real time           7:02.60
+      cpu time            1:40.83
+      
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/302e9bfe2d060754.pdf.
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/302e9bfe2d0607541.pdf.
+NOTE: There were 10000 observations read from the data set WORK.SNIPPET22.
+      WHERE patient_hash='302e9bfe2d060754';
+
+MPRINT(_PDFJAM):   x "pdfjam --landscape --paper letter -o 
+302e9bfe2d060754.pdf 302e9bfe2d060754.pdf 302e9bfe2d0607541.pdf 2> 
+/dev/null";
+MPRINT(_PDFJAM):   x "rm 302e9bfe2d0607541.pdf";
+NOTE: graphics records written to 302e9bfe2d060754.pdf
+MPRINT(_PDFJAM):  ;
+MPRINT(MAIN):  ;
+MPRINT(MAIN):   x "mv 302e9bfe2d060754.pdf figures/";
+MPRINT(MAIN):   data _null_;
+MPRINT(MAIN):   set patient_hash(obs=289 firstobs=289);
+MPRINT(MAIN):   call symput("patient_hash", trim(patient_hash));
+MPRINT(MAIN):   run;
+
+NOTE: There were 1 observations read from the data set WORK.PATIENT_HASH.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(MAIN):   ods graphics on / reset imagename="3040fe8cffd269d7" 
+imagefmt=pdf;
+MPRINT(MAIN):   proc sgplot data=snippet22 aspect=0.25;
+MPRINT(MAIN):   where patient_hash="3040fe8cffd269d7";
+MPRINT(MAIN):   by patient_trac_id nqrs print vrate;
+16                             The SAS System      08:32 Friday, May 9, 2025
+
+MPRINT(MAIN):   series x=ms y=ii;
+MPRINT(MAIN):   xaxis values=(0 to 10000 by 1000) grid minorgrid 
+minorcount=4;
+MPRINT(MAIN):   yaxis values=(-3 to 3 by 1) grid minorgrid minorcount=1 
+label='mV';
+MPRINT(MAIN):   run;
+
+NOTE: PROCEDURE SGPLOT used (Total process time):
+      real time           7:03.30
+      cpu time            1:44.03
+      
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/3040fe8cffd269d7.pdf.
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/3040fe8cffd269d71.pdf.
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/3040fe8cffd269d72.pdf.
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/3040fe8cffd269d73.pdf.
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/3040fe8cffd269d74.pdf.
+NOTE: There were 25000 observations read from the data set WORK.SNIPPET22.
+      WHERE patient_hash='3040fe8cffd269d7';
+
+MPRINT(_PDFJAM):   x "pdfjam --landscape --paper letter -o 
+3040fe8cffd269d7.pdf 3040fe8cffd269d7.pdf 3040fe8cffd269d71.pdf 
+3040fe8cffd269d72.pdf 3040fe8cffd269d73.pdf 3040fe8cffd269d74.pdf 2> 
+/dev/null";
+MPRINT(_PDFJAM):   x "rm 3040fe8cffd269d71.pdf 3040fe8cffd269d72.pdf 
+3040fe8cffd269d73.pdf 3040fe8cffd269d74.pdf";
+NOTE: graphics records written to 3040fe8cffd269d7.pdf
+MPRINT(_PDFJAM):  ;
+MPRINT(MAIN):  ;
+MPRINT(MAIN):   x "mv 3040fe8cffd269d7.pdf figures/";
+MPRINT(MAIN):   data _null_;
+MPRINT(MAIN):   set patient_hash(obs=290 firstobs=290);
+MPRINT(MAIN):   call symput("patient_hash", trim(patient_hash));
+MPRINT(MAIN):   run;
+
+NOTE: There were 1 observations read from the data set WORK.PATIENT_HASH.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(MAIN):   ods graphics on / reset imagename="306f3724ff5e0d94" 
+imagefmt=pdf;
+MPRINT(MAIN):   proc sgplot data=snippet22 aspect=0.25;
+MPRINT(MAIN):   where patient_hash="306f3724ff5e0d94";
+MPRINT(MAIN):   by patient_trac_id nqrs print vrate;
+MPRINT(MAIN):   series x=ms y=ii;
+MPRINT(MAIN):   xaxis values=(0 to 10000 by 1000) grid minorgrid 
+17                             The SAS System      08:32 Friday, May 9, 2025
+
+minorcount=4;
+MPRINT(MAIN):   yaxis values=(-3 to 3 by 1) grid minorgrid minorcount=1 
+label='mV';
+MPRINT(MAIN):   run;
+
+NOTE: PROCEDURE SGPLOT used (Total process time):
+      real time           7:02.55
+      cpu time            1:40.87
+      
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/306f3724ff5e0d94.pdf.
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/306f3724ff5e0d941.pdf.
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/306f3724ff5e0d942.pdf.
+NOTE: There were 15000 observations read from the data set WORK.SNIPPET22.
+      WHERE patient_hash='306f3724ff5e0d94';
+
+MPRINT(_PDFJAM):   x "pdfjam --landscape --paper letter -o 
+306f3724ff5e0d94.pdf 306f3724ff5e0d94.pdf 306f3724ff5e0d941.pdf 
+306f3724ff5e0d942.pdf 2> /dev/null";
+MPRINT(_PDFJAM):   x "rm 306f3724ff5e0d941.pdf 306f3724ff5e0d942.pdf";
+NOTE: graphics records written to 306f3724ff5e0d94.pdf
+MPRINT(_PDFJAM):  ;
+MPRINT(MAIN):  ;
+MPRINT(MAIN):   x "mv 306f3724ff5e0d94.pdf figures/";
+MPRINT(MAIN):   data _null_;
+MPRINT(MAIN):   set patient_hash(obs=291 firstobs=291);
+MPRINT(MAIN):   call symput("patient_hash", trim(patient_hash));
+MPRINT(MAIN):   run;
+
+NOTE: There were 1 observations read from the data set WORK.PATIENT_HASH.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(MAIN):   ods graphics on / reset imagename="307731e5f490681c" 
+imagefmt=pdf;
+MPRINT(MAIN):   proc sgplot data=snippet22 aspect=0.25;
+MPRINT(MAIN):   where patient_hash="307731e5f490681c";
+MPRINT(MAIN):   by patient_trac_id nqrs print vrate;
+MPRINT(MAIN):   series x=ms y=ii;
+MPRINT(MAIN):   xaxis values=(0 to 10000 by 1000) grid minorgrid 
+minorcount=4;
+MPRINT(MAIN):   yaxis values=(-3 to 3 by 1) grid minorgrid minorcount=1 
+label='mV';
+MPRINT(MAIN):   run;
+
+NOTE: PROCEDURE SGPLOT used (Total process time):
+      real time           7:02.59
+      cpu time            1:41.08
+18                             The SAS System      08:32 Friday, May 9, 2025
+
+      
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/307731e5f490681c.pdf.
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/307731e5f490681c1.pdf.
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/307731e5f490681c2.pdf.
+NOTE: There were 15000 observations read from the data set WORK.SNIPPET22.
+      WHERE patient_hash='307731e5f490681c';
+
+MPRINT(_PDFJAM):   x "pdfjam --landscape --paper letter -o 
+307731e5f490681c.pdf 307731e5f490681c.pdf 307731e5f490681c1.pdf 
+307731e5f490681c2.pdf 2> /dev/null";
+MPRINT(_PDFJAM):   x "rm 307731e5f490681c1.pdf 307731e5f490681c2.pdf";
+NOTE: graphics records written to 307731e5f490681c.pdf
+MPRINT(_PDFJAM):  ;
+MPRINT(MAIN):  ;
+MPRINT(MAIN):   x "mv 307731e5f490681c.pdf figures/";
+MPRINT(MAIN):   data _null_;
+MPRINT(MAIN):   set patient_hash(obs=292 firstobs=292);
+MPRINT(MAIN):   call symput("patient_hash", trim(patient_hash));
+MPRINT(MAIN):   run;
+
+NOTE: There were 1 observations read from the data set WORK.PATIENT_HASH.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(MAIN):   ods graphics on / reset imagename="308e6e10b87958c1" 
+imagefmt=pdf;
+MPRINT(MAIN):   proc sgplot data=snippet22 aspect=0.25;
+MPRINT(MAIN):   where patient_hash="308e6e10b87958c1";
+MPRINT(MAIN):   by patient_trac_id nqrs print vrate;
+MPRINT(MAIN):   series x=ms y=ii;
+MPRINT(MAIN):   xaxis values=(0 to 10000 by 1000) grid minorgrid 
+minorcount=4;
+MPRINT(MAIN):   yaxis values=(-3 to 3 by 1) grid minorgrid minorcount=1 
+label='mV';
+MPRINT(MAIN):   run;
+
+NOTE: PROCEDURE SGPLOT used (Total process time):
+      real time           7:01.79
+      cpu time            1:40.81
+      
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/308e6e10b87958c1.pdf.
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/308e6e10b87958c11.pdf.
+NOTE: There were 10000 observations read from the data set WORK.SNIPPET22.
+      WHERE patient_hash='308e6e10b87958c1';
+
+19                             The SAS System      08:32 Friday, May 9, 2025
+
+MPRINT(_PDFJAM):   x "pdfjam --landscape --paper letter -o 
+308e6e10b87958c1.pdf 308e6e10b87958c1.pdf 308e6e10b87958c11.pdf 2> 
+/dev/null";
+MPRINT(_PDFJAM):   x "rm 308e6e10b87958c11.pdf";
+NOTE: graphics records written to 308e6e10b87958c1.pdf
+MPRINT(_PDFJAM):  ;
+MPRINT(MAIN):  ;
+MPRINT(MAIN):   x "mv 308e6e10b87958c1.pdf figures/";
+MPRINT(MAIN):   data _null_;
+MPRINT(MAIN):   set patient_hash(obs=293 firstobs=293);
+MPRINT(MAIN):   call symput("patient_hash", trim(patient_hash));
+MPRINT(MAIN):   run;
+
+NOTE: There were 1 observations read from the data set WORK.PATIENT_HASH.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(MAIN):   ods graphics on / reset imagename="30ac308d0b566479" 
+imagefmt=pdf;
+MPRINT(MAIN):   proc sgplot data=snippet22 aspect=0.25;
+MPRINT(MAIN):   where patient_hash="30ac308d0b566479";
+MPRINT(MAIN):   by patient_trac_id nqrs print vrate;
+MPRINT(MAIN):   series x=ms y=ii;
+MPRINT(MAIN):   xaxis values=(0 to 10000 by 1000) grid minorgrid 
+minorcount=4;
+MPRINT(MAIN):   yaxis values=(-3 to 3 by 1) grid minorgrid minorcount=1 
+label='mV';
+MPRINT(MAIN):   run;
+
+NOTE: PROCEDURE SGPLOT used (Total process time):
+      real time           7:02.76
+      cpu time            1:42.41
+      
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/30ac308d0b566479.pdf.
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/30ac308d0b5664791.pdf.
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/30ac308d0b5664792.pdf.
+NOTE: There were 15000 observations read from the data set WORK.SNIPPET22.
+      WHERE patient_hash='30ac308d0b566479';
+
+MPRINT(_PDFJAM):   x "pdfjam --landscape --paper letter -o 
+30ac308d0b566479.pdf 30ac308d0b566479.pdf 30ac308d0b5664791.pdf 
+30ac308d0b5664792.pdf 2> /dev/null";
+MPRINT(_PDFJAM):   x "rm 30ac308d0b5664791.pdf 30ac308d0b5664792.pdf";
+NOTE: graphics records written to 30ac308d0b566479.pdf
+MPRINT(_PDFJAM):  ;
+MPRINT(MAIN):  ;
+MPRINT(MAIN):   x "mv 30ac308d0b566479.pdf figures/";
+20                             The SAS System      08:32 Friday, May 9, 2025
+
+MPRINT(MAIN):   data _null_;
+MPRINT(MAIN):   set patient_hash(obs=294 firstobs=294);
+MPRINT(MAIN):   call symput("patient_hash", trim(patient_hash));
+MPRINT(MAIN):   run;
+
+NOTE: There were 1 observations read from the data set WORK.PATIENT_HASH.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(MAIN):   ods graphics on / reset imagename="30fe5d0a9a09be83" 
+imagefmt=pdf;
+MPRINT(MAIN):   proc sgplot data=snippet22 aspect=0.25;
+MPRINT(MAIN):   where patient_hash="30fe5d0a9a09be83";
+MPRINT(MAIN):   by patient_trac_id nqrs print vrate;
+MPRINT(MAIN):   series x=ms y=ii;
+MPRINT(MAIN):   xaxis values=(0 to 10000 by 1000) grid minorgrid 
+minorcount=4;
+MPRINT(MAIN):   yaxis values=(-3 to 3 by 1) grid minorgrid minorcount=1 
+label='mV';
+MPRINT(MAIN):   run;
+
+NOTE: PROCEDURE SGPLOT used (Total process time):
+      real time           7:02.42
+      cpu time            1:40.94
+      
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/30fe5d0a9a09be83.pdf.
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/30fe5d0a9a09be831.pdf.
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/30fe5d0a9a09be832.pdf.
+NOTE: There were 15000 observations read from the data set WORK.SNIPPET22.
+      WHERE patient_hash='30fe5d0a9a09be83';
+
+MPRINT(_PDFJAM):   x "pdfjam --landscape --paper letter -o 
+30fe5d0a9a09be83.pdf 30fe5d0a9a09be83.pdf 30fe5d0a9a09be831.pdf 
+30fe5d0a9a09be832.pdf 2> /dev/null";
+MPRINT(_PDFJAM):   x "rm 30fe5d0a9a09be831.pdf 30fe5d0a9a09be832.pdf";
+NOTE: graphics records written to 30fe5d0a9a09be83.pdf
+MPRINT(_PDFJAM):  ;
+MPRINT(MAIN):  ;
+MPRINT(MAIN):   x "mv 30fe5d0a9a09be83.pdf figures/";
+MPRINT(MAIN):   data _null_;
+MPRINT(MAIN):   set patient_hash(obs=295 firstobs=295);
+MPRINT(MAIN):   call symput("patient_hash", trim(patient_hash));
+MPRINT(MAIN):   run;
+
+NOTE: There were 1 observations read from the data set WORK.PATIENT_HASH.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+21                             The SAS System      08:32 Friday, May 9, 2025
+
+      cpu time            0.00 seconds
+      
+
+MPRINT(MAIN):   ods graphics on / reset imagename="3138c9fb0638b614" 
+imagefmt=pdf;
+MPRINT(MAIN):   proc sgplot data=snippet22 aspect=0.25;
+MPRINT(MAIN):   where patient_hash="3138c9fb0638b614";
+MPRINT(MAIN):   by patient_trac_id nqrs print vrate;
+MPRINT(MAIN):   series x=ms y=ii;
+MPRINT(MAIN):   xaxis values=(0 to 10000 by 1000) grid minorgrid 
+minorcount=4;
+MPRINT(MAIN):   yaxis values=(-3 to 3 by 1) grid minorgrid minorcount=1 
+label='mV';
+MPRINT(MAIN):   run;
+
+NOTE: PROCEDURE SGPLOT used (Total process time):
+      real time           7:02.56
+      cpu time            1:42.24
+      
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/3138c9fb0638b614.pdf.
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/3138c9fb0638b6141.pdf.
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/3138c9fb0638b6142.pdf.
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/3138c9fb0638b6143.pdf.
+NOTE: There were 20000 observations read from the data set WORK.SNIPPET22.
+      WHERE patient_hash='3138c9fb0638b614';
+
+MPRINT(_PDFJAM):   x "pdfjam --landscape --paper letter -o 
+3138c9fb0638b614.pdf 3138c9fb0638b614.pdf 3138c9fb0638b6141.pdf 
+3138c9fb0638b6142.pdf 3138c9fb0638b6143.pdf 2> /dev/null";
+MPRINT(_PDFJAM):   x "rm 3138c9fb0638b6141.pdf 3138c9fb0638b6142.pdf 
+3138c9fb0638b6143.pdf";
+NOTE: graphics records written to 3138c9fb0638b614.pdf
+MPRINT(_PDFJAM):  ;
+MPRINT(MAIN):  ;
+MPRINT(MAIN):   x "mv 3138c9fb0638b614.pdf figures/";
+MPRINT(MAIN):   data _null_;
+MPRINT(MAIN):   set patient_hash(obs=296 firstobs=296);
+MPRINT(MAIN):   call symput("patient_hash", trim(patient_hash));
+MPRINT(MAIN):   run;
+
+NOTE: There were 1 observations read from the data set WORK.PATIENT_HASH.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(MAIN):   ods graphics on / reset imagename="3179ea7cbc23ca50" 
+imagefmt=pdf;
+22                             The SAS System      08:32 Friday, May 9, 2025
+
+MPRINT(MAIN):   proc sgplot data=snippet22 aspect=0.25;
+MPRINT(MAIN):   where patient_hash="3179ea7cbc23ca50";
+MPRINT(MAIN):   by patient_trac_id nqrs print vrate;
+MPRINT(MAIN):   series x=ms y=ii;
+MPRINT(MAIN):   xaxis values=(0 to 10000 by 1000) grid minorgrid 
+minorcount=4;
+MPRINT(MAIN):   yaxis values=(-3 to 3 by 1) grid minorgrid minorcount=1 
+label='mV';
+MPRINT(MAIN):   run;
+
+NOTE: PROCEDURE SGPLOT used (Total process time):
+      real time           7:02.04
+      cpu time            1:43.24
+      
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/3179ea7cbc23ca50.pdf.
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/3179ea7cbc23ca501.pdf.
+NOTE: There were 10000 observations read from the data set WORK.SNIPPET22.
+      WHERE patient_hash='3179ea7cbc23ca50';
+
+MPRINT(_PDFJAM):   x "pdfjam --landscape --paper letter -o 
+3179ea7cbc23ca50.pdf 3179ea7cbc23ca50.pdf 3179ea7cbc23ca501.pdf 2> 
+/dev/null";
+MPRINT(_PDFJAM):   x "rm 3179ea7cbc23ca501.pdf";
+NOTE: graphics records written to 3179ea7cbc23ca50.pdf
+MPRINT(_PDFJAM):  ;
+MPRINT(MAIN):  ;
+MPRINT(MAIN):   x "mv 3179ea7cbc23ca50.pdf figures/";
+MPRINT(MAIN):   data _null_;
+MPRINT(MAIN):   set patient_hash(obs=297 firstobs=297);
+MPRINT(MAIN):   call symput("patient_hash", trim(patient_hash));
+MPRINT(MAIN):   run;
+
+NOTE: There were 1 observations read from the data set WORK.PATIENT_HASH.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(MAIN):   ods graphics on / reset imagename="31817cff67a421de" 
+imagefmt=pdf;
+MPRINT(MAIN):   proc sgplot data=snippet22 aspect=0.25;
+MPRINT(MAIN):   where patient_hash="31817cff67a421de";
+MPRINT(MAIN):   by patient_trac_id nqrs print vrate;
+MPRINT(MAIN):   series x=ms y=ii;
+MPRINT(MAIN):   xaxis values=(0 to 10000 by 1000) grid minorgrid 
+minorcount=4;
+MPRINT(MAIN):   yaxis values=(-3 to 3 by 1) grid minorgrid minorcount=1 
+label='mV';
+MPRINT(MAIN):   run;
+
+23                             The SAS System      08:32 Friday, May 9, 2025
+
+NOTE: PROCEDURE SGPLOT used (Total process time):
+      real time           7:01.49
+      cpu time            1:42.48
+      
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/31817cff67a421de.pdf.
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/31817cff67a421de1.pdf.
+NOTE: There were 10000 observations read from the data set WORK.SNIPPET22.
+      WHERE patient_hash='31817cff67a421de';
+
+MPRINT(_PDFJAM):   x "pdfjam --landscape --paper letter -o 
+31817cff67a421de.pdf 31817cff67a421de.pdf 31817cff67a421de1.pdf 2> 
+/dev/null";
+MPRINT(_PDFJAM):   x "rm 31817cff67a421de1.pdf";
+NOTE: graphics records written to 31817cff67a421de.pdf
+MPRINT(_PDFJAM):  ;
+MPRINT(MAIN):  ;
+MPRINT(MAIN):   x "mv 31817cff67a421de.pdf figures/";
+MPRINT(MAIN):   data _null_;
+MPRINT(MAIN):   set patient_hash(obs=298 firstobs=298);
+MPRINT(MAIN):   call symput("patient_hash", trim(patient_hash));
+MPRINT(MAIN):   run;
+
+NOTE: There were 1 observations read from the data set WORK.PATIENT_HASH.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(MAIN):   ods graphics on / reset imagename="31db431c77d3789e" 
+imagefmt=pdf;
+MPRINT(MAIN):   proc sgplot data=snippet22 aspect=0.25;
+MPRINT(MAIN):   where patient_hash="31db431c77d3789e";
+MPRINT(MAIN):   by patient_trac_id nqrs print vrate;
+MPRINT(MAIN):   series x=ms y=ii;
+MPRINT(MAIN):   xaxis values=(0 to 10000 by 1000) grid minorgrid 
+minorcount=4;
+MPRINT(MAIN):   yaxis values=(-3 to 3 by 1) grid minorgrid minorcount=1 
+label='mV';
+MPRINT(MAIN):   run;
+
+NOTE: PROCEDURE SGPLOT used (Total process time):
+      real time           7:01.29
+      cpu time            1:47.23
+      
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/31db431c77d3789e.pdf.
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/31db431c77d3789e1.pdf.
+NOTE: There were 10000 observations read from the data set WORK.SNIPPET22.
+      WHERE patient_hash='31db431c77d3789e';
+24                             The SAS System      08:32 Friday, May 9, 2025
+
+
+MPRINT(_PDFJAM):   x "pdfjam --landscape --paper letter -o 
+31db431c77d3789e.pdf 31db431c77d3789e.pdf 31db431c77d3789e1.pdf 2> 
+/dev/null";
+MPRINT(_PDFJAM):   x "rm 31db431c77d3789e1.pdf";
+NOTE: graphics records written to 31db431c77d3789e.pdf
+MPRINT(_PDFJAM):  ;
+MPRINT(MAIN):  ;
+MPRINT(MAIN):   x "mv 31db431c77d3789e.pdf figures/";
+MPRINT(MAIN):   data _null_;
+MPRINT(MAIN):   set patient_hash(obs=299 firstobs=299);
+MPRINT(MAIN):   call symput("patient_hash", trim(patient_hash));
+MPRINT(MAIN):   run;
+
+NOTE: There were 1 observations read from the data set WORK.PATIENT_HASH.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(MAIN):   ods graphics on / reset imagename="32323062f9cbf40e" 
+imagefmt=pdf;
+MPRINT(MAIN):   proc sgplot data=snippet22 aspect=0.25;
+MPRINT(MAIN):   where patient_hash="32323062f9cbf40e";
+MPRINT(MAIN):   by patient_trac_id nqrs print vrate;
+MPRINT(MAIN):   series x=ms y=ii;
+MPRINT(MAIN):   xaxis values=(0 to 10000 by 1000) grid minorgrid 
+minorcount=4;
+MPRINT(MAIN):   yaxis values=(-3 to 3 by 1) grid minorgrid minorcount=1 
+label='mV';
+MPRINT(MAIN):   run;
+
+NOTE: PROCEDURE SGPLOT used (Total process time):
+      real time           7:02.30
+      cpu time            1:40.87
+      
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/32323062f9cbf40e.pdf.
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/32323062f9cbf40e1.pdf.
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/32323062f9cbf40e2.pdf.
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/Summer25/32323062f9cbf40e3.pdf.
+NOTE: There were 20000 observations read from the data set WORK.SNIPPET22.
+      WHERE patient_hash='32323062f9cbf40e';
+
+MPRINT(_PDFJAM):   x "pdfjam --landscape --paper letter -o 
+32323062f9cbf40e.pdf 32323062f9cbf40e.pdf 32323062f9cbf40e1.pdf 
+32323062f9cbf40e2.pdf 32323062f9cbf40e3.pdf 2> /dev/null";
+MPRINT(_PDFJAM):   x "rm 32323062f9cbf40e1.pdf 32323062f9cbf40e2.pdf 
+32323062f9cbf40e3.pdf";
+25                             The SAS System      08:32 Friday, May 9, 2025
+
+NOTE: graphics records written to 32323062f9cbf40e.pdf
+MPRINT(_PDFJAM):  ;
+MPRINT(MAIN):  ;
+MPRINT(MAIN):   x "mv 32323062f9cbf40e.pdf figures/";
+MPRINT(MAIN):   data _null_;
+MPRINT(MAIN):   set patient_hash(obs=300 firstobs=300);
+MPRINT(MAIN):   call symput("patient_hash", trim(patient_hash));
+MPRINT(MAIN):   run;
+
+NOTE: There were 1 observations read from the data set WORK.PATIENT_HASH.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(MAIN):   ods graphics on / reset imagename="324630c7020b919f" 
+imagefmt=pdf;
+MPRINT(MAIN):   proc sgplot data=snippet22 aspect=0.25;
+MPRINT(MAIN):   where patient_hash="324630c7020b919f";
+MPRINT(MAIN):   by patient_trac_id nqrs print vrate;
+MPRINT(MAIN):   series x=ms y=ii;
+MPRINT(MAIN):   xaxis values=(0 to 10000 by 1000) grid minorgrid 
+minorcount=4;
+MPRINT(MAIN):   yaxis values=(-3 to 3 by 1) grid minorgrid minorcount=1 
+label='mV';
+MPRINT(MAIN):   run;

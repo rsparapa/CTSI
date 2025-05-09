@@ -1,0 +1,257 @@
+1                                                          The SAS System                             17:08 Thursday, March 13, 2025
+
+NOTE: Copyright (c) 2023 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M8) 
+      Licensed to MEDICAL COLLEGE OF WISCONSIN - T&R SFA, Site 70183647.
+NOTE: This session is executing on the Linux 3.10.0-514.10.2.el7.x86_64 (LIN X64) platform.
+
+
+
+NOTE: Analytical products:
+      
+      SAS/STAT 15.3
+      SAS/ETS 15.3
+      SAS/OR 15.3
+      SAS/IML 15.3
+      SAS/QC 15.3
+
+NOTE: Additional host information:
+
+ Linux LIN X64 3.10.0-514.10.2.el7.x86_64 #1 SMP Fri Mar 3 00:04:05 UTC 2017 x86_64 CentOS Linux release 7.9.2009 (Core) 
+
+NOTE: SAS initialization used:
+      real time           0.02 seconds
+      cpu time            0.02 seconds
+      
+
+NOTE: AUTOEXEC processing beginning; file is /home/rsparapa/git/CTSI/BERD/autoexec.sas.
+
+NOTE: Libref CRDW was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /data/shared/04224/CTSI/libname/crdw
+NOTE: You have called the macro _IFELSE, 2008-07-15.
+NOTE: Copyright (c) 2006-2008 Rodney Sparapani
+ 
+NOTE: You have called the macro _EXIST, 2012-07-11.
+NOTE: Copyright (c) 2001-2012 Rodney Sparapani
+ 
+NOTE: You have called the macro _FN, 2024-08-03.
+NOTE: Copyright (c) 2001-2024 Rodney Sparapani
+ 
+MPRINT(_FN):   filename fn "/home/rsparapa/git/CTSI/BERD/snippet13.sas";
+MPRINT(_FN):   filename fn;
+NOTE: Fileref FN has been deassigned.
+NOTE: You have called the macro _TAIL, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _DIRCHAR, 2007-07-24.
+NOTE: Copyright (c) 2004-2007 Rodney Sparapani
+ 
+NOTE: You have called the macro _UNWIND, 2004-11-23.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _COUNT, 2022-06-07.
+NOTE: Copyright (c) 2001-2022 Rodney Sparapani
+2                              The SAS System 17:08 Thursday, March 13, 2025
+
+ 
+NOTE: You have called the macro _SUBSTR, 2004-03-29.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _HEAD, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+FN=snippet13.sas
+FNROOT=snippet13
+FNPATH=/home/rsparapa/git/CTSI/BERD/snippet13.sas
+FNDIR=/home/rsparapa/git/CTSI/BERD/
+FNTEXT=snippet13.txt
+FNHTML=snippet13.html
+FNTEX=snippet13.tex
+FNPDF=snippet13.pdf
+NOTE: You have called the macro _LJ, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _PAD, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+MPRINT(_LJ):   "/home/rsparapa/git/CTSI/BERD/snippet13.sas"
+MPRINT(_PAD):   
+"202020202020202020202020202020202020202020202020202020202020202020202020202
+0202020202020202020202020202020202020202020202020202020202020202020202020202
+020202020"X
+ 
+*** SGANNO macros are now available ***
+     NOTE: SGANNO macros (except SGANNO_HELP) should be used within data 
+step.
+ 
+ 
+ Following macros are available 
+ 
+     %SGANNO_HELP 
+     %SGARROW 
+     %SGIMAGE 
+     %SGLINE 
+     %SGOVAL 
+     %SGPOLYCONT 
+     %SGPOLYGON 
+     %SGPOLYLINE 
+     %SGRECTANGLE 
+     %SGTEXT 
+     %SGTEXTCONT 
+ 
+ Enter %SGANNO_HELP(macroname) for details on each SGANNO macro,
+    or %SGANNO_HELP(ALL) for details on all SGANNO macros.
+ 
+MPRINT(SGANNO):  ;
+ 
+3                              The SAS System 17:08 Thursday, March 13, 2025
+
+*** ANNOTATE macros are now available ***
+ 
+ For further information on ANNOTATE macros, enter,
+    %HELPANO(macroname), (for specific macros)
+    %HELPANO(ALL), (for information on all macros)
+ or %HELPANO (for a list of macro names)
+ 
+NOTE: Libref CWD was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /home/rsparapa/git/CTSI/BERD
+NOTE: Libref PWD refers to the same physical library as CWD.
+NOTE: Libref PWD was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /home/rsparapa/git/CTSI/BERD
+
+NOTE: AUTOEXEC processing completed.
+
+1          * snippet13.sas ;
+2          data snippet13;
+3              merge
+4                  crdw.ekg_test_demographics
+5                  crdw.ekg_resting_ecg_meas
+6              ;
+7              by patient_trac_id;
+8          
+9              if ventricular_rate>=100 &
+10                 diagnosis_stmt not in:(
+11                 "** ** ** Pediatric ECG Analysis ** ** **",
+12                 "*** Poor data quality,",
+13                 "*** Suspect arm lead reversal,");
+14         
+15             if atrial_rate=. | atrial_rate>=ventricular_rate;
+16         run;
+
+NOTE: There were 50583 observations read from the data set 
+      CRDW.EKG_TEST_DEMOGRAPHICS.
+NOTE: There were 50583 observations read from the data set 
+      CRDW.EKG_RESTING_ECG_MEAS.
+NOTE: The data set WORK.SNIPPET13 has 12745 observations and 45 variables.
+NOTE: DATA statement used (Total process time):
+      real time           1.43 seconds
+      cpu time            1.43 seconds
+      
+
+17         
+18         proc sort data=snippet13;
+19             by patient_hash acquisition_date_shifted;
+20         run;
+
+NOTE: There were 12745 observations read from the data set WORK.SNIPPET13.
+NOTE: The data set WORK.SNIPPET13 has 12745 observations and 45 variables.
+4                              The SAS System 17:08 Thursday, March 13, 2025
+
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.04 seconds
+      
+
+21         
+22         proc univariate noprint;
+23             var acquisition_date;
+24             by patient_hash;
+25             output out=dates min=first_date max=last_date;
+26         run;
+
+NOTE: The data set WORK.DATES has 7574 observations and 3 variables.
+NOTE: PROCEDURE UNIVARIATE used (Total process time):
+      real time           0.06 seconds
+      cpu time            0.06 seconds
+      
+
+27         
+28         data crdw.snippet13;
+29             merge dates snippet13;
+30             by patient_hash;
+31             diff=last_date-first_date;
+32             if diff>30;
+33             attrib first_date last_date format=date7. label='';
+34         run;
+
+NOTE: There were 7574 observations read from the data set WORK.DATES.
+NOTE: There were 12745 observations read from the data set WORK.SNIPPET13.
+NOTE: The data set CRDW.SNIPPET13 has 4747 observations and 48 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.06 seconds
+      cpu time            0.03 seconds
+      
+
+35         
+36         proc contents varnum;
+37         run;
+
+NOTE: PROCEDURE CONTENTS used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+NOTE: The PROCEDURE CONTENTS printed pages 1-3.
+
+38         
+39         proc univariate plot;
+40             var diff ventricular_rate atrial_rate;
+41         run;
+
+NOTE: The PROCEDURE UNIVARIATE printed pages 4-13.
+5                              The SAS System 17:08 Thursday, March 13, 2025
+
+NOTE: PROCEDURE UNIVARIATE used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+42         
+43         proc freq;
+44             where diagnosis_stmt=:'**';
+45             tables diagnosis_stmt;
+46             format diagnosis_stmt $40.;
+47         run;
+
+NOTE: There were 8 observations read from the data set CRDW.SNIPPET13.
+      WHERE diagnosis_stmt=:'**';
+NOTE: The PROCEDURE FREQ printed page 14.
+NOTE: PROCEDURE FREQ used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+48         
+49         options ps=49 ls=122;
+50         
+51         proc print;
+52             where diagnosis_stmt=:'**';
+53             var diagnosis_stmt;
+54         run;
+
+WARNING: Data too long for column "diagnosis_stmt"; truncated to 117 characters to fit.
+NOTE: There were 8 observations read from the data set CRDW.SNIPPET13.
+      WHERE diagnosis_stmt=:'**';
+NOTE: The PROCEDURE PRINT printed page 15.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           1.80 seconds
+      cpu time            1.71 seconds
+      

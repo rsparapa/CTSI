@@ -1,0 +1,254 @@
+1                                                          The SAS System                              12:34 Tuesday, April 22, 2025
+
+NOTE: Copyright (c) 2023 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M8) 
+      Licensed to MEDICAL COLLEGE OF WISCONSIN - T&R SFA, Site 70183647.
+NOTE: This session is executing on the Linux 3.10.0-514.10.2.el7.x86_64 (LIN X64) platform.
+
+
+
+NOTE: Analytical products:
+      
+      SAS/STAT 15.3
+      SAS/ETS 15.3
+      SAS/OR 15.3
+      SAS/IML 15.3
+      SAS/QC 15.3
+
+NOTE: Additional host information:
+
+ Linux LIN X64 3.10.0-514.10.2.el7.x86_64 #1 SMP Fri Mar 3 00:04:05 UTC 2017 x86_64 CentOS Linux release 7.9.2009 (Core) 
+
+NOTE: SAS initialization used:
+      real time           0.02 seconds
+      cpu time            0.02 seconds
+      
+
+NOTE: AUTOEXEC processing beginning; file is /home/rsparapa/git/CTSI/BERD/autoexec.sas.
+
+NOTE: Libref CRDW was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /data/shared/04224/afib/libname/crdw
+NOTE: You have called the macro _IFELSE, 2008-07-15.
+NOTE: Copyright (c) 2006-2008 Rodney Sparapani
+ 
+NOTE: You have called the macro _EXIST, 2012-07-11.
+NOTE: Copyright (c) 2001-2012 Rodney Sparapani
+ 
+NOTE: You have called the macro _FN, 2024-08-03.
+NOTE: Copyright (c) 2001-2024 Rodney Sparapani
+ 
+MPRINT(_FN):   filename fn "/home/rsparapa/git/CTSI/BERD/snippet18.sas";
+MPRINT(_FN):   filename fn;
+NOTE: Fileref FN has been deassigned.
+NOTE: You have called the macro _TAIL, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _DIRCHAR, 2007-07-24.
+NOTE: Copyright (c) 2004-2007 Rodney Sparapani
+ 
+NOTE: You have called the macro _UNWIND, 2004-11-23.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _COUNT, 2022-06-07.
+NOTE: Copyright (c) 2001-2022 Rodney Sparapani
+2                              The SAS System  12:34 Tuesday, April 22, 2025
+
+ 
+NOTE: You have called the macro _SUBSTR, 2004-03-29.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _HEAD, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+FN=snippet18.sas
+FNROOT=snippet18
+FNPATH=/home/rsparapa/git/CTSI/BERD/snippet18.sas
+FNDIR=/home/rsparapa/git/CTSI/BERD/
+FNTEXT=snippet18.txt
+FNHTML=snippet18.html
+FNTEX=snippet18.tex
+FNPDF=snippet18.pdf
+NOTE: You have called the macro _LJ, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _PAD, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+MPRINT(_LJ):   "/home/rsparapa/git/CTSI/BERD/snippet18.sas"
+MPRINT(_PAD):   
+"202020202020202020202020202020202020202020202020202020202020202020202020202
+0202020202020202020202020202020202020202020202020202020202020202020202020202
+020202020"X
+ 
+*** SGANNO macros are now available ***
+     NOTE: SGANNO macros (except SGANNO_HELP) should be used within data 
+step.
+ 
+ 
+ Following macros are available 
+ 
+     %SGANNO_HELP 
+     %SGARROW 
+     %SGIMAGE 
+     %SGLINE 
+     %SGOVAL 
+     %SGPOLYCONT 
+     %SGPOLYGON 
+     %SGPOLYLINE 
+     %SGRECTANGLE 
+     %SGTEXT 
+     %SGTEXTCONT 
+ 
+ Enter %SGANNO_HELP(macroname) for details on each SGANNO macro,
+    or %SGANNO_HELP(ALL) for details on all SGANNO macros.
+ 
+MPRINT(SGANNO):  ;
+ 
+*** ANNOTATE macros are now available ***
+3                              The SAS System  12:34 Tuesday, April 22, 2025
+
+ 
+ For further information on ANNOTATE macros, enter,
+    %HELPANO(macroname), (for specific macros)
+    %HELPANO(ALL), (for information on all macros)
+ or %HELPANO (for a list of macro names)
+ 
+NOTE: Libref CWD was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /home/rsparapa/git/CTSI/BERD
+NOTE: Libref PWD refers to the same physical library as CWD.
+NOTE: Libref PWD was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /home/rsparapa/git/CTSI/BERD
+
+NOTE: AUTOEXEC processing completed.
+
+1          
+2          data crdw.persistent;
+3              merge crdw.snippet13(in=snippet13)
+4                  crdw.snippet14(in=snippet14) crdw.aad(in=inaad);
+5              by patient_hash;
+6              if snippet13;
+7          
+8              if snippet14=0 then do;
+9                  ablation=0;
+10                 cardioversion=0;
+11             end;
+12         
+13             if inaad=0 then do;
+14                 amio=0;
+15                 type1a=0;
+16                 type1b=0;
+17                 type1c=0;
+18                 type3=0;
+19                 misc=0;
+20                 aad=0;
+21             end;
+22             else if amio then aad=0;
+23         run;
+
+NOTE: There were 4747 observations read from the data set CRDW.SNIPPET13.
+NOTE: There were 6262 observations read from the data set CRDW.SNIPPET14.
+NOTE: There were 21957 observations read from the data set CRDW.AAD.
+NOTE: The data set CRDW.PERSISTENT has 4747 observations and 643 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.18 seconds
+      cpu time            0.09 seconds
+      
+
+24         
+25         /*
+26         proc contents varnum;
+4                              The SAS System  12:34 Tuesday, April 22, 2025
+
+27         run;
+28         */
+29         
+30         proc format;
+31             value present
+32                 1-high='1+'
+33             ;
+NOTE: Format PRESENT has been output.
+34         run;
+
+NOTE: PROCEDURE FORMAT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+35         
+36         options ps=49 ls=122;
+37         
+38         proc freq;
+39             format ablation cardioversion amio aad present.;
+40             tables amio cardioversion ablation aad;
+41             tables amio*cardioversion*ablation*aad / list missing
+42                 noprint out=persistent;
+43         run;
+
+NOTE: There were 4747 observations read from the data set CRDW.PERSISTENT.
+NOTE: The data set WORK.PERSISTENT has 12 observations and 6 variables.
+NOTE: The PROCEDURE FREQ printed page 1.
+NOTE: PROCEDURE FREQ used (Total process time):
+      real time           0.05 seconds
+      cpu time            0.04 seconds
+      
+
+44         
+45         %_sort(data=persistent, out=persistent, by=descending count);
+NOTE: You have called the macro _SORT, 2016-11-16
+NOTE: Copyright (c) 2001-2016 Rodney Sparapani
+ 
+NOTE: You have called the macro _REQUIRE, 2004-03-29.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+MPRINT(_SORT):  ;
+NOTE: You have called the macro _OPTION, 2004-03-29.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _LIB, 2007-08-01.
+NOTE: Copyright (c) 2001-2007 Rodney Sparapani
+5                                                     The SAS System                         12:34 Tuesday, April 22, 2025
+
+ 
+NOTE: You have called the macro _DATA, 2007-07-31.
+NOTE: Copyright (c) 2001-2007 Rodney Sparapani
+ 
+MPRINT(_SORT):   proc sort out=work.persistent (sortedby=descending count) data=
+MPRINT(_SORT):   work.persistent (
+MPRINT(_SORT):   );
+NOTE: You have called the macro _BY, 2005-03-25.
+NOTE: Copyright (c) 2001-2005 Rodney Sparapani
+ 
+MPRINT(_SORT):   by
+NOTE: You have called the macro _LIST, 2013-09-04.
+NOTE: Copyright (c) 2001-2013 Rodney Sparapani
+ 
+MPRINT(_BY):   DESCENDING COUNT
+MPRINT(_SORT):  ;
+MPRINT(_SORT):   run;
+
+NOTE: There were 12 observations read from the data set WORK.PERSISTENT.
+NOTE: The data set WORK.PERSISTENT has 12 observations and 6 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+46         
+47         proc print;
+48         run;
+
+NOTE: There were 12 observations read from the data set WORK.PERSISTENT.
+NOTE: The PROCEDURE PRINT printed page 2.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           0.43 seconds
+      cpu time            0.27 seconds
+      

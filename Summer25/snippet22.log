@@ -1,0 +1,245 @@
+1                                                          The SAS System                               13:32 Friday, April 25, 2025
+
+NOTE: Copyright (c) 2023 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M8) 
+      Licensed to MEDICAL COLLEGE OF WISCONSIN - T&R SFA, Site 70183647.
+NOTE: This session is executing on the Linux 3.10.0-514.10.2.el7.x86_64 (LIN X64) platform.
+
+
+
+NOTE: Analytical products:
+      
+      SAS/STAT 15.3
+      SAS/ETS 15.3
+      SAS/OR 15.3
+      SAS/IML 15.3
+      SAS/QC 15.3
+
+NOTE: Additional host information:
+
+ Linux LIN X64 3.10.0-514.10.2.el7.x86_64 #1 SMP Fri Mar 3 00:04:05 UTC 2017 x86_64 CentOS Linux release 7.9.2009 (Core) 
+
+NOTE: SAS initialization used:
+      real time           0.05 seconds
+      cpu time            0.04 seconds
+      
+
+NOTE: AUTOEXEC processing beginning; file is /home/rsparapa/git/CTSI/BERD/autoexec.sas.
+
+NOTE: Libref CRDW was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /data/shared/04224/afib/libname/crdw
+NOTE: You have called the macro _IFELSE, 2008-07-15.
+NOTE: Copyright (c) 2006-2008 Rodney Sparapani
+ 
+NOTE: You have called the macro _EXIST, 2012-07-11.
+NOTE: Copyright (c) 2001-2012 Rodney Sparapani
+ 
+NOTE: You have called the macro _FN, 2024-08-03.
+NOTE: Copyright (c) 2001-2024 Rodney Sparapani
+ 
+MPRINT(_FN):   filename fn "/home/rsparapa/git/CTSI/BERD/snippet22.sas";
+MPRINT(_FN):   filename fn;
+NOTE: Fileref FN has been deassigned.
+NOTE: You have called the macro _TAIL, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _DIRCHAR, 2007-07-24.
+NOTE: Copyright (c) 2004-2007 Rodney Sparapani
+ 
+NOTE: You have called the macro _UNWIND, 2004-11-23.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _COUNT, 2022-06-07.
+NOTE: Copyright (c) 2001-2022 Rodney Sparapani
+2                              The SAS System   13:32 Friday, April 25, 2025
+
+ 
+NOTE: You have called the macro _SUBSTR, 2004-03-29.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _HEAD, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+FN=snippet22.sas
+FNROOT=snippet22
+FNPATH=/home/rsparapa/git/CTSI/BERD/snippet22.sas
+FNDIR=/home/rsparapa/git/CTSI/BERD/
+FNTEXT=snippet22.txt
+FNHTML=snippet22.html
+FNTEX=snippet22.tex
+FNPDF=snippet22.pdf
+NOTE: You have called the macro _LJ, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _PAD, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+MPRINT(_LJ):   "/home/rsparapa/git/CTSI/BERD/snippet22.sas"
+MPRINT(_PAD):   
+"202020202020202020202020202020202020202020202020202020202020202020202020202
+0202020202020202020202020202020202020202020202020202020202020202020202020202
+020202020"X
+ 
+*** SGANNO macros are now available ***
+     NOTE: SGANNO macros (except SGANNO_HELP) should be used within data 
+step.
+ 
+ 
+ Following macros are available 
+ 
+     %SGANNO_HELP 
+     %SGARROW 
+     %SGIMAGE 
+     %SGLINE 
+     %SGOVAL 
+     %SGPOLYCONT 
+     %SGPOLYGON 
+     %SGPOLYLINE 
+     %SGRECTANGLE 
+     %SGTEXT 
+     %SGTEXTCONT 
+ 
+ Enter %SGANNO_HELP(macroname) for details on each SGANNO macro,
+    or %SGANNO_HELP(ALL) for details on all SGANNO macros.
+ 
+MPRINT(SGANNO):  ;
+ 
+*** ANNOTATE macros are now available ***
+3                              The SAS System   13:32 Friday, April 25, 2025
+
+ 
+ For further information on ANNOTATE macros, enter,
+    %HELPANO(macroname), (for specific macros)
+    %HELPANO(ALL), (for information on all macros)
+ or %HELPANO (for a list of macro names)
+ 
+NOTE: Libref CWD was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /home/rsparapa/git/CTSI/BERD
+NOTE: Libref PWD refers to the same physical library as CWD.
+NOTE: Libref PWD was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /home/rsparapa/git/CTSI/BERD
+
+NOTE: AUTOEXEC processing completed.
+
+1          *snippet22.sas;
+2          %let total=5000; *500 Hz X 10 s=5000;
+3          
+4          data i ii %_list(v1-v6);
+NOTE: You have called the macro _LIST, 2013-09-04.
+NOTE: Copyright (c) 2001-2013 Rodney Sparapani
+ 
+NOTE: You have called the macro _REPEAT, 2004-03-29.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+MPRINT(_LIST):   ii v1 v2 v3 v4 v5
+5              set crdw.ekg_lead_data;
+6          
+7              keep patient_hash patient_trac_id waveform_id ms mv;
+8          
+9              wave_form_data=input(wave_form_data, $base64x13532.);
+10         
+11             ms=0; *time in ms;
+12             mv=0; *ECG in mV;
+13         
+14             do i=1 to &total;
+15                 ms=2*i-1;
+16                 mv=input(substr(wave_form_data, ms, 2), ib2.);
+17                 if mv<lead_low_limit | mv>lead_high_limit then
+18                     put waveform_id= lead_id= ms= mv=;
+19                 mv=mv*lead_amplitude_units_per_bit/1000;
+20         
+21                 select(lead_id);
+22                 when('I')  output i;
+23                 when('II') output ii;
+24                 when('V1') output v1;
+25                 when('V2') output v2;
+26                 when('V3') output v3;
+27                 when('V4') output v4;
+28                 when('V5') output v5;
+29                 when('V6') output v6;
+4                              The SAS System   13:32 Friday, April 25, 2025
+
+30                 end;
+31             end;
+32         run;
+
+NOTE: Character values have been converted to numeric 
+      values at the places given by: (Line):(Column).
+      17:15   
+NOTE: There were 37928 observations read from the data set 
+      CRDW.EKG_LEAD_DATA.
+NOTE: The data set WORK.I has 23705000 observations and 5 variables.
+NOTE: The data set WORK.II has 23705000 observations and 5 variables.
+NOTE: The data set WORK.V1 has 23705000 observations and 5 variables.
+NOTE: The data set WORK.V2 has 23705000 observations and 5 variables.
+NOTE: The data set WORK.V3 has 23705000 observations and 5 variables.
+NOTE: The data set WORK.V4 has 23705000 observations and 5 variables.
+NOTE: The data set WORK.V5 has 23705000 observations and 5 variables.
+NOTE: The data set WORK.V6 has 23705000 observations and 5 variables.
+NOTE: DATA statement used (Total process time):
+      real time           41.19 seconds
+      cpu time            41.17 seconds
+      
+
+33         
+34         data crdw.snippet22;
+35             merge
+36                 i( rename=(mv=i))
+37                 ii(rename=(mv=ii))
+38                 v1(rename=(mv=v1))
+39                 v2(rename=(mv=v2))
+40                 v3(rename=(mv=v3))
+41                 v4(rename=(mv=v4))
+42                 v5(rename=(mv=v5))
+43                 v6(rename=(mv=v6))
+44             ;
+45             by patient_hash patient_trac_id waveform_id ms;
+46         run;
+
+NOTE: There were 23705000 observations read from the data set WORK.I.
+NOTE: There were 23705000 observations read from the data set WORK.II.
+NOTE: There were 23705000 observations read from the data set WORK.V1.
+NOTE: There were 23705000 observations read from the data set WORK.V2.
+NOTE: There were 23705000 observations read from the data set WORK.V3.
+NOTE: There were 23705000 observations read from the data set WORK.V4.
+NOTE: There were 23705000 observations read from the data set WORK.V5.
+NOTE: There were 23705000 observations read from the data set WORK.V6.
+NOTE: The data set CRDW.SNIPPET22 has 23705000 observations and 12 
+      variables.
+NOTE: DATA statement used (Total process time):
+      real time           36.82 seconds
+      cpu time            36.82 seconds
+      
+
+5                              The SAS System   13:32 Friday, April 25, 2025
+
+47         
+48         proc univariate plot;
+49             var i ii v1-v6;
+50             id ms;
+51         run;
+
+NOTE: The PROCEDURE UNIVARIATE printed pages 1-24.
+NOTE: PROCEDURE UNIVARIATE used (Total process time):
+      real time           23.85 seconds
+      cpu time            23.84 seconds
+      
+
+52         
+53         proc contents varnum;
+54         run;
+
+NOTE: PROCEDURE CONTENTS used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.02 seconds
+      
+NOTE: The PROCEDURE CONTENTS printed pages 25-26.
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           1:42.09
+      cpu time            1:42.03
+      

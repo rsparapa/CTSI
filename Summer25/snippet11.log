@@ -1,0 +1,557 @@
+1                                                          The SAS System                             17:01 Thursday, March 13, 2025
+
+NOTE: Copyright (c) 2023 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M8) 
+      Licensed to MEDICAL COLLEGE OF WISCONSIN - T&R SFA, Site 70183647.
+NOTE: This session is executing on the Linux 3.10.0-514.10.2.el7.x86_64 (LIN X64) platform.
+
+
+
+NOTE: Analytical products:
+      
+      SAS/STAT 15.3
+      SAS/ETS 15.3
+      SAS/OR 15.3
+      SAS/IML 15.3
+      SAS/QC 15.3
+
+NOTE: Additional host information:
+
+ Linux LIN X64 3.10.0-514.10.2.el7.x86_64 #1 SMP Fri Mar 3 00:04:05 UTC 2017 x86_64 CentOS Linux release 7.9.2009 (Core) 
+
+NOTE: SAS initialization used:
+      real time           0.02 seconds
+      cpu time            0.02 seconds
+      
+
+NOTE: AUTOEXEC processing beginning; file is /home/rsparapa/git/CTSI/BERD/autoexec.sas.
+
+NOTE: Libref CRDW was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /data/shared/04224/CTSI/libname/crdw
+NOTE: You have called the macro _IFELSE, 2008-07-15.
+NOTE: Copyright (c) 2006-2008 Rodney Sparapani
+ 
+NOTE: You have called the macro _EXIST, 2012-07-11.
+NOTE: Copyright (c) 2001-2012 Rodney Sparapani
+ 
+NOTE: You have called the macro _FN, 2024-08-03.
+NOTE: Copyright (c) 2001-2024 Rodney Sparapani
+ 
+MPRINT(_FN):   filename fn "/home/rsparapa/git/CTSI/BERD/snippet11.sas";
+MPRINT(_FN):   filename fn;
+NOTE: Fileref FN has been deassigned.
+NOTE: You have called the macro _TAIL, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _DIRCHAR, 2007-07-24.
+NOTE: Copyright (c) 2004-2007 Rodney Sparapani
+ 
+NOTE: You have called the macro _UNWIND, 2004-11-23.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _COUNT, 2022-06-07.
+NOTE: Copyright (c) 2001-2022 Rodney Sparapani
+2                              The SAS System 17:01 Thursday, March 13, 2025
+
+ 
+NOTE: You have called the macro _SUBSTR, 2004-03-29.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _HEAD, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+FN=snippet11.sas
+FNROOT=snippet11
+FNPATH=/home/rsparapa/git/CTSI/BERD/snippet11.sas
+FNDIR=/home/rsparapa/git/CTSI/BERD/
+FNTEXT=snippet11.txt
+FNHTML=snippet11.html
+FNTEX=snippet11.tex
+FNPDF=snippet11.pdf
+NOTE: You have called the macro _LJ, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _PAD, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+MPRINT(_LJ):   "/home/rsparapa/git/CTSI/BERD/snippet11.sas"
+MPRINT(_PAD):   
+"202020202020202020202020202020202020202020202020202020202020202020202020202
+0202020202020202020202020202020202020202020202020202020202020202020202020202
+020202020"X
+ 
+*** SGANNO macros are now available ***
+     NOTE: SGANNO macros (except SGANNO_HELP) should be used within data 
+step.
+ 
+ 
+ Following macros are available 
+ 
+     %SGANNO_HELP 
+     %SGARROW 
+     %SGIMAGE 
+     %SGLINE 
+     %SGOVAL 
+     %SGPOLYCONT 
+     %SGPOLYGON 
+     %SGPOLYLINE 
+     %SGRECTANGLE 
+     %SGTEXT 
+     %SGTEXTCONT 
+ 
+ Enter %SGANNO_HELP(macroname) for details on each SGANNO macro,
+    or %SGANNO_HELP(ALL) for details on all SGANNO macros.
+ 
+MPRINT(SGANNO):  ;
+ 
+3                              The SAS System 17:01 Thursday, March 13, 2025
+
+*** ANNOTATE macros are now available ***
+ 
+ For further information on ANNOTATE macros, enter,
+    %HELPANO(macroname), (for specific macros)
+    %HELPANO(ALL), (for information on all macros)
+ or %HELPANO (for a list of macro names)
+ 
+NOTE: Libref CWD was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /home/rsparapa/git/CTSI/BERD
+NOTE: Libref PWD refers to the same physical library as CWD.
+NOTE: Libref PWD was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /home/rsparapa/git/CTSI/BERD
+
+NOTE: AUTOEXEC processing completed.
+
+1          * snippet11.sas ;
+2          
+3          %_dblib(data=db.ekg_test_demographics);
+NOTE: You have called the macro _DBLIB, 2025-03-11.
+NOTE: Copyright (c) 2025 Rodney Sparapani
+ 
+NOTE: You have called the macro _REQUIRE, 2004-03-29.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+MPRINT(_DBLIB):  ;
+NOTE: You have called the macro _LIB, 2007-08-01.
+NOTE: Copyright (c) 2001-2007 Rodney Sparapani
+ 
+NOTE: You have called the macro _DATA, 2007-07-31.
+NOTE: Copyright (c) 2001-2007 Rodney Sparapani
+ 
+MPRINT(_DBLIB):   proc sql;
+MPRINT(_DBLIB):   connect to postgres as crdw (user=rsparapani 
+password=RSP#ygbzqp26t5W#Jyph2 server="garth.ctsi.mcw.edu" 
+database="fh_jupyter_hub_hbdb");
+MPRINT(_DBLIB):   create table schema as select * from connection to crdw 
+(select * from information_schema.columns where table_schema = 'public') 
+where table_name="ekg_test_demographics";
+NOTE: Table WORK.SCHEMA created, with 15 rows and 44 columns.
+
+MPRINT(_DBLIB):   disconnect from crdw;
+MPRINT(_DBLIB):   quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.13 seconds
+      cpu time            0.06 seconds
+      
+
+MPRINT(_DBLIB):   data dbdates;
+MPRINT(_DBLIB):   set schema;
+4                              The SAS System 17:01 Thursday, March 13, 2025
+
+MPRINT(_DBLIB):   where data_type=:"time";
+MPRINT(_DBLIB):   run;
+
+NOTE: There were 2 observations read from the data set WORK.SCHEMA.
+      WHERE data_type=:'time';
+NOTE: The data set WORK.DBDATES has 2 observations and 44 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: You have called the macro _LEVEL, 2011-09-01.
+NOTE: Copyright (c) 2002-2011 Rodney Sparapani
+ 
+NOTE: You have called the macro _NOBS, 2007-07-11.
+NOTE: Copyright (c) 2001-2007 Rodney Sparapani
+ 
+NOTE: You have called the macro _DSEXIST, 2007-08-01.
+NOTE: Copyright (c) 2001-2007 Rodney Sparapani
+ 
+NOTE: You have called the macro _SUFFIX, 2004-10-26.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _VERSION, 2006-02-15.
+NOTE: Copyright (c) 2001-2006 Rodney Sparapani
+ 
+NOTE: You have called the macro _DIR, 2004-11-23.
+NOTE: Copyright (c) 2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _FILE, 2004-11-23.
+NOTE: Copyright (c) 2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _OPTION, 2004-03-29.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+MPRINT(_DBLIB):   data dblen;
+MPRINT(_DBLIB):   set schema;
+MPRINT(_DBLIB):   where data_type in:('character', 'text');
+MPRINT(_DBLIB):   column_name=lowcase(column_name);
+MPRINT(_DBLIB):   run;
+
+NOTE: There were 13 observations read from the data set WORK.SCHEMA.
+      WHERE data_type in: ('character', 'text');
+NOTE: The data set WORK.DBLEN has 13 observations and 44 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   proc sql;
+MPRINT(_DBLIB):   connect to postgres as crdw (user=rsparapani 
+5                              The SAS System 17:01 Thursday, March 13, 2025
+
+password=RSP#ygbzqp26t5W#Jyph2 server="garth.ctsi.mcw.edu" 
+database="fh_jupyter_hub_hbdb");
+NOTE: You have called the macro _INDEXW, 2009-11-19.
+NOTE: Copyright (c) 2009 Rodney Sparapani
+ 
+MPRINT(_DBLIB):   create table length as select * from connection to crdw 
+(select
+MPRINT(_DBLIB):   max(length(test_demographics_id)) as test_demographics_id,
+MPRINT(_DBLIB):   max(length(patient_trac_id)) as patient_trac_id,
+MPRINT(_DBLIB):   max(length(data_type)) as data_type,
+MPRINT(_DBLIB):   max(length(site_name)) as site_name,
+MPRINT(_DBLIB):   max(length(acquisition_device)) as acquisition_device,
+MPRINT(_DBLIB):   max(length(overreader_last_name)) as overreader_last_name,
+MPRINT(_DBLIB):   max(length(overreader_first_name)) as 
+overreader_first_name,
+MPRINT(_DBLIB):   max(length(overreader_id)) as overreader_id,
+MPRINT(_DBLIB):   max(length(status)) as status,
+MPRINT(_DBLIB):   max(length(location_name)) as location_name,
+MPRINT(_DBLIB):   max(length(room_id)) as room_id,
+MPRINT(_DBLIB):   max(length(test_reason)) as test_reason,
+MPRINT(_DBLIB):   max(length(diagnosis_stmt)) as diagnosis_stmt from 
+ekg_test_demographics);
+NOTE: Table WORK.LENGTH created, with 1 rows and 13 columns.
+
+MPRINT(_DBLIB):   disconnect from crdw;
+MPRINT(_DBLIB):   quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.60 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(_DBLIB):   data _null_;
+MPRINT(_DBLIB):   set length;
+MPRINT(_DBLIB):   call symput("dbmax_text", trim(max(of 
+test_demographics_id--diagnosis_stmt)));
+MPRINT(_DBLIB):   call symput("len1", trim(test_demographics_id));
+MPRINT(_DBLIB):   call symput("len2", trim(patient_trac_id));
+MPRINT(_DBLIB):   call symput("len3", trim(data_type));
+MPRINT(_DBLIB):   call symput("len4", trim(site_name));
+MPRINT(_DBLIB):   call symput("len5", trim(acquisition_device));
+MPRINT(_DBLIB):   call symput("len6", trim(overreader_last_name));
+MPRINT(_DBLIB):   call symput("len7", trim(overreader_first_name));
+MPRINT(_DBLIB):   call symput("len8", trim(overreader_id));
+MPRINT(_DBLIB):   call symput("len9", trim(status));
+MPRINT(_DBLIB):   call symput("len10", trim(location_name));
+MPRINT(_DBLIB):   call symput("len11", trim(room_id));
+MPRINT(_DBLIB):   call symput("len12", trim(test_reason));
+MPRINT(_DBLIB):   call symput("len13", trim(diagnosis_stmt));
+MPRINT(_DBLIB):   run;
+
+NOTE: Numeric values have been converted to character 
+6                              The SAS System 17:01 Thursday, March 13, 2025
+
+      values at the places given by: (Line):(Column).
+      3:33   3:1    3:1    3:1    3:1    3:1    3:1    3:1    3:1    3:1
+      3:1    3:1    3:1    3:1    
+NOTE: There were 1 observations read from the data set WORK.LENGTH.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(_DBLIB):   libname db postgres user = "rsparapani" password = 
+"RSP#ygbzqp26t5W#Jyph2" server = "garth.ctsi.mcw.edu" database = 
+"fh_jupyter_hub_hbdb" client_encoding = "utf-8" dbmax_text = 895 
+sql_functions = all port=5432 ;
+NOTE: Libref DB was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: garth.ctsi.mcw.edu
+4          
+5          proc sort data=db.ekg_test_demographics out=ekg_test_demographics
+5        ! ;
+6              where "01JAN2017:00:00:00"dt<=acquisition_date_shifted<
+7                  "01JAN2023:00:00:00"dt;
+8              by patient_trac_id;
+9          run;
+
+NOTE: Sorting was performed by the data source.
+NOTE: There were 677030 observations read from the data set 
+      DB.EKG_TEST_DEMOGRAPHICS.
+      WHERE (acquisition_date_shifted>='  01JAN2017:00:00:00'DT and 
+      acquisition_date_shifted<'  01JAN2023:00:00:00'DT);
+NOTE: The data set WORK.EKG_TEST_DEMOGRAPHICS has 677030 observations and 
+      15 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           14.08 seconds
+      cpu time            13.28 seconds
+      
+
+10         
+11         %_dbdata(out=crdw.ekg_test_demographics);
+NOTE: You have called the macro _DBDATA, 2025-03-10.
+NOTE: Copyright (c) 2025 Rodney Sparapani
+ 
+MPRINT(_DBDATA):  ;
+NOTE: You have called the macro _BLIST, 2008-03-03.
+NOTE: Copyright (c) 2004-2008 Rodney Sparapani
+ 
+MPRINT(_DBDATA):   data crdw.ekg_test_demographics;
+MPRINT(_DBDATA):   length
+MPRINT(_DBDATA):   test_demographics_id $ 16
+MPRINT(_DBDATA):   patient_trac_id $ 16
+MPRINT(_DBDATA):   data_type $ 7
+MPRINT(_DBDATA):   site_name $ 29
+7                              The SAS System 17:01 Thursday, March 13, 2025
+
+MPRINT(_DBDATA):   acquisition_device $ 5
+MPRINT(_DBDATA):   overreader_last_name $ 22
+MPRINT(_DBDATA):   overreader_first_name $ 13
+MPRINT(_DBDATA):   overreader_id $ 5
+MPRINT(_DBDATA):   status $ 11
+MPRINT(_DBDATA):   location_name $ 32
+MPRINT(_DBDATA):   room_id $ 28
+MPRINT(_DBDATA):   test_reason $ 67
+MPRINT(_DBDATA):   diagnosis_stmt $ 895;
+MPRINT(_DBDATA):   set WORK.EKG_TEST_DEMOGRAPHICS ;
+MPRINT(_DBDATA):   attrib _all_ label=' ';
+MPRINT(_DBDATA):   format test_demographics_id patient_trac_id data_type 
+site_name acquisition_device overreader_last_name overreader_first_name 
+overreader_id status location_name room_id test_reason diagnosis_stmt 
+_numeric_;
+MPRINT(_DBDATA):   informat test_demographics_id patient_trac_id data_type 
+site_name acquisition_device overreader_last_name overreader_first_name 
+overreader_id status location_name room_id test_reason diagnosis_stmt 
+_numeric_;
+MPRINT(_DBDATA):   informat acquisition_time;
+MPRINT(_DBDATA):   format acquisition_time_date date9. acquisition_time 
+datetime19.;
+MPRINT(_DBDATA):   acquisition_time_date=datepart(acquisition_time);
+MPRINT(_DBDATA):   informat acquisition_date_shifted;
+MPRINT(_DBDATA):   format acquisition_date date9. acquisition_date_shifted 
+datetime19.;
+MPRINT(_DBDATA):   acquisition_date=datepart(acquisition_date_shifted);
+MPRINT(_DBDATA):   run;
+
+WARNING: Multiple lengths were specified for the variable 
+         test_demographics_id by input data set(s). This can cause 
+         truncation of data.
+WARNING: Multiple lengths were specified for the variable patient_trac_id 
+         by input data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable data_type by 
+         input data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable site_name by 
+         input data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable 
+         acquisition_device by input data set(s). This can cause truncation 
+         of data.
+WARNING: Multiple lengths were specified for the variable 
+         overreader_last_name by input data set(s). This can cause 
+         truncation of data.
+WARNING: Multiple lengths were specified for the variable 
+         overreader_first_name by input data set(s). This can cause 
+         truncation of data.
+WARNING: Multiple lengths were specified for the variable overreader_id by 
+         input data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable status by input 
+         data set(s). This can cause truncation of data.
+8                              The SAS System 17:01 Thursday, March 13, 2025
+
+WARNING: Multiple lengths were specified for the variable location_name by 
+         input data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable room_id by input 
+         data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable test_reason by 
+         input data set(s). This can cause truncation of data.
+NOTE: There were 677030 observations read from the data set 
+      WORK.EKG_TEST_DEMOGRAPHICS.
+NOTE: The data set CRDW.EKG_TEST_DEMOGRAPHICS has 677030 observations and 
+      17 variables.
+NOTE: DATA statement used (Total process time):
+      real time           7.06 seconds
+      cpu time            3.32 seconds
+      
+
+12         
+13         proc contents varnum;
+14         run;
+
+NOTE: PROCEDURE CONTENTS used (Total process time):
+      real time           0.63 seconds
+      cpu time            0.12 seconds
+      
+NOTE: The PROCEDURE CONTENTS printed pages 1-2.
+
+15         
+16         proc sort data=crdw.ekg_test_demographics
+17             out=ekg_test_demographics;
+18             by patient_trac_id;
+19         run;
+
+NOTE: There were 677030 observations read from the data set 
+      CRDW.EKG_TEST_DEMOGRAPHICS.
+NOTE: The data set WORK.EKG_TEST_DEMOGRAPHICS has 677030 observations and 
+      17 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           3.02 seconds
+      cpu time            3.20 seconds
+      
+
+20         
+21         proc sort data=crdw.ekg_patient_tracings
+22             out=ekg_patient_tracings;
+23             by patient_trac_id;
+24         run;
+
+NOTE: There were 356568 observations read from the data set 
+      CRDW.EKG_PATIENT_TRACINGS.
+NOTE: The data set WORK.EKG_PATIENT_TRACINGS has 356568 observations and 
+      162 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+9                              The SAS System 17:01 Thursday, March 13, 2025
+
+      real time           2.08 seconds
+      cpu time            2.33 seconds
+      
+
+25         
+26         data ekg_test_demographics;
+27             merge
+28                 ekg_patient_tracings(in=ekg_patient_tracings)
+29                 ekg_test_demographics(in=ekg_test_demographics)
+30             ;
+31             by patient_trac_id;
+32         
+33             array _afib(2017:2022, 1:12)
+34                 afib1701-afib1712 afib1801-afib1812 afib1901-afib1912
+35                 afib2001-afib2012 afib2101-afib2112 afib2201-afib2212
+36             ;
+37         
+38             array _aflt(2017:2022, 1:12)
+39                 aflt1701-aflt1712 aflt1801-aflt1812 aflt1901-aflt1912
+40                 aflt2001-aflt2012 aflt2101-aflt2112 aflt2201-aflt2212
+41             ;
+42         
+43             if ekg_patient_tracings & ekg_test_demographics;
+44         
+45             drop month year /*afib_date aflt_date*/
+46                 afib17-afib22 aflt17-aflt22
+47                 afib1701-afib1712 afib1801-afib1812 afib1901-afib1912
+48                 afib2001-afib2012 afib2101-afib2112 afib2201-afib2212
+49                 aflt1701-aflt1712 aflt1801-aflt1812 aflt1901-aflt1912
+50                 aflt2001-aflt2012 aflt2101-aflt2112 aflt2201-aflt2212
+51             ;
+52         
+53             month=month(acquisition_date);
+54             year =year(acquisition_date);
+55         
+56             format afib_date aflt_date date7.;
+57         
+58             if _afib(year, month)>0 then
+59                 afib_date=mdy(month, _afib(year, month), year);
+60             if _aflt(year, month)>0 then
+61                 aflt_date=mdy(month, _aflt(year, month), year);
+62         
+63             afib=(acquisition_date=afib_date);
+64             aflt=(acquisition_date=aflt_date);
+65         
+66             if afib | aflt;
+67         
+68             if afib=0 then afib_date=.;
+69             if aflt=0 then aflt_date=.;
+70         run;
+
+10                             The SAS System 17:01 Thursday, March 13, 2025
+
+NOTE: There were 356568 observations read from the data set 
+      WORK.EKG_PATIENT_TRACINGS.
+NOTE: There were 677030 observations read from the data set 
+      WORK.EKG_TEST_DEMOGRAPHICS.
+NOTE: The data set WORK.EKG_TEST_DEMOGRAPHICS has 50583 observations and 24 
+      variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.61 seconds
+      cpu time            0.59 seconds
+      
+
+71         
+72         %_sort(data=ekg_test_demographics,
+72       ! out=crdw.ekg_test_demographics,
+NOTE: You have called the macro _SORT, 2016-11-16
+NOTE: Copyright (c) 2001-2016 Rodney Sparapani
+ 
+73             by=patient_hash acquisition_date_shifted,
+73       ! index=patient_trac_id/unique);
+MPRINT(_SORT):  ;
+MPRINT(_SORT):   proc sort out=crdw.ekg_test_demographics 
+(index=(patient_trac_id/unique) sortedby=patient_hash 
+acquisition_date_shifted) data=
+MPRINT(_SORT):   work.ekg_test_demographics (
+MPRINT(_SORT):   );
+NOTE: You have called the macro _BY, 2005-03-25.
+NOTE: Copyright (c) 2001-2005 Rodney Sparapani
+ 
+MPRINT(_SORT):   by
+NOTE: You have called the macro _LIST, 2013-09-04.
+NOTE: Copyright (c) 2001-2013 Rodney Sparapani
+ 
+MPRINT(_BY):   PATIENT_HASH ACQUISITION_DATE_SHIFTED
+MPRINT(_SORT):  ;
+MPRINT(_SORT):   run;
+
+NOTE: There were 50583 observations read from the data set 
+      WORK.EKG_TEST_DEMOGRAPHICS.
+NOTE: The data set CRDW.EKG_TEST_DEMOGRAPHICS has 50583 observations and 24 
+      variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.68 seconds
+      cpu time            0.35 seconds
+      
+
+74         
+75         proc freq;
+76             tables afib*aflt;
+77         run;
+
+NOTE: There were 50583 observations read from the data set 
+11                             The SAS System 17:01 Thursday, March 13, 2025
+
+      CRDW.EKG_TEST_DEMOGRAPHICS.
+NOTE: The PROCEDURE FREQ printed page 3.
+NOTE: PROCEDURE FREQ used (Total process time):
+      real time           0.25 seconds
+      cpu time            0.05 seconds
+      
+
+78         
+79         proc contents varnum;
+80         run;
+
+NOTE: PROCEDURE CONTENTS used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+NOTE: The PROCEDURE CONTENTS printed pages 4-5.
+
+81         
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           29.78 seconds
+      cpu time            23.57 seconds
+      

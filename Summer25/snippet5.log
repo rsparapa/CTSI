@@ -1,0 +1,534 @@
+1                                                          The SAS System                              11:55 Tuesday, April 22, 2025
+
+NOTE: Copyright (c) 2023 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M8) 
+      Licensed to MEDICAL COLLEGE OF WISCONSIN - T&R SFA, Site 70183647.
+NOTE: This session is executing on the Linux 3.10.0-514.10.2.el7.x86_64 (LIN X64) platform.
+
+
+
+NOTE: Analytical products:
+      
+      SAS/STAT 15.3
+      SAS/ETS 15.3
+      SAS/OR 15.3
+      SAS/IML 15.3
+      SAS/QC 15.3
+
+NOTE: Additional host information:
+
+ Linux LIN X64 3.10.0-514.10.2.el7.x86_64 #1 SMP Fri Mar 3 00:04:05 UTC 2017 x86_64 CentOS Linux release 7.9.2009 (Core) 
+
+NOTE: SAS initialization used:
+      real time           0.02 seconds
+      cpu time            0.01 seconds
+      
+
+NOTE: AUTOEXEC processing beginning; file is /home/rsparapa/git/CTSI/BERD/autoexec.sas.
+
+NOTE: Libref CRDW was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /data/shared/04224/afib/libname/crdw
+NOTE: You have called the macro _IFELSE, 2008-07-15.
+NOTE: Copyright (c) 2006-2008 Rodney Sparapani
+ 
+NOTE: You have called the macro _EXIST, 2012-07-11.
+NOTE: Copyright (c) 2001-2012 Rodney Sparapani
+ 
+NOTE: You have called the macro _FN, 2024-08-03.
+NOTE: Copyright (c) 2001-2024 Rodney Sparapani
+ 
+MPRINT(_FN):   filename fn "/home/rsparapa/git/CTSI/BERD/snippet5.sas";
+MPRINT(_FN):   filename fn;
+NOTE: Fileref FN has been deassigned.
+NOTE: You have called the macro _TAIL, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _DIRCHAR, 2007-07-24.
+NOTE: Copyright (c) 2004-2007 Rodney Sparapani
+ 
+NOTE: You have called the macro _UNWIND, 2004-11-23.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _COUNT, 2022-06-07.
+NOTE: Copyright (c) 2001-2022 Rodney Sparapani
+2                              The SAS System  11:55 Tuesday, April 22, 2025
+
+ 
+NOTE: You have called the macro _SUBSTR, 2004-03-29.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _HEAD, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+FN=snippet5.sas
+FNROOT=snippet5
+FNPATH=/home/rsparapa/git/CTSI/BERD/snippet5.sas
+FNDIR=/home/rsparapa/git/CTSI/BERD/
+FNTEXT=snippet5.txt
+FNHTML=snippet5.html
+FNTEX=snippet5.tex
+FNPDF=snippet5.pdf
+NOTE: You have called the macro _LJ, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _PAD, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+MPRINT(_LJ):   "/home/rsparapa/git/CTSI/BERD/snippet5.sas"
+MPRINT(_PAD):   
+"202020202020202020202020202020202020202020202020202020202020202020202020202
+0202020202020202020202020202020202020202020202020202020202020202020202020202
+02020202020"X
+ 
+*** SGANNO macros are now available ***
+     NOTE: SGANNO macros (except SGANNO_HELP) should be used within data 
+step.
+ 
+ 
+ Following macros are available 
+ 
+     %SGANNO_HELP 
+     %SGARROW 
+     %SGIMAGE 
+     %SGLINE 
+     %SGOVAL 
+     %SGPOLYCONT 
+     %SGPOLYGON 
+     %SGPOLYLINE 
+     %SGRECTANGLE 
+     %SGTEXT 
+     %SGTEXTCONT 
+ 
+ Enter %SGANNO_HELP(macroname) for details on each SGANNO macro,
+    or %SGANNO_HELP(ALL) for details on all SGANNO macros.
+ 
+MPRINT(SGANNO):  ;
+ 
+*** ANNOTATE macros are now available ***
+3                              The SAS System  11:55 Tuesday, April 22, 2025
+
+ 
+ For further information on ANNOTATE macros, enter,
+    %HELPANO(macroname), (for specific macros)
+    %HELPANO(ALL), (for information on all macros)
+ or %HELPANO (for a list of macro names)
+ 
+NOTE: Libref CWD was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /home/rsparapa/git/CTSI/BERD
+NOTE: Libref PWD refers to the same physical library as CWD.
+NOTE: Libref PWD was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /home/rsparapa/git/CTSI/BERD
+
+NOTE: AUTOEXEC processing completed.
+
+1          * snippet5.sas ;
+2          
+3          %_dblib(data=db.fh_hb_demographics_jupyter);
+NOTE: You have called the macro _DBLIB, 2025-03-11.
+NOTE: Copyright (c) 2025 Rodney Sparapani
+ 
+NOTE: You have called the macro _REQUIRE, 2004-03-29.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+MPRINT(_DBLIB):  ;
+NOTE: You have called the macro _LIB, 2007-08-01.
+NOTE: Copyright (c) 2001-2007 Rodney Sparapani
+ 
+NOTE: You have called the macro _DATA, 2007-07-31.
+NOTE: Copyright (c) 2001-2007 Rodney Sparapani
+ 
+MPRINT(_DBLIB):   proc sql;
+MPRINT(_DBLIB):   connect to postgres as crdw (user=rsparapani 
+password=RSP#ygbzqp26t5W#Jyph2 server="garth.ctsi.mcw.edu" 
+database="fh_jupyter_hub_hbdb");
+MPRINT(_DBLIB):   create table schema as select * from connection to crdw 
+(select * from information_schema.columns where table_schema = 'public') 
+where table_name="fh_hb_demographics_jupyter";
+NOTE: Table WORK.SCHEMA created, with 40 rows and 44 columns.
+
+MPRINT(_DBLIB):   disconnect from crdw;
+MPRINT(_DBLIB):   quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.13 seconds
+      cpu time            0.05 seconds
+      
+
+MPRINT(_DBLIB):   data dbdates;
+MPRINT(_DBLIB):   set schema;
+MPRINT(_DBLIB):   where data_type=:"time";
+MPRINT(_DBLIB):   run;
+4                              The SAS System  11:55 Tuesday, April 22, 2025
+
+
+NOTE: There were 3 observations read from the data set WORK.SCHEMA.
+      WHERE data_type=:'time';
+NOTE: The data set WORK.DBDATES has 3 observations and 44 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: You have called the macro _LEVEL, 2011-09-01.
+NOTE: Copyright (c) 2002-2011 Rodney Sparapani
+ 
+NOTE: You have called the macro _NOBS, 2007-07-11.
+NOTE: Copyright (c) 2001-2007 Rodney Sparapani
+ 
+NOTE: You have called the macro _DSEXIST, 2007-08-01.
+NOTE: Copyright (c) 2001-2007 Rodney Sparapani
+ 
+NOTE: You have called the macro _SUFFIX, 2004-10-26.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _VERSION, 2006-02-15.
+NOTE: Copyright (c) 2001-2006 Rodney Sparapani
+ 
+NOTE: You have called the macro _DIR, 2004-11-23.
+NOTE: Copyright (c) 2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _FILE, 2004-11-23.
+NOTE: Copyright (c) 2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _OPTION, 2004-03-29.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+MPRINT(_DBLIB):   data dblen;
+MPRINT(_DBLIB):   set schema;
+MPRINT(_DBLIB):   where data_type in:('character', 'text');
+MPRINT(_DBLIB):   column_name=lowcase(column_name);
+MPRINT(_DBLIB):   run;
+
+NOTE: There were 33 observations read from the data set WORK.SCHEMA.
+      WHERE data_type in: ('character', 'text');
+NOTE: The data set WORK.DBLEN has 33 observations and 44 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   proc sql;
+MPRINT(_DBLIB):   connect to postgres as crdw (user=rsparapani 
+password=RSP#ygbzqp26t5W#Jyph2 server="garth.ctsi.mcw.edu" 
+database="fh_jupyter_hub_hbdb");
+NOTE: You have called the macro _INDEXW, 2009-11-19.
+5                              The SAS System  11:55 Tuesday, April 22, 2025
+
+NOTE: Copyright (c) 2009 Rodney Sparapani
+ 
+MPRINT(_DBLIB):   create table length as select * from connection to crdw 
+(select
+MPRINT(_DBLIB):   max(length(vital_status_source)) as vital_status_source,
+MPRINT(_DBLIB):   max(length(death_date_source)) as death_date_source,
+MPRINT(_DBLIB):   max(length(death_date_precision)) as death_date_precision,
+MPRINT(_DBLIB):   max(length(vital_status)) as vital_status,
+MPRINT(_DBLIB):   max(length(military_branch_name)) as military_branch_name,
+MPRINT(_DBLIB):   max(length(zip3)) as zip3,
+MPRINT(_DBLIB):   max(length(veteran_status_c)) as veteran_status_c,
+MPRINT(_DBLIB):   max(length(secondary_ruca_code_2010)) as 
+secondary_ruca_code_2010,
+MPRINT(_DBLIB):   max(length(ethnicity)) as ethnicity,
+MPRINT(_DBLIB):   max(length(primary_care_provider_name)) as 
+primary_care_provider_name,
+MPRINT(_DBLIB):   max(length(primary_care_provider_id)) as 
+primary_care_provider_id,
+MPRINT(_DBLIB):   max(length(ped_gest_age)) as ped_gest_age,
+MPRINT(_DBLIB):   max(length(adi_narank)) as adi_narank,
+MPRINT(_DBLIB):   max(length(state_c)) as state_c,
+MPRINT(_DBLIB):   max(length(race)) as race,
+MPRINT(_DBLIB):   max(length(research_contact_pref)) as 
+research_contact_pref,
+MPRINT(_DBLIB):   max(length(race_c)) as race_c,
+MPRINT(_DBLIB):   max(length(sex)) as sex,
+MPRINT(_DBLIB):   max(length(state_name)) as state_name,
+MPRINT(_DBLIB):   max(length(patient_hash)) as patient_hash,
+MPRINT(_DBLIB):   max(length(hispanic_c)) as hispanic_c,
+MPRINT(_DBLIB):   max(length(sex_c)) as sex_c,
+MPRINT(_DBLIB):   max(length(language_code)) as language_code,
+MPRINT(_DBLIB):   max(length(geocode_result)) as geocode_result,
+MPRINT(_DBLIB):   max(length(marital_status)) as marital_status,
+MPRINT(_DBLIB):   max(length(primary_care_provider_title)) as 
+primary_care_provider_title,
+MPRINT(_DBLIB):   max(length(need_interpreter)) as need_interpreter,
+MPRINT(_DBLIB):   max(length(adv_directive_yn)) as adv_directive_yn,
+MPRINT(_DBLIB):   max(length(veteran_status_name)) as veteran_status_name,
+MPRINT(_DBLIB):   max(length(language)) as language,
+MPRINT(_DBLIB):   max(length(gender_identity)) as gender_identity,
+MPRINT(_DBLIB):   max(length(employment_status)) as employment_status,
+MPRINT(_DBLIB):   max(length(txp_pat_yn)) as txp_pat_yn from 
+fh_hb_demographics_jupyter);
+NOTE: Table WORK.LENGTH created, with 1 rows and 33 columns.
+
+MPRINT(_DBLIB):   disconnect from crdw;
+MPRINT(_DBLIB):   quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.70 seconds
+      cpu time            0.03 seconds
+      
+
+6                              The SAS System  11:55 Tuesday, April 22, 2025
+
+MPRINT(_DBLIB):   data _null_;
+MPRINT(_DBLIB):   set length;
+MPRINT(_DBLIB):   call symput("dbmax_text", trim(max(of 
+vital_status_source--txp_pat_yn)));
+MPRINT(_DBLIB):   call symput("len1", trim(vital_status_source));
+MPRINT(_DBLIB):   call symput("len2", trim(death_date_source));
+MPRINT(_DBLIB):   call symput("len3", trim(death_date_precision));
+MPRINT(_DBLIB):   call symput("len4", trim(vital_status));
+MPRINT(_DBLIB):   call symput("len5", trim(military_branch_name));
+MPRINT(_DBLIB):   call symput("len6", trim(zip3));
+MPRINT(_DBLIB):   call symput("len7", trim(veteran_status_c));
+MPRINT(_DBLIB):   call symput("len8", trim(secondary_ruca_code_2010));
+MPRINT(_DBLIB):   call symput("len9", trim(ethnicity));
+MPRINT(_DBLIB):   call symput("len10", trim(primary_care_provider_name));
+MPRINT(_DBLIB):   call symput("len11", trim(primary_care_provider_id));
+MPRINT(_DBLIB):   call symput("len12", trim(ped_gest_age));
+MPRINT(_DBLIB):   call symput("len13", trim(adi_narank));
+MPRINT(_DBLIB):   call symput("len14", trim(state_c));
+MPRINT(_DBLIB):   call symput("len15", trim(race));
+MPRINT(_DBLIB):   call symput("len16", trim(research_contact_pref));
+MPRINT(_DBLIB):   call symput("len17", trim(race_c));
+MPRINT(_DBLIB):   call symput("len18", trim(sex));
+MPRINT(_DBLIB):   call symput("len19", trim(state_name));
+MPRINT(_DBLIB):   call symput("len20", trim(patient_hash));
+MPRINT(_DBLIB):   call symput("len21", trim(hispanic_c));
+MPRINT(_DBLIB):   call symput("len22", trim(sex_c));
+MPRINT(_DBLIB):   call symput("len23", trim(language_code));
+MPRINT(_DBLIB):   call symput("len24", trim(geocode_result));
+MPRINT(_DBLIB):   call symput("len25", trim(marital_status));
+MPRINT(_DBLIB):   call symput("len26", trim(primary_care_provider_title));
+MPRINT(_DBLIB):   call symput("len27", trim(need_interpreter));
+MPRINT(_DBLIB):   call symput("len28", trim(adv_directive_yn));
+MPRINT(_DBLIB):   call symput("len29", trim(veteran_status_name));
+MPRINT(_DBLIB):   call symput("len30", trim(language));
+MPRINT(_DBLIB):   call symput("len31", trim(gender_identity));
+MPRINT(_DBLIB):   call symput("len32", trim(employment_status));
+MPRINT(_DBLIB):   call symput("len33", trim(txp_pat_yn));
+MPRINT(_DBLIB):   run;
+
+NOTE: Numeric values have been converted to character 
+      values at the places given by: (Line):(Column).
+      3:33   3:1    3:1    3:1    3:1    3:1    3:1    3:1    3:1    3:1
+      3:1    3:1    3:1    3:1    3:1    3:1    3:1    3:1    3:1    3:1
+      3:1    3:1    3:1    3:1    3:1    3:1    3:1    3:1    3:1    3:1
+      3:1    3:1    3:1    3:1    
+NOTE: There were 1 observations read from the data set WORK.LENGTH.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   libname db postgres user = "rsparapani" password = 
+7                              The SAS System  11:55 Tuesday, April 22, 2025
+
+"RSP#ygbzqp26t5W#Jyph2" server = "garth.ctsi.mcw.edu" database = 
+"fh_jupyter_hub_hbdb" client_encoding = "utf-8" dbmax_text = 55 
+sql_functions = all port=5432 ;
+NOTE: Libref DB was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: garth.ctsi.mcw.edu
+4          *_dblib(data=db.fh_hb_demographics_jupyter, var=_none_);
+5          
+6          data check;
+7              set db.&dbdata(obs=10);
+8          *&dbdata is short for fh_hb_demographics_jupyter;
+9              drop death_date_shifted primary_care_provider_id;
+10         *Drop 2 variables: members of DBDATES and DBCHAR;
+11         *Will _DBDATA fail under such a circumstance?;
+12         run;
+
+NOTE: There were 10 observations read from the data set 
+      DB.FH_HB_DEMOGRAPHICS_JUPYTER.
+NOTE: The data set WORK.CHECK has 10 observations and 38 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+13         
+14         %_dbdata(out=crdw.snippet5); *Of course not!;
+NOTE: You have called the macro _DBDATA, 2025-03-10.
+NOTE: Copyright (c) 2025 Rodney Sparapani
+ 
+MPRINT(_DBDATA):  ;
+NOTE: You have called the macro _BLIST, 2008-03-03.
+NOTE: Copyright (c) 2004-2008 Rodney Sparapani
+ 
+MPRINT(_DBDATA):   data crdw.snippet5;
+MPRINT(_DBDATA):   length
+MPRINT(_DBDATA):   vital_status_source $ 22
+MPRINT(_DBDATA):   death_date_source $ 22
+MPRINT(_DBDATA):   death_date_precision $ 10
+MPRINT(_DBDATA):   vital_status $ 8
+MPRINT(_DBDATA):   military_branch_name $ 23
+MPRINT(_DBDATA):   zip3 $ 3
+MPRINT(_DBDATA):   veteran_status_c $ 1
+MPRINT(_DBDATA):   secondary_ruca_code_2010 $ 4
+MPRINT(_DBDATA):   ethnicity $ 12
+MPRINT(_DBDATA):   primary_care_provider_name $ 55
+MPRINT(_DBDATA):   ped_gest_age $ 15
+MPRINT(_DBDATA):   adi_narank $ 5
+MPRINT(_DBDATA):   state_c $ 3
+MPRINT(_DBDATA):   race $ 41
+MPRINT(_DBDATA):   research_contact_pref $ 14
+MPRINT(_DBDATA):   race_c $ 2
+MPRINT(_DBDATA):   sex $ 7
+8                              The SAS System  11:55 Tuesday, April 22, 2025
+
+MPRINT(_DBDATA):   state_name $ 30
+MPRINT(_DBDATA):   patient_hash $ 16
+MPRINT(_DBDATA):   hispanic_c $ 2
+MPRINT(_DBDATA):   sex_c $ 1
+MPRINT(_DBDATA):   language_code $ 3
+MPRINT(_DBDATA):   geocode_result $ 22
+MPRINT(_DBDATA):   marital_status $ 17
+MPRINT(_DBDATA):   primary_care_provider_title $ 18
+MPRINT(_DBDATA):   need_interpreter $ 1
+MPRINT(_DBDATA):   adv_directive_yn $ 1
+MPRINT(_DBDATA):   veteran_status_name $ 18
+MPRINT(_DBDATA):   language $ 22
+MPRINT(_DBDATA):   gender_identity $ 22
+MPRINT(_DBDATA):   employment_status $ 23
+MPRINT(_DBDATA):   txp_pat_yn $ 1;
+MPRINT(_DBDATA):   set WORK.CHECK ;
+MPRINT(_DBDATA):   attrib _all_ label=' ';
+MPRINT(_DBDATA):   format vital_status_source death_date_source 
+death_date_precision vital_status military_branch_name zip3 
+veteran_status_c secondary_ruca_code_2010 ethnicity 
+primary_care_provider_name ped_gest_age adi_narank state_c race 
+research_contact_pref race_c sex state_name patient_hash hispanic_c sex_c 
+language_code geocode_result marital_status primary_care_provider_title 
+need_interpreter adv_directive_yn veteran_status_name language 
+gender_identity employment_status txp_pat_yn _numeric_;
+MPRINT(_DBDATA):   informat vital_status_source death_date_source 
+death_date_precision vital_status military_branch_name zip3 
+veteran_status_c secondary_ruca_code_2010 ethnicity 
+primary_care_provider_name ped_gest_age adi_narank state_c race 
+research_contact_pref race_c sex state_name patient_hash hispanic_c sex_c 
+language_code geocode_result marital_status primary_care_provider_title 
+need_interpreter adv_directive_yn veteran_status_name language 
+gender_identity employment_status txp_pat_yn _numeric_;
+MPRINT(_DBDATA):   informat birth_date_shifted;
+MPRINT(_DBDATA):   format birth_date date9. birth_date_shifted datetime19.;
+MPRINT(_DBDATA):   birth_date=datepart(birth_date_shifted);
+MPRINT(_DBDATA):   informat adv_directive_date_shifted;
+MPRINT(_DBDATA):   format adv_directive_date date9. 
+adv_directive_date_shifted datetime19.;
+MPRINT(_DBDATA):   adv_directive_date=datepart(adv_directive_date_shifted);
+MPRINT(_DBDATA):   run;
+
+WARNING: Multiple lengths were specified for the variable patient_hash by 
+         input data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable sex_c by input 
+         data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable sex by input data 
+         set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable gender_identity 
+         by input data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable vital_status by 
+         input data set(s). This can cause truncation of data.
+9                              The SAS System  11:55 Tuesday, April 22, 2025
+
+WARNING: Multiple lengths were specified for the variable 
+         research_contact_pref by input data set(s). This can cause 
+         truncation of data.
+WARNING: Multiple lengths were specified for the variable marital_status by 
+         input data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable employment_status 
+         by input data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable race_c by input 
+         data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable race by input 
+         data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable hispanic_c by 
+         input data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable ethnicity by 
+         input data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable language_code by 
+         input data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable language by input 
+         data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable need_interpreter 
+         by input data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable state_c by input 
+         data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable state_name by 
+         input data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable zip3 by input 
+         data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable ped_gest_age by 
+         input data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable 
+         primary_care_provider_title by input data set(s). This can cause 
+         truncation of data.
+WARNING: Multiple lengths were specified for the variable 
+         death_date_precision by input data set(s). This can cause 
+         truncation of data.
+WARNING: Multiple lengths were specified for the variable 
+         vital_status_source by input data set(s). This can cause 
+         truncation of data.
+WARNING: Multiple lengths were specified for the variable death_date_source 
+         by input data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable geocode_result by 
+         input data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable adi_narank by 
+         input data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable 
+         secondary_ruca_code_2010 by input data set(s). This can cause 
+         truncation of data.
+WARNING: Multiple lengths were specified for the variable 
+         military_branch_name by input data set(s). This can cause 
+         truncation of data.
+WARNING: Multiple lengths were specified for the variable veteran_status_c 
+         by input data set(s). This can cause truncation of data.
+10                             The SAS System  11:55 Tuesday, April 22, 2025
+
+WARNING: Multiple lengths were specified for the variable 
+         veteran_status_name by input data set(s). This can cause 
+         truncation of data.
+WARNING: Multiple lengths were specified for the variable adv_directive_yn 
+         by input data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable txp_pat_yn by 
+         input data set(s). This can cause truncation of data.
+NOTE: Missing values were generated as a result of performing an operation 
+      on missing values.
+      Each place is given by: (Number of times) at (Line):(Column).
+      10 at 14:80   
+NOTE: There were 10 observations read from the data set WORK.CHECK.
+NOTE: The data set CRDW.SNIPPET5 has 10 observations and 40 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.05 seconds
+      cpu time            0.02 seconds
+      
+
+15         
+16         proc print;
+17             var &dbdates;
+18         *&dbdates is a list of SAS dates and date-times;
+19         run;
+
+NOTE: There were 10 observations read from the data set CRDW.SNIPPET5.
+NOTE: The PROCEDURE PRINT printed page 1.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+20         
+21         proc contents varnum;
+22         run;
+
+NOTE: PROCEDURE CONTENTS used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+NOTE: The PROCEDURE CONTENTS printed pages 2-3.
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           1.23 seconds
+      cpu time            0.36 seconds
+      

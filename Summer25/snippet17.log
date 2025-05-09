@@ -1,0 +1,1696 @@
+1                                                          The SAS System                              12:00 Saturday, March 8, 2025
+
+NOTE: Copyright (c) 2023 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M8) 
+      Licensed to MEDICAL COLLEGE OF WISCONSIN - T&R SFA, Site 70183647.
+NOTE: This session is executing on the Linux 3.10.0-514.10.2.el7.x86_64 (LIN X64) platform.
+
+
+
+NOTE: Analytical products:
+      
+      SAS/STAT 15.3
+      SAS/ETS 15.3
+      SAS/OR 15.3
+      SAS/IML 15.3
+      SAS/QC 15.3
+
+NOTE: Additional host information:
+
+ Linux LIN X64 3.10.0-514.10.2.el7.x86_64 #1 SMP Fri Mar 3 00:04:05 UTC 2017 x86_64 CentOS Linux release 7.9.2009 (Core) 
+
+NOTE: SAS initialization used:
+      real time           0.06 seconds
+      cpu time            0.04 seconds
+      
+
+NOTE: AUTOEXEC processing beginning; file is /home/rsparapa/git/CTSI/BERD/autoexec.sas.
+
+NOTE: Libref CRDW was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /data/shared/AI/libname/crdw
+NOTE: You have called the macro _IFELSE, 2008-07-15.
+NOTE: Copyright (c) 2006-2008 Rodney Sparapani
+ 
+NOTE: You have called the macro _EXIST, 2012-07-11.
+NOTE: Copyright (c) 2001-2012 Rodney Sparapani
+ 
+NOTE: You have called the macro _FN, 2024-08-03.
+NOTE: Copyright (c) 2001-2024 Rodney Sparapani
+ 
+MPRINT(_FN):   filename fn "/home/rsparapa/git/CTSI/BERD/snippet17.sas";
+MPRINT(_FN):   filename fn;
+NOTE: Fileref FN has been deassigned.
+NOTE: You have called the macro _TAIL, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _DIRCHAR, 2007-07-24.
+NOTE: Copyright (c) 2004-2007 Rodney Sparapani
+ 
+NOTE: You have called the macro _UNWIND, 2004-11-23.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _COUNT, 2022-06-07.
+NOTE: Copyright (c) 2001-2022 Rodney Sparapani
+2                              The SAS System  12:00 Saturday, March 8, 2025
+
+ 
+NOTE: You have called the macro _SUBSTR, 2004-03-29.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _HEAD, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+FN=snippet17.sas
+FNROOT=snippet17
+FNPATH=/home/rsparapa/git/CTSI/BERD/snippet17.sas
+FNDIR=/home/rsparapa/git/CTSI/BERD/
+FNTEXT=snippet17.txt
+FNHTML=snippet17.html
+FNTEX=snippet17.tex
+FNPDF=snippet17.pdf
+NOTE: You have called the macro _LJ, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _PAD, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+MPRINT(_LJ):   "/home/rsparapa/git/CTSI/BERD/snippet17.sas"
+MPRINT(_PAD):   
+"202020202020202020202020202020202020202020202020202020202020202020202020202
+0202020202020202020202020202020202020202020202020202020202020202020202020202
+020202020"X
+ 
+*** SGANNO macros are now available ***
+     NOTE: SGANNO macros (except SGANNO_HELP) should be used within data 
+step.
+ 
+ 
+ Following macros are available 
+ 
+     %SGANNO_HELP 
+     %SGARROW 
+     %SGIMAGE 
+     %SGLINE 
+     %SGOVAL 
+     %SGPOLYCONT 
+     %SGPOLYGON 
+     %SGPOLYLINE 
+     %SGRECTANGLE 
+     %SGTEXT 
+     %SGTEXTCONT 
+ 
+ Enter %SGANNO_HELP(macroname) for details on each SGANNO macro,
+    or %SGANNO_HELP(ALL) for details on all SGANNO macros.
+ 
+MPRINT(SGANNO):  ;
+ 
+*** ANNOTATE macros are now available ***
+3                              The SAS System  12:00 Saturday, March 8, 2025
+
+ 
+ For further information on ANNOTATE macros, enter,
+    %HELPANO(macroname), (for specific macros)
+    %HELPANO(ALL), (for information on all macros)
+ or %HELPANO (for a list of macro names)
+ 
+NOTE: Libref CWD was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /home/rsparapa/git/CTSI/BERD
+NOTE: Libref PWD refers to the same physical library as CWD.
+NOTE: Libref PWD was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /home/rsparapa/git/CTSI/BERD
+
+NOTE: AUTOEXEC processing completed.
+
+1          
+2          %_dblib(data=db.fh_hb_mar_table_jupyter, var=pharm_subclass);
+NOTE: You have called the macro _DBLIB, 2025-02-28.
+NOTE: Copyright (c) 2025 Rodney Sparapani
+ 
+NOTE: You have called the macro _REQUIRE, 2004-03-29.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+MPRINT(_DBLIB):  ;
+NOTE: You have called the macro _LIB, 2007-08-01.
+NOTE: Copyright (c) 2001-2007 Rodney Sparapani
+ 
+NOTE: You have called the macro _DATA, 2007-07-31.
+NOTE: Copyright (c) 2001-2007 Rodney Sparapani
+ 
+MPRINT(_DBLIB):   proc sql;
+MPRINT(_DBLIB):   connect to postgres as crdw (user=rsparapani 
+password=RSP#ygbzqp26t5W#Jyph2 server="garth.ctsi.mcw.edu" 
+database="fh_jupyter_hub_hbdb");
+MPRINT(_DBLIB):   create table schema as select * from connection to crdw 
+(select * from information_schema.columns where table_schema = 'public') 
+where table_name="fh_hb_mar_table_jupyter";
+NOTE: Table WORK.SCHEMA created, with 37 rows and 44 columns.
+
+MPRINT(_DBLIB):   disconnect from crdw;
+MPRINT(_DBLIB):   quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.16 seconds
+      cpu time            0.08 seconds
+      
+
+MPRINT(_DBLIB):   data dbdates;
+MPRINT(_DBLIB):   set schema;
+MPRINT(_DBLIB):   where data_type=:'time';
+MPRINT(_DBLIB):   run;
+
+4                              The SAS System  12:00 Saturday, March 8, 2025
+
+NOTE: There were 2 observations read from the data set WORK.SCHEMA.
+      WHERE data_type=:'time';
+NOTE: The data set WORK.DBDATES has 2 observations and 44 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+NOTE: You have called the macro _LEVEL, 2011-09-01.
+NOTE: Copyright (c) 2002-2011 Rodney Sparapani
+ 
+NOTE: You have called the macro _NOBS, 2007-07-11.
+NOTE: Copyright (c) 2001-2007 Rodney Sparapani
+ 
+NOTE: You have called the macro _DSEXIST, 2007-08-01.
+NOTE: Copyright (c) 2001-2007 Rodney Sparapani
+ 
+NOTE: You have called the macro _SUFFIX, 2004-10-26.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _VERSION, 2006-02-15.
+NOTE: Copyright (c) 2001-2006 Rodney Sparapani
+ 
+NOTE: You have called the macro _DIR, 2004-11-23.
+NOTE: Copyright (c) 2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _FILE, 2004-11-23.
+NOTE: Copyright (c) 2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _OPTION, 2004-03-29.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+MPRINT(_DBLIB):   data dblen;
+MPRINT(_DBLIB):   set schema;
+MPRINT(_DBLIB):   where data_type in:('character', 'text');
+MPRINT(_DBLIB):   column_name=lowcase(column_name);
+MPRINT(_DBLIB):   run;
+
+NOTE: There were 30 observations read from the data set WORK.SCHEMA.
+      WHERE data_type in: ('character', 'text');
+NOTE: The data set WORK.DBLEN has 30 observations and 44 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   data patient_hash;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.PATIENT_HASH has 1 observations and 1 variables.
+5                              The SAS System  12:00 Saturday, March 8, 2025
+
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   data encounter_hash;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.ENCOUNTER_HASH has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   data order_med_id_hash;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.ORDER_MED_ID_HASH has 1 observations and 1 
+      variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   data medication_name;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.MEDICATION_NAME has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(_DBLIB):   data mar_action;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.MAR_ACTION has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   data mar_dose;
+MPRINT(_DBLIB):   len=16;
+6                              The SAS System  12:00 Saturday, March 8, 2025
+
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.MAR_DOSE has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   data mar_dose_unit;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.MAR_DOSE_UNIT has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   data mar_route;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.MAR_ROUTE has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   data pharm_class;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.PHARM_CLASS has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   data pharm_subclass;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.PHARM_SUBCLASS has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+7                              The SAS System  12:00 Saturday, March 8, 2025
+
+
+MPRINT(_DBLIB):   data ingredient_rxcui;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.INGREDIENT_RXCUI has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   data ingredient_rxcui_name;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.INGREDIENT_RXCUI_NAME has 1 observations and 1 
+      variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   data specific_rxcui;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.SPECIFIC_RXCUI has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   data specific_rxcui_type;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.SPECIFIC_RXCUI_TYPE has 1 observations and 1 
+      variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(_DBLIB):   data gpi;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+8                              The SAS System  12:00 Saturday, March 8, 2025
+
+NOTE: The data set WORK.GPI has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   data order_class;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.ORDER_CLASS has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   data ordering_mode;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.ORDERING_MODE has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   data order_status;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.ORDER_STATUS has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   data freq_id;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.FREQ_ID has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   data frequency;
+MPRINT(_DBLIB):   len=16;
+9                              The SAS System  12:00 Saturday, March 8, 2025
+
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.FREQUENCY has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   data order_dose;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.ORDER_DOSE has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   data order_dose_unit;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.ORDER_DOSE_UNIT has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(_DBLIB):   data quantity;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.QUANTITY has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   data part_of_mix_yn;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.PART_OF_MIX_YN has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+10                             The SAS System  12:00 Saturday, March 8, 2025
+
+
+MPRINT(_DBLIB):   data mix_ingredient_type;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.MIX_INGREDIENT_TYPE has 1 observations and 1 
+      variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   data mix_parent_medication_name;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.MIX_PARENT_MEDICATION_NAME has 1 observations and 1 
+      variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   data auth_prov_id;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.AUTH_PROV_ID has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   data auth_provider;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.AUTH_PROVIDER has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   data auth_provider_type;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+11                             The SAS System  12:00 Saturday, March 8, 2025
+
+NOTE: The data set WORK.AUTH_PROVIDER_TYPE has 1 observations and 1 
+      variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   data auth_prov_title;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.AUTH_PROV_TITLE has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   proc sql;
+MPRINT(_DBLIB):   connect to postgres as crdw (user=rsparapani 
+password=RSP#ygbzqp26t5W#Jyph2 server="garth.ctsi.mcw.edu" 
+database="fh_jupyter_hub_hbdb");
+NOTE: You have called the macro _INDEXW, 2009-11-19.
+NOTE: Copyright (c) 2009 Rodney Sparapani
+ 
+MPRINT(_DBLIB):   create table pharm_subclass as select * from connection 
+to crdw (select max(length(pharm_subclass)) as len from 
+fh_hb_mar_table_jupyter);
+NOTE: Table WORK.PHARM_SUBCLASS created, with 1 rows and 1 columns.
+
+MPRINT(_DBLIB):   disconnect from crdw;
+MPRINT(_DBLIB):   quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           28.49 seconds
+      cpu time            0.03 seconds
+      
+
+MPRINT(_DBLIB):   data _null_;
+MPRINT(_DBLIB):   set patient_hash encounter_hash order_med_id_hash 
+medication_name mar_action mar_dose mar_dose_unit mar_route pharm_class 
+pharm_subclass ingredient_rxcui ingredient_rxcui_name specific_rxcui 
+specific_rxcui_type gpi order_class ordering_mode order_status freq_id 
+frequency order_dose order_dose_unit quantity part_of_mix_yn 
+mix_ingredient_type mix_parent_medication_name auth_prov_id auth_provider 
+auth_provider_type auth_prov_title end=last;
+MPRINT(_DBLIB):   retain dbmax_text 16;
+MPRINT(_DBLIB):   dbmax_text=max(dbmax_text, len);
+MPRINT(_DBLIB):   if last then call symput("dbmax_text", trim(dbmax_text));
+MPRINT(_DBLIB):   run;
+
+NOTE: Numeric values have been converted to character 
+      values at the places given by: (Line):(Column).
+12                             The SAS System  12:00 Saturday, March 8, 2025
+
+      2:191   
+NOTE: There were 1 observations read from the data set WORK.PATIENT_HASH.
+NOTE: There were 1 observations read from the data set WORK.ENCOUNTER_HASH.
+NOTE: There were 1 observations read from the data set 
+      WORK.ORDER_MED_ID_HASH.
+NOTE: There were 1 observations read from the data set WORK.MEDICATION_NAME.
+NOTE: There were 1 observations read from the data set WORK.MAR_ACTION.
+NOTE: There were 1 observations read from the data set WORK.MAR_DOSE.
+NOTE: There were 1 observations read from the data set WORK.MAR_DOSE_UNIT.
+NOTE: There were 1 observations read from the data set WORK.MAR_ROUTE.
+NOTE: There were 1 observations read from the data set WORK.PHARM_CLASS.
+NOTE: There were 1 observations read from the data set WORK.PHARM_SUBCLASS.
+NOTE: There were 1 observations read from the data set 
+      WORK.INGREDIENT_RXCUI.
+NOTE: There were 1 observations read from the data set 
+      WORK.INGREDIENT_RXCUI_NAME.
+NOTE: There were 1 observations read from the data set WORK.SPECIFIC_RXCUI.
+NOTE: There were 1 observations read from the data set 
+      WORK.SPECIFIC_RXCUI_TYPE.
+NOTE: There were 1 observations read from the data set WORK.GPI.
+NOTE: There were 1 observations read from the data set WORK.ORDER_CLASS.
+NOTE: There were 1 observations read from the data set WORK.ORDERING_MODE.
+NOTE: There were 1 observations read from the data set WORK.ORDER_STATUS.
+NOTE: There were 1 observations read from the data set WORK.FREQ_ID.
+NOTE: There were 1 observations read from the data set WORK.FREQUENCY.
+NOTE: There were 1 observations read from the data set WORK.ORDER_DOSE.
+NOTE: There were 1 observations read from the data set WORK.ORDER_DOSE_UNIT.
+NOTE: There were 1 observations read from the data set WORK.QUANTITY.
+NOTE: There were 1 observations read from the data set WORK.PART_OF_MIX_YN.
+NOTE: There were 1 observations read from the data set 
+      WORK.MIX_INGREDIENT_TYPE.
+NOTE: There were 1 observations read from the data set 
+      WORK.MIX_PARENT_MEDICATION_NAME.
+NOTE: There were 1 observations read from the data set WORK.AUTH_PROV_ID.
+NOTE: There were 1 observations read from the data set WORK.AUTH_PROVIDER.
+NOTE: There were 1 observations read from the data set 
+      WORK.AUTH_PROVIDER_TYPE.
+NOTE: There were 1 observations read from the data set WORK.AUTH_PROV_TITLE.
+NOTE: DATA statement used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.02 seconds
+      
+
+MPRINT(_DBLIB):   libname db postgres user = "rsparapani" password = 
+"RSP#ygbzqp26t5W#Jyph2" server = "garth.ctsi.mcw.edu" database = 
+"fh_jupyter_hub_hbdb" client_encoding = "utf-8" dbmax_text = 57 
+sql_functions = all port=5432 ;
+NOTE: Libref DB was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: garth.ctsi.mcw.edu
+3          
+4          data mar_table;
+13                             The SAS System  12:00 Saturday, March 8, 2025
+
+5              set db.&dbdata(keep=patient_hash pharm_class pharm_subclass
+6                  mar_route ingredient_rxcui_name mar_event_time_shifted);
+7              where (pharm_subclass in('Direct Factor Xa Inhibitors',
+8                  'Thrombin Inhibitors') | ingredient_rxcui_name='warfarin'
+8        !  |
+9                  (pharm_subclass='Heparins And Heparinoid-Like Agents'
+10                 & ingredient_rxcui_name^='heparin')) &
+11                 '01JAN2017:00:00:00'dt<=mar_event_time_shifted<'01JAN2023
+11       ! :00:00:00'dt;
+12         run;
+
+NOTE: There were 1899303 observations read from the data set 
+      DB.FH_HB_MAR_TABLE_JUPYTER.
+      WHERE (pharm_subclass in ('Direct Factor Xa Inhibitors', 'Thrombin 
+      Inhibitors') or (ingredient_rxcui_name='warfarin') or 
+      ((pharm_subclass='Heparins And Heparinoid-Like Agents') and 
+      (ingredient_rxcui_name not = 'heparin'))) and 
+      (mar_event_time_shifted>='  01JAN2017:00:00:00'DT and 
+      mar_event_time_shifted<'  01JAN2023:00:00:00'DT);
+NOTE: The data set WORK.MAR_TABLE has 1899303 observations and 6 variables.
+NOTE: DATA statement used (Total process time):
+      real time           37.73 seconds
+      cpu time            10.35 seconds
+      
+
+13         
+14         %_dbdata(out=mar_table);
+NOTE: You have called the macro _DBDATA, 2025-02-20.
+NOTE: Copyright (c) 2025 Rodney Sparapani
+ 
+MPRINT(_DBDATA):  ;
+NOTE: You have called the macro _BLIST, 2008-03-03.
+NOTE: Copyright (c) 2004-2008 Rodney Sparapani
+ 
+MPRINT(_DBDATA):   data mar_table;
+MPRINT(_DBDATA):   length
+MPRINT(_DBDATA):   patient_hash $ 16
+MPRINT(_DBDATA):   mar_route $ 16
+MPRINT(_DBDATA):   pharm_class $ 16
+MPRINT(_DBDATA):   pharm_subclass $ 57
+MPRINT(_DBDATA):   ingredient_rxcui_name $ 16
+MPRINT(_DBDATA):  ;
+MPRINT(_DBDATA):   set WORK.MAR_TABLE ;
+MPRINT(_DBDATA):   format patient_hash mar_route pharm_class pharm_subclass 
+ingredient_rxcui_name _numeric_;
+MPRINT(_DBDATA):   informat patient_hash mar_route pharm_class 
+pharm_subclass ingredient_rxcui_name _numeric_;
+MPRINT(_DBDATA):   informat mar_event_time_shifted;
+MPRINT(_DBDATA):   format mar_event_time date9. mar_event_time_shifted 
+datetime19.;
+MPRINT(_DBDATA):   mar_event_time=datepart(mar_event_time_shifted);
+MPRINT(_DBDATA):   run;
+14                             The SAS System  12:00 Saturday, March 8, 2025
+
+
+WARNING: Multiple lengths were specified for the variable patient_hash by 
+         input data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable mar_route by 
+         input data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable pharm_class by 
+         input data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable 
+         ingredient_rxcui_name by input data set(s). This can cause 
+         truncation of data.
+NOTE: There were 1899303 observations read from the data set WORK.MAR_TABLE.
+NOTE: The data set WORK.MAR_TABLE has 1899303 observations and 7 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.76 seconds
+      cpu time            0.77 seconds
+      
+
+15         
+16         %_sort(data=mar_table, out=mar_table, by=patient_hash
+16       ! mar_event_time_shifted);
+NOTE: You have called the macro _SORT, 2016-11-16
+NOTE: Copyright (c) 2001-2016 Rodney Sparapani
+ 
+MPRINT(_SORT):  ;
+MPRINT(_SORT):   proc sort out=work.mar_table (sortedby=patient_hash 
+mar_event_time_shifted) data=
+MPRINT(_SORT):   work.mar_table (
+MPRINT(_SORT):   );
+NOTE: You have called the macro _BY, 2005-03-25.
+NOTE: Copyright (c) 2001-2005 Rodney Sparapani
+ 
+MPRINT(_SORT):   by
+NOTE: You have called the macro _LIST, 2013-09-04.
+NOTE: Copyright (c) 2001-2013 Rodney Sparapani
+ 
+MPRINT(_BY):   PATIENT_HASH MAR_EVENT_TIME_SHIFTED
+MPRINT(_SORT):  ;
+MPRINT(_SORT):   run;
+
+NOTE: There were 1899303 observations read from the data set WORK.MAR_TABLE.
+NOTE: The data set WORK.MAR_TABLE has 1899303 observations and 7 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.61 seconds
+      cpu time            1.59 seconds
+      
+
+17         
+18         %_dblib(data=db.fh_hb_med_orders_table_jupyter,
+18       ! var=pharm_subclass);
+MPRINT(_DBLIB):  ;
+MPRINT(_DBLIB):   proc sql;
+MPRINT(_DBLIB):   connect to postgres as crdw (user=rsparapani 
+15                             The SAS System  12:00 Saturday, March 8, 2025
+
+password=RSP#ygbzqp26t5W#Jyph2 server="garth.ctsi.mcw.edu" 
+database="fh_jupyter_hub_hbdb");
+MPRINT(_DBLIB):   create table schema as select * from connection to crdw 
+(select * from information_schema.columns where table_schema = 'public') 
+where table_name="fh_hb_med_orders_table_jupyter";
+NOTE: Table WORK.SCHEMA created, with 32 rows and 44 columns.
+
+MPRINT(_DBLIB):   disconnect from crdw;
+MPRINT(_DBLIB):   quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.22 seconds
+      cpu time            0.13 seconds
+      
+
+MPRINT(_DBLIB):   data dbdates;
+MPRINT(_DBLIB):   set schema;
+MPRINT(_DBLIB):   where data_type=:'time';
+MPRINT(_DBLIB):   run;
+
+NOTE: There were 1 observations read from the data set WORK.SCHEMA.
+      WHERE data_type=:'time';
+NOTE: The data set WORK.DBDATES has 1 observations and 44 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   data dblen;
+MPRINT(_DBLIB):   set schema;
+MPRINT(_DBLIB):   where data_type in:('character', 'text');
+MPRINT(_DBLIB):   column_name=lowcase(column_name);
+MPRINT(_DBLIB):   run;
+
+NOTE: There were 27 observations read from the data set WORK.SCHEMA.
+      WHERE data_type in: ('character', 'text');
+NOTE: The data set WORK.DBLEN has 27 observations and 44 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   data patient_hash;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.PATIENT_HASH has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+16                             The SAS System  12:00 Saturday, March 8, 2025
+
+MPRINT(_DBLIB):   data encounter_hash;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.ENCOUNTER_HASH has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   data order_med_id_hash;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.ORDER_MED_ID_HASH has 1 observations and 1 
+      variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   data medication_name;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.MEDICATION_NAME has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   data pharm_class;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.PHARM_CLASS has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   data pharm_subclass;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.PHARM_SUBCLASS has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+17                             The SAS System  12:00 Saturday, March 8, 2025
+
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   data ingredient_rxcui;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.INGREDIENT_RXCUI has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   data ingredient_rxcui_name;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.INGREDIENT_RXCUI_NAME has 1 observations and 1 
+      variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   data specific_rxcui;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.SPECIFIC_RXCUI has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   data specific_rxcui_type;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.SPECIFIC_RXCUI_TYPE has 1 observations and 1 
+      variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(_DBLIB):   data gpi;
+MPRINT(_DBLIB):   len=16;
+18                             The SAS System  12:00 Saturday, March 8, 2025
+
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.GPI has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(_DBLIB):   data order_class;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.ORDER_CLASS has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   data ordering_mode;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.ORDERING_MODE has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   data order_status;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.ORDER_STATUS has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   data order_route;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.ORDER_ROUTE has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+19                             The SAS System  12:00 Saturday, March 8, 2025
+
+
+MPRINT(_DBLIB):   data freq_id;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.FREQ_ID has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(_DBLIB):   data frequency;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.FREQUENCY has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   data dose;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.DOSE has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   data dose_unit;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.DOSE_UNIT has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   data quantity;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.QUANTITY has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+20                             The SAS System  12:00 Saturday, March 8, 2025
+
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   data part_of_mix_yn;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.PART_OF_MIX_YN has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   data mix_ingredient_type;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.MIX_INGREDIENT_TYPE has 1 observations and 1 
+      variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(_DBLIB):   data mix_parent_medication_name;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.MIX_PARENT_MEDICATION_NAME has 1 observations and 1 
+      variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   data auth_prov_id;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.AUTH_PROV_ID has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   data auth_provider;
+MPRINT(_DBLIB):   len=16;
+21                             The SAS System  12:00 Saturday, March 8, 2025
+
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.AUTH_PROVIDER has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   data auth_provider_type;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.AUTH_PROVIDER_TYPE has 1 observations and 1 
+      variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   data auth_prov_title;
+MPRINT(_DBLIB):   len=16;
+MPRINT(_DBLIB):   output;
+MPRINT(_DBLIB):   run;
+
+NOTE: The data set WORK.AUTH_PROV_TITLE has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   proc sql;
+MPRINT(_DBLIB):   connect to postgres as crdw (user=rsparapani 
+password=RSP#ygbzqp26t5W#Jyph2 server="garth.ctsi.mcw.edu" 
+database="fh_jupyter_hub_hbdb");
+MPRINT(_DBLIB):   create table pharm_subclass as select * from connection 
+to crdw (select max(length(pharm_subclass)) as len from 
+fh_hb_med_orders_table_jupyter);
+NOTE: Table WORK.PHARM_SUBCLASS created, with 1 rows and 1 columns.
+
+MPRINT(_DBLIB):   disconnect from crdw;
+MPRINT(_DBLIB):   quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           13.77 seconds
+      cpu time            0.03 seconds
+      
+
+MPRINT(_DBLIB):   data _null_;
+MPRINT(_DBLIB):   set patient_hash encounter_hash order_med_id_hash 
+medication_name pharm_class pharm_subclass ingredient_rxcui 
+ingredient_rxcui_name specific_rxcui specific_rxcui_type gpi order_class 
+22                             The SAS System  12:00 Saturday, March 8, 2025
+
+ordering_mode order_status order_route freq_id frequency dose dose_unit 
+quantity part_of_mix_yn mix_ingredient_type mix_parent_medication_name 
+auth_prov_id auth_provider auth_provider_type auth_prov_title end=last;
+MPRINT(_DBLIB):   retain dbmax_text 16;
+MPRINT(_DBLIB):   dbmax_text=max(dbmax_text, len);
+MPRINT(_DBLIB):   if last then call symput("dbmax_text", trim(dbmax_text));
+MPRINT(_DBLIB):   run;
+
+NOTE: Numeric values have been converted to character 
+      values at the places given by: (Line):(Column).
+      18:191   
+NOTE: There were 1 observations read from the data set WORK.PATIENT_HASH.
+NOTE: There were 1 observations read from the data set WORK.ENCOUNTER_HASH.
+NOTE: There were 1 observations read from the data set 
+      WORK.ORDER_MED_ID_HASH.
+NOTE: There were 1 observations read from the data set WORK.MEDICATION_NAME.
+NOTE: There were 1 observations read from the data set WORK.PHARM_CLASS.
+NOTE: There were 1 observations read from the data set WORK.PHARM_SUBCLASS.
+NOTE: There were 1 observations read from the data set 
+      WORK.INGREDIENT_RXCUI.
+NOTE: There were 1 observations read from the data set 
+      WORK.INGREDIENT_RXCUI_NAME.
+NOTE: There were 1 observations read from the data set WORK.SPECIFIC_RXCUI.
+NOTE: There were 1 observations read from the data set 
+      WORK.SPECIFIC_RXCUI_TYPE.
+NOTE: There were 1 observations read from the data set WORK.GPI.
+NOTE: There were 1 observations read from the data set WORK.ORDER_CLASS.
+NOTE: There were 1 observations read from the data set WORK.ORDERING_MODE.
+NOTE: There were 1 observations read from the data set WORK.ORDER_STATUS.
+NOTE: There were 1 observations read from the data set WORK.ORDER_ROUTE.
+NOTE: There were 1 observations read from the data set WORK.FREQ_ID.
+NOTE: There were 1 observations read from the data set WORK.FREQUENCY.
+NOTE: There were 1 observations read from the data set WORK.DOSE.
+NOTE: There were 1 observations read from the data set WORK.DOSE_UNIT.
+NOTE: There were 1 observations read from the data set WORK.QUANTITY.
+NOTE: There were 1 observations read from the data set WORK.PART_OF_MIX_YN.
+NOTE: There were 1 observations read from the data set 
+      WORK.MIX_INGREDIENT_TYPE.
+NOTE: There were 1 observations read from the data set 
+      WORK.MIX_PARENT_MEDICATION_NAME.
+NOTE: There were 1 observations read from the data set WORK.AUTH_PROV_ID.
+NOTE: There were 1 observations read from the data set WORK.AUTH_PROVIDER.
+NOTE: There were 1 observations read from the data set 
+      WORK.AUTH_PROVIDER_TYPE.
+NOTE: There were 1 observations read from the data set WORK.AUTH_PROV_TITLE.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.02 seconds
+      
+
+MPRINT(_DBLIB):   libname db postgres user = "rsparapani" password = 
+"RSP#ygbzqp26t5W#Jyph2" server = "garth.ctsi.mcw.edu" database = 
+23                             The SAS System  12:00 Saturday, March 8, 2025
+
+"fh_jupyter_hub_hbdb" client_encoding = "utf-8" dbmax_text = 57 
+sql_functions = all port=5432 ;
+NOTE: Libref DB was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: garth.ctsi.mcw.edu
+19         
+20         data med_orders;
+21             set db.&dbdata(keep=patient_hash pharm_class pharm_subclass
+22                 order_route ingredient_rxcui_name order_date_shifted);
+23             where (pharm_subclass in('Direct Factor Xa Inhibitors',
+24                 'Thrombin Inhibitors') | ingredient_rxcui_name='warfarin'
+24       !  |
+25                 (pharm_subclass='Heparins And Heparinoid-Like Agents'
+26                 & ingredient_rxcui_name^='heparin')) &
+27                 '01JAN2017:00:00:00'dt<=order_date_shifted<'01JAN2023:00:
+27       ! 00:00'dt;
+28         run;
+
+NOTE: There were 930176 observations read from the data set 
+      DB.FH_HB_MED_ORDERS_TABLE_JUPYTER.
+      WHERE (pharm_subclass in ('Direct Factor Xa Inhibitors', 'Thrombin 
+      Inhibitors') or (ingredient_rxcui_name='warfarin') or 
+      ((pharm_subclass='Heparins And Heparinoid-Like Agents') and 
+      (ingredient_rxcui_name not = 'heparin'))) and (order_date_shifted>='  
+      01JAN2017:00:00:00'DT and order_date_shifted<'  
+      01JAN2023:00:00:00'DT);
+NOTE: The data set WORK.MED_ORDERS has 930176 observations and 6 variables.
+NOTE: DATA statement used (Total process time):
+      real time           18.00 seconds
+      cpu time            5.24 seconds
+      
+
+29         
+30         %_dbdata(out=med_orders);
+MPRINT(_DBDATA):  ;
+MPRINT(_DBDATA):   data med_orders;
+MPRINT(_DBDATA):   length
+MPRINT(_DBDATA):   patient_hash $ 16
+MPRINT(_DBDATA):   pharm_class $ 16
+MPRINT(_DBDATA):   pharm_subclass $ 57
+MPRINT(_DBDATA):   ingredient_rxcui_name $ 16
+MPRINT(_DBDATA):   patient_hash $ 16
+MPRINT(_DBDATA):   pharm_class $ 16
+MPRINT(_DBDATA):   pharm_subclass $ 57
+MPRINT(_DBDATA):   ingredient_rxcui_name $ 16
+MPRINT(_DBDATA):   order_route $ 16
+MPRINT(_DBDATA):  ;
+MPRINT(_DBDATA):   set WORK.MED_ORDERS ;
+MPRINT(_DBDATA):   format patient_hash pharm_class pharm_subclass 
+ingredient_rxcui_name patient_hash pharm_class pharm_subclass 
+ingredient_rxcui_name order_route _numeric_;
+MPRINT(_DBDATA):   informat patient_hash pharm_class pharm_subclass 
+24                             The SAS System  12:00 Saturday, March 8, 2025
+
+ingredient_rxcui_name patient_hash pharm_class pharm_subclass 
+ingredient_rxcui_name order_route _numeric_;
+MPRINT(_DBDATA):   informat order_date_shifted;
+MPRINT(_DBDATA):   format order_date date9. order_date_shifted datetime19.;
+MPRINT(_DBDATA):   order_date=datepart(order_date_shifted);
+MPRINT(_DBDATA):   run;
+
+WARNING: Multiple lengths were specified for the variable patient_hash by 
+         input data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable pharm_class by 
+         input data set(s). This can cause truncation of data.
+WARNING: Multiple lengths were specified for the variable 
+         ingredient_rxcui_name by input data set(s). This can cause 
+         truncation of data.
+WARNING: Multiple lengths were specified for the variable order_route by 
+         input data set(s). This can cause truncation of data.
+NOTE: There were 930176 observations read from the data set WORK.MED_ORDERS.
+NOTE: The data set WORK.MED_ORDERS has 930176 observations and 7 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.34 seconds
+      cpu time            0.34 seconds
+      
+
+31         
+32         %_sort(data=med_orders, out=med_orders, by=patient_hash
+32       ! order_date_shifted);
+MPRINT(_SORT):  ;
+MPRINT(_SORT):   proc sort out=work.med_orders (sortedby=patient_hash 
+order_date_shifted) data=
+MPRINT(_SORT):   work.med_orders (
+MPRINT(_SORT):   );
+MPRINT(_SORT):   by
+MPRINT(_BY):   PATIENT_HASH ORDER_DATE_SHIFTED
+MPRINT(_SORT):  ;
+MPRINT(_SORT):   run;
+
+NOTE: There were 930176 observations read from the data set WORK.MED_ORDERS.
+NOTE: The data set WORK.MED_ORDERS has 930176 observations and 7 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.34 seconds
+      cpu time            0.87 seconds
+      
+
+33         
+34         data antic;
+35             set mar_table
+36                 med_orders(rename=(order_route=mar_route
+37                 order_date_shifted=mar_event_time_shifted
+38                 order_date=mar_event_time));
+39             by patient_hash mar_event_time_shifted;
+40         run;
+
+25                             The SAS System  12:00 Saturday, March 8, 2025
+
+NOTE: There were 1899303 observations read from the data set WORK.MAR_TABLE.
+NOTE: There were 930176 observations read from the data set WORK.MED_ORDERS.
+NOTE: The data set WORK.ANTIC has 2829479 observations and 7 variables.
+NOTE: DATA statement used (Total process time):
+      real time           1.01 seconds
+      cpu time            1.02 seconds
+      
+
+41         
+42         data crdw.antic;
+43             length patient_hash $ 16;
+44             set antic;
+45             by patient_hash;
+46         
+47             antic=0; warf=0; factorxa=0; thrombin=0; lmwh=0;
+48         
+49             array __antic(2017:2022) antic17-antic22;
+50             array __warf(2017:2022) warf17-warf22;
+51             array __factorxa(2017:2022) factorxa17-factorxa22;
+52             array __thrombin(2017:2022) thrombin17-thrombin22;
+53             array __lmwh(2017:2022) lmwh17-lmwh22;
+54         
+55             array _antic(2017:2022, 12)
+56                 antic1701-antic1712 antic1801-antic1812
+56       ! antic1901-antic1912
+57                 antic2001-antic2012 antic2101-antic2112
+57       ! antic2201-antic2212;
+58             array _warf(2017:2022, 12)
+59                 warf1701-warf1712 warf1801-warf1812 warf1901-warf1912
+60                 warf2001-warf2012 warf2101-warf2112 warf2201-warf2212;
+61             array _factorxa(2017:2022, 12)
+62                 factorxa1701-factorxa1712 factorxa1801-factorxa1812
+62       ! factorxa1901-factorxa1912
+63                 factorxa2001-factorxa2012 factorxa2101-factorxa2112
+63       ! factorxa2201-factorxa2212;
+64             array _thrombin(2017:2022, 12)
+65                 thrombin1701-thrombin1712 thrombin1801-thrombin1812
+65       ! thrombin1901-thrombin1912
+66                 thrombin2001-thrombin2012 thrombin2101-thrombin2112
+66       ! thrombin2201-thrombin2212;
+67             array _lmwh(2017:2022, 12)
+68                 lmwh1701-lmwh1712 lmwh1801-lmwh1812 lmwh1901-lmwh1912
+69                 lmwh2001-lmwh2012 lmwh2101-lmwh2112 lmwh2201-lmwh2212;
+70         
+71             keep patient_hash antic warf factorxa thrombin lmwh
+71       ! antic17-antic22
+72                 warf17-warf22 factorxa17-factorxa22 thrombin17-thrombin22
+72       !  lmwh17-lmwh22
+73                 antic1701--antic1712 antic1801--antic1812
+73       ! antic1901--antic1912
+74                 antic2001--antic2012 antic2101--antic2112
+74       ! antic2201--antic2212
+26                             The SAS System  12:00 Saturday, March 8, 2025
+
+75                 warf1701--warf1712 warf1801--warf1812 warf1901--warf1912
+76                 warf2001--warf2012 warf2101--warf2112 warf2201--warf2212
+77                 factorxa1701--factorxa1712 factorxa1801--factorxa1812
+77       ! factorxa1901--factorxa1912
+78                 factorxa2001--factorxa2012 factorxa2101--factorxa2112
+78       ! factorxa2201--factorxa2212
+79                 thrombin1701--thrombin1712 thrombin1801--thrombin1812
+79       ! thrombin1901--thrombin1912
+80                 thrombin2001--thrombin2012 thrombin2101--thrombin2112
+80       ! thrombin2201--thrombin2212
+81                 lmwh1701--lmwh1712 lmwh1801--lmwh1812 lmwh1901--lmwh1912
+82                 lmwh2001--lmwh2012 lmwh2101--lmwh2112 lmwh2201--lmwh2212;
+83         
+84             %_retain(default=0, by=patient_hash, var=
+NOTE: You have called the macro _RETAIN, 2017-02-28.
+NOTE: Copyright (c) 2001-2017 Rodney Sparapani
+ 
+85                 antic1701--antic1712 antic1801--antic1812
+85       ! antic1901--antic1912
+86                 antic2001--antic2012 antic2101--antic2112
+86       ! antic2201--antic2212
+87                 warf1701--warf1712 warf1801--warf1812 warf1901--warf1912
+88                 warf2001--warf2012 warf2101--warf2112 warf2201--warf2212
+89                 factorxa1701--factorxa1712 factorxa1801--factorxa1812
+89       ! factorxa1901--factorxa1912
+90                 factorxa2001--factorxa2012 factorxa2101--factorxa2112
+90       ! factorxa2201--factorxa2212
+91                 thrombin1701--thrombin1712 thrombin1801--thrombin1812
+91       ! thrombin1901--thrombin1912
+92                 thrombin2001--thrombin2012 thrombin2101--thrombin2112
+92       ! thrombin2201--thrombin2212
+93                 lmwh1701--lmwh1712 lmwh1801--lmwh1812 lmwh1901--lmwh1912
+94                 lmwh2001--lmwh2012 lmwh2101--lmwh2112 lmwh2201--lmwh2212
+95                 );
+MPRINT(_RETAIN):  ;
+MPRINT(_RETAIN):   retain antic1701--antic1712
+MPRINT(_RETAIN):   0 ;
+MPRINT(_RETAIN):   retain antic1801--antic1812
+MPRINT(_RETAIN):   0 ;
+MPRINT(_RETAIN):   retain antic1901--antic1912
+MPRINT(_RETAIN):   0 ;
+MPRINT(_RETAIN):   retain antic2001--antic2012
+MPRINT(_RETAIN):   0 ;
+MPRINT(_RETAIN):   retain antic2101--antic2112
+MPRINT(_RETAIN):   0 ;
+MPRINT(_RETAIN):   retain antic2201--antic2212
+MPRINT(_RETAIN):   0 ;
+MPRINT(_RETAIN):   retain warf1701--warf1712
+MPRINT(_RETAIN):   0 ;
+MPRINT(_RETAIN):   retain warf1801--warf1812
+MPRINT(_RETAIN):   0 ;
+MPRINT(_RETAIN):   retain warf1901--warf1912
+27                             The SAS System  12:00 Saturday, March 8, 2025
+
+MPRINT(_RETAIN):   0 ;
+MPRINT(_RETAIN):   retain warf2001--warf2012
+MPRINT(_RETAIN):   0 ;
+MPRINT(_RETAIN):   retain warf2101--warf2112
+MPRINT(_RETAIN):   0 ;
+MPRINT(_RETAIN):   retain warf2201--warf2212
+MPRINT(_RETAIN):   0 ;
+MPRINT(_RETAIN):   retain factorxa1701--factorxa1712
+MPRINT(_RETAIN):   0 ;
+MPRINT(_RETAIN):   retain factorxa1801--factorxa1812
+MPRINT(_RETAIN):   0 ;
+MPRINT(_RETAIN):   retain factorxa1901--factorxa1912
+MPRINT(_RETAIN):   0 ;
+MPRINT(_RETAIN):   retain factorxa2001--factorxa2012
+MPRINT(_RETAIN):   0 ;
+MPRINT(_RETAIN):   retain factorxa2101--factorxa2112
+MPRINT(_RETAIN):   0 ;
+MPRINT(_RETAIN):   retain factorxa2201--factorxa2212
+MPRINT(_RETAIN):   0 ;
+MPRINT(_RETAIN):   retain thrombin1701--thrombin1712
+MPRINT(_RETAIN):   0 ;
+MPRINT(_RETAIN):   retain thrombin1801--thrombin1812
+MPRINT(_RETAIN):   0 ;
+MPRINT(_RETAIN):   retain thrombin1901--thrombin1912
+MPRINT(_RETAIN):   0 ;
+MPRINT(_RETAIN):   retain thrombin2001--thrombin2012
+MPRINT(_RETAIN):   0 ;
+MPRINT(_RETAIN):   retain thrombin2101--thrombin2112
+MPRINT(_RETAIN):   0 ;
+MPRINT(_RETAIN):   retain thrombin2201--thrombin2212
+MPRINT(_RETAIN):   0 ;
+MPRINT(_RETAIN):   retain lmwh1701--lmwh1712
+MPRINT(_RETAIN):   0 ;
+MPRINT(_RETAIN):   retain lmwh1801--lmwh1812
+MPRINT(_RETAIN):   0 ;
+MPRINT(_RETAIN):   retain lmwh1901--lmwh1912
+MPRINT(_RETAIN):   0 ;
+MPRINT(_RETAIN):   retain lmwh2001--lmwh2012
+MPRINT(_RETAIN):   0 ;
+MPRINT(_RETAIN):   retain lmwh2101--lmwh2112
+MPRINT(_RETAIN):   0 ;
+MPRINT(_RETAIN):   retain lmwh2201--lmwh2212
+MPRINT(_RETAIN):   0 ;
+NOTE: You have called the macro _FIRST, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+MPRINT(_RETAIN):   if
+MPRINT(_FIRST):   (first.PATIENT_HASH)
+MPRINT(_RETAIN):   then do;
+MPRINT(_RETAIN):   array _11(*) antic1701--antic1712;
+MPRINT(_RETAIN):   do _i_=1 to hbound(_11);
+MPRINT(_RETAIN):   _11(_i_)=0;
+28                             The SAS System  12:00 Saturday, March 8, 2025
+
+MPRINT(_RETAIN):   end;
+MPRINT(_RETAIN):   drop _i_;
+MPRINT(_RETAIN):   array _21(*) antic1801--antic1812;
+MPRINT(_RETAIN):   do _i_=1 to hbound(_21);
+MPRINT(_RETAIN):   _21(_i_)=0;
+MPRINT(_RETAIN):   end;
+MPRINT(_RETAIN):   drop _i_;
+MPRINT(_RETAIN):   array _31(*) antic1901--antic1912;
+MPRINT(_RETAIN):   do _i_=1 to hbound(_31);
+MPRINT(_RETAIN):   _31(_i_)=0;
+MPRINT(_RETAIN):   end;
+MPRINT(_RETAIN):   drop _i_;
+MPRINT(_RETAIN):   array _41(*) antic2001--antic2012;
+MPRINT(_RETAIN):   do _i_=1 to hbound(_41);
+MPRINT(_RETAIN):   _41(_i_)=0;
+MPRINT(_RETAIN):   end;
+MPRINT(_RETAIN):   drop _i_;
+MPRINT(_RETAIN):   array _51(*) antic2101--antic2112;
+MPRINT(_RETAIN):   do _i_=1 to hbound(_51);
+MPRINT(_RETAIN):   _51(_i_)=0;
+MPRINT(_RETAIN):   end;
+MPRINT(_RETAIN):   drop _i_;
+MPRINT(_RETAIN):   array _61(*) antic2201--antic2212;
+MPRINT(_RETAIN):   do _i_=1 to hbound(_61);
+MPRINT(_RETAIN):   _61(_i_)=0;
+MPRINT(_RETAIN):   end;
+MPRINT(_RETAIN):   drop _i_;
+MPRINT(_RETAIN):   array _71(*) warf1701--warf1712;
+MPRINT(_RETAIN):   do _i_=1 to hbound(_71);
+MPRINT(_RETAIN):   _71(_i_)=0;
+MPRINT(_RETAIN):   end;
+MPRINT(_RETAIN):   drop _i_;
+MPRINT(_RETAIN):   array _81(*) warf1801--warf1812;
+MPRINT(_RETAIN):   do _i_=1 to hbound(_81);
+MPRINT(_RETAIN):   _81(_i_)=0;
+MPRINT(_RETAIN):   end;
+MPRINT(_RETAIN):   drop _i_;
+MPRINT(_RETAIN):   array _91(*) warf1901--warf1912;
+MPRINT(_RETAIN):   do _i_=1 to hbound(_91);
+MPRINT(_RETAIN):   _91(_i_)=0;
+MPRINT(_RETAIN):   end;
+MPRINT(_RETAIN):   drop _i_;
+MPRINT(_RETAIN):   array _101(*) warf2001--warf2012;
+MPRINT(_RETAIN):   do _i_=1 to hbound(_101);
+MPRINT(_RETAIN):   _101(_i_)=0;
+MPRINT(_RETAIN):   end;
+MPRINT(_RETAIN):   drop _i_;
+MPRINT(_RETAIN):   array _111(*) warf2101--warf2112;
+MPRINT(_RETAIN):   do _i_=1 to hbound(_111);
+MPRINT(_RETAIN):   _111(_i_)=0;
+MPRINT(_RETAIN):   end;
+MPRINT(_RETAIN):   drop _i_;
+29                             The SAS System  12:00 Saturday, March 8, 2025
+
+MPRINT(_RETAIN):   array _121(*) warf2201--warf2212;
+MPRINT(_RETAIN):   do _i_=1 to hbound(_121);
+MPRINT(_RETAIN):   _121(_i_)=0;
+MPRINT(_RETAIN):   end;
+MPRINT(_RETAIN):   drop _i_;
+MPRINT(_RETAIN):   array _131(*) factorxa1701--factorxa1712;
+MPRINT(_RETAIN):   do _i_=1 to hbound(_131);
+MPRINT(_RETAIN):   _131(_i_)=0;
+MPRINT(_RETAIN):   end;
+MPRINT(_RETAIN):   drop _i_;
+MPRINT(_RETAIN):   array _141(*) factorxa1801--factorxa1812;
+MPRINT(_RETAIN):   do _i_=1 to hbound(_141);
+MPRINT(_RETAIN):   _141(_i_)=0;
+MPRINT(_RETAIN):   end;
+MPRINT(_RETAIN):   drop _i_;
+MPRINT(_RETAIN):   array _151(*) factorxa1901--factorxa1912;
+MPRINT(_RETAIN):   do _i_=1 to hbound(_151);
+MPRINT(_RETAIN):   _151(_i_)=0;
+MPRINT(_RETAIN):   end;
+MPRINT(_RETAIN):   drop _i_;
+MPRINT(_RETAIN):   array _161(*) factorxa2001--factorxa2012;
+MPRINT(_RETAIN):   do _i_=1 to hbound(_161);
+MPRINT(_RETAIN):   _161(_i_)=0;
+MPRINT(_RETAIN):   end;
+MPRINT(_RETAIN):   drop _i_;
+MPRINT(_RETAIN):   array _171(*) factorxa2101--factorxa2112;
+MPRINT(_RETAIN):   do _i_=1 to hbound(_171);
+MPRINT(_RETAIN):   _171(_i_)=0;
+MPRINT(_RETAIN):   end;
+MPRINT(_RETAIN):   drop _i_;
+MPRINT(_RETAIN):   array _181(*) factorxa2201--factorxa2212;
+MPRINT(_RETAIN):   do _i_=1 to hbound(_181);
+MPRINT(_RETAIN):   _181(_i_)=0;
+MPRINT(_RETAIN):   end;
+MPRINT(_RETAIN):   drop _i_;
+MPRINT(_RETAIN):   array _191(*) thrombin1701--thrombin1712;
+MPRINT(_RETAIN):   do _i_=1 to hbound(_191);
+MPRINT(_RETAIN):   _191(_i_)=0;
+MPRINT(_RETAIN):   end;
+MPRINT(_RETAIN):   drop _i_;
+MPRINT(_RETAIN):   array _201(*) thrombin1801--thrombin1812;
+MPRINT(_RETAIN):   do _i_=1 to hbound(_201);
+MPRINT(_RETAIN):   _201(_i_)=0;
+MPRINT(_RETAIN):   end;
+MPRINT(_RETAIN):   drop _i_;
+MPRINT(_RETAIN):   array _211(*) thrombin1901--thrombin1912;
+MPRINT(_RETAIN):   do _i_=1 to hbound(_211);
+MPRINT(_RETAIN):   _211(_i_)=0;
+MPRINT(_RETAIN):   end;
+MPRINT(_RETAIN):   drop _i_;
+MPRINT(_RETAIN):   array _221(*) thrombin2001--thrombin2012;
+MPRINT(_RETAIN):   do _i_=1 to hbound(_221);
+30                             The SAS System  12:00 Saturday, March 8, 2025
+
+MPRINT(_RETAIN):   _221(_i_)=0;
+MPRINT(_RETAIN):   end;
+MPRINT(_RETAIN):   drop _i_;
+MPRINT(_RETAIN):   array _231(*) thrombin2101--thrombin2112;
+MPRINT(_RETAIN):   do _i_=1 to hbound(_231);
+MPRINT(_RETAIN):   _231(_i_)=0;
+MPRINT(_RETAIN):   end;
+MPRINT(_RETAIN):   drop _i_;
+MPRINT(_RETAIN):   array _241(*) thrombin2201--thrombin2212;
+MPRINT(_RETAIN):   do _i_=1 to hbound(_241);
+MPRINT(_RETAIN):   _241(_i_)=0;
+MPRINT(_RETAIN):   end;
+MPRINT(_RETAIN):   drop _i_;
+MPRINT(_RETAIN):   array _251(*) lmwh1701--lmwh1712;
+MPRINT(_RETAIN):   do _i_=1 to hbound(_251);
+MPRINT(_RETAIN):   _251(_i_)=0;
+MPRINT(_RETAIN):   end;
+MPRINT(_RETAIN):   drop _i_;
+MPRINT(_RETAIN):   array _261(*) lmwh1801--lmwh1812;
+MPRINT(_RETAIN):   do _i_=1 to hbound(_261);
+MPRINT(_RETAIN):   _261(_i_)=0;
+MPRINT(_RETAIN):   end;
+MPRINT(_RETAIN):   drop _i_;
+MPRINT(_RETAIN):   array _271(*) lmwh1901--lmwh1912;
+MPRINT(_RETAIN):   do _i_=1 to hbound(_271);
+MPRINT(_RETAIN):   _271(_i_)=0;
+MPRINT(_RETAIN):   end;
+MPRINT(_RETAIN):   drop _i_;
+MPRINT(_RETAIN):   array _281(*) lmwh2001--lmwh2012;
+MPRINT(_RETAIN):   do _i_=1 to hbound(_281);
+MPRINT(_RETAIN):   _281(_i_)=0;
+MPRINT(_RETAIN):   end;
+MPRINT(_RETAIN):   drop _i_;
+MPRINT(_RETAIN):   array _291(*) lmwh2101--lmwh2112;
+MPRINT(_RETAIN):   do _i_=1 to hbound(_291);
+MPRINT(_RETAIN):   _291(_i_)=0;
+MPRINT(_RETAIN):   end;
+MPRINT(_RETAIN):   drop _i_;
+MPRINT(_RETAIN):   array _301(*) lmwh2201--lmwh2212;
+MPRINT(_RETAIN):   do _i_=1 to hbound(_301);
+MPRINT(_RETAIN):   _301(_i_)=0;
+MPRINT(_RETAIN):   end;
+MPRINT(_RETAIN):   drop _i_;
+MPRINT(_RETAIN):   end
+96         
+97             month=month(mar_event_time);
+98             year =year(mar_event_time);
+99         
+100            select;
+101            when(ingredient_rxcui_name='warfarin')
+102                _warf(year, month)+1;
+103            when(pharm_subclass='Heparins And Heparinoid-Like Agents')
+31                             The SAS System  12:00 Saturday, March 8, 2025
+
+104                _lmwh(year, month)+1;
+105            when(pharm_subclass='Direct Factor Xa Inhibitors')
+106                _factorxa(year, month)+1;
+107            when(pharm_subclass='Thrombin Inhibitors')
+108                _thrombin(year, month)+1;
+109            otherwise;
+110            end;
+111        
+112            if last.patient_hash;
+113        
+114            do year=2017 to 2022;
+115                __antic(year)=0;
+116                __warf(year)=0;
+117                __factorxa(year)=0;
+118                __thrombin(year)=0;
+119                __lmwh(year)=0;
+120        
+121                do month=1 to 12;
+122                _antic(year, month)=_warf(year, month)+_factorxa(year,
+122      ! month)+
+123                    _thrombin(year, month)+_lmwh(year, month);
+124                __antic(year)=__antic(year)+(_antic(year, month)>0);
+125                __warf(year)  =__warf(year)+(_warf(year, month)>0);
+126                __factorxa(year)=__factorxa(year)+(_factorxa(year,
+126      ! month)>0);
+127                __thrombin(year)=__thrombin(year)+(_thrombin(year,
+127      ! month)>0);
+128                __lmwh(year)  =__lmwh(year)+(_lmwh(year, month)>0);
+129                end;
+130        
+131                antic=antic+(__antic(year));
+132                warf=warf+(__warf(year));
+133                factorxa=factorxa+(__factorxa(year));
+134                thrombin=thrombin+(__thrombin(year));
+135                lmwh=lmwh+(__lmwh(year));
+136            end;
+137        run;
+
+NOTE: There were 2829479 observations read from the data set WORK.ANTIC.
+NOTE: The data set CRDW.ANTIC has 125433 observations and 396 variables.
+NOTE: DATA statement used (Total process time):
+      real time           5.03 seconds
+      cpu time            5.03 seconds
+      
+
+138        
+139        proc freq;
+140            tables antic warf factorxa thrombin lmwh;
+141        run;
+
+NOTE: There were 125433 observations read from the data set CRDW.ANTIC.
+NOTE: The PROCEDURE FREQ printed pages 1-8.
+32                             The SAS System  12:00 Saturday, March 8, 2025
+
+NOTE: PROCEDURE FREQ used (Total process time):
+      real time           0.12 seconds
+      cpu time            0.12 seconds
+      
+
+142        
+143        proc contents varnum;
+144        run;
+
+NOTE: PROCEDURE CONTENTS used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+NOTE: The PROCEDURE CONTENTS printed pages 9-19.
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           1:47.40
+      cpu time            26.25 seconds
+      

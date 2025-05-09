@@ -1,0 +1,264 @@
+1                                                          The SAS System                             16:25 Thursday, March 13, 2025
+
+NOTE: Copyright (c) 2023 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M8) 
+      Licensed to MEDICAL COLLEGE OF WISCONSIN - T&R SFA, Site 70183647.
+NOTE: This session is executing on the Linux 3.10.0-514.10.2.el7.x86_64 (LIN X64) platform.
+
+
+
+NOTE: Analytical products:
+      
+      SAS/STAT 15.3
+      SAS/ETS 15.3
+      SAS/OR 15.3
+      SAS/IML 15.3
+      SAS/QC 15.3
+
+NOTE: Additional host information:
+
+ Linux LIN X64 3.10.0-514.10.2.el7.x86_64 #1 SMP Fri Mar 3 00:04:05 UTC 2017 x86_64 CentOS Linux release 7.9.2009 (Core) 
+
+NOTE: SAS initialization used:
+      real time           0.02 seconds
+      cpu time            0.01 seconds
+      
+
+NOTE: AUTOEXEC processing beginning; file is /home/rsparapa/git/CTSI/BERD/autoexec.sas.
+
+NOTE: Libref CRDW was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /data/shared/04224/CTSI/libname/crdw
+NOTE: You have called the macro _IFELSE, 2008-07-15.
+NOTE: Copyright (c) 2006-2008 Rodney Sparapani
+ 
+NOTE: You have called the macro _EXIST, 2012-07-11.
+NOTE: Copyright (c) 2001-2012 Rodney Sparapani
+ 
+NOTE: You have called the macro _FN, 2024-08-03.
+NOTE: Copyright (c) 2001-2024 Rodney Sparapani
+ 
+MPRINT(_FN):   filename fn "/home/rsparapa/git/CTSI/BERD/snippet8.sas";
+MPRINT(_FN):   filename fn;
+NOTE: Fileref FN has been deassigned.
+NOTE: You have called the macro _TAIL, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _DIRCHAR, 2007-07-24.
+NOTE: Copyright (c) 2004-2007 Rodney Sparapani
+ 
+NOTE: You have called the macro _UNWIND, 2004-11-23.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _COUNT, 2022-06-07.
+NOTE: Copyright (c) 2001-2022 Rodney Sparapani
+2                              The SAS System 16:25 Thursday, March 13, 2025
+
+ 
+NOTE: You have called the macro _SUBSTR, 2004-03-29.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _HEAD, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+FN=snippet8.sas
+FNROOT=snippet8
+FNPATH=/home/rsparapa/git/CTSI/BERD/snippet8.sas
+FNDIR=/home/rsparapa/git/CTSI/BERD/
+FNTEXT=snippet8.txt
+FNHTML=snippet8.html
+FNTEX=snippet8.tex
+FNPDF=snippet8.pdf
+NOTE: You have called the macro _LJ, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _PAD, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+MPRINT(_LJ):   "/home/rsparapa/git/CTSI/BERD/snippet8.sas"
+MPRINT(_PAD):   
+"202020202020202020202020202020202020202020202020202020202020202020202020202
+0202020202020202020202020202020202020202020202020202020202020202020202020202
+02020202020"X
+ 
+*** SGANNO macros are now available ***
+     NOTE: SGANNO macros (except SGANNO_HELP) should be used within data 
+step.
+ 
+ 
+ Following macros are available 
+ 
+     %SGANNO_HELP 
+     %SGARROW 
+     %SGIMAGE 
+     %SGLINE 
+     %SGOVAL 
+     %SGPOLYCONT 
+     %SGPOLYGON 
+     %SGPOLYLINE 
+     %SGRECTANGLE 
+     %SGTEXT 
+     %SGTEXTCONT 
+ 
+ Enter %SGANNO_HELP(macroname) for details on each SGANNO macro,
+    or %SGANNO_HELP(ALL) for details on all SGANNO macros.
+ 
+MPRINT(SGANNO):  ;
+ 
+3                              The SAS System 16:25 Thursday, March 13, 2025
+
+*** ANNOTATE macros are now available ***
+ 
+ For further information on ANNOTATE macros, enter,
+    %HELPANO(macroname), (for specific macros)
+    %HELPANO(ALL), (for information on all macros)
+ or %HELPANO (for a list of macro names)
+ 
+NOTE: Libref CWD was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /home/rsparapa/git/CTSI/BERD
+NOTE: Libref PWD refers to the same physical library as CWD.
+NOTE: Libref PWD was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /home/rsparapa/git/CTSI/BERD
+
+NOTE: AUTOEXEC processing completed.
+
+1          * snippet8.sas ;
+2          data crdw.snippet8;
+3              set crdw.snippet7;
+4              by patient_hash dx_date_shifted;
+5          
+6              *I48 is AFIB except for these codes for AFLT;
+7              where dx_code not in:("I48.3", "I48.4", "I48.92") &
+8                  enc_type in('ED', 'EI', 'IP', 'OS');
+9          
+10             array _year(2017:2022) afib17-afib22;
+11         
+12             array _afib(2017:2022, 1:12)
+13                 afib1701-afib1712 afib1801-afib1812
+14                 afib1901-afib1912 afib2001-afib2012
+15                 afib2101-afib2112 afib2201-afib2212
+16             ;
+17         
+18             keep patient_hash afib17-afib22 afib1701--afib2212;
+19         
+20             %_retain(var=prev_afib=dx_date afib1701--afib2212=0,
+NOTE: You have called the macro _RETAIN, 2017-02-28.
+NOTE: Copyright (c) 2001-2017 Rodney Sparapani
+ 
+21                 by=patient_hash);
+NOTE: You have called the macro _REQUIRE, 2004-03-29.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+MPRINT(_RETAIN):  ;
+NOTE: You have called the macro _LIST, 2013-09-04.
+NOTE: Copyright (c) 2001-2013 Rodney Sparapani
+ 
+MPRINT(_RETAIN):   retain prev_afib
+NOTE: You have called the macro _INDEXC, 2004-03-29.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+4                              The SAS System 16:25 Thursday, March 13, 2025
+
+ 
+MPRINT(_RETAIN):   ;
+MPRINT(_RETAIN):   retain afib1701--afib2212
+MPRINT(_RETAIN):   0 ;
+NOTE: You have called the macro _FIRST, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+MPRINT(_RETAIN):   if
+NOTE: You have called the macro _BY, 2005-03-25.
+NOTE: Copyright (c) 2001-2005 Rodney Sparapani
+ 
+MPRINT(_FIRST):   (first.PATIENT_HASH)
+MPRINT(_RETAIN):   then do;
+MPRINT(_RETAIN):   prev_afib=dx_date;
+MPRINT(_RETAIN):   array _21(*) afib1701--afib2212;
+MPRINT(_RETAIN):   do _i_=1 to hbound(_21);
+MPRINT(_RETAIN):   _21(_i_)=0;
+MPRINT(_RETAIN):   end;
+MPRINT(_RETAIN):   drop _i_;
+MPRINT(_RETAIN):   end
+22         
+23             if first.patient_hash | (dx_date-prev_afib)>30 then do;
+24                 prev_afib=dx_date;
+25                 _afib(year(dx_date), month(dx_date))=day(dx_date);
+26             end;
+27         
+28             if last.patient_hash;
+29         
+30             afib17=0; afib18=0; afib19=0; afib20=0; afib21=0; afib22=0;
+31         
+32             do year=2017 to 2022;
+33                 do month=1 to 12;
+34                     if _afib(year, month)>0 then _year(year)+1;
+35                 end;
+36             end;
+37         run;
+
+NOTE: There were 314571 observations read from the data set CRDW.SNIPPET7.
+      WHERE dx_code not in: ('I48.3', 'I48.4', 'I48.92') and enc_type in 
+      ('ED', 'EI', 'IP', 'OS');
+NOTE: The data set CRDW.SNIPPET8 has 26824 observations and 79 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.76 seconds
+      cpu time            0.59 seconds
+      
+
+38         
+39         proc freq;
+40             tables afib17-afib22;
+41         run;
+
+5                              The SAS System 16:25 Thursday, March 13, 2025
+
+NOTE: There were 26824 observations read from the data set CRDW.SNIPPET8.
+NOTE: The PROCEDURE FREQ printed pages 1-2.
+NOTE: PROCEDURE FREQ used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.02 seconds
+      
+
+42         
+43         proc format;
+44             value afib
+45                 0-1='0:1'
+46                 2-12='2+'
+47             ;
+NOTE: Format AFIB has been output.
+48         run;
+
+NOTE: PROCEDURE FORMAT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+49         
+50         proc freq;
+51             tables afib17*afib18*afib19 afib20*afib21*afib22 / list;
+52             format afib17-afib22 afib.;
+53         run;
+
+NOTE: There were 26824 observations read from the data set CRDW.SNIPPET8.
+NOTE: The PROCEDURE FREQ printed page 3.
+NOTE: PROCEDURE FREQ used (Total process time):
+      real time           0.05 seconds
+      cpu time            0.02 seconds
+      
+
+54         
+55         proc contents varnum;
+56         run;
+
+NOTE: PROCEDURE CONTENTS used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+NOTE: The PROCEDURE CONTENTS printed pages 4-6.
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           1.02 seconds
+      cpu time            0.77 seconds
+      

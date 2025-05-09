@@ -1,0 +1,382 @@
+1                                                          The SAS System                             17:03 Thursday, March 13, 2025
+
+NOTE: Copyright (c) 2023 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M8) 
+      Licensed to MEDICAL COLLEGE OF WISCONSIN - T&R SFA, Site 70183647.
+NOTE: This session is executing on the Linux 3.10.0-514.10.2.el7.x86_64 (LIN X64) platform.
+
+
+
+NOTE: Analytical products:
+      
+      SAS/STAT 15.3
+      SAS/ETS 15.3
+      SAS/OR 15.3
+      SAS/IML 15.3
+      SAS/QC 15.3
+
+NOTE: Additional host information:
+
+ Linux LIN X64 3.10.0-514.10.2.el7.x86_64 #1 SMP Fri Mar 3 00:04:05 UTC 2017 x86_64 CentOS Linux release 7.9.2009 (Core) 
+
+NOTE: SAS initialization used:
+      real time           0.54 seconds
+      cpu time            0.03 seconds
+      
+
+NOTE: AUTOEXEC processing beginning; file is /home/rsparapa/git/CTSI/BERD/autoexec.sas.
+
+NOTE: Libref CRDW was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /data/shared/04224/CTSI/libname/crdw
+NOTE: You have called the macro _IFELSE, 2008-07-15.
+NOTE: Copyright (c) 2006-2008 Rodney Sparapani
+ 
+NOTE: You have called the macro _EXIST, 2012-07-11.
+NOTE: Copyright (c) 2001-2012 Rodney Sparapani
+ 
+NOTE: You have called the macro _FN, 2024-08-03.
+NOTE: Copyright (c) 2001-2024 Rodney Sparapani
+ 
+MPRINT(_FN):   filename fn "/home/rsparapa/git/CTSI/BERD/snippet12.sas";
+MPRINT(_FN):   filename fn;
+NOTE: Fileref FN has been deassigned.
+NOTE: You have called the macro _TAIL, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _DIRCHAR, 2007-07-24.
+NOTE: Copyright (c) 2004-2007 Rodney Sparapani
+ 
+NOTE: You have called the macro _UNWIND, 2004-11-23.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _COUNT, 2022-06-07.
+NOTE: Copyright (c) 2001-2022 Rodney Sparapani
+2                              The SAS System 17:03 Thursday, March 13, 2025
+
+ 
+NOTE: You have called the macro _SUBSTR, 2004-03-29.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _HEAD, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+FN=snippet12.sas
+FNROOT=snippet12
+FNPATH=/home/rsparapa/git/CTSI/BERD/snippet12.sas
+FNDIR=/home/rsparapa/git/CTSI/BERD/
+FNTEXT=snippet12.txt
+FNHTML=snippet12.html
+FNTEX=snippet12.tex
+FNPDF=snippet12.pdf
+NOTE: You have called the macro _LJ, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _PAD, 2004-03-30.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+MPRINT(_LJ):   "/home/rsparapa/git/CTSI/BERD/snippet12.sas"
+MPRINT(_PAD):   
+"202020202020202020202020202020202020202020202020202020202020202020202020202
+0202020202020202020202020202020202020202020202020202020202020202020202020202
+020202020"X
+ 
+*** SGANNO macros are now available ***
+     NOTE: SGANNO macros (except SGANNO_HELP) should be used within data 
+step.
+ 
+ 
+ Following macros are available 
+ 
+     %SGANNO_HELP 
+     %SGARROW 
+     %SGIMAGE 
+     %SGLINE 
+     %SGOVAL 
+     %SGPOLYCONT 
+     %SGPOLYGON 
+     %SGPOLYLINE 
+     %SGRECTANGLE 
+     %SGTEXT 
+     %SGTEXTCONT 
+ 
+ Enter %SGANNO_HELP(macroname) for details on each SGANNO macro,
+    or %SGANNO_HELP(ALL) for details on all SGANNO macros.
+ 
+MPRINT(SGANNO):  ;
+ 
+3                              The SAS System 17:03 Thursday, March 13, 2025
+
+*** ANNOTATE macros are now available ***
+ 
+ For further information on ANNOTATE macros, enter,
+    %HELPANO(macroname), (for specific macros)
+    %HELPANO(ALL), (for information on all macros)
+ or %HELPANO (for a list of macro names)
+ 
+NOTE: Libref CWD was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /home/rsparapa/git/CTSI/BERD
+NOTE: Libref PWD refers to the same physical library as CWD.
+NOTE: Libref PWD was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /home/rsparapa/git/CTSI/BERD
+
+NOTE: AUTOEXEC processing completed.
+
+1          * snippet12.sas ;
+2          %_dblib(data=db.ekg_resting_ecg_meas);
+NOTE: You have called the macro _DBLIB, 2025-03-11.
+NOTE: Copyright (c) 2025 Rodney Sparapani
+ 
+NOTE: You have called the macro _REQUIRE, 2004-03-29.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+MPRINT(_DBLIB):  ;
+NOTE: You have called the macro _LIB, 2007-08-01.
+NOTE: Copyright (c) 2001-2007 Rodney Sparapani
+ 
+NOTE: You have called the macro _DATA, 2007-07-31.
+NOTE: Copyright (c) 2001-2007 Rodney Sparapani
+ 
+MPRINT(_DBLIB):   proc sql;
+MPRINT(_DBLIB):   connect to postgres as crdw (user=rsparapani 
+password=RSP#ygbzqp26t5W#Jyph2 server="garth.ctsi.mcw.edu" 
+database="fh_jupyter_hub_hbdb");
+MPRINT(_DBLIB):   create table schema as select * from connection to crdw 
+(select * from information_schema.columns where table_schema = 'public') 
+where table_name="ekg_resting_ecg_meas";
+NOTE: Table WORK.SCHEMA created, with 22 rows and 44 columns.
+
+MPRINT(_DBLIB):   disconnect from crdw;
+MPRINT(_DBLIB):   quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.22 seconds
+      cpu time            0.06 seconds
+      
+
+MPRINT(_DBLIB):   data dbdates;
+MPRINT(_DBLIB):   set schema;
+MPRINT(_DBLIB):   where data_type=:"time";
+4                              The SAS System 17:03 Thursday, March 13, 2025
+
+MPRINT(_DBLIB):   run;
+
+NOTE: There were 0 observations read from the data set WORK.SCHEMA.
+      WHERE data_type=:'time';
+NOTE: The data set WORK.DBDATES has 0 observations and 44 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: You have called the macro _LEVEL, 2011-09-01.
+NOTE: Copyright (c) 2002-2011 Rodney Sparapani
+ 
+NOTE: You have called the macro _NOBS, 2007-07-11.
+NOTE: Copyright (c) 2001-2007 Rodney Sparapani
+ 
+NOTE: You have called the macro _DSEXIST, 2007-08-01.
+NOTE: Copyright (c) 2001-2007 Rodney Sparapani
+ 
+NOTE: You have called the macro _SUFFIX, 2004-10-26.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _VERSION, 2006-02-15.
+NOTE: Copyright (c) 2001-2006 Rodney Sparapani
+ 
+NOTE: You have called the macro _DIR, 2004-11-23.
+NOTE: Copyright (c) 2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _FILE, 2004-11-23.
+NOTE: Copyright (c) 2004 Rodney Sparapani
+ 
+NOTE: You have called the macro _OPTION, 2004-03-29.
+NOTE: Copyright (c) 2001-2004 Rodney Sparapani
+ 
+MPRINT(_DBLIB):   data dblen;
+MPRINT(_DBLIB):   set schema;
+MPRINT(_DBLIB):   where data_type in:('character', 'text');
+MPRINT(_DBLIB):   column_name=lowcase(column_name);
+MPRINT(_DBLIB):   run;
+
+NOTE: There were 2 observations read from the data set WORK.SCHEMA.
+      WHERE data_type in: ('character', 'text');
+NOTE: The data set WORK.DBLEN has 2 observations and 44 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(_DBLIB):   proc sql;
+MPRINT(_DBLIB):   connect to postgres as crdw (user=rsparapani 
+password=RSP#ygbzqp26t5W#Jyph2 server="garth.ctsi.mcw.edu" 
+5                              The SAS System 17:03 Thursday, March 13, 2025
+
+database="fh_jupyter_hub_hbdb");
+NOTE: You have called the macro _INDEXW, 2009-11-19.
+NOTE: Copyright (c) 2009 Rodney Sparapani
+ 
+MPRINT(_DBLIB):   create table length as select * from connection to crdw 
+(select
+MPRINT(_DBLIB):   max(length(resting_ecg_meas_id)) as resting_ecg_meas_id,
+MPRINT(_DBLIB):   max(length(patient_trac_id)) as patient_trac_id from 
+ekg_resting_ecg_meas);
+NOTE: Table WORK.LENGTH created, with 1 rows and 2 columns.
+
+MPRINT(_DBLIB):   disconnect from crdw;
+MPRINT(_DBLIB):   quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.18 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(_DBLIB):   data _null_;
+MPRINT(_DBLIB):   set length;
+MPRINT(_DBLIB):   call symput("dbmax_text", trim(max(of 
+resting_ecg_meas_id--patient_trac_id)));
+MPRINT(_DBLIB):   call symput("len1", trim(resting_ecg_meas_id));
+MPRINT(_DBLIB):   call symput("len2", trim(patient_trac_id));
+MPRINT(_DBLIB):   run;
+
+NOTE: Numeric values have been converted to character 
+      values at the places given by: (Line):(Column).
+      2:33   2:1    2:1    
+NOTE: There were 1 observations read from the data set WORK.LENGTH.
+NOTE: DATA statement used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(_DBLIB):   libname db postgres user = "rsparapani" password = 
+"RSP#ygbzqp26t5W#Jyph2" server = "garth.ctsi.mcw.edu" database = 
+"fh_jupyter_hub_hbdb" client_encoding = "utf-8" dbmax_text = 16 
+sql_functions = all port=5432 ;
+NOTE: Libref DB was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: garth.ctsi.mcw.edu
+3          
+4          data ekg_resting_ecg_meas;
+5              merge
+6                  crdw.ekg_test_demographics(keep=patient_hash
+7                      patient_trac_id acquisition_date_shifted
+8                      acquisition_date in=ekg_test_demographics)
+9                  db.ekg_resting_ecg_meas(in=ekg_resting_ecg_meas)
+10             ;
+11             by patient_trac_id;
+6                              The SAS System 17:03 Thursday, March 13, 2025
+
+12         
+13             if ekg_test_demographics & ekg_resting_ecg_meas;
+14         run;
+
+NOTE: There were 50583 observations read from the data set 
+      CRDW.EKG_TEST_DEMOGRAPHICS.
+NOTE: There were 1844512 observations read from the data set 
+      DB.EKG_RESTING_ECG_MEAS.
+NOTE: The data set WORK.EKG_RESTING_ECG_MEAS has 50583 observations and 25 
+      variables.
+NOTE: DATA statement used (Total process time):
+      real time           18.89 seconds
+      cpu time            16.96 seconds
+      
+
+15         
+16         %_dbdata(out=ekg_resting_ecg_meas);
+NOTE: You have called the macro _DBDATA, 2025-03-10.
+NOTE: Copyright (c) 2025 Rodney Sparapani
+ 
+MPRINT(_DBDATA):  ;
+NOTE: You have called the macro _BLIST, 2008-03-03.
+NOTE: Copyright (c) 2004-2008 Rodney Sparapani
+ 
+MPRINT(_DBDATA):   data ekg_resting_ecg_meas;
+MPRINT(_DBDATA):   length
+MPRINT(_DBDATA):   resting_ecg_meas_id $ 16
+MPRINT(_DBDATA):   patient_trac_id $ 16;
+MPRINT(_DBDATA):   set WORK.EKG_RESTING_ECG_MEAS ;
+MPRINT(_DBDATA):   attrib _all_ label=' ';
+MPRINT(_DBDATA):   format resting_ecg_meas_id patient_trac_id _numeric_;
+MPRINT(_DBDATA):   informat resting_ecg_meas_id patient_trac_id _numeric_;
+MPRINT(_DBDATA):   run;
+
+NOTE: There were 50583 observations read from the data set 
+      WORK.EKG_RESTING_ECG_MEAS.
+NOTE: The data set WORK.EKG_RESTING_ECG_MEAS has 50583 observations and 25 
+      variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.29 seconds
+      cpu time            0.30 seconds
+      
+
+17         
+18         proc sort data=ekg_resting_ecg_meas
+19             out=crdw.ekg_resting_ecg_meas(index=(patient_trac_id/unique))
+19       ! ;
+20             by patient_hash acquisition_date_shifted;
+21         run;
+
+NOTE: There were 50583 observations read from the data set 
+7                              The SAS System 17:03 Thursday, March 13, 2025
+
+      WORK.EKG_RESTING_ECG_MEAS.
+NOTE: The data set CRDW.EKG_RESTING_ECG_MEAS has 50583 observations and 25 
+      variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.20 seconds
+      cpu time            0.09 seconds
+      
+
+22         
+23         proc contents varnum;
+24         run;
+
+NOTE: PROCEDURE CONTENTS used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.02 seconds
+      
+NOTE: The PROCEDURE CONTENTS printed pages 1-2.
+
+25         
+26         proc univariate plot;
+27             var ventricular_rate atrial_rate;
+28         run;
+
+NOTE: The PROCEDURE UNIVARIATE printed pages 3-8.
+NOTE: PROCEDURE UNIVARIATE used (Total process time):
+      real time           0.12 seconds
+      cpu time            0.03 seconds
+      
+
+29         
+30         ods graphics on / reset imagename="&fnroot" imagefmt=pdf;
+31         
+32         footnote;
+33         
+34         proc sgplot;
+35             scatter x=atrial_rate y=ventricular_rate;
+36         run;
+
+NOTE: PROCEDURE SGPLOT used (Total process time):
+      real time           10.12 seconds
+      cpu time            1.59 seconds
+      
+NOTE: Listing image output written to 
+      /home/rsparapa/git/CTSI/BERD/snippet12.pdf.
+NOTE: There were 50583 observations read from the data set 
+      CRDW.EKG_RESTING_ECG_MEAS.
+
+37         
+38         %_pdfjam;
+NOTE: You have called the macro _PDFJAM, 2018-01-02.
+NOTE: Copyright (c) 2017-2018 Rodney Sparapani
+8                              The SAS System 17:03 Thursday, March 13, 2025
+
+ 
+MPRINT(_PDFJAM):  ;
+NOTE: graphics records written to snippet12.pdf
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           31.34 seconds
+      cpu time            19.32 seconds
+      
