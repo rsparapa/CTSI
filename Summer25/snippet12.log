@@ -1,5 +1,7 @@
-1                                                          The SAS System                             17:03 Thursday, March 13, 2025
+1                                                          The SAS System                                 10:53 Monday, May 12, 2025
 
+NOTE: Unable to open SASUSER.PROFILE. WORK.PROFILE will be opened instead.
+NOTE: All profile changes will be lost at the end of the session.
 NOTE: Copyright (c) 2023 by SAS Institute Inc., Cary, NC, USA. 
 NOTE: SAS (r) Proprietary Software 9.4 (TS1M8) 
       Licensed to MEDICAL COLLEGE OF WISCONSIN - T&R SFA, Site 70183647.
@@ -20,15 +22,15 @@ NOTE: Additional host information:
  Linux LIN X64 3.10.0-514.10.2.el7.x86_64 #1 SMP Fri Mar 3 00:04:05 UTC 2017 x86_64 CentOS Linux release 7.9.2009 (Core) 
 
 NOTE: SAS initialization used:
-      real time           0.54 seconds
+      real time           0.03 seconds
       cpu time            0.03 seconds
       
 
-NOTE: AUTOEXEC processing beginning; file is /home/rsparapa/git/CTSI/BERD/autoexec.sas.
+NOTE: AUTOEXEC processing beginning; file is /home/rsparapa/git/CTSI/Summer25/autoexec.sas.
 
 NOTE: Libref CRDW was successfully assigned as follows: 
       Engine:        V9 
-      Physical Name: /data/shared/04224/CTSI/libname/crdw
+      Physical Name: /data/shared/04224/afib/libname/crdw
 NOTE: You have called the macro _IFELSE, 2008-07-15.
 NOTE: Copyright (c) 2006-2008 Rodney Sparapani
  
@@ -38,7 +40,7 @@ NOTE: Copyright (c) 2001-2012 Rodney Sparapani
 NOTE: You have called the macro _FN, 2024-08-03.
 NOTE: Copyright (c) 2001-2024 Rodney Sparapani
  
-MPRINT(_FN):   filename fn "/home/rsparapa/git/CTSI/BERD/snippet12.sas";
+MPRINT(_FN):   filename fn "/home/rsparapa/git/CTSI/Summer25/snippet12.sas";
 MPRINT(_FN):   filename fn;
 NOTE: Fileref FN has been deassigned.
 NOTE: You have called the macro _TAIL, 2004-03-30.
@@ -50,10 +52,10 @@ NOTE: Copyright (c) 2004-2007 Rodney Sparapani
 NOTE: You have called the macro _UNWIND, 2004-11-23.
 NOTE: Copyright (c) 2001-2004 Rodney Sparapani
  
+2                              The SAS System     10:53 Monday, May 12, 2025
+
 NOTE: You have called the macro _COUNT, 2022-06-07.
 NOTE: Copyright (c) 2001-2022 Rodney Sparapani
-2                              The SAS System 17:03 Thursday, March 13, 2025
-
  
 NOTE: You have called the macro _SUBSTR, 2004-03-29.
 NOTE: Copyright (c) 2001-2004 Rodney Sparapani
@@ -63,8 +65,8 @@ NOTE: Copyright (c) 2001-2004 Rodney Sparapani
  
 FN=snippet12.sas
 FNROOT=snippet12
-FNPATH=/home/rsparapa/git/CTSI/BERD/snippet12.sas
-FNDIR=/home/rsparapa/git/CTSI/BERD/
+FNPATH=/home/rsparapa/git/CTSI/Summer25/snippet12.sas
+FNDIR=/home/rsparapa/git/CTSI/Summer25/
 FNTEXT=snippet12.txt
 FNHTML=snippet12.html
 FNTEX=snippet12.tex
@@ -75,11 +77,11 @@ NOTE: Copyright (c) 2001-2004 Rodney Sparapani
 NOTE: You have called the macro _PAD, 2004-03-30.
 NOTE: Copyright (c) 2001-2004 Rodney Sparapani
  
-MPRINT(_LJ):   "/home/rsparapa/git/CTSI/BERD/snippet12.sas"
+MPRINT(_LJ):   "/home/rsparapa/git/CTSI/Summer25/snippet12.sas"
 MPRINT(_PAD):   
 "202020202020202020202020202020202020202020202020202020202020202020202020202
 0202020202020202020202020202020202020202020202020202020202020202020202020202
-020202020"X
+0"X
  
 *** SGANNO macros are now available ***
      NOTE: SGANNO macros (except SGANNO_HELP) should be used within data 
@@ -104,9 +106,9 @@ step.
     or %SGANNO_HELP(ALL) for details on all SGANNO macros.
  
 MPRINT(SGANNO):  ;
- 
-3                              The SAS System 17:03 Thursday, March 13, 2025
+3                              The SAS System     10:53 Monday, May 12, 2025
 
+ 
 *** ANNOTATE macros are now available ***
  
  For further information on ANNOTATE macros, enter,
@@ -116,11 +118,11 @@ MPRINT(SGANNO):  ;
  
 NOTE: Libref CWD was successfully assigned as follows: 
       Engine:        V9 
-      Physical Name: /home/rsparapa/git/CTSI/BERD
+      Physical Name: /home/rsparapa/git/CTSI/Summer25
 NOTE: Libref PWD refers to the same physical library as CWD.
 NOTE: Libref PWD was successfully assigned as follows: 
       Engine:        V9 
-      Physical Name: /home/rsparapa/git/CTSI/BERD
+      Physical Name: /home/rsparapa/git/CTSI/Summer25
 
 NOTE: AUTOEXEC processing completed.
 
@@ -141,7 +143,7 @@ NOTE: Copyright (c) 2001-2007 Rodney Sparapani
  
 MPRINT(_DBLIB):   proc sql;
 MPRINT(_DBLIB):   connect to postgres as crdw (user=rsparapani 
-password=RSP#ygbzqp26t5W#Jyph2 server="garth.ctsi.mcw.edu" 
+password=&password server="garth.ctsi.mcw.edu" 
 database="fh_jupyter_hub_hbdb");
 MPRINT(_DBLIB):   create table schema as select * from connection to crdw 
 (select * from information_schema.columns where table_schema = 'public') 
@@ -151,14 +153,14 @@ NOTE: Table WORK.SCHEMA created, with 22 rows and 44 columns.
 MPRINT(_DBLIB):   disconnect from crdw;
 MPRINT(_DBLIB):   quit;
 NOTE: PROCEDURE SQL used (Total process time):
-      real time           0.22 seconds
-      cpu time            0.06 seconds
+      real time           0.15 seconds
+      cpu time            0.05 seconds
       
 
 MPRINT(_DBLIB):   data dbdates;
 MPRINT(_DBLIB):   set schema;
 MPRINT(_DBLIB):   where data_type=:"time";
-4                              The SAS System 17:03 Thursday, March 13, 2025
+4                              The SAS System     10:53 Monday, May 12, 2025
 
 MPRINT(_DBLIB):   run;
 
@@ -166,8 +168,8 @@ NOTE: There were 0 observations read from the data set WORK.SCHEMA.
       WHERE data_type=:'time';
 NOTE: The data set WORK.DBDATES has 0 observations and 44 variables.
 NOTE: DATA statement used (Total process time):
-      real time           0.02 seconds
-      cpu time            0.00 seconds
+      real time           0.00 seconds
+      cpu time            0.01 seconds
       
 
 NOTE: You have called the macro _LEVEL, 2011-09-01.
@@ -205,15 +207,15 @@ NOTE: There were 2 observations read from the data set WORK.SCHEMA.
 NOTE: The data set WORK.DBLEN has 2 observations and 44 variables.
 NOTE: DATA statement used (Total process time):
       real time           0.00 seconds
-      cpu time            0.01 seconds
+      cpu time            0.00 seconds
       
 
 MPRINT(_DBLIB):   proc sql;
 MPRINT(_DBLIB):   connect to postgres as crdw (user=rsparapani 
-password=RSP#ygbzqp26t5W#Jyph2 server="garth.ctsi.mcw.edu" 
-5                              The SAS System 17:03 Thursday, March 13, 2025
-
+password=&password server="garth.ctsi.mcw.edu" 
 database="fh_jupyter_hub_hbdb");
+5                              The SAS System     10:53 Monday, May 12, 2025
+
 NOTE: You have called the macro _INDEXW, 2009-11-19.
 NOTE: Copyright (c) 2009 Rodney Sparapani
  
@@ -244,12 +246,12 @@ NOTE: Numeric values have been converted to character
       2:33   2:1    2:1    
 NOTE: There were 1 observations read from the data set WORK.LENGTH.
 NOTE: DATA statement used (Total process time):
-      real time           0.02 seconds
-      cpu time            0.00 seconds
+      real time           0.00 seconds
+      cpu time            0.01 seconds
       
 
 MPRINT(_DBLIB):   libname db postgres user = "rsparapani" password = 
-"RSP#ygbzqp26t5W#Jyph2" server = "garth.ctsi.mcw.edu" database = 
+"&password" server = "garth.ctsi.mcw.edu" database = 
 "fh_jupyter_hub_hbdb" client_encoding = "utf-8" dbmax_text = 16 
 sql_functions = all port=5432 ;
 NOTE: Libref DB was successfully assigned as follows: 
@@ -264,21 +266,21 @@ NOTE: Libref DB was successfully assigned as follows:
 9                  db.ekg_resting_ecg_meas(in=ekg_resting_ecg_meas)
 10             ;
 11             by patient_trac_id;
-6                              The SAS System 17:03 Thursday, March 13, 2025
-
 12         
 13             if ekg_test_demographics & ekg_resting_ecg_meas;
+6                              The SAS System     10:53 Monday, May 12, 2025
+
 14         run;
 
 NOTE: There were 50583 observations read from the data set 
       CRDW.EKG_TEST_DEMOGRAPHICS.
-NOTE: There were 1844512 observations read from the data set 
+NOTE: There were 1860751 observations read from the data set 
       DB.EKG_RESTING_ECG_MEAS.
-NOTE: The data set WORK.EKG_RESTING_ECG_MEAS has 50583 observations and 25 
+NOTE: The data set WORK.EKG_RESTING_ECG_MEAS has 50570 observations and 25 
       variables.
 NOTE: DATA statement used (Total process time):
-      real time           18.89 seconds
-      cpu time            16.96 seconds
+      real time           21.06 seconds
+      cpu time            18.56 seconds
       
 
 15         
@@ -300,13 +302,13 @@ MPRINT(_DBDATA):   format resting_ecg_meas_id patient_trac_id _numeric_;
 MPRINT(_DBDATA):   informat resting_ecg_meas_id patient_trac_id _numeric_;
 MPRINT(_DBDATA):   run;
 
-NOTE: There were 50583 observations read from the data set 
+NOTE: There were 50570 observations read from the data set 
       WORK.EKG_RESTING_ECG_MEAS.
-NOTE: The data set WORK.EKG_RESTING_ECG_MEAS has 50583 observations and 25 
+NOTE: The data set WORK.EKG_RESTING_ECG_MEAS has 50570 observations and 25 
       variables.
 NOTE: DATA statement used (Total process time):
-      real time           0.29 seconds
-      cpu time            0.30 seconds
+      real time           0.38 seconds
+      cpu time            0.38 seconds
       
 
 17         
@@ -316,15 +318,15 @@ NOTE: DATA statement used (Total process time):
 20             by patient_hash acquisition_date_shifted;
 21         run;
 
-NOTE: There were 50583 observations read from the data set 
-7                              The SAS System 17:03 Thursday, March 13, 2025
-
+NOTE: There were 50570 observations read from the data set 
       WORK.EKG_RESTING_ECG_MEAS.
-NOTE: The data set CRDW.EKG_RESTING_ECG_MEAS has 50583 observations and 25 
+NOTE: The data set CRDW.EKG_RESTING_ECG_MEAS has 50570 observations and 25 
       variables.
+7                              The SAS System     10:53 Monday, May 12, 2025
+
 NOTE: PROCEDURE SORT used (Total process time):
-      real time           0.20 seconds
-      cpu time            0.09 seconds
+      real time           0.33 seconds
+      cpu time            0.14 seconds
       
 
 22         
@@ -332,8 +334,8 @@ NOTE: PROCEDURE SORT used (Total process time):
 24         run;
 
 NOTE: PROCEDURE CONTENTS used (Total process time):
-      real time           0.01 seconds
-      cpu time            0.02 seconds
+      real time           0.03 seconds
+      cpu time            0.01 seconds
       
 NOTE: The PROCEDURE CONTENTS printed pages 1-2.
 
@@ -344,8 +346,8 @@ NOTE: The PROCEDURE CONTENTS printed pages 1-2.
 
 NOTE: The PROCEDURE UNIVARIATE printed pages 3-8.
 NOTE: PROCEDURE UNIVARIATE used (Total process time):
-      real time           0.12 seconds
-      cpu time            0.03 seconds
+      real time           0.13 seconds
+      cpu time            0.04 seconds
       
 
 29         
@@ -358,25 +360,25 @@ NOTE: PROCEDURE UNIVARIATE used (Total process time):
 36         run;
 
 NOTE: PROCEDURE SGPLOT used (Total process time):
-      real time           10.12 seconds
-      cpu time            1.59 seconds
+      real time           7.13 seconds
+      cpu time            1.54 seconds
       
 NOTE: Listing image output written to 
-      /home/rsparapa/git/CTSI/BERD/snippet12.pdf.
-NOTE: There were 50583 observations read from the data set 
+      /home/rsparapa/git/CTSI/Summer25/snippet12.pdf.
+NOTE: There were 50570 observations read from the data set 
       CRDW.EKG_RESTING_ECG_MEAS.
 
 37         
 38         %_pdfjam;
 NOTE: You have called the macro _PDFJAM, 2018-01-02.
 NOTE: Copyright (c) 2017-2018 Rodney Sparapani
-8                              The SAS System 17:03 Thursday, March 13, 2025
-
  
 MPRINT(_PDFJAM):  ;
 NOTE: graphics records written to snippet12.pdf
 NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+8                              The SAS System     10:53 Monday, May 12, 2025
+
 NOTE: The SAS System used:
-      real time           31.34 seconds
-      cpu time            19.32 seconds
+      real time           29.78 seconds
+      cpu time            20.94 seconds
       

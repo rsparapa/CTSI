@@ -141,7 +141,7 @@ NOTE: Copyright (c) 2001-2007 Rodney Sparapani
  
 MPRINT(_DBLIB):   proc sql;
 MPRINT(_DBLIB):   connect to postgres as crdw (user=rsparapani 
-password=RSP#ygbzqp26t5W#Jyph2 server="garth.ctsi.mcw.edu" 
+password=&password server="garth.ctsi.mcw.edu" 
 database="fh_jupyter_hub_hbdb");
 MPRINT(_DBLIB):   create table schema as select * from connection to crdw 
 (select * from information_schema.columns where table_schema = 'public') 
@@ -383,7 +383,7 @@ NOTE: DATA statement used (Total process time):
 
 MPRINT(_DBLIB):   proc sql;
 MPRINT(_DBLIB):   connect to postgres as crdw (user=rsparapani 
-password=RSP#ygbzqp26t5W#Jyph2 server="garth.ctsi.mcw.edu" 
+password=&password server="garth.ctsi.mcw.edu" 
 database="fh_jupyter_hub_hbdb");
 MPRINT(_DBLIB):   disconnect from crdw;
 MPRINT(_DBLIB):   quit;
@@ -425,7 +425,7 @@ NOTE: DATA statement used (Total process time):
       
 
 MPRINT(_DBLIB):   libname db postgres user = "rsparapani" password = 
-"RSP#ygbzqp26t5W#Jyph2" server = "garth.ctsi.mcw.edu" database = 
+"&password" server = "garth.ctsi.mcw.edu" database = 
 "fh_jupyter_hub_hbdb" client_encoding = "utf-8" dbmax_text = 16 
 sql_functions = all port=5432 ;
 NOTE: Libref DB was successfully assigned as follows: 
