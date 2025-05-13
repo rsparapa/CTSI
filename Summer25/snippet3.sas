@@ -2,7 +2,7 @@
 
 proc sql;
    connect to postgres as crdw 
-       (user=&user password=&password 
+       (user=&user password="&password" 
        server="garth.ctsi.mcw.edu" 
        database="fh_jupyter_hub_hbdb");
 

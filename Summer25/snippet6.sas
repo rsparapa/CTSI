@@ -1,5 +1,4 @@
 * snippet6.sas ;
-endsas;
 /*
 BEWARE: this takes 8 hours and is demanding
 you need to submit it with TORQUE like so
